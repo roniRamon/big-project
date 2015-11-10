@@ -29,9 +29,9 @@ module ToolModule
     end
   end
 
-  def check_error_or_quit err, input
+  def check_error_or_quit err, msg, input
     until err.downcase.split(" | ").include? input.downcase
-      format_output TEXT[:error]
+      format_output msg
       format_option err
       format_input
 
