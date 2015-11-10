@@ -1,3 +1,6 @@
+# To run this project, type in the terminal:
+# $ rb game.rb
+#
 # This folder consists of some logic for the intro part of the project.
 # I wasn't able to implement this using javascript since my knowledge is 
 # limited, so I decided to write some code using ruby just to get a feel 
