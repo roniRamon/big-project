@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="description" content="177 big project Game">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+  <title>Game Big Porject</title>
+		
+</head>
+
+<body>
+  
+<!-- This is the first page -->
+<section id="pageIndex" data-role="page" data-fullscrenn="true">
+<header data-role="header" data-position="fixed">
+  <h1>ABC Toys</h1>
+	<div data-role="navbar" data-iconpos="top"> <!-- navbar -->
+		<ul>
+			<li><a href="#pageIndex" data-icon="home">Home</a></li>
+			<li><a href="#game" data-icon="arrow-r">Game</a></li>
+		</ul>
+	</div>
+</header>
+	<div data-role="content">
+  <h3>Game</h3>
+ 
+  <p>Instrection for the Game (button to start Game)</p>
+</div>
+
+</section>
+	
+	<!-- This is the second page -->
+    <div id="game" data-role="page">
+        <header data-role="header" data-position="fixed">
+        <h1>The Game</h1>
+		<div data-role="navbar" data-iconpos="top"> <!-- navbar -->
+		<ul>
+			<li><a href="#pageIndex" data-icon="home">Home</a></li>
+			<li><a href="#game" data-icon="arrow-d">Game</a></li>
+		</ul>
+	</div>
+        </header>
+<script>
+	
+function Choice(clicked_id)
+{	
+	if(clicked_id == 1)
+			{
+				document.getElementById('gameStart').innerHTML = "You'r choice was swimming to the other side... <br>you drowned";
+				document.getElementById("river").src = "imagGame/drowned.jpeg";
+			}else if(clicked_id == 2)
+			{
+				document.getElementById('gameStart').innerHTML = "You'r choice was building a raft.... <br>you reach the other side of the river";
+				document.getElementById("river").src = "imagGame/reft.jpeg";
+			}
+}
+
+</script>
+        <div data-role="content">
+			<div id="box">
+				<img src="imagGame/river.jpeg" width="50%" height="50%" alt="river" id="river"><br>
+			<p id="gameStart">You reached a river. you need to cross to the other side.
+				you can: <br>
+			1. Try to swime to the other side <button class="ui-btn ui-btn-inline" name="start" id="1" onclick="Choice(this.id)" type="submit";>Swim</button><br>
+			2. Build a raft to reach the other side<button class="ui-btn ui-btn-inline" name="start" id="2" onclick="Choice(this.id)" >Build raft</button></p>
+			</div>
+        </div>
+ 
+    </div>
+	
