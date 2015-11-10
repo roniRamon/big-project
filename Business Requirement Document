@@ -47,5 +47,17 @@ End of the game.
 The game ends with reaching the goal of the game and winning the final battle or by loosing 
 and dying in one of the fight in earlier events. 
 
-<<NICE TO HAVE>> counting points and summary at the ending of the game. And/Or Counting number of games played. 
+<<NICE TO HAVE>> counting points and summary at the ending of the game. And/Or Counting number 
+of games played. 
+
+
+
+Technical notes:
+- Game designed to single player only
+- No animation will be supported in the game. Events description will be displayed on the browser screen.
+User will pick the path to follow/choices will be made by a click on the button/link (single select only).
+- Program will not require reloading at the change of the event.
+- Every event will contain a static image or a design to make the interface more interesting.
+- Programming language: JavaScript/JQuery
+- Designed for Chrome, Firefox Mozilla and Safari. <<NICE TO HAVE>> available on IE too.>>
 
