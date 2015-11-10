@@ -3,19 +3,49 @@ Role playing game for students, PG 13.
 The game will be based on predefined scenario and main goal to achieve. 
 
 Beginning of the game
-<<GG: how about to give user a choice of the character: Viking, Warrior Princess, Cheese, Pine Cone. And goals: Save Prince, Milk Cow, Plant a tree, Eat the most delicious ice-cream in the world before it melts>> 
-User will start the game with the choice of building their character according to their preferences and attribute the character with points for the main attributes which are:
--	Health – which has to be maintained on the positive level in order to keep the character alive. This parameter might be decreased during the fight. Health recovery will be available at special events and during meeting selected characters during events
--	Strength – a measure of combat strength of the character. Might be increased by certain artefacts gathered in selected events or after winning the fight with selected creatures. This parameter can be decreased only by removing equipment which was giving it additional values. The base strength of the character cannot be decreased 
--	Intelligence – measure of negotiation and empathy skills of the character. By developing this skill character might avoid a fight with some of the creatures, can get better deals with merchants and while picking up items will have more choices to pick from
-User will be given initial number of points which they need to redistribute between above parameters. Depending on it user can create more defensive (higher input on intelligence and health) or offensive (attach and health) character.
+<<NICE TO HAVE>> User has to choose the main character: Viking, Warrior Princess, Cheese, 
+Cone. And goals: Save Prince, Milk Cow, Plant a tree, Eat the most delicious ice-cream in 
+the world before it melts.<<>> 
+
+User will start the game with giving a name to their character and assigning points to the 
+attributes of the character. The main attributes are:
+-	Health – which has to be maintained on the positive level in order to keep the character 
+alive. This parameter might be decreased during the fight. Health recovery will be available 
+at special events and during meeting selected characters during events
+-	Strength – a measure of combat strength of the character. Might be increased by certain 
+artefacts gathered in selected events or after winning the fight with selected creatures. 
+This parameter can be decreased only by removing equipment which was giving it additional 
+values. The base strength of the character cannot be decreased 
+-	Intelligence – measure of negotiation and empathy skills of the character. By developing 
+this skill character might avoid a fight with some of the creatures, can get better deals 
+with merchants and while picking up items will have more choices to pick from
+User will be given initial number of points which they need to redistribute between above 
+parameters. Depending on it user can create more defensive (higher input on intelligence 
+and health) or offensive (attach and health) character.
 Additional features of the character:
--	Money – the character will be given certain amount of cash in the beginning of a game for which will be able to buy artefacts to increase it’s parameters (books for Intelligence; swords, axes, bows, knifes for Strength; armor and healing potions for Health). At some events character will be able to bribe the opponent instead to avoid the fight. In case when characters Intelligence is not high enough and certain merchant creature is met money will allow to buy another select option from given goods.
--	Backpack – character will have a backpack with limited number of slots to fill with found, won or collected from other creatures, artefacts. Some of the artefacts might increase parameters of the character
+-	Money – the character will be given certain amount of cash in the beginning of a game 
+for which will be able to buy artefacts to increase it’s parameters (books for Intelligence; 
+swords, axes, bows, knifes for Strength; armor and healing potions for Health). At some events 
+character will be able to bribe the opponent instead to avoid the fight. In case when characters 
+Intelligence is not high enough and certain merchant creature is met money will allow to buy 
+another select option from given goods.
+-	Backpack – character will have a backpack with limited number of slots to fill with found, 
+or collected from other creatures, artefacts. Some of the artefacts might increase parameters 
+of the character
  
 The game.
-Character will be located in a location and will have to reach predefined goal. User will face three types of events: Fight, Finding artefacts, Meetings other creatures.
-To make the game less repetitive each meeting and fighting event will have multiple (three) creatures defined from which script will pick one on random basis.  
-Details of the scenarios will be defined later in the project, but the game will have minimum 5 of each events, which gives the total of 15 events after which the final battle with A Brick monster.
+Character will be located in a location and will have to reach predefined goal. User will face 
+three types of events: Fight, Finding artefacts, Meetings other creatures.
 
+<<NICE TO HAVE>>To make the game less repetitive each meeting and fighting event will have multiple 
+(three) creatures defined from which script will pick one on random basis.<<>>  
+
+Details of the scenarios will be defined later in the project, but the game will have minimum 5 of 
+each events, which gives the total of 15 events after which the final battle with A Brick monster.
+
+End of the game.
+The game ends with reaching the goal of the game and winning the final battle or by loosing 
+and dying in one of the fight in earlier events. 
+
+<<NICE TO HAVE>> counting points and summary at the ending of the game. And/Or Counting number of games played. 
 
