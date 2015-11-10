@@ -1,0 +1,62 @@
+# File: Example Output #1
+# Date: Last Modified: Mon, Nov 9, 2015, ~11 pm
+# Desc: It would be nice to see an example of how the game works. The 
+#       purpose of this file is to display a possible outcome of the game.
+#
+# Note: This hypothetical output is an example of a game from start to end.
+#       "GAME>" is followed by the output from the program.
+#       "=>" requires user input.
+#
+# Please keep in mind that the actual game is implemented using html and 
+# javascript/jquery
+
+##########
+# OUTPUT #
+##########
+Game> Welcome to the game!
+Game> What would you like to do?
+Game> Options: play, help, quit // in the actual version, jquery will implement a click feature
+=> play
+Game> [some story]
+Game> Select your character!
+Game> Options: Viking, Warrior Princess, Cheese, Pine Cone
+=> Pine Cone
+Game> Here are your stats!
+
+# this can be done by calling display(player_1.stats)
+Game> ****************************************
+Game> * Health:         7                    *
+Game> * Strength:       6                    *
+Game> * Intelligence:   7                    *
+Game> * Money:          $1,000               *
+Game> * Backpack:       2x potion, 1x elixir *
+Game> ****************************************  
+Game> Select your goal!
+Game> Save Prince, Milk cow, Plant a tree, Eat the most delicious ice cream
+Game> in the world before it melts
+=> Eat the most delicious ice cream in the world before it melts
+
+# I'm clueless on ideas here
+Game> [some more text]
+Game> [and some more]
+Game> What would you like to do?
+Game> Options: Fight, Find Artifacts, Meet Other Creature
+=> Fight
+
+# a creature object is randomly selected from the creatures array/class
+Game> A Wild Book (4/4) has appeared! 
+Game> What would you like to do?
+Game> Options: Hit, Item, Run
+=> Hit
+
+# the following is calculated by doing rand(player_1.strength) + 1
+Game> You hit Wild Book for 4 damage!
+
+# picking up potion is a random event
+# Attributes should also go up a fixed amount (like 0.1 for each). User 
+# should be notified if an attribute increases by 1 point.
+Game> You defeated Wild Book, picked up 1x potion, and …
+
+
+# ok im stuck on the idea
+# also how would events be implemented?
