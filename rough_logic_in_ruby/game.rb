@@ -28,14 +28,16 @@ class Game
     format_output TEXT[:intro]
     format_option TEXT[:option][:intro]
     format_input
-    input = check_error_or_quit TEXT[:option][:intro], gets.chomp # prompts user input
+
+# prompts user input
+    input = check_error_or_quit TEXT[:option][:intro], TEXT[:error], gets.chomp
   end
 
   def choose
     format_output TEXT[:choose]
     format_option TEXT[:option][:choose]
     format_input
-    input = check_error_or_quit TEXT[:option][:choose], gets.chomp
+    input = check_error_or_quit TEXT[:option][:choose], TEXT[:error], gets.chomp
 
 # initializes an instance of the Hero class and stores it in an instance variable. 
     values = HEROS[input.intern].values
@@ -48,7 +50,7 @@ class Game
     format_output TEXT[:goal]
     format_option TEXT[:option][:goal]
     format_input
-    input = check_error_or_quit TEXT[:option][:goal], gets.chomp
+    input = check_error_or_quit TEXT[:option][:goal], TEXT[:error], gets.chomp
 
     @goal = input.downcase
 
