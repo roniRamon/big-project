@@ -138,5 +138,47 @@ Story 2:
 
 >>Next Event
 
+Event #2:
 
+You reached a crossroad in an enchanted forest. You can:
+#=> op1: Go left to shortcut in the dark part of the forest.
+#=> op2: Go through the long and safe way of the foresr.
+
+#=> if player choose op1:
+you reached a one eye demon, if you want to pass this way you have to fight
+him:
+roll the dice to see if you can bit him(demon roll dice too)
+
+#user win: if user has bigger number on the dice he get to keep going 
+through the path.
+#demon win: if demon has bigger number he win and he takes 5$ from
+the player and let the player keep going.
+#if its a tie: they get to roll again.
+
+#=> if player choose op2:
+The player keep walking and he reached a river which he have to 
+cross. 
+#=> op1: You can build a raft if you have an ax/knife.
+#=> op2: Try to swim across
+#=> op3: Pay the river keeper 15$ to get him across safly.
+
+#=> if player choose op1:
+You user your ax/knife to build a raft. you reached the other
+side of the river buy your tired. you lose 1 point of strength.
+
+#=> if player choose op2:
+You try to swim across and you didnt made it...
+You lose 1 point of strength, And you are back on the same 
+side of the river with the option to: 
+1. build a raft
+2. Try to swim across
+3. Pay the river keeper 15$ to get him across safly 
+
+#=> if player choose op3:
+You payed 15$ to the river keeper.
+the river keeper got you across safly but stole from you
+100$.
+
+
+>>Next Event  
 
