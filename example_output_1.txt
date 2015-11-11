@@ -138,7 +138,7 @@ Story 2:
 
 >>Next Event
 
-Event #2:
+story 3:
 
 You reached a crossroad in an enchanted forest. You can:
 #=> op1: Go left to shortcut in the dark part of the forest.
@@ -146,9 +146,7 @@ You reached a crossroad in an enchanted forest. You can:
 
 #=> if player choose op1:
 you reached a one eye demon, if you want to pass this way you have to fight
-him:
-roll the dice to see if you can bit him(demon roll dice too)
-
+him:roll the dice to see if you can bit him(demon roll dice too)
 #user win: if user has bigger number on the dice he get to keep going 
 through the path.
 #demon win: if demon has bigger number he win and he takes 5$ from
@@ -180,5 +178,4 @@ the river keeper got you across safly but stole from you
 100$.
 
 
->>Next Event  
-
+>>Next Event
