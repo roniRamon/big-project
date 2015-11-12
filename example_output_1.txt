@@ -61,8 +61,9 @@ Game> You defeated Wild Book, picked up 1x potion, and …
 # ok im stuck on the idea
 # also how would events be implemented?
 
-
-Story 2:
+############
+# Story 2: #
+############
 # Game> You are walking on the road and meeting a merchant with goods. What do you do?
 
 # Game> 1.Ignore him and move on.
@@ -138,8 +139,9 @@ Story 2:
 
 >>Next Event
 
-story 3:
-
+##########
+#story 3:#
+##########
 You reached a crossroad in an enchanted forest. You can:
 #=> op1: Go left to shortcut in the dark part of the forest.
 #=> op2: Go through the long and safe way of the foresr.
@@ -180,8 +182,9 @@ the river keeper got you across safly but stole from you
 
 >>Next Event
 
-Story 4
-
+##########
+#Story 4 #
+##########
 # You are crossing the meadow where group of goats are walking around. What do you do?
 # A.	Chase one of the goats and kill it.
 # B.	Walk away
@@ -222,3 +225,109 @@ Gk.strength (random from 0 to 100)
 #yourself never to tell anyone about what has happened here. 
 -20 Health
 >>Next Page
+
+#######################
+# Story 5 - QUIZ TIME #
+#######################
+GM: You are day dreaming in your javascript class when all of a sudden,
+GM: the teacher presents you with a POP QUiZ!!
+GM: You will have between 10 seconds to 1 minute to solve each question.
+GM: 1. Got it?
+GM: 2. Skip the quiz
+
+> 1
+GM: Question 1 of 4:
+GM: Which of the following will result in an error?
+# (Note a timer of 30 seconds starts running down)
+GM: 1. function add(a,b) {
+GM:      return a+b;
+GM:    }
+GM: 2. var add = function(a,b) {
+GM:      return a+b;
+GM:    }
+GM: 3. var add = function huh(a,b) {
+GM:      return a+b;
+GM:    }
+GM: 4. None of the above
+> 4
+GM: Correct! Your intelligence goes up by 3 points!
+
+GM: Question 2 of 4:
+# (10 seconds)
+GM: What is the result of this code: 5 + "6"
+GM: 1. 11
+GM: 2. 56
+GM: 3. NaN
+GM: 4. undefined
+> 2
+GM: Correct! Your intelligence goes up by 2 points!
+
+GM: Question 3 of 4:
+# (10 seconds)
+GM: What is the result of this code: 6 - "5"
+GM: 1. 1
+GM: 2. ""
+GM: 3. NaN
+GM: 4. undefined
+> 3
+GM: Wrong! Your intelligence goes down by 3 points!
+
+GM: Final Question:
+# (30 seconds)
+GM: What will this code produce?
+GM: function aFunction(n) {
+GM:   return n===1 ? n : n * aFunction(n-1);
+GM: }
+GM: 
+GM: aFunction(4)
+GM: 1. 1
+GM: 2. 4
+GM: 3. 0
+GM: 4. none of the above
+> 4
+GM: Correct! Your intelligence goes up by 3 points!
+
+GM: You've scored 3/4 points! The teacher was impressed and decided
+GM: to give you 100 dollars for your effort.
+GM: As the teacher walks away, his wallet drops on the floor.
+GM: You pick it up and notice that there is 400 dollars in there.
+GM: You
+GM: 1. Give back the wallet
+GM: 2. Keep the wallet
+> 1
+
+GM: You raise your hand and hand the teacher his wallet.
+GM: The teacher thanks you and hands you a "kryptonite"
+
+###############################
+# Story 6 - Unexpected Twists #
+###############################
+GM: You are driving a red porsche when all of a sudden you hear sirens.
+GM: What do you do?
+GM: 1. pull over
+GM: 2. accerlate
+> 1
+
+GM: You decide to pull over and then all of a sudden, you hear a loud 
+GM: horn from the police officer telling you to step out of your 
+GM: vehicle with your hands up.
+GM: You feel a little uneasy as you are familiar with the process of 
+GM: speeding tickets.
+GM: What do you do?
+GM: 1. Sit in the car and wait
+GM: 2. Get out
+GM: 3. The hell with this, accelerate
+> 2
+
+GM: You decide to get out of the car when all of a sudden you notice that
+GM: the car behind you isn't a police officer. The person chasing you is
+GM: Darth Vadar. Darth Vadar pulls out his life saber.
+GM: What do you do?
+GM: 1. Get back into your car and drive AS FAST AS POSSIBLE
+GM: 2. Fight Darth Vadar
+> 1
+
+GM: You merely escaped.
+GM: Health +3, Intelligence +5, Health +2
+# (note: an alternative version would result in Darth Vadar stealing your
+# money and damanging your heatlh).
