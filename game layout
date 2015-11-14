@@ -1,3 +1,331 @@
-Link for the very basic game layout: www.googledrive.com/host/0B53s_0pl9UI8ZG9FRllvQzFrc0k/
-Includes: title screen, main page, home page.
-Built using HTML5, css3, jQuery Mobile (JavaScript library). Will eventually work on mobile devices as well.
+//Link for the game layout: www.googledrive.com/host/0B53s_0pl9UI8ZG9FRllvQzFrc0k/
+//Includes: title screen, main page, home page.
+//Built using HTML5, css3, jQuery Mobile (JavaScript library). Will eventually work on mobile devices as well.
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>collapsibleset demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+/* SPLASH SCREEN*/
+  #title-screen {
+    text-align: center;
+    margin-top: 100px;
+   }
+
+  #logo {
+    border-radius: 10em;
+    border: 1px solid black;
+  }
+
+/* HOME PAGE settings */
+/*......................................*/
+
+  #home-page {
+    display: flex;
+  }
+  /* Header #1 */
+  /*.....................*/
+  #project-details {
+    margin: 10px 50px;
+    font-size: 20px;
+  }
+  #info, #about {
+    margin-left: 10px;
+  }
+
+  #introduction {
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #eee; 
+    line-height: 2em;   
+  }
+
+  #accordion {
+    flex: 2;
+    margin: 20px;
+    text-align: left;
+    outline: none;
+  }
+
+/* GAME PAGE settings */
+/*......................................*/
+
+  #game-page {
+    padding: 10em;
+    text-align: center;
+    background-color: #fff;
+    /*background-image: url("forestRoad.jpg");*/
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 500px;
+  }
+
+  #game-page fieldset {
+    width: 600px;
+  }
+
+  #header2 {
+    background-color: rgba(0,0,0,.7);
+    position: fixed;
+    width: 100%;
+    padding-right: 40px;
+  }
+  #header2 h1 {
+    margin-right: 50px;
+  } 
+  #user-points {
+    margin-right: 30px;
+    text-align: center;
+  }
+  #controls {
+    margin-right:80px; 
+  }
+  </style>
+
+  <script>
+  // ACCORDION MENU SETTINGS
+  $( document ).ready(function() { 
+      $( "#col2" ).collapsible({
+        disabled: true
+      });
+      $( "#col3" ).collapsible({
+        disabled: true
+      });
+      $( "#col4" ).collapsible({
+        disabled: true
+      });
+
+      $( "#begin" ).button({
+        disabled: true
+      });
+
+    // when user sets the name, release lower accordion section
+    $("#next1").click(function() {
+      if ($("#name").val() !== '') {
+          $( "#col2" ).collapsible( "expand" );
+           $( "#col1" ).collapsible("enable" );
+      } else {
+        alert('Please enter a name!');
+      }
+    });
+// when user sets the character, release lower accordion section
+    $("#next2").click(function() {
+        $( "#col3" ).collapsible( "expand" );
+        $( "#col2" ).collapsible("enable" );
+        $( "#col3" ).collapsible("enable" );
+    });
+// when user sets the goal, release lower accordion section
+    $("#next3").click(function() {
+        $( "#col4" ).collapsible( "expand" );
+        $( "#col4" ).collapsible("enable" );
+    });
+
+    // when user is ready with the steps:
+    $("#ready").click(function() {
+      // enable the start button
+      $( "#begin" ).button({
+          disabled: false
+        });
+      // replace the introduction text with the chosen options
+      $("#welcome").html("Get ready, " + $("#name").val() + "!");
+      var selectedChar = $("#select-choice-0 option:selected" ).text();
+      var selectedGoal = $("#select-choice-1 option:selected" ).text();
+
+      var introText = "Your character is: " + selectedChar + "<br>Your goal is: " + selectedGoal + 
+      "<br>Your initial points are:" +
+      "<br>Health: " + $("#health").val() +
+      "<br>Strength: " + $("#strength").val() +
+      "<br>Intelligence: " + $("#intelligence").val() +
+      "<br>Your backpack is now empty" +
+      "<br>GOOD LUCK!";
+      // set the new text
+      $("#intro-text").html(introText); 
+
+      // set the character and goal on the GAME PAGE
+      $("#set-char").html(selectedChar.toUpperCase());
+      $("#set-goal").html(selectedGoal.toUpperCase());
+
+      // set the initial points on the GAME PAGE
+      $("#health-points").val($("#health").val());
+      $("#strength-points").val($("#strength").val());
+      $("#smart-points").val($("#intelligence").val());
+  });
+
+    $("#reset").click(function() {
+      $("#health").textinput("refresh");
+    });
+
+
+});
+  </script>
+
+
+</head>
+<body>
+
+  <!-- Start of first page -->
+<div data-role="page" id="page1">
+  <div role="main" class="ui-content" id="title-screen">
+    <img src="https://images.unsplash.com/10/wii.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=625b73ba987c0d185a2757dc7ab70e15" alt="Game Logo" id="logo" height="220" width="220"><br>
+    <a href="#page2" class="ui-btn ui-btn-inline">START GAME</a>
+  </div>
+</div>
+
+
+<!-- Start of the second page: MAIN PAGE -->
+<div data-role="page" id="page2" class="ui-page-theme-a">
+
+<!-- HEADER #1 -->
+  <div data-role="header" id="header1" data-position="fixed">
+    <div class="ui-bar" id="project-details"> <!-- wrap content of the header#1 -->
+      <h1>Project Name</h1>
+      <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
+        <a href="#" data-icon="gear" id="info">Options</a>
+      <a href="#" data-icon="info" id="info">How to play</a>
+      <a href="#" data-icon="star" id="about">About</a>
+    </div> <!-- end of grouped buttons -->
+  </div> <!-- end of content of header#1 -->
+  </div> <!-- end of header#1 -->
+
+<!-- main content of the page#2 -->
+  <div role="main" class="ui-content" id="home-page">
+      <div id="introduction">
+        <h1 id="welcome">Welcome message</h1>
+        <p id="intro-text">Short introduction to the game. Short description of what the user will do.
+        Complete three steps and press 'Begin adventure' to start your journey!</p>
+
+        <a href="#page3" id="begin" class="ui-btn ui-shadow ui-btn-inline ui-corner-all">BEGIN ADVENTURE</a>
+      </div>
+
+<!-- Accordion menu with 4 steps -->
+    <div data-role="collapsibleset" id="accordion">
+      <div data-role="collapsible" id="col1" data-collapsed="false">
+        <h3>STEP 1</h3>
+        <label for="name">Enter your name:</label>
+        <input type="text" name="name" id="name" value="" data-clear-btn="true" autofocus>
+        <input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check">
+      </div>
+
+      <div data-role="collapsible" id="col2">
+        <h3>STEP 2</h3>
+        <label for="select-choice-0" class="select">Choose your character</label>
+          <select name="select-choice-0" id="select-choice-0" data-native-menu="false" >
+            <option value="char1">Viking</option>
+            <option value="char2">Warrior Princess</option>
+            <option value="char3">Cheese</option>
+            <option value="char4">Pine Cone</option>
+          </select>
+          <input type="button" value="Next" id="next2" data-inline="true" data-mini="true" data-icon="check">
+      </div>
+
+      <div data-role="collapsible" id="col3">
+        <h3>STEP 3</h3>
+         <label for="select-choice-1" class="select">Choose a goal</label>
+          <select name="select-choice-1" id="select-choice-1" data-native-menu="false">
+            <option value="goal1">Save Prince</option>
+            <option value="goal2">Milk a Cow</option>
+            <option value="goal3">Plant a Tree</option>
+            <option value="goal4">Eat the most delicious ice cream in the world before it melts</option>
+          </select>
+          <input type="button" value="Next" id="next3" data-inline="true" data-mini="true" data-icon="check">
+      </div>
+
+      <!-- STEP 4: assign points -->
+      <div data-role="collapsible" id="col4">
+        <h3>STEP 4</h3>
+        <h4>You have 100 points. Distribute them accordingly (check 'Hints' for help)</h4>
+        <div class="ui-field-contain" id="assign-points">
+          <label for="health">Health</label>
+          <input name="number" pattern="[0-9]*" id="health" value="" type="number" min="0" max="100">
+          <label for="strength">Strength</label>
+          <input name="number" pattern="[0-9]*" id="strength" value="" type="number" min="0" max="100">
+          <label for="intelligence">Intelligence</label>
+          <input name="number" pattern="[0-9]*" id="intelligence" value="" type="number" min="0" max="100">
+        </div> <!-- end of container with inputs -->
+
+        <input type="button" value="Done!" id="ready" data-inline="true" data-mini="true" data-icon="check">
+        <input type="button" value="Reset" id="reset" data-inline="true" data-mini="true" data-icon="refresh">
+      </div> <!-- end of section#4 -->
+    </div>
+  </div>
+</div>
+
+<!-- Start of the third page: GAME PAGE -->
+<div data-role="page" id="page3">
+  <!-- HEADER #2 -->
+<div class="ui-bar ui-bar-b" id="header2">
+     <h1>Character: <span id="set-char"></span></h1>
+      <h1>Goal: <span id="set-goal"></span></h1>
+
+      <!-- grouped points fields in header#2 -->
+      <fieldset class="ui-grid-b"  style="width:20%" id="user-points">
+        <div class="ui-block-a">
+               <label for="health-points">Health: </label>
+               <input data-mini="true" data-clear-btn="false" name="health-points" id="health-points" value="" type="text">
+        </div>
+        <div class="ui-block-b">
+            <label for="strength-points">Strength: </label>
+           <input data-mini="true" data-clear-btn="false" name="strength-points" id="strength-points" value="" type="text">
+         </div>
+         <div class="ui-block-c">
+              <label for="smart-points">Intelligence: </label>
+             <input data-mini="true" data-clear-btn="false" name="smart-points" id="smart-points" value="" type="text">
+          </div>
+      </fieldset>
+
+    <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right" id="controls"> <!-- start of grouped buttons in the header#2 -->
+      <a href="#mypanel" class="ui-btn ui-shadow ui-btn-inline ui-icon-eye ui-btn-icon-left" id="open-backpack">What's in my backpack?</a>
+
+      <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="slidedown" class="ui-btn ui-shadow ui-btn-inline ui-icon-info ui-btn-icon-left">Hints</a> <!-- help button -->
+
+      <!-- START OF POPUP DIALOG BOX WITH HINTS -->
+      <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" class="ui-content" data-dismissible="false" style="max-width:400px;">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <div data-role="header" data-theme="a"> <!-- header in popup box -->
+            <h1>Things to Consider</h1>
+          </div>
+          <div role="main" class="ui-content"><!--  content of popup box -->
+              <p>Having trouble finding out where to go? Talk to the townsfolk!<br><br>
+               Is a lack of an item holding you back? Investigate even the weirdest places! You never know what you’ll find.<br><br>
+               Too weak to beat the bear? If you’re smart enough, try talking them down!<br><br>
+               Not smart enough to outwit the merchant? Break his legs! Not saying the town won’t come after you, though...<br><br>
+          </p>
+          </div>
+      </div> <!-- end of popup box -->
+      <a href="#page2" class="ui-btn ui-shadow ui-btn-inline ui-icon-home ui-btn-icon-left">Quit</a> <!-- quit game button -->
+    </div> <!-- end of grouped buttons in header#2 -->
+</div> <!-- end of header#2 -->
+
+
+  <!-- GAME PAGE MAIN CONTENT -->
+  <div role="main" class="ui-content" id="game-page">
+
+      <fieldset data-role="controlgroup" class="ui-bar-b">
+          <legend><h3>You are walking on the road and meeting a merchant with goods. What do you do?</h3></legend>
+              <input name="radio-choice-1" id="radio-choice-1" value="choice-1" type="radio">
+              <label for="radio-choice-1">Ignore him and move on.</label>
+              <input name="radio-choice-1" id="radio-choice-2" value="choice-2" type="radio">
+              <label for="radio-choice-2">Attack and try to take his goods.</label>
+              <input name="radio-choice-1" id="radio-choice-3" value="choice-3" type="radio">
+              <label for="radio-choice-3">Try to buy something.</label>
+              <input name="radio-choice-1" id="radio-choice-4" value="choice-4" type="radio">
+              <label for="radio-choice-4">Start conversation.</label>
+              <input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check">
+      </fieldset>
+  </div><!-- end of content on page#3 -->
+  </div><!-- end of page#3 -->
+ 
+</body>
+</html>
