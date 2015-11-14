@@ -62,7 +62,7 @@ Game> You defeated Wild Book, picked up 1x potion, and …
 # also how would events be implemented?
 
 ############
-# Story 2: #
+# Story 2 Forest - Merchant #
 ############
 # Game> You are walking on the road and meeting a merchant with goods. What do you do?
 
@@ -140,7 +140,7 @@ Game> You defeated Wild Book, picked up 1x potion, and …
 >>Next Event
 
 ##########
-#story 3:#
+#story 3 Forest - River#
 ##########
 You reached a crossroad in an enchanted forest. You can:
 #=> op1: Go left to shortcut in the dark part of the forest.
@@ -183,7 +183,7 @@ the river keeper got you across safly but stole from you
 >>Next Event
 
 ##########
-#Story 4 #
+#Story 4 Forest - Goats adventure #
 ##########
 # You are crossing the meadow where group of goats are walking around. What do you do?
 # A.	Chase one of the goats and kill it.
@@ -392,3 +392,67 @@ GM: Health +3, Intelligence +5, Health +2
 # Game> You do a barrel roll, again and again until you're out of this sticky mess.
 
 >> Next Event
+
+
+#############################################
+# Story 7: Forest - Dead body on the ground #
+#############################################
+# Game> You are walking through the forest and you have tripped over something. 
+# Game> When you look at it you can see human body covered with blood. What do you do?
+# Game> a.	You are running away in case there is an attacker in the area
+# Game> b.	You examine the body and the surroundings
+
+=>a 
+<<random.backpackIndex = null; random item from backpack is lost
+# Game> You have run away in panic and lost one of your artefacts from your backpack (<<item_name>> )
+=>b 
+# Game> While examining the body you have found some money (+30$) and following artefacts: 
+# Game> axe (+30 strength), 
+# Game> book “The Mythical Man Month” (+25/ 15* Intelligence), 
+# Game> book “Biography of Grace Hopper” ((+20/ 10* Intelligence), 
+# Game> apple (+5 Health).
+
+# Game> What do you do:
+# Game> Axe Put to back pack slot 1, 2, 3, 4  OR leave it
+# Game> Book “The Mythical Man Month” : Put to back pack slot 1, 2, 3, 4 (+25 intelligence) OR Read it (+15 intelligence)
+# Game> Book “Biography of Grace Hopper” : Put to back pack slot 1, 2, 3, 4 (+20 intelligence) OR Read it (+10 intelligence)
+# Game> Apple Put to back pack slot 1, 2, 3, 4  OR eat it now
+# Game> Submit 
+
+# Game> You walk away from the body and get back to the trail
+# Game> While you were taking further you find another body on the ground. What do you do?
+# Game> 1.	You are running away in case there is an attacker in the area
+# Game> 2.	You examine the body and the surroundings
+
+=>1 
+<<random.backpackIndex = null; random item from backpack is lost
+# Game> You have run away in panic and lost one of your artefacts from your backpack (<<item_name>> )
+
+=>2
+# Game> When examining the body you have noticed that the man lying on the ground is only wounded and not dead. What do you do?
+# Game> 1.1.	Kill him and take his sword (+40 strenght)
+# Game> 1.2.	Ask him what happened.
+
+   =>1.1
+   # Game> You have killed the man and took his sword. Where do you want to place it?
+   # Game> a.	Slot 1
+   # Game> b.	Slot 2
+   # Game> c.	Slot 3
+   # Game> d.	Slot 4
+   # Game> e.	Don’t take it
+
+   =>1.2
+   # Game> Man: “I am private Jon Black, from the Hub City garrison. Our partol were attacked by the great shadow. I couldn’t see what it was, but it was vicious and killed almost everyone. Can you help me get to my station so I can report to my Captain.”
+   # Game> 1.2.1.	Help the officer
+   # Game> 1.2.2.	Don’t help him
+      =>1.2.1 
+      # Game> You: “Sure, I will help you.” You are taking Jon to the nearby garrison where he gives a report to his Captain. After this Jon thanks you for saving his life and gives you his lucky amulet (+100 Health) which you hang on your neck 
+      <<no need for taking slot in the backpack, only points added to health>>
+      1.2.2
+      # Game> You: “Sorry, I cannot help you. I’m on my way on a quest. Have a nice day”. You walk away and leave private where he was. 
+
+
+
+<<next event>>
+
+
