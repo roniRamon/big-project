@@ -134,6 +134,11 @@
 
     // when user is ready with the steps:
     $("#ready").click(function() {
+		if(parseInt($("#health").val()) + parseInt($("#strength").val()) + parseInt($("#intelligence").val()) > 100)
+		{
+			alert("You have 100 points. Distribute them accordingly");	
+		}
+		else {
       // enable the start button
       $( "#begin" ).button({
           disabled: false
@@ -161,6 +166,7 @@
       $("#health-points").val($("#health").val());
       $("#strength-points").val($("#strength").val());
       $("#smart-points").val($("#intelligence").val());
+	}
   });
 
     $("#reset").click(function() {
