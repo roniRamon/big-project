@@ -1,4 +1,4 @@
-# File: Example Output #1
+﻿# File: Example Output #1
 # Date: Last Modified: Mon, Nov 9, 2015, ~11 pm
 # Desc: It would be nice to see an example of how the game works. The 
 #       purpose of this file is to display a possible outcome of the game.
@@ -331,3 +331,64 @@ GM: You merely escaped.
 GM: Health +3, Intelligence +5, Health +2
 # (note: an alternative version would result in Darth Vadar stealing your
 # money and damanging your heatlh).
+
+###########################
+# Story 7: Dessert Desert #
+###########################
+
+# Game> The world begings to blur. The sand below begins to stick the bottom of your feet.
+# Game> 1. Continue walking.
+#(if intellegence > 12 option 2 is visible)
+# Game> 2. Investigate. 
+
+=>1. Continue
+# Game> You continue walking. Your feet are growing heavy.
+# Game> 1. Continue walking..
+#(if intellegence > 12 option 2 is visible)
+# Game> 2. Investigate. 
+
+=>2. Investigate
+# Game> You get down on one knee for a closer look at the sand. It smells sugary.
+# Game> 1. Continue walking.
+# Game> 2. Investigate closer.
+
+   =>1. Continue
+   # Game> You continue walking. Your feet are growing heavy.
+   # Game> 1. Continue walking..
+   #(if intellegence > 12 option 2 is visible)
+   # Game> 2. Investigate closer. 
+
+   =>2. Investigate
+   # Game> You lean in closer to smell the sand. Definitely sugar.
+   # Game> 1. Continue walking.
+   # Game> 2. Lick the sand.
+
+      =>1. Continue
+      # Game> You continue walking. Your feet are growing heavy.
+      # Game> 1. Continue walking..
+      # Game> 2. Lick the sand.
+
+      =>2. Lick
+      # Game> Definitely sugar. Yum. -> +1 Health
+      # Game> 1. Continue walking..
+
+=>1. Continue
+# Game> It's become increasingly hard to walk.
+# Game> 1. Continue walking...
+# Game> 2. Make like a rock and roll.
+
+=>1. Continue
+# Game> You're sinking.
+# Game> 1. Continue walking....
+# Game> 2. Freak out!
+
+   => 1. Continue
+   # Game> You try to walk out of this mess, but continue to sink. -> Death
+
+   => 2. Freak
+   # Game> You freak out hardcore, and continue to sink. -> Death
+
+=>2. Roll
+# Game> You do a barrel roll, again and again until you're out of this sticky mess.
+
+>> Next Event
