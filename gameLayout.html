@@ -132,6 +132,33 @@
         $( "#col4" ).collapsible("enable" );
     });
 
+//if the letter is not digit then display error and don't type anything	  
+  $("#health").keypress(function (e) {
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+	  
+//if the letter is not digit then display error and don't type anything	  
+  $("#strength").keypress(function (e) {
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg1").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+	  
+	//if the letter is not digit then display error and don't type anything	  
+  $("#intelligence").keypress(function (e) {
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg2").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+
     // when user is ready with the steps:
     $("#ready").click(function() {
 		if(parseInt($("#health").val()) + parseInt($("#strength").val()) + parseInt($("#intelligence").val()) > 100)
@@ -248,19 +275,18 @@
           <input type="button" value="Next" id="next3" data-inline="true" data-mini="true" data-icon="check">
       </div>
 
-      <!-- STEP 4: assign points -->
+	<!-- STEP 4: assign points -->
       <div data-role="collapsible" id="col4">
         <h3>STEP 4</h3>
         <h4>You have 100 points. Distribute them accordingly (check 'Hints' for help)</h4>
         <div class="ui-field-contain" id="assign-points">
-          <label for="health">Health</label>
-          <input name="number" pattern="[0-9]*" id="health" value="" type="number" min="0" max="100">
-          <label for="strength">Strength</label>
-          <input name="number" pattern="[0-9]*" id="strength" value="" type="number" min="0" max="100">
-          <label for="intelligence">Intelligence</label>
-          <input name="number" pattern="[0-9]*" id="intelligence" value="" type="number" min="0" max="100">
-        </div> <!-- end of container with inputs -->
-
+          <label for="health">Health</label><span id="errmsg"></span>
+          <input name="number" pattern="[0-9]*" id="health" value="0" type="number" min="0" max="100">
+          <label for="strength">Strength</label><span id="errmsg1"></span>
+          <input name="number" pattern="[0-9]*" id="strength" value="0" type="number" min="0" max="100">
+          <label for="intelligence">Intelligence</label><span id="errmsg2"></span>
+          <input name="number" pattern="[0-9]*" id="intelligence" value="0" type="number" min="0" max="100">
+        </div> <!-- end of input field container -->
         <input type="button" value="Done!" id="ready" data-inline="true" data-mini="true" data-icon="check">
         <input type="button" value="Reset" id="reset" data-inline="true" data-mini="true" data-icon="refresh">
       </div> <!-- end of section#4 -->
@@ -319,20 +345,35 @@
   <div role="main" class="ui-content" id="game-page">
 
       <fieldset data-role="controlgroup" class="ui-bar-b">
-          <legend><h3>You are walking on the road and meeting a merchant with goods. What do you do?</h3></legend>
-              <input name="radio-choice-1" id="radio-choice-1" value="choice-1" type="radio">
+          <legend><h3 id="gameStart">You are walking on the road and meeting a merchant with goods. What do you do?</h3></legend>
+              <input name="radio-choice-1" id="radio-choice-1" value="choice-1" type="radio" onclick="Choice(this.id)">
               <label for="radio-choice-1">Ignore him and move on.</label>
-              <input name="radio-choice-1" id="radio-choice-2" value="choice-2" type="radio">
+              <input name="radio-choice-1" id="radio-choice-2" value="choice-2" type="radio" onclick="Choice(this.id)">
               <label for="radio-choice-2">Attack and try to take his goods.</label>
-              <input name="radio-choice-1" id="radio-choice-3" value="choice-3" type="radio">
+              <input name="radio-choice-1" id="radio-choice-3" value="choice-3" type="radio" onclick="Choice(this.id)">
               <label for="radio-choice-3">Try to buy something.</label>
-              <input name="radio-choice-1" id="radio-choice-4" value="choice-4" type="radio">
+              <input name="radio-choice-1" id="radio-choice-4" value="choice-4" type="radio" onclick="Choice(this.id)">
               <label for="radio-choice-4">Start conversation.</label>
-              <input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check">
+              <input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check"onclick="Choice(this.id)">
       </fieldset>
   </div><!-- end of content on page#3 -->
   </div><!-- end of page#3 -->
  
+	<script>
+	function Choice(clicked_id)
+{	
+	if(clicked_id == "radio-choice-1")
+			{ 
+
+				document.getElementById('gameStart').innerHTML = "You'r choice was swimming to the other side... <br>you drowned";
+				document.getElementById('radio-choice-1').style.display = "none";
+			}else if(clicked_id == "radio-choice-2")
+			{
+				document.getElementById('gameStart').innerHTML = "You'r choice was building a raft.... <br>you reach the other side of the river";
+			}
+}
+	
+	</script>
 </body>
 </html>
 
