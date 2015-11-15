@@ -1,0 +1,168 @@
+###########################
+# Story 1: Dessert Desert #
+###########################
+
+# Game> The world begings to blur. The sand below begins to stick the bottom of your feet.
+# Game> 1. Continue walking.
+#(if intellegence > 12 option 2 is visible)
+# Game> 2. Investigate. 
+
+=>1. Continue
+# Game> You continue walking. Your feet are growing heavy.
+# Game> 1. Continue walking..
+#(if intellegence > 12 option 2 is visible)
+# Game> 2. Investigate. 
+
+=>2. Investigate
+# Game> You get down on one knee for a closer look at the sand. It smells sugary.
+# Game> 1. Continue walking.
+# Game> 2. Investigate closer.
+
+   =>1. Continue
+   # Game> You continue walking. Your feet are growing heavy.
+   # Game> 1. Continue walking..
+   #(if intellegence > 12 option 2 is visible)
+   # Game> 2. Investigate closer. 
+
+   =>2. Investigate
+   # Game> You lean in closer to smell the sand. Definitely sugar.
+   # Game> 1. Continue walking.
+   # Game> 2. Lick the sand.
+
+      =>1. Continue
+      # Game> You continue walking. Your feet are growing heavy.
+      # Game> 1. Continue walking..
+      # Game> 2. Lick the sand.
+
+      =>2. Lick
+      # Game> Definitely sugar. Yum. -> +1 Health
+      # Game> 1. Continue walking..
+
+=>1. Continue
+# Game> It's become increasingly hard to walk.
+# Game> 1. Continue walking...
+# Game> 2. Make like a rock and roll.
+
+=>1. Continue
+# Game> You're sinking.
+# Game> 1. Continue walking....
+# Game> 2. Freak out!
+
+   => 1. Continue
+   # Game> You try to walk out of this mess, but continue to sink. -> Death
+
+   => 2. Freak
+   # Game> You freak out hardcore, and continue to sink. -> Death
+
+=>2. Roll
+# Game> You do a barrel roll, again and again until you're out of this sticky mess.
+
+>> Next Event
+
+
+
+
+
+
+
+
+
+#########################
+# Story 2: Desert Water #
+#########################
+
+GM: For whatever reason, it is your 3rd day wandering aimlsesly around the 
+GM: desert. You realize you haven't had water since the adventure and you
+GM: are now very very thirsty. Luckily you do have your iphone 5s on you. 
+GM: You decide to locate yourself on the map. You pull your iphone out. 
+GM: Unfortunately, the wifi does not work! Desperate, you look around your 
+GM: surroundings for water. You see no signs of water in your immediate 
+GM: path. 
+GM: What do you do?
+GM: => 1. Continue walking
+GM: => 2. Dig into the ground
+GM: => 3. Walk in the opposite path
+
+  GM: 1. Continue walking
+  GM: You decide to keep walking. Within a few miles, your phone picks up 
+  GM: wifi. You ask siri where to find water and siri points you towards
+  GM: Cactus Island about 10 miles away. As you continue to walk, you feel
+  GM: tired as hell. You really want to stop walking. You look up into the 
+  GM: sky and notice the clouds are getting heavy and dark. Is this a sign 
+  GM: of rain? 
+  GM: What do you do?
+  GM: 1 => Wait for rain
+  GM: 2 => Continue walking towards Cactus Island
+
+    GM: 1. Wait for rain
+    GM: You decide to wait. Your phone has no wifi so you decide to play 
+    GM: Angry Birds while you wait for the rain. 4 hours has passed and 
+    GM: your phone is receiving wifi again. You look up the weather and 
+    GM: notice the weather app says it will only be cloudy. You do some
+    GM: research and realize that it does not rain here. You decide to 
+    GM: once again walk towards Cactus Island, but you die of dehydration 
+    GM: 1 mile down the road.
+
+    GM: 2. Continue walking towards Cactus Island
+    GM: You decide to continue walking. You finally arrive at Cactus
+    GM: Island. What a heavenly place!! You pick up a cactus, open it, 
+    GM: drink the water, and are now replenished! You decide to pack
+    GM: your bag with a cactus to last yourself with at least another
+    GM: week's worth of water supply.
+
+  GM: 2. Dig into the ground
+  GM: You dig into the ground. 4 hours in, you've come to the realization 
+  GM: that you've made no progress so far. 
+  GM: What do you do?
+  GM: 1 => Continue digging
+  GM: 2 => Dig elsewhere
+  GM: 3 => Continue walking
+
+    GM: 1. Continue digging
+    GM: You continue to dig. As you continue to dig, you begin to feel 
+    GM: nauseous and fever-ish. Within the next minute, you fall into 
+    GM: the hole you've dug.
+
+    GM: 2. Dig elswhere
+    GM: You come to the realization that the hole you've dug contains no
+    GM: water, so you decide to dig elsewhere. You dig and dig and die.
+
+    GM: 3. Continue walking
+    GM: You decide to continue walking. Within 4 hours, your phone begins
+    GM: to receive wifi signal. You pull out your phone and google for the
+    GM: nearest area with water. Siri tells you to goto Cactus Island
+    GM: which is located 5 miles from where you are. You begin walking 
+    GM: towards Cactus Island. Unfortunately you fall flat on your face 
+    GM: and die within the next mile.
+
+  GM: 3. Walk in the opposite path
+  GM: You decide to walk in the path you came from. Within 4 hours, your 
+  GM: phone picks up wifi signal. You pull out your phone and google for 
+  GM: the nearest area with water. Siri tells you to goto Cactus Island,
+  GM: which is located 25 miles from where you are.
+  GM: What do you do?
+  GM: 1 => Walk towards Cactus Island
+  GM: 2 => Continue walking towards the path you came from
+
+    GM: 1. Walk towards Cactus Island
+    GM: You fall into your own death within the 2nd mile to dehydration.
+
+    GM: 2. Continue walking towards the path you came from
+    GM: You decide to continue walking. Within 2 miles you notice a 
+    GM: python crawling around the desert.
+    GM: What do you do?
+    GM: 1 => Ignore the python
+    GM: 2 => Attempt to kill the python for its meat and blood
+
+    GM: 1. Ignore the python
+    GM: You decide to ignore the python and walk. As you begin to walk,
+    GM: the python sneaks up from behind you. Before you can do anything 
+    GM: to stop it, it wraps itself around you. Too weak to fight back, 
+    GM: you lay idled until your own breath. Well, at least a life is 
+    GM: saved.
+
+    GM: 2. Attempt to kill the python for its meat and blood
+    GM: You run upto the python and grab it by its mouth. The snake 
+    GM: wiggles for a minute and then becomes motionless. You eat 
+    GM: the python and feel rejuvinated. You continue to walk and barely 
+    GM: made it back to the city.
