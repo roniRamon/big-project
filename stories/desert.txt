@@ -247,3 +247,39 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 			that sometimes you make a hammock out of it and spend all day swinging in it
 			. The moist weather and buttery diet undermine your health.
 			You stay in the canyon forever.
+
+###########
+# story 4 #
+###########
+
+You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid.
+As you walk in, the door shuts tight and you are now trapped. You notice three items 
+floating magically above a stone. Which of these items do you pick up?
+1: compass
+2: flame torch
+3: stack of gold
+
+You decide to pick up <ITEM>. The other items turns into dust. You walk down the path 
+and a mummy suddenly appears from no where. You…
+1: run for your life
+2: fight the mummy
+3: talk to the mummy
+
+    => 1: You run for your life. Along the way, you fall into a pit trap.
+    You are lost. You continue walking around looking for an exit. 
+    * If you picked the compass, you find the exit
+    * Else, you continue to be lost.
+
+    20 days have gone by and you are still lost. You look at the stack of gold you’ve
+    picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you
+    that you have learned your lesson. In return, it wants the stack of gold back plus 
+    $1000.
+    * If you don’t have $1000, the angel mummy tells you “TOO BAD”, gives an evil laugh
+    and disappears.
+    * Else, you hand it the gold + money. You magically appear outside the pyramid.
+
+    => 2: You decide to fight the mummy. 
+    * If you didn’t pick the flame torch, you die.
+    * Else, you burn the mummy to a 2nd death. 
+
+    => 3: You decide to talk the mummy. The mummy rips your head off. You die.
