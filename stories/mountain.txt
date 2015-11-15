@@ -1,0 +1,46 @@
+##########################
+# Story 1: Mountain Lion #
+##########################
+
+# Game> You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU!
+# Game> 1. Fight the big cat.
+# Game> 2. Run away.
+#(if intellegence > 12 option 3 is visible)
+# Game> 3. Show you're not a threat.
+
+=>1. Fight the big cat.
+# Game> You're not going to let Garfield deter you from your quest. You put your fists up. The feline lunges.
+# your.strength = random(from 0 to Strength.Max), 
+# puma.strength = random(from 0 to 20)
+
+# Game> Your attack: <<your.strength>>. Mountain lion's attack: <<puma.strength>>.
+
+	# If your.strength < puma.strength
+	# Game> The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off.
+	>> -10 Health
+	>> Next event
+
+	# If your.strength >= puma.strength
+	# Game> You grab the cat out of the air and hurl it off the mountainside. Manly.
+	>> +3 Strength
+	>> Next event
+
+=>2. Run away.
+# Game> You're allergic to cats. You decide to get out of there.
+# Game> 1. Run ahead.
+# Game> 2. Run the way you came from.
+
+	=>1. Run ahead.
+	# Game> You run towards the cat. Startled, it turns around and books it. Ain't gonna deal with someone crazy enough to chase a mountain lion.
+	>> Next event
+	
+	=>2. Run the way you came from.
+	# Game> You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you're back at the City.
+	>> -20 Health
+	>> Go to City
+
+=>3. Show you're not a threat.
+# Game> Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving.
+>> Item: Mountain lion tooth (+25 Health)
+>> Next event
+
