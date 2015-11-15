@@ -268,7 +268,12 @@ and a mummy suddenly appears from no where. You…
     => 1: You run for your life. Along the way, you fall into a pit trap.
     You are lost. You continue walking around looking for an exit. 
     * If you picked the compass, you find the exit
-    * Else, you continue to be lost.
+    * Else, you continue to walk around looking for an exit. You suddenly see a glimpse 
+    of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse 
+    of light, the tombs open and the mummies all come out of it.
+    * If you picked the flame torch, you pull it out and all the mummies get scared 
+    and goes back into their tomb. You exit safely.
+    * Else, you run in the opposite direction and FALL into another pit trap.
 
     20 days have gone by and you are still lost. You look at the stack of gold you’ve
     picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you
