@@ -1,17 +1,3 @@
-Skip to content
-This repository  
-Pull requests
-Issues
-Gist
- @roniRamon
- Unwatch 9
-  Star 0
-  Fork 0 roniRamon/big-project
- Branch: master  big-project/example_output_1.txt
-7e20a36  an hour ago
-@Patyk Patyk story 8
-4 contributors @Patyk @yochess @tjdunlap @roniRamon
-RawBlameHistory     459 lines (382 sloc)  15.7 KB
 ﻿# File: Example Output #1
 # Date: Last Modified: Mon, Nov 9, 2015, ~11 pm
 # Desc: It would be nice to see an example of how the game works. The 
