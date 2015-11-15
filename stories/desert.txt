@@ -181,7 +181,8 @@ Option 2: You decide to have a rest and wait for the fog to clear out.
 Option 3 (if intelligence is high): You are cautiously exploring the edge of the canyon.
 
 	Option 1. Oh no! Suddenly the ground is shaking and the giant ugly troll is climbing out from the canyon!
-	He has a stupid face and a cold. He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk!
+	He has a stupid face and a cold.
+	He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk!
 	What do you do?
 	
 		1.1.You fight the troll.
@@ -192,7 +193,9 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 		He gets upset, starts to cry and tells you his name is Karl.
 		Very dirty and sticky you search his pockets and get water (++Health) and the giant needle (+Item).
 
-		1.2.Result. The troll catches you! He puts you in his pocket and carries back to his dank home at the bottom of the            canyon. You have to cook, clean and bear the thundering sneezing till the rest of your life.
+		1.2.Result. The troll catches you!
+		He puts you in his pocket and carries back to his dank home at the bottom of the canyon.
+		You have to cook, clean and bear the thundering sneezing till the rest of your life.
 
 		1.3.Result. You are flying through the fog and land in the lake.
 		You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (-Item).
@@ -207,13 +210,16 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 		2.3. You jump into the canyon and dissapear in the fog.
 
 			 2.1.Result. 
-			 a) You give them your shoes and in return they carry you in the city (+Stength as you rest during the journey).                 During the fly you manage to sneak a bag of money (+Item). 
+			 a) You give them your shoes and in return they carry you in the city 
+			 (+Stength as you rest during the journey).
+			 During the fly you manage to sneak a bag of money (+Item). 
 
 			 2.2.Result. Bummer! The bird is smart! She makes a cirle and flies back to the owner.
 			 He is not pleased and bites you. You are poisoned and stay in the desert forever. 
 
 			 2.3.Result. You reach the giant trampoline at the bottom and jump out of the canyon.
-			 You frostbite your ears during the flight (-Health), but find a tree with juicy lematos on the other side.
+			 You frostbite your ears during the flight (-Health),
+			 but find a tree with juicy lematos on the other side.
 			 You eat a fruit (+Health) and find a way to the city. 
 
 
@@ -227,13 +233,17 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 		3.2. You rely on your eloquence and begin to persuade them.
 		3.3. You decide to stay.
 
-			3.1.Result. You are reaching the bottom of the canyon. You spend a lot of power by going through bushes (-Strength)            and quench yout thirst at a spring (+Health). Finally you manage to find a way back to the city.
+			3.1.Result. You are reaching the bottom of the canyon. 
+			You spend a lot of power by going through bushes (-Strength)
+			and quench yout thirst at a spring (+Health).
+			Finally you manage to find a way back to the city.
 
 			3.2. Result. Your detailed descriptions of all the yummy food besides butter that there is the world 
 			inspire leprechans and they decide to leave the village and the canyon!
 			They inflate the hot air baloon and take you to the city.
 			As a gift you receive a pack of magical butter that makes one invulnerable.
 
-			3.3.Result. You learn the Irish stepdance and grow a beard so long that sometimes you make a hammock out of it
-			and spend all day swinging in it. The moist weather and buttery diet undermine your health.
+			3.3.Result. You learn the Irish stepdance and grow a beard so long 
+			that sometimes you make a hammock out of it and spend all day swinging in it
+			. The moist weather and buttery diet undermine your health.
 			You stay in the canyon forever.
