@@ -556,3 +556,65 @@ GM: => 3. Walk in the opposite path
     GM: made it back to the city.
 
 
+##########
+#story 9 Forest - hole#
+##########
+
+# You want to enter the forest.  
+# The forest is dark its night, you need some kind of light to show you the way.
+
+#=> A. Go back to the meadow and ask the goat-keeper for some candle or a flashlight.
+#=> B. Go in without any light.
+#=> C. camp the night and wait for the morning.
+   
+#=>A.Go back to the meadow.
+# You went back to the goat-keeper for some kind of candle. but the goat-keeper disappeared.
+# All you see in the meadow is cols from the goat-keeper fire.  
+# You pick up a branch and light it up with a cole. 
+# Now you can enter the forest.
+
+#=>B. Go in without any light.
+# You enter the forest withOut any light. You cannot see anything, its all dark around you.
+# You make a few steps and you fall into a deep hole in the ground.
+#=>A.Try to clime out with your hands.
+#=>B.Start crying.
+#=>C.you make a rope out of your cloth.
+
+	#=>A.Try to clime out with your hands.
+	You try to clime up…
+	you start climbing and in the middle of the hole you fall back and brake 
+	your back. 
+	nobody know you are stuck there so after a few days you day of starvation.
+
+	#=>B.Start crying.
+	you start crying!! thinking that you will never leave this
+	hole again.
+	Someone heard your crying, you hear foot steps above you.
+	someOne trow a rope to you, and you are climbing out.
+	but when you get out there is nobody there!!!!
+
+	#=>C.you make a rope out of your cloth.
+	you made a rope out of your cloth. you are more intelligence
+	than you gave your self credit (+10 intelligence)
+	you got out of the hole.
+	
+
+#=> C. camp the night and wait for the morning.
+#You camp trow the night outside the forest.
+#at night a robber come an take your knife(if you have one)
+#and 10$ from your money.
+# you wake up to noises he made:
+	#=>A. you decide to fight him.
+	#=>B. you pretend your still asleep.
+
+	#=>A. you decide to fight him:
+	You want to fight hime but he runs away leaving behind him
+	every thing he took from you and he also drops an ax.
+	you pick your knife, the ax and the money(+10$)
+
+	#=>B. you pretend your still asleep.
+	the robber took the knife and the money. but your still alive…
+	you can go in to the forest, it is morning.
+	
+
+>>Next Page
