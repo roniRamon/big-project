@@ -1,0 +1,299 @@
+################
+# Forest story #
+################
+
+##########
+#Story 1 Forest - Goats adventure #
+##########
+
+# You are crossing the meadow where group of goats are walking around. What do you do?
+# A.	Chase one of the goats and kill it.
+# B.	Walk away
+# C.	Pick some flowers and gets some rest
+
+#=>A. chase and kill the goat
+# You have killed the goat, but all that running made you hungry. You set up the fire and roast the goat.(+30 Health)
++30 Health
+
+#=> B.Walk away
+# When exiting the meadow you have found a goat-keeper sleeping in the bushes. You wake him up.
+# “Hey there. You should watch out for your goats, because some animal might attach them. There are plenty of wild
+# beasts in this forest, you know.” 
+# Goat-keeper thanks you for the warning and gives you some goat milk to drink. +5 Health.
++5 Health
+
+#=> C.Pick flowers and rest.
+# You are hanging out on the meadow, watching goats when a grumpy goat-keeper comes to you. 
+# GK: “What are you doing around my goats?” 
+# You: “Just hanging out and getting some rest. Is there something wrong?”
+# GK: “I already lost few goats this month, killed by some tramps like you. Go away or I’ll punch you.”
+# What do you do?
+# A.	Fight 
+# B.	Walk away
+
+#=>A.Fight
+# You attach the goat-keeper (Strength 100)
+Your.strength (random from 0 to max.strength)
+Gk.strength (random from 0 to 100)
+
+=>Your.strength > gk.strength 
+# You have beaten up the goat keeper and took his money and food (+50$, +10 Health)
++50 money, +10 Health
+
+=>Your.stenght < =gk.strength 
+# Goat keeper kicked your ass and left the meadow. (-20 Health) 
+# Feeling ashamed to be beaten up by a goat-keeper you are walking away promising 
+#yourself never to tell anyone about what has happened here. 
+-20 Health
+
+############
+# Story 2 Forest - Merchant #
+############
+
+# Game> You are walking on the road and meeting a merchant with goods. What do you do?
+
+# Game> 1.Ignore him and move on.
+# Game> 2.Attack and try to take his goods.
+# Game> 3.Try to buy something.
+#(if intelligence > 40 option 4 is visible)
+# Game> 4.Start conversation 
+
+=>1. Ignore
+# Game>Merchant is trying to sell you something, but you reply him "I am in the rush to <<insert game goal>> and cannot talk with you now. Maybe next time."
+
+=>2. Fight
+# Game> Merchant is fighting back. Strength 50. 
+# Game> You say: "My name is Inigo Montoya. You killed my father. Prepare to die".
+# your.strenght = random(from 0 to Strength.Max), 
+# merchant.strength = random(from 0 to 50)
+
+# Game> Your attack <<your.strenght>>. Merchant's attack <<merchant.strength>>.
+
+# If  your.strength < merchant.strength -> -15 Health. 
+# Game> You have lost the fight but merchant lets your go. He feels pity for an 
+# Game> orphant and gives you a bottle of whisky (+5 health, -10 intelligence) which 
+# Game> you can put in your backpack or leave it.'
+# Game> Where do you want to put whisky: 
+# Game> pocket 1, 
+# Game> pocket 2, 
+# Game> pocket 3, 
+# Game> pocket 4, 
+# Game> Don't take it 
+#(TechNote: if user selects a pocket with some goods already there goods will be replaced and previous artefact will be thrown away without possibility to get it back. If 'Dont take it' option is selected then user will throw away new artefact)
+
+#If your.strength > merchant.strength -> +5 Strentgh,
+# Game> You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+5 Strength), # #Game> sword (+20 Strength), whisky (+5Health, -10 Intelligence)
+# Game> Where do you want to put a knife: 
+# Game> pocket 1, 
+# Game> pocket 2, 
+# Game> pocket 3, 
+# Game> pocket 4, 
+# Game> Don't take it 
+
+# Game> Where do you want to put sword: 
+# Game> pocket 1...
+
+# Game> Where do you want to put whisky: 
+# Game> pocket 1...
+
+=> 3. Shopping
+# Game> Merchant shows you his goods: 
+# Game> option 1:sword (+20 Strength), price 500%
+# Game> option 2:whisky (+5Health, -10 Intelligence). price 50$ 
+# If your intelligence > 30 Option 3 is visible like this
+# Game> option 3: - knife (+5 Strength) price 100$ is also visible
+# if intelligence < 30 Option 3 is visible like this
+# Game> "I also have something special, but you have to show my some cash first"(give merchant 10$ to show you the last product) 
+# Game> option 4: No thanks, I don't need anything
+
+# => Option 3 selected new page >
+# Game> Merchant shows you his goods: 
+# Game> option 1: sword (+20 Strength), price 500$
+# Game> option 2: whisky (+5Health, -10 Intelligence) price 50$, 
+# Game> option 3: knife (+5 Strength) price 200$
+# Game> option 4: No thanks, I don't need anything
+
+# => op1: 
+# Game> where do you want to put sword: pocket 1...
+
+#=> op2: 
+# Game> where do you want to put whisky: pocket 1...
+#=> op3:
+# Game> where do you want to put knife: pocket 1...
+#=> op4: 
+# Game> You reply: "Hmm. Maybe next time. I don't see anything interesting."
+
+>>Next Event
+
+
+##########
+#story 3 Forest - hole#
+##########
+
+# You want to enter the forest.  
+# The forest is dark its night, you need some kind of light to show you the way.
+
+#=> A. Go back to the meadow and ask the goat-keeper for some candle or a flashlight.
+#=> B. Go in without any light.
+#=> C. camp the night and wait for the morning.
+   
+#=>A.Go back to the meadow.
+# You went back to the goat-keeper for some kind of candle. but the goat-keeper disappeared.
+# All you see in the meadow is cols from the goat-keeper fire.  
+# You pick up a branch and light it up with a cole. 
+# Now you can enter the forest.
+
+#=>B. Go in without any light.
+# You enter the forest withOut any light. You cannot see anything, its all dark around you.
+# You make a few steps and you fall into a deep hole in the ground.
+#=>A.Try to clime out with your hands.
+#=>B.Start crying.
+#=>C.you make a rope out of your cloth.
+
+	#=>A.Try to clime out with your hands.
+	You try to clime up…
+	you start climbing and in the middle of the hole you fall back and brake 
+	your back. 
+	nobody know you are stuck there so after a few days you day of starvation.
+
+	#=>B.Start crying.
+	you start crying!! thinking that you will never leave this
+	hole again.
+	Someone heard your crying, you hear foot steps above you.
+	someOne trow a rope to you, and you are climbing out.
+	but when you get out there is nobody there!!!!
+
+	#=>C.you make a rope out of your cloth.
+	you made a rope out of your cloth. you are more intelligence
+	than you gave your self credit (+10 intelligence)
+	you got out of the hole.
+	
+
+#=> C. camp the night and wait for the morning.
+#You camp trow the night outside the forest.
+#at night a robber come an take your knife(if you have one)
+#and 10$ from your money.
+# you wake up to noises he made:
+	#=>A. you decide to fight him.
+	#=>B. you pretend your still asleep.
+
+	#=>A. you decide to fight him:
+	You want to fight hime but he runs away leaving behind him
+	every thing he took from you and he also drops an ax.
+	you pick your knife, the ax and the money(+10$)
+
+	#=>B. you pretend your still asleep.
+	the robber took the knife and the money. but your still alive…
+	you can go in to the forest, it is morning.
+	
+
+>>Next Page
+
+##########
+#story 4 Forest - River#
+##########
+
+You reached a crossroad in an enchanted forest. You can:
+#=>A. Go left to shortcut in the dark part of the forest.
+#=>B Go through the long and safe way of the forest.
+
+#=> A. Go left to shortcut in the dark part of the forest.
+you reached a one eye demon, if you want to pass this way you have to fight.
+roll the dice to see if you can bit him(demon roll dice too)
+
+#demon < player:
+you win! you can keep going through the path.
+
+#demon > player
+the demon wins! you lose (-10 health)
+to keep going you have to pay him 10$ (-10$)
+
+# demon == player
+keep rolling until someOne wins.
+
+#=> B Go through the long and safe way of the forest:
+The player keep walking and he reached a river which he have to 
+cross. 
+#=> A. You can build a raft if you have an ax/knife.
+#=> B. Try to swim across
+#=> c. Pay the river keeper 15$ to get him across safely.
+
+#=> A. You can build a raft if you have an ax/knife.
+You user your ax/knife to build a raft. you reached the other
+side of the river but your tired. you lose 5 point of strength.
+(-5 strength)
+
+#=> B. Try to swim across:
+You try to swim across and you didn’t made it...
+You lose 5 point of strength, And you are back on the same(-5 strength)
+side of the river with the option to: 
+1. build a raft
+2. Try to swim across
+3. Pay the river keeper 15$ to get him across safely 
+
+#=>C. Pay the river keeper
+You payed 15$ to the river keeper.
+the river keeper got you across safely but stole from you
+25$.
+
+>>Next Page
+
+
+#############################################
+# Story 5: Forest - Dead body on the ground #
+#############################################
+# Game> You are walking through the forest and you have tripped over something. 
+# Game> When you look at it you can see human body covered with blood. What do you do?
+# Game> a.	You are running away in case there is an attacker in the area
+# Game> b.	You examine the body and the surroundings
+
+=>a 
+<<random.backpackIndex = null; random item from backpack is lost
+# Game> You have run away in panic and lost one of your artefacts from your backpack (<<item_name>> )
+=>b 
+# Game> While examining the body you have found some money (+30$) and following artefacts: 
+# Game> axe (+30 strength), 
+# Game> book “The Mythical Man Month” (+25/ 15* Intelligence), 
+# Game> book “Biography of Grace Hopper” ((+20/ 10* Intelligence), 
+# Game> apple (+5 Health).
+
+# Game> What do you do:
+# Game> Axe Put to back pack slot 1, 2, 3, 4  OR leave it
+# Game> Book “The Mythical Man Month” : Put to back pack slot 1, 2, 3, 4 (+25 intelligence) OR Read it (+15 intelligence)
+# Game> Book “Biography of Grace Hopper” : Put to back pack slot 1, 2, 3, 4 (+20 intelligence) OR Read it (+10 intelligence)
+# Game> Apple Put to back pack slot 1, 2, 3, 4  OR eat it now
+# Game> Submit 
+
+# Game> You walk away from the body and get back to the trail
+# Game> While you were taking further you find another body on the ground. What do you do?
+# Game> 1.	You are running away in case there is an attacker in the area
+# Game> 2.	You examine the body and the surroundings
+
+=>1 
+<<random.backpackIndex = null; random item from backpack is lost
+# Game> You have run away in panic and lost one of your artefacts from your backpack (<<item_name>> )
+
+=>2
+# Game> When examining the body you have noticed that the man lying on the ground is only wounded and not dead. What do you do?
+# Game> 1.1.	Kill him and take his sword (+40 strenght)
+# Game> 1.2.	Ask him what happened.
+
+   =>1.1
+   # Game> You have killed the man and took his sword. Where do you want to place it?
+   # Game> a.	Slot 1
+   # Game> b.	Slot 2
+   # Game> c.	Slot 3
+   # Game> d.	Slot 4
+   # Game> e.	Don’t take it
+
+   =>1.2
+   # Game> Man: “I am private Jon Black, from the Hub City garrison. Our partol were attacked by the great shadow. I couldn’t see what it was, but it was vicious and killed almost everyone. Can you help me get to my station so I can report to my Captain.”
+   # Game> 1.2.1.	Help the officer
+   # Game> 1.2.2.	Don’t help him
+      =>1.2.1 
+      # Game> You: “Sure, I will help you.” You are taking Jon to the nearby garrison where he gives a report to his Captain. After this Jon thanks you for saving his life and gives you his lucky amulet (+100 Health) which you hang on your neck 
+      <<no need for taking slot in the backpack, only points added to health>>
+      1.2.2
+      # Game> You: “Sorry, I cannot help you. I’m on my way on a quest. Have a nice day”. You walk away and leave private where he was. 
+
+
