@@ -60,7 +60,8 @@ C) Ask if she would like to join your adventure
 
 Go left (will be elaborated)
 
-	There's a foul stench on the air. You pause to take in your surroundings, but it's too late; It's an ambush!          You're quickly surrounded by orcs and are ordered to lower your weapon.
+	There's a foul stench on the air. You pause to take in your surroundings, but it's too late; It's an ambush!          
+	You're quickly surrounded by orcs and are ordered to lower your weapon.
 	A) (if you have sword or fairy) "He has/they have the Warchief's sword!" (begin fight)  
 	 + (if you have the fairy) "Well I didn't say it was MY family's heirloom, did I?"
 	B) Pay them gold to let you leave
@@ -69,7 +70,8 @@ Go left (will be elaborated)
 
 Go right (will be elaborated)  (You have for option to click one or both choices or just continue ahead)
 
-	As you continue your trek up the perilous peak, the path before you grows increasingly worn. You come across 		the burning embers of a campfire.
+	As you continue your trek up the perilous peak, the path before you grows increasingly worn. You come across 		
+	the burning embers of a campfire.
 	A) -Investigate the firepit-
 	  As you step forward to investigate the firepit, the fairy exclaims "This was no ordinary fire!". She quickly 	  
 	  grabs a bag of dust out of her pocket and sprinkles it upon the dying embers. In a glorious blaze of fire, a 
