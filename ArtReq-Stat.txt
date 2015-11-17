@@ -1,0 +1,17 @@
+Landscape:
+Hub City
+Brick's Hut
+Mountain
+Desert
+Forest
+Cross Road
+
+Characters:
+M.Penguin
+D. Penguin
+F. Penguin
+Python
+A Brick
+
+Artifacts:
+Whiskey
