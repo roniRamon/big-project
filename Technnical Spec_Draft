@@ -60,17 +60,64 @@ In the 1.0 version Player will go through all Forest events and only after finis
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
+
+3.1.4.1 Event Goat Adventure
+...
+
+3.1.4.2 Merchant
+
+...
+3.1.4.3 Hole
+
+...
+3.1.4.4 River
+
+...
+3.1.3.5 Dead Body
+
+...
+
+
+
 3.1.5	Desert
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Desert events and only after finishing it will be able to go to other location. 
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
+3.1.5.1 Dessert Desert
+...
+
+3.1.5.2 Desert Water
+
+...
+3.1.5.3 Canyon Adventures
+
+...
+3.1.5.4 Merchant
+
+...
+
+
+
 3.1.6	Mountains
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Mountains events and only after finishing it will be able to go to other location. 
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
+
+3.1.6.1 Mountain Lion
+...
+
+3.1.6.2  ...
+
+...
+3.1.6.3 ...
+
+...
+3.1.6.4 Merchant
+
+...
 
 
 3.1.7	Python’s Nest
@@ -107,13 +154,15 @@ Info of penguins collected should be visible on the user information.
 
 3.1.10	Options/Settings 
 
-3.1.10.1	Backpack in version 1.2
+3.1.10.1	Backpack  
+
+NICE TO HAVE : in version 1.2
 
 
 
 3.2	Players attributes 
 Player will have 3 main attributes:
-
+...
 
 
 3.3	Artefacts
@@ -123,9 +172,9 @@ Following artefacts will be available to collects in various events and their in
 Name	Strength	Health	Intelligence
 Knife	+10		
 Sword	+ 40		
-Super Sword	+ 60		
-Whiskey		+10	-15
-Apple		+25/+15*	
+Super Sword		+ 60		
+Whiskey			+10		-15
+Apple			+25/+15*	
 …			
 
 Some of the artefacts and goods (food items) if consumed in place will have lower impact on the character’s parameters than if Played would insert them in their backpack. For example: Apple will give 25 to Health if is located in the backpack and only 15 when eaten on the spot. 
