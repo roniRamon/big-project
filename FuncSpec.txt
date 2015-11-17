@@ -8,13 +8,36 @@ SomeRPG is a single-player fantasy role-playing video game, played in a browser 
 
 Scenarios
 Scenario 1: Indie Mindie.
-Mindie has played a lot of games in her day and become tired of the AA titles with flashy graphics. Wanting something a tad more indie, she happens upon SomeRPG. Initially amused by the character choices available to play, she selects Pine Cone and proceeds to play the game after picking a goal, distributing attributes and entering a name. On her first run her intelligence is off the charts, but her strength is low and the resulting game play she found amusing as she proceeded through the Mountain, Forest, and Desert areas. After retrieving all three penguins required by the python to fight the final boss of the game, she forgot to save her progress at all and proceeded to fight A Brick. Unfortunately, rng was not in her favor, and she lost the final fight. She intends to start up again after dinner with a new build to take down A Brick.
+Mindie has played a lot of games in her day and become tired of the AA titles with flashy graphics. Wanting something a tad
+more indie, she happens upon SomeRPG. Initially amused by the character choices available to play, she selects Pine Cone and
+proceeds to play the game after picking a goal, distributing attributes and entering a name. On her first run her 
+intelligence is off the charts, but her strength is low and the resulting game play she found amusing as she proceeded
+through the Mountain, Forest, and Desert areas. After retrieving all three penguins required by the python to fight the final
+boss of the game, she forgot to save her progress at all and proceeded to fight A Brick. Unfortunately, rng was not in her
+favor, and she lost the final fight. She intends to start up again after dinner with a new build to take down A Brick.
 
 Scenario 2: Johnny.
-Johnny is a middle school student who, like many students his age, is quite fond of video games and less fond of paying attention in class. During 5th period (social studies), a particularly boring time of the day, he will often take out his iPhone to pass time. Sittirite timekng in the back where Ms. Talksalot canít see, he loads up his favorite time killer: SomeRPG. Heís played it many times before, but it never gets old because each adventure is different. Today he chooses to create a viking character with all brawn and no brain. He sets forth on his journey to eat the most delicious ice cream in the world. As he did so, today he chose to pick a new option heíd never chosen before- he denied the python the penguins. Unfortunately, the python retaliated and in revenge for not surrendering the penguins he desired, the python ate Johnnyís character, resulting in a game over. Not a lick of the United Statesí westward expansion reached his ears that dayóhe had his own Destiny to Manifest.
+Johnny is a middle school student who, like many students his age, is quite fond of video games and less fond of paying
+attention in class. During 5th period (social studies), a particularly boring time of the day, he will often take out his
+iPhone to pass time. Sittirite timekng in the back where Ms. Talksalot can‚Äôt see, he loads up his favorite time killer:
+SomeRPG. He‚Äôs played it many times before, but it never gets old because each adventure is different. Today he chooses to
+create a viking character with all brawn and no brain. He sets forth on his journey to eat the most delicious ice cream in
+the world. As he did so, today he chose to pick a new option he‚Äôd never chosen before- he denied the python the penguins.
+Unfortunately, the python retaliated and in revenge for not surrendering the penguins he desired, the python ate Johnny‚Äôs
+character, resulting in a game over. Not a lick of the United States‚Äô westward expansion reached his ears that day‚Äîhe had his
+own Destiny to Manifest.
 
 Scenario 3: Story Rory.
-Rory is a pretty casual game player, and isnít interested in anything with a too complex learning curve. He picks up SomeRPG at the recommendation of a random banner ad he sees online, and is charmed with its simple appearance. He goes through character creation and advances through the first few screens of the game. At first put off by the cookie-cutter RPG aspect of the game, he is soon captivated by the underlying story and continues playing. Not giving much thought to the ìgameî part of the game, Rory carries on with the storytelling facet. He immerses himself in his characterís shoes, and reads eagerly to discover how he will plant the tree that will grow to the heavens. While traveling in the desert, Rory chose for his character to play Angry Birds. His character died of dehydration and he was met with a ìGame Overî screen. Wanting to not be stumped by a simple browser game, he restarted his character with the knowledge he gained of his first playthrough and avoided all the pitfalls present in the paths. At long last, Rory made it to the final boss, A Brick. The final battle ensued, and in the end, Rory was victorious.
+Rory is a pretty casual game player, and isn‚Äôt interested in anything with a too complex learning curve. He picks up SomeRPG
+at the recommendation of a random banner ad he sees online, and is charmed with its simple appearance. He goes through
+character creation and advances through the first few screens of the game. At first put off by the cookie-cutter RPG aspect
+of the game, he is soon captivated by the underlying story and continues playing. Not giving much thought to the ‚Äúgame‚Äù part
+of the game, Rory carries on with the storytelling facet. He immerses himself in his character‚Äôs shoes, and reads eagerly to
+discover how he will plant the tree that will grow to the heavens. While traveling in the desert, Rory chose for his
+character to play Angry Birds. His character died of dehydration and he was met with a ‚ÄúGame Over‚Äù screen. Wanting to not be
+stumped by a simple browser game, he restarted his character with the knowledge he gained of his first playthrough and
+avoided all the pitfalls present in the paths. At long last, Rory made it to the final boss, A Brick. The final battle 
+ensued, and in the end, Rory was victorious.
 Hooked by the writing of the game, Rory plays through the game over and over again to see the other paths and characters.
 
 
@@ -24,7 +47,7 @@ This version of the game will not have these features:
 Animations
 Multiplayer 
 Sound effects?
-Support for browsers that arenít up-to date versions of Mozilla Firefox, Google Chrome, or Safari
+Support for browsers that aren‚Äôt up-to date versions of Mozilla Firefox, Google Chrome, or Safari
 
 
 
@@ -34,16 +57,22 @@ Screen by Screen Specification
 Home Page
 The main page where the entire game will take place. It consists of several subpages that make up each feature of the game.
 
-On this and all other pages, there is a menu at the top-right that lets users navigate to each page. To the left of the menu is the gameís logo.
+On this and all other pages, there is a menu at the top-right that lets users navigate to each page. To the left of the menu
+is the game‚Äôs logo.
 
 Title Screen
-Displays the gameís logo in majestic fashion while allowing time to load the game. As the game loads, a loading bar below the title fills to indicate its progress. Once the game is loaded, a button that says ìStart Gameî appears, replacing the loading bar. Clicking on ìStart Gameî goes to Character Creation.
+Displays the game‚Äôs logo in majestic fashion while allowing time to load the game. As the game loads, a loading bar below the
+title fills to indicate its progress. Once the game is loaded, a button that says ‚ÄúStart Game‚Äù appears, replacing the loading
+bar. Clicking on ‚ÄúStart Game‚Äù goes to Character Creation.
 
 Character Creation
-The left side of Character Creation has a welcome message that introduces the game and instructs the user on creating a character. The right side shows the customizable options for doing so. Before the user can begin the game, they must complete the following steps in order:
+The left side of Character Creation has a welcome message that introduces the game and instructs the user on creating a
+character. The right side shows the customizable options for doing so. Before the user can begin the game, they must complete
+the following steps in order:
 
 Input a name
-A text field allows the name to be typed, up to 16 alphabetical characters. If there is at least one character inputted, show the ìNextî button, which proceeds to Step 2. //Should we mention if special characters valid? What about spaces?
+A text field allows the name to be typed, up to 16 alphabetical characters. If there is at least one character inputted, show
+the ‚ÄúNext‚Äù button, which proceeds to Step 2. //Should we mention if special characters valid? What about spaces?
 
 Choose a character
 A drop-down menu contains the predefined characters. They include:
@@ -51,7 +80,7 @@ Viking
 Warrior Princess
 Cheese
 Pine Cone
-Once a character is chosen, show the ìNextî button, which proceeds to Step 3.
+Once a character is chosen, show the ‚ÄúNext‚Äù button, which proceeds to Step 3.
 
 Choose a goal
 A drop-down menu contains the predefined goals. They include:
@@ -59,41 +88,50 @@ Save prince
 Milk cow
 Plant a tree
 Eat the most delicious ice cream in the world before it melts
-Once a goal is chosen, show the ìNextî button, which proceeds to Step 4.
+Once a goal is chosen, show the ‚ÄúNext‚Äù button, which proceeds to Step 4.
 
 Allocate attributes
-The attributes Health, Strength, and Intelligence are listed with their amount next to them. Plus and minus buttons are next to the amounts, allowing the number of each attribute to be added to or subtracted from. Once all attribute points are distributed, the user may begin the game.
+The attributes Health, Strength, and Intelligence are listed with their amount next to them. Plus and minus buttons are next
+to the amounts, allowing the number of each attribute to be added to or subtracted from. Once all attribute points are
+distributed, the user may begin the game.
 
-Underneath the welcome message is the ìBegin Adventureî button that goes to the Main Game. Initially grayed out, it becomes clickable once the last step is complete.
+Underneath the welcome message is the ‚ÄúBegin Adventure‚Äù button that goes to the Main Game. Initially grayed out, it becomes
+clickable once the last step is complete.
 
 Main Game
-The top portion of the Main Game, known as the Main Screen, displays a background representing the current area of the character. Artwork may appear in the foreground, representing the character, NPCs, enemies, items, and any other objects that our artists choose to draw.
+The top portion of the Main Game, known as the Main Screen, displays a background representing the current area of the
+character. Artwork may appear in the foreground, representing the character, NPCs, enemies, items, and any other objects that
+our artists choose to draw.
 
-The bottom portion, known as the Text Box, displays text about anything occurring in the game. When players are given multiple actions to choose from, each option will be detailed in this area. The player will then be prompted to click their desired action.
+The bottom portion, known as the Text Box, displays text about anything occurring in the game. When players are given
+multiple actions to choose from, each option will be detailed in this area. The player will then be prompted to click their
+desired action.
 
 Interaction with the Text Box
-During the game, text will scroll (as a result of dialogue or exposition) in the Text Box. When enough text has been spawned to fill the Text Box, scrolling will stop and await for a user click to continue scrolling. Upon this user click, the currently present text will be blanked, and scrolling will continue from the top most position to the bottom of the Text Box.
+During the game, text will scroll (as a result of dialogue or exposition) in the Text Box. When enough text has been spawned
+to fill the Text Box, scrolling will stop and await for a user click to continue scrolling. Upon this user click, the
+currently present text will be blanked, and scrolling will continue from the top most position to the bottom of the Text Box.
 
 Character Page/Backpack
 The left side of Character Page shows information about the character, including Name, Character, Goal, Attributes, and Money.
-The right side shows the Backpack which contains the characterís possessions.
+The right side shows the Backpack which contains the character‚Äôs possessions.
 
 Game Over Screen
-Shows the words ìGame Overî in majestic fashion. Underneath, a ìRestartî button brings the player back to the Title Screen.
+Shows the words ‚ÄúGame Over‚Äù in majestic fashion. Underneath, a ‚ÄúRestart‚Äù button brings the player back to the Title Screen.
 
 Options
 Lists settings that can be changed by the user:
 Music Volume: Adjustable slider that goes from 0% to 100% volume. Default: 100%.
 Font size: Five buttons that will change font size, from very small to very large. Default: Normal.
 Font colour: A dropdown menu listing all available text colour options. Default: Black.
-Text speed: ëSlowí, ëNormalí, ëFastí options for text speed. Default: Normal.
+Text speed: ‚ÄòSlow‚Äô, ‚ÄòNormal‚Äô, ‚ÄòFast‚Äô options for text speed. Default: Normal.
 
 Hints Page
 Contains hints and tips to the game that will aid any users that may be having difficulty progressing.
 	Ex: Having trouble finding out where to go? Talk to the townsfolk!
-	       Is a lack of an item holding you back? Investigate even the weirdest places! You never know what youíll find.
-	       Too weak to beat the bear? If youíre smart enough, try talking them down!
-	       Not smart enough to outwit the merchant? Break his legs! Not saying the town wonít come after you, though...
+	       Is a lack of an item holding you back? Investigate even the weirdest places! You never know what you‚Äôll find.
+	       Too weak to beat the bear? If you‚Äôre smart enough, try talking them down!
+	       Not smart enough to outwit the merchant? Break his legs! Not saying the town won‚Äôt come after you, though...
 
 About Page
 Contains information about the game/project and the team that worked on it.
@@ -101,18 +139,23 @@ Contains information about the game/project and the team that worked on it.
 
 
 Story (rough)              
-
+//see flowchart reference
 
 Begin Adventure
-After ìBegin Adventureî is pressed, present the backstory for their chosen goal. Start the tutorial after all the text is scrolled.
+After ‚ÄúBegin Adventure‚Äù is pressed, present the backstory for their chosen goal. Start the tutorial after all the text is scrolled.
 
 Event T: Tutorial
-Go over the basics: Character Page, Backpack, Options, and the Hints Page. Describe what theyíll find in each of those places. Have them pick up an item to demonstrate the backpackís usage. Then have the player make their way to Hub City while teaching them how to choose from several actions, starting first with the crossroad area tutorial. All Areas will be grayed out and inaccessible aside from Hub City. 
+Go over the basics: Character Page, Backpack, Options, and the Hints Page. Describe what they‚Äôll find in each of those places. 
+Have them pick up an item to demonstrate the backpack‚Äôs usage. Then have the player make their way to Hub City while teaching
+them how to choose from several actions, starting first with the crossroad area tutorial. All Areas will be grayed out and
+inaccessible aside from Hub City. 
 
 Hub City
-Once the player is in Hub City, continue the story (python asks player to get penguins?). From this point, the player can choose to adventure to one of the three other locations: Desert, Forest, or Mountain.
+Once the player is in Hub City, continue the story (python asks player to get penguins?). From this point, the player can
+choose to adventure to one of the three other locations: Desert, Forest, or Mountain.
 
-When a player returns to Hub City after an Event, adventuring to a location will place them where they last were at that location.
+When a player returns to Hub City after an Event, adventuring to a location will place them where they last were at that
+location.
 
 When Events P1, P2, and P3 are complete, present the appropriate story dialogue, and Event Z1 occurs after.
 
@@ -120,4 +163,5 @@ Events 1, 2, 3
 After completing an Event of this category, the player may choose to return to Hub City or continue onward.
 
 Event P: Penguins
-After completing an Event P, the player is sent back to Hub City. The location for that Event P is then closed and cannot be accessed from the Crossroads.
+After completing an Event P, the player is sent back to Hub City. The location for that Event P is then closed and cannot be
+accessed from the Crossroads.
