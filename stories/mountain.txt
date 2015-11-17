@@ -48,7 +48,11 @@
 # Story 2: Ascending The Peak #
 ###############################
 
-You enter the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. You could use a little break, and she's genuinely interested in how such an intriguing creature has found itself in the mountains.  After some time spent discussing your adventures, you catch the glisten of a jewel-encrusted sword in her backpack, it looks powerful. She notices your gaze and understand what it means; You want the sword.
+You enter the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it 
+would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. 
+You could use a little break, and she's genuinely interested in how such an intriguing creature has found itself in 
+the mountains.  After some time spent discussing your adventures, you catch the glisten of a jewel-encrusted sword in 
+her backpack, it looks powerful. She notices your gaze and understand what it means; You want the sword.
 "Please, this sword is a family heirloom. It's value to me cannot be measured in coin; It's not for sale."
 A) Fight her for the sword
 B) Leave her alone and continue your journey
