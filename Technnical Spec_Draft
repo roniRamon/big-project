@@ -1,0 +1,201 @@
+1.	Overview
+The objective of this document is to provide a comprehensive guide on the architect and inner workings behind the implementation of [insert title]. [insert title] is a web-based text game and makes a perfect project for beginner developers looking to build their first web-application
+
+2.	Summary
+
+2.1	Background Story
+
+2.1.1	Overview of Game
+The game is called << GAME NAME>> and is located in the imaginary world. It is a role play game with multiple tasks to fulfil in order to finish the quest. User will have a character with certain attributes which can be developed according to the player’s preference. 
+
+2.1.2	Background Story
+<<Name of the Location>> is an imaginary world full of exciting adventures waiting for the ones who seek excitement. The goal of the game (selected by the user) is protected by the evil but mysterious cuboid monster, The Brick. Unfortunately to get to him Player must pass series of tasks and quests to be allowed to reach him. Maybe that is for good, as during those adventures Player will gain certain skills and artefacts which can help them to in the final combat. 
+
+
+3.	Game Play Look and Feel
+3.1	Appearance
+
+3.1.1	Welcome page with Character selection
+
+On the entry page in the beginning of a game Player will select their Character from available list. Options are as follows:
+-	Viking
+-	Warrior Princess
+-	Cheese
+-	Pine Cone
+-	Horny Mushroom
+
+ 
+After select the character, Player will choose their main goal. Options are as follows:
+-	Save Prince
+-	Milk Cow
+-	Plant Tree
+-	Eat the most delicious ice-cream in the world before it melts
+
+The last option to select will be starting character’s attributes. Those include:
+-	Strength (offensive)
+-	Health (defensive)
+-	Intelligence (giving more options in some events)
+User is given the total of 100 points to redistribute among all parameters. None of the parameters can be set to less than 10 points. 
+
+After all points are redistributed Player will be able to go further to the next step.
+
+3.1.2	First quest – Event T
+User is located IN FRONT of CITY GATES and will have to finish the first small quest which is linked with tutorial. Features will be shown on the page: 
+-	Character page: attributes 
+-	Backpack content and usage: removing items adding items, browsing through them (displaying attributes add-ons)
+-	Options: 
+•	Go to City
+-	Hints Page: each event or location will have a small note attached to it with a hint how to progress. 
+
+3.1.3	City – the main hub
+Center location from where User has an option to go to selected locations:
+-	Mountains, 
+-	Forest
+-	Desert
+-	Python’s Nest
+
+3.1.4	 Forest
+Player will go through series of events in this location. 
+In the 1.0 version Player will go through all Forest events and only after finishing it will be able to go to other location. 
+
+NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
+
+3.1.5	Desert
+Player will go through series of events in this location. 
+In the 1.0 version Player will go through all Desert events and only after finishing it will be able to go to other location. 
+
+NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
+
+3.1.6	Mountains
+Player will go through series of events in this location. 
+In the 1.0 version Player will go through all Mountains events and only after finishing it will be able to go to other location. 
+
+NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
+
+
+3.1.7	Python’s Nest
+Python is protecting the entrance to the Brick Hub. In order to get pass through Python 3 penguins has to be collected (one from each Location). 
+If a Player goes to the Python with less than 3 penguins Python will not let them through and the message appears: “I want you to bring me 3 penguins. Each of them is in different location in somewhere in the area. Only then I will let you through.”
+Once Player collects all penguins and will come to the Python’s Nest option appears:
+a.	Give penguins to the python 
+b.	Do not give penguins to the python
+Ad a: message “Python ate you instead of penguins”
+Ad b: message “Python lets you through.” Brick Event Z2 is enabled. Button “Go to Bricks Hut”
+
+
+
+3.1.8	Brick’s Hut
+The final battle with the Brick monster. Brick.strength = 200, Player.strength = from character attributes.
+
+-	5 rounds of battle,
+-	Player has to win at least 3 rounds.
+-	Strength of player and Brick defined by random number between 0 and their strength paramertes. 
+If Player wins the round message: “You have won this round, but Brick is attacking you again”
+If Player wins the round message: “You have lost this round and Brick laughs at you”
+
+If Player wins at least 3 rounds message:” Congrats!!! You have won the fight and Brick is defeated. You are laughing and dancing over its dead corpse. 
+You have managed to <<goal_name>> and Brick could not stop you!”
+If Player losts at least 3 rounds message: “Buhu, you have lost with Brick and he kills you. Maybe you will try in other life. GAME LOST!!!”
+
+End of the Game
+
+
+3.1.9	Penguins
+Penguins are small creatures wandering around at the end of every locations path. Once Player finishes all the events in one location one penguin will join and will follow from now on. No backpack pocket is needed for a penguins’ collection. 
+Info of penguins collected should be visible on the user information. 
+
+
+3.1.10	Options/Settings 
+
+3.1.10.1	Backpack in version 1.2
+
+
+
+3.2	Players attributes 
+Player will have 3 main attributes:
+
+
+
+3.3	Artefacts
+
+Following artefacts will be available to collects in various events and their influence on Character’s parameters :
+
+Name	Strength	Health	Intelligence
+Knife	+10		
+Sword	+ 40		
+Super Sword	+ 60		
+Whiskey		+10	-15
+Apple		+25/+15*	
+…			
+
+Some of the artefacts and goods (food items) if consumed in place will have lower impact on the character’s parameters than if Played would insert them in their backpack. For example: Apple will give 25 to Health if is located in the backpack and only 15 when eaten on the spot. 
+
+
+
+
+3.4	Strategies and Motivations
+
+User can try to develop their character in more defensive or offensive way depending on the strategy of assigning points and collecting artefacts.
+…
+ 
+3.5	Level summary/Story progression
+
+4.	Development Specifications
+4.1	System Requirements
+
+•	Web browser: Mozilla Firefox, Safari or Chrome
+
+4.2	Development Specifications
+•	Built in …
+o	
+•	JavaScript and JQuery Language
+•	UML diagrams generated with Microsoft® PowerPoing® 2010 Student
+•	Graphics were modified/created using following tools
+o	
+•	Sounds were using …
+
+4.3	Algorithm Style
+
+
+4.3.1	Development Algorithm
+
+The key features of the game
+•	Frame adjusted to the desktop and mobile view.
+
+•	Backpack object created as shown on UML diagram 
+
+•	Game cannot be saved and restored later. Upon closing the game, Player will have to start from the beginning at the next opening of the program
+
+•	…
+
+
+
+ 
+
+
+Figure x Backpack UML Structure
+
+
+
+5.	Disclaimer
+This document was created as the educational project by City College of San Francisco students. 
+
+Any software used during this project and most objects will be used for personal, educational, non-commercial use only.
+
+ 
+6.	References 
+
+
+6.1	Graphics References
+	
+	
+	
+	
+	
+
+
+6.2	Miscellaneous
+Library Functions and other effects	
+
+
+
