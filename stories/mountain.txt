@@ -60,7 +60,7 @@ C) Ask if she would like to join your adventure
 
 Go left (will be elaborated)
 
-	There's a foul stench on the air. You pause to take in your surroundings, but it's too late; It's an ambush! 		You're quickly surrounded by orcs and are ordered to lower your weapon.
+	There's a foul stench on the air. You pause to take in your surroundings, but it's too late; It's an ambush!          You're quickly surrounded by orcs and are ordered to lower your weapon.
 	A) (if you have sword or fairy) "He has/they have the Warchief's sword!" (begin fight)  
 	 + (if you have the fairy) "Well I didn't say it was MY family's heirloom, did I?"
 	B) Pay them gold to let you leave
@@ -71,18 +71,29 @@ Go right (will be elaborated)  (You have for option to click one or both choices
 
 	As you continue your trek up the perilous peak, the path before you grows increasingly worn. You come across 		the burning embers of a campfire.
 	A) -Investigate the firepit-
-	  As you step forward to investigate the firepit, the fairy exclaims "This was no ordinary fire!". She quickly 	  grabs a bag of dust out of her pocket and sprinkles it upon the dying embers. In a glorious blaze of fire, a 			  phoenix is reborn! In return for rejuvenating him, he grants you his crown of fire (extra health).
+	  As you step forward to investigate the firepit, the fairy exclaims "This was no ordinary fire!". She quickly 	  
+	  grabs a bag of dust out of her pocket and sprinkles it upon the dying embers. In a glorious blaze of fire, a 
+	  phoenix is reborn! In return for rejuvenating him, he grants you his crown of fire (extra health).
 	B) -Someone left a bag of candy. You can't let it go to waste, it's your favorite kind.-
 	  It was poisoned, you die.
 
 Continue--
-As you finally scale the crest of the mountain and step upon the summit, the mountain below you rumbles ominously. Time is of the essence. Also, it occurs to you how silly you're going to feel if the penguin wasn't up here after all. Your path finally leads you to a dark cave. Perhaps the penguin is inside, Perhaps it could be something else.
+As you finally scale the crest of the mountain and step upon the summit, the mountain below you rumbles ominously. 
+Time is of the essence. Also, it occurs to you how silly you're going to feel if the penguin wasn't up here after all. 
+Your path finally leads you to a dark cave. Perhaps the penguin is inside, Perhaps it could be something else.
 	A) -Leave, there must be another path-
-	 As you make your way back down to search for another path, the ground beneath you shatters violently. Lava 		 spews up from within the mountain and you are incinerated.
+	 As you make your way back down to search for another path, the ground beneath you shatters violently. Lava 		 
+	 spews up from within the mountain and you are incinerated.
 	B) -There's no turning back now, you boldly venture in-
-	 The air is unnaturally warm and muggy. Amongst the pitch black canopy, two large menacing eyes reveal 		         themselves; It's a dragon! He turns on the lights so everyone can see better, and you notice a fuzzy white 	 creature nestled in his tail. IT'S THE PENGUIN. "Can't you see I'm taking a nap? You are not welcome here,                leave." The rumbles of the mountain grow increasingly violent, there's no time to waste.
+	 The air is unnaturally warm and muggy. Amongst the pitch black canopy, two large menacing eyes reveal 		         
+	 themselves; It's a dragon! He turns on the lights so everyone can see better, and you notice a fuzzy white 	 
+	 creature nestled in his tail. IT'S THE PENGUIN. "Can't you see I'm taking a nap? You are not welcome here,               
+	 leave." The rumbles of the mountain grow increasingly violent, there's no time to waste.
 		A)-(If you have fairy) Let the fairy talk to the dragon-
-          	 Turns out they're actually good friends. The dragon gives you the penguin and flies you back to the 			 city as the mountain begins to rupture. Your trio looks particularly stoic as you make your escape 		 amongst the jets of scalding lava.
+          	 Turns out they're actually good friends. The dragon gives you the penguin and flies you back to the 			 
+          	 city as the mountain begins to rupture. Your trio looks particularly stoic as you make your escape 		 
+          	 amongst the jets of scalding lava.
 		B)-Fight the dragon-
-          	 If successful, he submits to your will, granting you the penguin and flying you back to the city. You 		 look particularly stoic as you make your escape amongst the jets of scalding lava
+          	 If successful, he submits to your will, granting you the penguin and flying you back to the city. You 		 
+          	 look particularly stoic as you make your escape amongst the jets of scalding lava
 
