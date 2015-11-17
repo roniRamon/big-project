@@ -48,6 +48,7 @@ Animations
 Multiplayer 
 Sound effects?
 Support for browsers that aren’t up-to date versions of Mozilla Firefox, Google Chrome, or Safari
+Save states
 
 
 
