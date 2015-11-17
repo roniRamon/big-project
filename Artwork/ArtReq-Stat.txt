@@ -1,5 +1,10 @@
 History: !!-Urgent *-In Progress
 
+General:
+  Title screen
+  Logo
+  Game over screen(s)
+
 Landscape:
   Hub City
   Brick's Hut
