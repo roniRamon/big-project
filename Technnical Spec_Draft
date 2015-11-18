@@ -206,14 +206,28 @@ Info of penguins collected should be visible on the user information.
 
 NICE TO HAVE : in version 1.2
 
+3.2	Variables and objects
+
+-	Health : int
+-	Strength : int 
+-	Intelligence: int
+-	Money : int
+-	PenguinCount : int
+-	Backpack : Artefacts [] 
+-	Knife : Artefact
+-	Sword : Artefact
+-	Apple : Artefact
+-	Whiskey : Artefact
+-	FightYou : int // your result of the fight random selected number multiplied by current strength
+-	FightOpponent : int // your opponents result of the fight random selected number multiplied by current strength
 
 
-3.2	Players attributes 
+3.3	Players attributes 
 Player will have 3 main attributes:
 ...
 
 
-3.3	Artefacts
+3.4	Artefacts
 
 Following artefacts will be available to collects in various events and their influence on Character’s parameters :
 
@@ -230,12 +244,12 @@ Some of the artefacts and goods (food items) if consumed in place will have lowe
 
 
 
-3.4	Strategies and Motivations
+3.5	Strategies and Motivations
 
 User can try to develop their character in more defensive or offensive way depending on the strategy of assigning points and collecting artefacts.
 …
  
-3.5	Level summary/Story progression
+3.6	Level summary/Story progression
 
 4.	Development Specifications
 4.1	System Requirements
