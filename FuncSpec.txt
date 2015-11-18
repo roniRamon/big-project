@@ -1,16 +1,16 @@
-BuildSomeRPG (Working Title)
+The Tale of Tux
 Functional Specification
 Tari Dunlap, Justin Pascual, Steven Wong
 Last Updated: November 16, 2015
  
 Overview
-SomeRPG is a single-player fantasy role-playing video game, played in a browser on both desktop and mobile devices.
+The Tale of Tux is a single-player fantasy role-playing video game, played in a browser on both desktop and mobile devices.
 
 Scenarios
 Scenario 1: Indie Mindie.
 Mindie has played a lot of games in her day and become tired of the AA titles with flashy graphics. Wanting something a tad
-more indie, she happens upon SomeRPG. Initially amused by the character choices available to play, she selects Pine Cone and
-proceeds to play the game after picking a goal, distributing attributes and entering a name. On her first run her 
+more indie, she happens upon The Tale of Tux. Initially amused by the character choices available to play, she selects Pine
+Cone and proceeds to play the game after picking a goal, distributing attributes and entering a name. On her first run her 
 intelligence is off the charts, but her strength is low and the resulting game play she found amusing as she proceeded
 through the Mountain, Forest, and Desert areas. After retrieving all three penguins required by the python to fight the final
 boss of the game. Unfortunately, rng was not in her favor, and she lost the final fight. She intends to start up again after
@@ -18,18 +18,17 @@ dinner with a new build to take down A Brick.
 
 Scenario 2: Johnny.
 Johnny is a middle school student who, like many students his age, is quite fond of video games and less fond of paying
-attention in class. During 5th period (social studies), a particularly boring time of the day, he will often take out his
-iPhone to pass time. Sittirite timekng in the back where Ms. Talksalot can’t see, he loads up his favorite time killer:
-SomeRPG. He’s played it many times before, but it never gets old because each adventure is different. Today he chooses to
-create a viking character with all brawn and no brain. He sets forth on his journey to eat the most delicious ice cream in
-the world. As he did so, today he chose to pick a new option he’d never chosen before- he denied the python the penguins.
-Unfortunately, the python retaliated and in revenge for not surrendering the penguins he desired, the python ate Johnny’s
-character, resulting in a game over. Not a lick of the United States’ westward expansion reached his ears that day—he had his
-own Destiny to Manifest.
+attention in class. During 5th period, a particularly boring time of the day, he will often take out his iPhone to pass time.
+He loads up his favorite time killer The Tale of Tux, something he’s played many times before but never gets old because each
+adventure is different. Today he chooses to create a viking character with all brawn and no brain. He sets forth on his
+journey to eat the most delicious ice cream in the world. As he’s adventuring through the mountains, he decides to head back
+to the City because he wanted a change of scenery. Today he picked a new option he’d never chosen before- he denied the
+python the penguins. Unfortunately, the python retaliated and in revenge for not surrendering the penguins he desired, the
+python ate Johnny’s character, resulting in a game over. No problem; exploring all the options is part of the fun.
 
 Scenario 3: Story Rory.
-Rory is a pretty casual game player, and isn’t interested in anything with a too complex learning curve. He picks up SomeRPG
-at the recommendation of a random banner ad he sees online, and is charmed with its simple appearance. He goes through
+Rory is a pretty casual game player, and isn’t interested in anything with a too complex learning curve. He picks up The Tale
+of Tux at the recommendation of a random banner ad he sees online, and is charmed with its simple appearance. He goes through
 character creation and advances through the first few screens of the game. At first put off by the cookie-cutter RPG aspect
 of the game, he is soon captivated by the underlying story and continues playing. Not giving much thought to the “game” part
 of the game, Rory carries on with the storytelling facet. He immerses himself in his character’s shoes, and reads eagerly to
@@ -46,11 +45,10 @@ Non Goals
 This version of the game will not have these features:
 Animations
 Multiplayer 
-Sound effects?
-Support for browsers that aren’t up-to date versions of Mozilla Firefox, Google Chrome, or Safari
 Save states
+Sound effects
+Support for browsers that aren’t up-to date versions of Mozilla Firefox, Google Chrome, or Safari
 Support for languages other than English
-
 
 
 
@@ -137,7 +135,7 @@ Contains hints and tips to the game that will aid any users that may be having d
 About Page
 Contains information about the game/project and the team that worked on it.
 
-
+
 
 Story (rough)              
 //see flowchart reference
@@ -146,7 +144,8 @@ Begin Adventure
 After “Begin Adventure” is pressed, present the backstory for their chosen goal. Start the tutorial after all the text is scrolled.
 
 Event T: Tutorial
-Go over the basics: Character Page, Backpack, Options, and the Hints Page. Describe what they’ll find in each of those places. 
+Go over the basics: Character Page, Backpack, Options, and the Hints Page. Describe what they’ll find in each of those places.
+
 Have them pick up an item to demonstrate the backpack’s usage. Then have the player make their way to Hub City while teaching
 them how to choose from several actions, starting first with the crossroad area tutorial. All Areas will be grayed out and
 inaccessible aside from Hub City. 
