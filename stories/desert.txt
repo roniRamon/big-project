@@ -322,9 +322,9 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 			. The moist weather and buttery diet undermine your health.
 			You stay in the canyon forever.
 
-###########
-# story 5 #
-###########
+##########################
+# story 5 Desert Pytamid #
+##########################
 
 You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid.
 As you walk in, the door shuts tight and you are now trapped. You notice three items 
