@@ -58,6 +58,9 @@ Table of Contents
 1.	Overview
 The objective of this document is to provide a comprehensive guide on the architect and inner workings behind the implementation of [insert title]. [insert title] is a web-based text game and makes a perfect project for beginner developers looking to build their first web-application
 
+*****
+(Note: formatting is messy, but will furnish, such as tabs and spaces. will fix when tech spec is looking near complete)
+*****
 
 
 2.	Summary
@@ -179,8 +182,6 @@ Feeling ashamed to be beaten up by a goat-keeper you are walking away promising 
 
 ...
 
-
-
 3.1.5	Desert
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Desert events and only after finishing it will be able to go to other location. 
@@ -188,22 +189,266 @@ In the 1.0 version Player will go through all Desert events and only after finis
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
 3.1.5.1 Dessert Desert
-...
-
-3.1.5.2 Desert - Merchant
 
 ...
 3.1.5.3 Desert Water
+<p>
+GM: For whatever reason, it is your 3rd day wandering aimlsesly around the 
+GM: desert. You realize you haven't had water since the adventure and you
+GM: are now very very thirsty. Luckily you do have your iphone 5s on you. 
+GM: You decide to locate yourself on the map. You pull your iphone out. 
+GM: Unfortunately, the wifi does not work! Desperate, you look around your 
+GM: surroundings for water. You see no signs of water in your immediate 
+GM: path. 
+GM: What do you do?
+</p>
+<p>
+GM: What do you do?
+GM: <button>1. Continue walking</button>
+GM: <button>2. Dig into the ground</button>
+GM: <button>3. Walk in the opposite path</button>
+</p>
 
-...
+if( <button>1. Continue walking</button> )
+  <p>
+  GM: You decide to keep walking. Within a few miles, your phone picks up 
+  GM: wifi. You ask siri where to find water and siri points you towards
+  GM: Cactus Island about 10 miles away. As you continue to walk, you feel
+  GM: tired as hell. You really want to stop walking. You look up into the 
+  GM: sky and notice the clouds are getting heavy and dark. Is this a sign 
+  GM: of rain? 
+  GM: What do you do?
+  GM: <button>1 => Wait for rain</button>
+  GM: <button>2 => Continue walking towards Cactus Island</button>
+  </p>
+
+  if( <button>1 => Wait for rain</button> )
+    <p>
+    GM: You decide to wait. Your phone has no wifi so you decide to play 
+    GM: Angry Birds while you wait for the rain. 4 hours has passed and 
+    GM: your phone is receiving wifi again. You look up the weather and 
+    GM: notice the weather app says it will only be cloudy. You do some
+    GM: research and realize that it does not rain here. You decide to 
+    GM: once again walk towards Cactus Island, 1 mile down the road.
+    GM: Health: -5, and change scenes to 2. cactus island.
+    </p>
+
+  else( <button>2 => Continue walking towards Cactus Island</button> )
+    <p>
+    GM: You decide to continue walking. You finally arrive at Cactus
+    GM: Island. What a heavenly place!! You pick up a cactus, open it, 
+    GM: drink the water, and are now replenished! You decide to pack
+    GM: your bag with a cactus to last yourself with at least another
+    GM: week's worth of water supply.
+    </p>
+
+else if( <button>2. Dig into the ground</button> )
+  <p>
+  GM: You dig into the ground. 4 hours in, you've come to the realization 
+  GM: that you've made no progress so far. 
+  GM: What do you do?
+  GM: <button>1 => Continue digging</button>
+  GM: <button>2 => Continue walking</button>
+  </p>
+
+  if( <button>1 => Continue digging</button> )
+    <p>
+    GM: You continue to dig. As you continue to dig, you begin to feel 
+    GM: nauseous and fever-ish. Within the next minute, you fall into 
+    GM: the hole you've dug.
+    GM: You die.
+    </p>
+
+  else ( <button>2 => Continue walking</button> )
+    <p>
+    GM: You decide to continue walking. Within 4 hours, your phone begins
+    GM: to receive wifi signal. You pull out your phone and google for the
+    GM: nearest area with water. Siri tells you to goto Cactus Island
+    GM: which is located 5 miles from where you are. You begin walking 
+    GM: towards Cactus Island. 
+    GM: change scenes to 2. Cactus Island
+    </p>
+
+if( <button>3. Walk in the opposite path</button> )
+  <p> 
+  GM: 3. Walk in the opposite path
+  GM: You decide to walk in the path you came from. Within 4 hours, your 
+  GM: phone picks up wifi signal. You pull out your phone and google for 
+  GM: the nearest area with water. Siri tells you to goto Cactus Island,
+  GM: which is located 25 miles from where you are.
+  GM: What do you do?
+  GM: <button>1 => Walk towards Cactus Island</button>
+  GM: <button>2 => Continue walking towards the path you came from</button>
+  </p>
+
+  if( <button>1 => Walk towards Cactus Island</button> )
+    <p>
+    GM: You fall into your own death within the 8th mile to dehydration.
+    </p>
+
+  else( <button>2 => Continue walking towards the path you came from</button> )
+    <p>
+    GM: You decide to continue walking. Within 2 miles you notice a 
+    GM: python crawling around the desert.
+    GM: What do you do?
+    GM: <button>1 => Ignore the python</button>
+    GM: <button>2 => Attempt to kill the python for its meat and blood</button>
+    </p>
+
+    if( <button>1 => Ignore the python</button> )
+      <p>
+      GM: You decide to ignore the python and walk. As you begin to walk,
+      GM: the python sneaks up from behind you. Before you can do anything 
+      GM: to stop it, it wraps itself around you. 
+      GM: health: -5
+      GM: Fortunately, the snake is also weak due to dehydration. You are able
+      GM: to rip it apart and eat + drink its blood.
+      GM: You feel rejuvenated and continue walking until you make it to the city.
+      </p>
+
+    else( <button>2 => Attempt to kill the python for its meat and blood</button> )
+      <p>
+      GM: 2. Attempt to kill the python for its meat and blood
+      GM: You run upto the python and grab it by its mouth. The snake 
+      GM: wiggles for a minute and then becomes motionless. You eat 
+      GM: the python and feel rejuvinated. You continue to walk and barely 
+      GM: made it back to the city.
+      </p>
+
+
 3.1.5.4 Canyon Adventures
+<p>After the tiring walking in the desert sands you reach an enormous canyon.
+It's very deep and foggy and you can't see the bottom or the other side if it.
+What do you do?<p>
+<btn>Option 1: You are making a loud shout right in the canyon.</btn>
+<btn>Option 2: You decide to have a rest and wait for the fog to clear out.</btn>
+<btn>Option 3 (if intelligence is high): You are cautiously exploring the edge of the canyon.</btn>
 
-...
+if( <btn>Option 1: You are making a loud shout right in the canyon.</btn> )
+	<p>Oh no! Suddenly the ground is shaking and the giant ugly troll is climbing out from the canyon!
+	He has a stupid face and a cold.
+	He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk!
+	What do you do?</p>
+	<btn>1.1.You fight the troll.</btn>
+	<btn>1.2.You run like hell back to the desert.</btn>
+	<btn>1.3. You jump into the canyon right between troll's legs.</btn>
+
+	if( <btn>1.1.You fight the troll.</btn> )
+		<p>Result: You are fighting the troll. Luckily he is so sick and absent-minded he can't catch you.
+		He gets upset, starts to cry and tells you his name is Karl.
+		Very dirty and sticky you search his pockets and get water (++Health) and the giant needle (+Item).</p>
+
+	else if( <btn>1.2.You run like hell back to the desert.</btn> )
+		<p>Result. The troll catches you!
+		He puts you in his pocket and carries back to his dank home at the bottom of the canyon.
+		You have to cook, clean and bear the thundering sneezing till the rest of your life.</p>
+
+	else( <btn>1.3. You jump into the canyon right between troll's legs.</btn> )
+		<p>Result. You are flying through the fog and land in the lake.
+		You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (-Item).
+		You manage to find a path to the city and return weak and wet.</p>
+
+else if( <btn>Option 2: You decide to have a rest and wait for the fog to clear out.</btn> )
+	<p>At twilight you hear flapping of the wings and the pair of coloured birds lands near you.
+	The lizard-looking riders get down from them and demand that you leave. What do you do?</p>
+	<btn>2.1. You bargain with them.</btn>
+	<btn>2.2. You jump on one of the birds and try to fly away.</btn>
+	<btn>2.3. You jump into the canyon and dissapear in the fog.</btn>
+
+	if( <btn>2.1. You bargain with them.</btn> )
+		 <p>2.1.Result. 
+		 a) You give them your shoes and in return they carry you in the city 
+		 (+Stength as you rest during the journey).
+		 During the fly you manage to sneak a bag of money (+Item). </p>
+
+	else if( <btn>2.2. You jump on one of the birds and try to fly away.</btn> )
+		 <p>2.2.Result. Bummer! The bird is smart! She makes a cirle and flies back to the owner.
+		 He is not pleased and bites you. You are poisoned and stay in the desert forever. </p>
+
+	else( <btn>2.3. You jump into the canyon and dissapear in the fog.</btn> )
+		 <p>2.3.Result. You reach the giant trampoline at the bottom and jump out of the canyon.
+		 You frostbite your ears during the flight (-Health),
+		 but find a tree with juicy lematos on the other side.
+		 You eat a fruit (+Health) and find a way to the city. </p>
+
+else( <btn>Option 3 (if intelligence is high): You are cautiously exploring the edge of the canyon.</btn> )
+	<p>You find a tiny path and descend into the canyon. 
+	At the lower lever you enter a lovely village of butter-eating leprechauns.
+	They seem hospitable and serve you a dinner (which is made mainly of butter),
+	but oh no! they are not going to let you leave!
+	What do you do?</p>
+	<btn>3.1. You distract them and jump deeper into the canyon.</btn>
+	<btn>3.2. You rely on your eloquence and begin to persuade them.</btn>
+	<btn>3.3. You decide to stay.</btn>
+
+	if( <btn>3.1. You distract them and jump deeper into the canyon.</btn> )
+		<p>Result. You are reaching the bottom of the canyon. 
+		You spend a lot of power by going through bushes (-Strength)
+		and quench yout thirst at a spring (+Health).
+		Finally you manage to find a way back to the city.</p>
+
+	else if( <btn>3.2. You rely on your eloquence and begin to persuade them.</btn> )
+		<p>Result. Your detailed descriptions of all the yummy food besides butter that there is the world 
+		inspire leprechans and they decide to leave the village and the canyon!
+		They inflate the hot air baloon and take you to the city.
+		As a gift you receive a pack of magical butter that makes one invulnerable.</p>
+
+	else( <btn>3.3. You decide to stay.</btn> )
+		<p>Result. You learn the Irish stepdance and grow a beard so long 
+		that sometimes you make a hammock out of it and spend all day swinging in it
+		. The moist weather and buttery diet undermine your health.
+		You stay in the canyon forever.</p>
+
+
 3.1.5.5 Desert Pyramid
+<p>
+You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid.
+As you walk in, the door shuts tight and you are now trapped. You notice three items 
+floating magically above a stone. Which of these items do you pick up?
+</p>
+<btn>1: compass</btn>
+<btn>2: flame torch</btn>
+<btn>3: stack of gold</btn>
 
-...
+<p>
+You decide to pick up <ITEM>. The other items turns into dust. You walk down the path 
+and a mummy suddenly appears from no where. You…
+</p>
+<btn>1: run for your life</btn>
+<btn>2: fight the mummy</btn>
+<btn>3: talk to the mummy</btn>
 
+if( <btn>1: run for your life</btn> )
+    <p>
+    Along the way, you fall into a pit trap.
+    You are lost. You continue walking around looking for an exit. 
+    </p>
 
+    * If you picked the compass, you find the exit
+    * Else, you continue to walk around looking for an exit. You suddenly see a glimpse 
+      of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse 
+      of light, the tombs open and the mummies all come out of it.
+        * If you picked the flame torch, you pull it out and all the mummies get scared 
+        *    and goes back into their tomb. You exit safely.
+        * Else, you run in the opposite direction and FALL into another pit trap.
+
+        <p>
+        20 days have gone by and you are still lost. You look at the stack of gold you’ve
+        picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you
+        that you have learned your lesson. In return, it wants the stack of gold back.
+        </p>
+        * If you don’t give back the gold, the angel mummy tells you “TOO BAD”, gives an 
+        *    evil laugh and disappears.
+        * Else, you hand it the gold. You magically appear outside the pyramid.
+
+else if( <btn>2: fight the mummy</btn> )
+    * If you didn’t pick the flame torch, you lose 10 health points.
+    * Else, you burn the mummy to a 2nd death. 
+
+else( <btn>3: talk to the mummy</btn> )
+    <p>
+    The mummy ends up being friendly and offers you beer
+    </p>
 
 3.1.6	Mountains
 Player will go through series of events in this location. 
