@@ -190,133 +190,66 @@ if (intelligence > 40)
 			  <p> Your attack <<FightYout>>. Merchant's attack <<FightOpponent >> </p>
 
 			  if (FightYou < FightOpponent):
-				<p> You have lost the fight (-15 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) which you can put in your backpack or leave it.</p>
-
-				Health -= 15;
-
-				<button2.1>pocket 1</button2.1>
-				<button2.2>pocket 2</button2.2>
-				<button2.3>pocket 3</button2.3>
-				<button2.4>pocket 4</button2.4>
-				<button2.5>Don't take it</button2.5>
-
-				Switch (button):
-					Case button 2.1:
-					  Backpack [0] = whisky; 
-					  health += 5;
-					  intelligence -=10
-					  break;
-					Case button 2.2:
-					  Backpack [1] = whisky;
-					  health += 5;
-					  intelligence -=10
-					  break;
-					Case button 2.3:
-					  Backpack [2] = whisky;
-					  health += 5;
-					  intelligence -=10
-					  break;
-					Case button 2.4:
-					  Backpack [3] = whisky;
-					  health += 5;
-					  intelligence -=10
-					  break;
-					Case button 2.5:
-					  break;
-
+			    Health -= 15;
+			    if (Health <= 0):
+				<popup message> You have died. Game Lost </popup message>
+<<END OF GAME>>
+			    else:
+				<p> You have lost the fight (-15 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) 
+				Do you want to put it in your backpack or leave it.</p>
+				<button2.1> Yes</button2.1>
+				<button2.2> No</button2.2>
+				if (button2.1) // yes, take it
+				  if backpack.length =4 // we do not have space, all slots are filled
+				    add.backpack(whisky)
+				  else	
+				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				else if (botton2.1)
+				  <popup> You didn't take the whisky </popup>
 <<Next Event>>
 
 			else: // if you win fight
 			  <p> You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, knife (+5 Strength), sword (+20 Strength), whisky (+5Health, -10 Intelligence)
-			  Where do you want to put a knife? </p>
-			  strength += 5;
+			  Do you want to put a knife in your backpack? </p>
+			  
 			  money += 80
-
-			  <button3.1>pocket 1</button3.1>
-			  <button3.2>pocket 2</button3.2>
-			  <button3.3>pocket 3</button3.3>
-			  <button3.4>pocket 4</button3.4>
-			  <button3.5>Don't take it</button3.5>
-
-			  Switch (button):
-				Case button 3.1:
-				  Backpack [0] = knife; 
-				  strength += 5;
-				  break;
-			 	Case button 3.2:
-				  Backpack [1] = knife;
-				  strength += 5;
-				  break;
-				Case button 3.3:
-				  Backpack [2] = knife;
-				  strength += 5;
-				  break;
-				Case button 3.4:
-				  Backpack [3] = knife;
-				  strength += 5;
-				  break;
-				Case button 3.5:
-	   			  break;
-
-			<p>Where do you want to put a sword: </p>
-			<button4.1>pocket 1</button4.1>
-			<button4.2>pocket 2</button4.2>
-			<button4.3>pocket 3</button4.3>
-			<button4.4>pocket 4</button4.4>
-			<button4.5>Don't take it</button4.5>
-
-			Switch (button):
-			  Case button4.1:
-				Backpack [0] = sword; 
-				strength += 20;
-				break;
-			  Case button 4.2:
-				Backpack [1] = sword;
-				strength += 20;
-				break;
-			  Case button 4.3:
-				Backpack [2] = sword;
-				strength += 20;
-				break;
-		  	  Case button 4.4:
-				Backpack [3] = sword;
-				strength += 20;
-				break;
-			  Case button 4.5:
-				break;
-
-			<p>Where do you want to put whisky: </p>
-			<button5.1>pocket 1</button5.1>
-			<button5.2>pocket 2</button5.2>
-			<button5.3>pocket 3</button5.3>
-			<button5.4>pocket 4</button5.4>
-			<button5.5>Don't take it</button5.5>
+			  
+			  <button2.1> Yes</button2.1>
+			  <button2.2> No</button2.2>
+				if (button2.1) // yes, take it
+				  if backpack.length =4 // we do not have space, all slots are filled
+				    add.backpack(knife)
+				    strength += 5;
+				    
+				  else	
+				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				else if (botton2.2)
+				  <popup> You didn't take the knife </popup>
+			 
+			<p> Do you want to put a sword in yout backpack? </p>
+			<button3.1> Yes</button3.1>
+			<button3.2> No</button3.2>
+				if (button3.1) // yes, take it
+				  if backpack.length =4 // we do not have space, all slots are filled
+				    add.backpack(sword)
+				    strength += 20;
+				  else	
+				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				else if (botton2.3)
+				  <popup> You didn't take the sword </popup>
+			
+			<p> Do you want to put whisky in your backpack </p>
+			<button4.1> Yes</button4.1>
+			<button4.2> No</button4.2>
+				if (button4.1) // yes, take it
+				  if backpack.length =4 // we do not have space, all slots are filled
+				    add.backpack(sword)
+				    strength += 20;
+				  else	
+				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				else if (botton4.2)
+				  <popup> You didn't take the sword </popup>
 	
-			Switch (button):
-		  	  Case button 5.1:
-				Backpack [0] = whisky; 
-				health += 5;
-				intelligence -=10
-				break;
-		  	  Case button 5.2:
-				Backpack [1] = whisky;
-				health += 5;
-				intelligence -=10
-				break;
-		 	  Case button 5.3:
-				Backpack [2] = whisky;
-				health += 5;
-				intelligence -=10
-				break;
-			  Case button 5.4:
-				Backpack [3] = whisky;
-				health += 5;
-				intelligence -=10
-				break;
-			  Case button 5.5:
-				break;
-
-
 FightYou = 0;
 FightOpponent = 0;
 
