@@ -59,16 +59,90 @@
 
 >> Next Event
 
+#############################
+# Story 2 Desert - Merchant #
+#############################
 
+# Game> You are walking through the desert when somewhere on the horisont you see a figure approaching you. You recognize that he's a merchant with goods. What do you do?
 
+# Game> 1.Ignore him and move on.
+# Game> 2.Attack and try to take his goods.
+# Game> 3.Try to buy something.
+#(if intelligence > 30 option 4 is visible)
+# Game> 4.Start conversation 
 
+=>1. Ignore
+# Game>Merchant is trying to sell you something, but you reply him "Naaaah. I'm good." and you walk away.
 
+=>2. Fight
+# Game> Merchant is fighting back. Strength 30. 
+# Game> You say: "Hasta la vista baby!".
+# your.strenght = random(from 0 to Strength.Max), 
+# merchant.strength = random(from 0 to 30)
 
+# Game> Your attack <<your.strenght>>. Merchant's attack <<merchant.strength>>.
 
+# If  your.strength < merchant.strength -> -20 Health. 
+# Game> You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases 
+# Game>  and gives you an apple  (+5 health) which 
+# Game> you can put in your backpack or leave it.'
+# Game> Where do you want to put apple: 
+# Game> pocket 1, 
+# Game> pocket 2, 
+# Game> pocket 3, 
+# Game> pocket 4, 
+# Game> Don't take it 
+#(TechNote: if user selects a pocket with some goods already there goods will be replaced and previous artefact will be thrown away without possibility to get it back. If 'Dont take it' option is selected then user will throw away new artefact)
 
+#If your.strength > merchant.strength -> +10 Strentgh,
+# Game> You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), # #Game> sword (+50 Strength), apple (+25 Health, +5 Intelligence)
+# Game> Where do you want to put a knife: 
+# Game> pocket 1, 
+# Game> pocket 2, 
+# Game> pocket 3, 
+# Game> pocket 4, 
+# Game> Don't take it 
+
+# Game> Where do you want to put a sword: 
+# Game> pocket 1...
+
+# Game> Where do you want to put an apple: 
+# Game> pocket 1...
+
+=> 3. Shopping
+# Game> Merchant shows you his goods: 
+# Game> option 1:sword (+40 Strength), price 800$
+# Game> option 2:apple (+25Health, +5 Intelligence). price 40$ 
+
+# If your intelligence > 30 Option 3 is visible like this
+# Game> option 3: - knife (+5 Strength) price 100$ is also visible
+
+# if intelligence < 30 Option 3 is visible like this
+# Game> "I also have something special, but you have to show my some cash first"(give merchant 10$ to show you the last product) 
+
+# Game> option 4: No thanks, I don't need anything
+
+# => Option 3 selected new page >
+# Game> Merchant shows you his goods: 
+# Game> option 1: sword (+40 Strength), price 800$
+# Game> option 2: apple (+25 Health, +5 Intelligence) price 40$, 
+# Game> option 3: knife (+5 Strength) price 200$
+# Game> option 4: No thanks, I don't need anything
+
+# => op1: 
+# Game> where do you want to put sword: pocket 1...
+
+#=> op2: 
+# Game> where do you want to put whisky: pocket 1...
+#=> op3:
+# Game> where do you want to put knife: pocket 1...
+#=> op4: 
+# Game> You reply: "Naaah, I'm good. Thanks."
+
+>>Next Event
 
 #########################
-# Story 2: Desert Water #
+# Story 3: Desert Water #
 #########################
 
 GM: For whatever reason, it is your 3rd day wandering aimlsesly around the 
@@ -169,7 +243,7 @@ GM: => 3. Walk in the opposite path
 
 
 #########################
-# Story 3: Canyon Adventures
+# Story 4: Canyon Adventures
 #########################
 
 After the tiring walking in the desert sands you reach an enormous canyon.
@@ -249,7 +323,7 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 			You stay in the canyon forever.
 
 ###########
-# story 4 #
+# story 5 #
 ###########
 
 You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid.
