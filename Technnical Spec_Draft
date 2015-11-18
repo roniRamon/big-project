@@ -34,7 +34,7 @@ Table of Contents
 3.1.10.1:             Backpack  				(need immediate attention)
 3.2:          Variables and objects				(incomplete list)
 3.3:          Players attributes 				(incomplete list)
-3.4:          Artefacts						(incomplete list)
+3.4:          Artifacts						(incomplete list)
 3.5:          Strategies and Motivations	(somewhat completed)
 3.6:          Level summary/Story progression			(need immediate attention)
 
@@ -56,7 +56,7 @@ Table of Contents
 
 
 1.	Overview
-The objective of this document is to provide a comprehensive guide on the architect and inner workings behind the implementation of [insert title]. [insert title] is a web-based text game and makes a perfect project for beginner developers looking to build their first web-application
+The objective of this document is to provide a comprehensive guide on the architecture and inner workings behind the implementation of “The Tale of Tux”. “The Tale of Tux” is a web-based text game and makes a perfect project for beginner developers looking to build their first web-application
 
 *****
 (Note: formatting is messy, but will furnish, such as tabs and spaces. will fix when tech spec is looking near complete)
@@ -65,12 +65,10 @@ The objective of this document is to provide a comprehensive guide on the archit
 
 2.	Summary
 2.1	Background Story
-<<Name of the Location>> is an imaginary world full of exciting adventures waiting for the ones who seek excitement. The goal of the game (selected by the user) is protected by the evil but mysterious cuboid monster, The Brick. Unfortunately to get to him Player must pass series of tasks and quests to be allowed to reach him. Maybe that is for good, as during those adventures Player will gain certain skills and artefacts which can help them to in the final combat. 
+<<Name of the Location>> is an imaginary world full of exciting adventures waiting for the ones who seek excitement. The goal of the game (selected by the user) is protected by the evil but mysterious cuboid monster, The Brick. Unfortunately to get to him Player must pass series of tasks and quests to be allowed to reach him. Maybe that is for good, as during those adventures Player will gain certain skills and artifacts which can help them to in the final combat. 
 
 2.2	Overview of Game
-The game is called << GAME NAME>> and is located in the imaginary world. It is a role play game with multiple tasks to fulfil in order to finish the quest. User will have a character with certain attributes which can be developed according to the player’s preference. 
-
-
+“The Tale of Tux” is a role-playing game which takes place in a imaginary world filled with excitement and evil monsters. Users will be able to create custom characters and go on quests in order to defeat the evil but mysterious cuboid monster, The Brick.
 
 3.	Game Play Look and Feel
 3.1	Appearance
@@ -471,10 +469,10 @@ NICE TO HAVE: After finishing each event Player will be able to choose if they w
 
 3.1.5.1 Dessert Desert
 <p>
-The world begings to blur. The sand below begins to stick the bottom of your feet.
+The world beginnings to blur. The sand below begins to stick the bottom of your feet.
 </p>
 <btn>1. Continue walking.</btn>
-#(if intellegence > 12 option 2 is visible)
+#(if intelligence > 12 option 2 is visible)
 <btn>2. Investigate.</btn>
 
 
@@ -483,7 +481,7 @@ while( <btn> != 2. Investigate )
     You continue walking. Your feet are growing heavy.
     </p>
     <btn>1. Continue walking..</btn>
-    #(if intellegence > 12 option 2 is visible)
+    #(if intelligence > 12 option 2 is visible)
     <btn>2. Investigate.</btn>
 
 # once the user clicks 2. investigate 
@@ -494,7 +492,7 @@ while( <btn> != 2. Investigate )
     You continue walking. Your feet are growing heavy.
     </p>
     <btn>1. Continue walking.</btn>
-    #(if intellegence > 12 option 2 is visible)
+    #(if intelligence > 12 option 2 is visible)
     <btn>2. Investigate closer.</btn>
 
 # once the user clicks 2. investigate 
@@ -541,7 +539,7 @@ while( <btn> != 2. Investigate )
 
 
 3.1.5.2 Desert - Merchant
-<p>You are walking through the desert when somewhere on the horisont you see a figure approaching you. You recognize that he's a merchant with goods. What do you do?
+<p>You are walking through the desert when somewhere on the horizon you see a figure approaching you. You recognize that he's a merchant with goods. What do you do?
 </p>
 
 <btn>1.Ignore him and move on.</btn>
@@ -561,12 +559,12 @@ else if( <btn>2.Attack and try to take his goods.</btn> )
     You say: "Hasta la vista baby!".
     your.strenght = random(from 0 to Strength.Max), 
     merchant.strength = random(from 0 to 30)
-    Your attack <<your.strenght>>. Merchant's attack <<merchant.strength>>.
+    Your attack <<your.strength>>. Merchant's attack <<merchant.strength>>.
 
 
     # If  your.strength < merchant.strength -> -20 Health. 
         <p>
-        You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases 
+        You have lost the fight but merchant lets you go. He feels pity for you and your poor phrases 
         and gives you an apple  (+5 health) which 
         you can put in your backpack or leave it.'
         Where do you want to put apple: 
@@ -575,10 +573,10 @@ else if( <btn>2.Attack and try to take his goods.</btn> )
         <btn>pocket 2</btn>
         <btn>pocket 3</btn>
         <btn>pocket 4</btn>
-        <btn>Don't take it 
-        #(TechNote: if user selects a pocket with some goods already there goods will be replaced and previous artefact will be thrown away without possibility to get it back. If 'Dont take it' option is selected then user will throw away new artefact)
+        <btn>Don't take it</btn> 
+        #(TechNote: if user selects a pocket with some goods already there goods will be replaced and previous artefact will be thrown away without possibility to get it back. If “Don’t take i” option is selected then user will throw away new artifact)
 
-    #If your.strength > merchant.strength -> +10 Strentgh,
+    #If your.strength > merchant.strength -> +10 Strength,
         <p>
         You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), # #Game> sword (+50 Strength), apple (+25 Health, +5 Intelligence)
         Where do you want to put a knife: 
@@ -634,7 +632,7 @@ else if( <btn>3.Try to buy something.</btn> )
 
 3.1.5.3 Desert Water
 <p>
-GM: For whatever reason, it is your 3rd day wandering aimlsesly around the 
+GM: For whatever reason, it is your 3rd day wandering aimlessly around the 
 GM: desert. You realize you haven't had water since the adventure and you
 GM: are now very very thirsty. Luckily you do have your iphone 5s on you. 
 GM: You decide to locate yourself on the map. You pull your iphone out. 
@@ -695,7 +693,7 @@ else if( <button>2. Dig into the ground</button> )
   if( <button>1 => Continue digging</button> )
     <p>
     GM: You continue to dig. As you continue to dig, you begin to feel 
-    GM: nauseous and fever-ish. Within the next minute, you fall into 
+    GM: nauseous and feverish. Within the next minute, you fall into 
     GM: the hole you've dug.
     GM: You die.
     </p>
@@ -750,9 +748,9 @@ if( <button>3. Walk in the opposite path</button> )
     else( <button>2 => Attempt to kill the python for its meat and blood</button> )
       <p>
       GM: 2. Attempt to kill the python for its meat and blood
-      GM: You run upto the python and grab it by its mouth. The snake 
+      GM: You run unto the python and grab it by its mouth. The snake 
       GM: wiggles for a minute and then becomes motionless. You eat 
-      GM: the python and feel rejuvinated. You continue to walk and barely 
+      GM: the python and feel rejuvenated. You continue to walk and barely 
       GM: made it back to the city.
       </p>
 
@@ -794,19 +792,19 @@ else if( <btn>Option 2: You decide to have a rest and wait for the fog to clear 
 	The lizard-looking riders get down from them and demand that you leave. What do you do?</p>
 	<btn>2.1. You bargain with them.</btn>
 	<btn>2.2. You jump on one of the birds and try to fly away.</btn>
-	<btn>2.3. You jump into the canyon and dissapear in the fog.</btn>
+	<btn>2.3. You jump into the canyon and disappear in the fog.</btn>
 
 	if( <btn>2.1. You bargain with them.</btn> )
 		 <p>2.1.Result. 
 		 a) You give them your shoes and in return they carry you in the city 
-		 (+Stength as you rest during the journey).
+		 (+Strength as you rest during the journey).
 		 During the fly you manage to sneak a bag of money (+Item). </p>
 
 	else if( <btn>2.2. You jump on one of the birds and try to fly away.</btn> )
-		 <p>2.2.Result. Bummer! The bird is smart! She makes a cirle and flies back to the owner.
+		 <p>2.2.Result. Bummer! The bird is smart! She makes a circle and flies back to the owner.
 		 He is not pleased and bites you. You are poisoned and stay in the desert forever. </p>
 
-	else( <btn>2.3. You jump into the canyon and dissapear in the fog.</btn> )
+	else( <btn>2.3. You jump into the canyon and disappear in the fog.</btn> )
 		 <p>2.3.Result. You reach the giant trampoline at the bottom and jump out of the canyon.
 		 You frostbite your ears during the flight (-Health),
 		 but find a tree with juicy lematos on the other side.
@@ -825,17 +823,17 @@ else( <btn>Option 3 (if intelligence is high): You are cautiously exploring the 
 	if( <btn>3.1. You distract them and jump deeper into the canyon.</btn> )
 		<p>Result. You are reaching the bottom of the canyon. 
 		You spend a lot of power by going through bushes (-Strength)
-		and quench yout thirst at a spring (+Health).
+		and quench your thirst at a spring (+Health).
 		Finally you manage to find a way back to the city.</p>
 
 	else if( <btn>3.2. You rely on your eloquence and begin to persuade them.</btn> )
 		<p>Result. Your detailed descriptions of all the yummy food besides butter that there is the world 
-		inspire leprechans and they decide to leave the village and the canyon!
-		They inflate the hot air baloon and take you to the city.
+		inspire leprechauns and they decide to leave the village and the canyon!
+		They inflate the hot air balloon and take you to the city.
 		As a gift you receive a pack of magical butter that makes one invulnerable.</p>
 
 	else( <btn>3.3. You decide to stay.</btn> )
-		<p>Result. You learn the Irish stepdance and grow a beard so long 
+		<p>Result. You learn the Irish step dance and grow a beard so long 
 		that sometimes you make a hammock out of it and spend all day swinging in it
 		. The moist weather and buttery diet undermine your health.
 		You stay in the canyon forever.</p>
@@ -927,13 +925,13 @@ The final battle with the Brick monster. Brick.strength = 200, Player.strength =
 
 -	5 rounds of battle,
 -	Player has to win at least 3 rounds.
--	Strength of player and Brick defined by random number between 0 and their strength paramertes. 
+-	Strength of player and Brick defined by random number between 0 and their strength parameters. 
 If Player wins the round message: “You have won this round, but Brick is attacking you again”
 If Player wins the round message: “You have lost this round and Brick laughs at you”
 
 If Player wins at least 3 rounds message:” Congrats!!! You have won the fight and Brick is defeated. You are laughing and dancing over its dead corpse. 
 You have managed to <<goal_name>> and Brick could not stop you!”
-If Player losts at least 3 rounds message: “Buhu, you have lost with Brick and he kills you. Maybe you will try in other life. GAME LOST!!!”
+If Player loses at least 3 rounds message: “Buhu, you have lost with Brick and he kills you. Maybe you will try in other life. GAME LOST!!!”
 
 End of the Game
 
@@ -956,11 +954,11 @@ NICE TO HAVE : in version 1.2
 -	Intelligence: int
 -	Money : int
 -	PenguinCount : int
--	Backpack : Artefacts [] 
--	Knife : Artefact
--	Sword : Artefact
--	Apple : Artefact
--	Whiskey : Artefact
+-	Backpack : Artifacts [] 
+-	Knife : Artifact
+-	Sword : Artifact
+-	Apple : Artifact
+-	Whiskey : Artifact
 -	FightYou : int // your result of the fight random selected number multiplied by current strength
 -	FightOpponent : int // your opponents result of the fight random selected number multiplied by current strength
 
@@ -970,9 +968,9 @@ Player will have 3 main attributes:
 ...
 
 
-3.4	Artefacts
+3.4	Artifacts
 
-Following artefacts will be available to collects in various events and their influence on Character’s parameters :
+Following artifacts will be available to collects in various events and their influence on Character’s parameters :
 
 Name	Strength	Health	Intelligence
 Knife	+10		
@@ -982,14 +980,14 @@ Whiskey			+10		-15
 Apple			+25/+15*	
 …			
 
-Some of the artefacts and goods (food items) if consumed in place will have lower impact on the character’s parameters than if Played would insert them in their backpack. For example: Apple will give 25 to Health if is located in the backpack and only 15 when eaten on the spot. 
+Some of the artifacts and goods (food items) if consumed in place will have lower impact on the character’s parameters than if Played would insert them in their backpack. For example: Apple will give 25 to Health if is located in the backpack and only 15 when eaten on the spot. 
 
 
 
 
 3.5	Strategies and Motivations
 
-User can try to develop their character in more defensive or offensive way depending on the strategy of assigning points and collecting artefacts.
+User can try to develop their character in more defensive or offensive way depending on the strategy of assigning points and collecting artifacts.
 …
  
 3.6	Level summary/Story progression
@@ -997,30 +995,29 @@ User can try to develop their character in more defensive or offensive way depen
 4.	Development Specifications
 4.1	System Requirements
 
-•	Web browser: Mozilla Firefox, Safari or Chrome
+•	Web browser: Mozilla Firefox, Safari, and Chrome
 
 4.2	Development Specifications
-•	Built in …
+•	Built using HTML, CSS, JavaScript, and JQuery.
 o	
-•	JavaScript and JQuery Language
-•	UML diagrams generated with Microsoft® PowerPoing® 2010 Student
-•	Graphics were modified/created using following tools
+•	UML diagrams were generated with Microsoft® PowerPoint® 2010 Student
+•	Graphics were modified/created using tools such as <<Insert tools here>>
 o	
-•	Sounds were using …
+•	Sounds were generated using <<Insert tools here>>
 
 4.3	Algorithm Style
 
 
 4.3.1	Development Algorithm
 
-The key features of the game
-•	Frame adjusted to the desktop and mobile view.
+The key features of the game include:
+•	Frame is adjusted to fit both desktop and mobile view.
 
-•	Backpack object created as shown on UML diagram 
+•	Backpack object is created as shown on UML diagram 
 
-•	Game cannot be saved and restored later. Upon closing the game, Player will have to start from the beginning at the next opening of the program
+•	Game cannot be saved and restored later. Upon closing the game, Player will have to start from the beginning at the next opening of the program.
 
-•	…
+•	Constant addition of content and features in order to increase replay value for the users.
 
 
 
