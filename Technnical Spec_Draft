@@ -188,9 +188,174 @@ In the 1.0 version Player will go through all Desert events and only after finis
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
-3.1.5.1 Dessert Desert
+# some notes:
+# What will the items in merchant story do?
+# logic to story 1 - desert is confusing towards the end. What exactly happens?
 
-...
+
+3.1.5.1 Dessert Desert
+<p>
+The world begings to blur. The sand below begins to stick the bottom of your feet.
+</p>
+<btn>1. Continue walking.</btn>
+#(if intellegence > 12 option 2 is visible)
+<btn>2. Investigate.</btn>
+
+
+while( <btn> != 2. Investigate )
+    <p>
+    You continue walking. Your feet are growing heavy.
+    </p>
+    <btn>1. Continue walking..</btn>
+    #(if intellegence > 12 option 2 is visible)
+    <btn>2. Investigate.</btn>
+
+# once the user clicks 2. investigate 
+<p>You get down on one knee for a closer look at the sand. It smells sugary.</p>
+
+while( <btn> != 2. Investigate )
+    <p>
+    You continue walking. Your feet are growing heavy.
+    </p>
+    <btn>1. Continue walking.</btn>
+    #(if intellegence > 12 option 2 is visible)
+    <btn>2. Investigate closer.</btn>
+
+# once the user clicks 2. investigate 
+<p>You lean in closer to smell the sand. Definitely sugar.</p>
+<btn>Continue walking.</btn>
+<btn>2. Lick the sand.</btn>
+
+####    NOTE TO STORY WRITER
+###     
+##      <!-- HAZY LOGIC FROM HERE -->
+#
+      =>1. Continue
+      # Game> You continue walking. Your feet are growing heavy.
+      # Game> 1. Continue walking..
+      # Game> 2. Lick the sand.
+
+      =>2. Lick
+      # Game> Definitely sugar. Yum. -> +1 Health
+      # Game> 1. Continue walking..
+
+=>1. Continue
+# Game> It's become increasingly hard to walk.
+# Game> 1. Continue walking...
+# Game> 2. Make like a rock and roll.
+
+=>1. Continue
+# Game> You're sinking.
+# Game> 1. Continue walking....
+# Game> 2. Freak out!
+
+   => 1. Continue
+   # Game> You try to walk out of this mess, but continue to sink. -> Death
+
+   => 2. Freak
+   # Game> You freak out hardcore, and continue to sink. -> Death
+
+=>2. Roll
+# Game> You do a barrel roll, again and again until you're out of this sticky mess.
+
+####
+###
+##      <!-- UNTIL HERE -->  
+#
+
+
+3.1.5.2 Desert - Merchant
+<p>You are walking through the desert when somewhere on the horisont you see a figure approaching you. You recognize that he's a merchant with goods. What do you do?
+</p>
+
+<btn>1.Ignore him and move on.</btn>
+<btn>2.Attack and try to take his goods.</btn>
+<btn>3.Try to buy something.</btn>
+#(if intelligence > 30 option 4 is visible)</btn>
+<btn>4.Start conversation</btn>
+
+if( <btn>1.Ignore him and move on.</btn> )
+    <p>
+    Merchant is trying to sell you something, but you reply him "Naaaah. I'm good." and you walk away.
+    </p>
+
+else if( <btn>2.Attack and try to take his goods.</btn> )
+    <p> 
+    Merchant is fighting back. Strength 30. 
+    You say: "Hasta la vista baby!".
+    your.strenght = random(from 0 to Strength.Max), 
+    merchant.strength = random(from 0 to 30)
+    Your attack <<your.strenght>>. Merchant's attack <<merchant.strength>>.
+
+
+    # If  your.strength < merchant.strength -> -20 Health. 
+        <p>
+        You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases 
+        and gives you an apple  (+5 health) which 
+        you can put in your backpack or leave it.'
+        Where do you want to put apple: 
+        </p>
+        <btn>pocket 1</btn>
+        <btn>pocket 2</btn>
+        <btn>pocket 3</btn>
+        <btn>pocket 4</btn>
+        <btn>Don't take it 
+        #(TechNote: if user selects a pocket with some goods already there goods will be replaced and previous artefact will be thrown away without possibility to get it back. If 'Dont take it' option is selected then user will throw away new artefact)
+
+    #If your.strength > merchant.strength -> +10 Strentgh,
+        <p>
+        You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), # #Game> sword (+50 Strength), apple (+25 Health, +5 Intelligence)
+        Where do you want to put a knife: 
+        </p>
+        <btn>pocket 1</btn>
+        <btn>pocket 2</btn>
+        <btn>pocket 3</btn>
+        <btn>pocket 4</btn>
+        <btn>Don't take it</btn>
+
+        <p>
+        Where do you want to put a sword: 
+        </p>
+        <btn>pocket 1</btn>
+        ...
+
+        <p>
+        Where do you want to put an apple: 
+        </p>
+        <btn>pocket 1</btn>
+        ...
+
+else if( <btn>3.Try to buy something.</btn> )
+    <p>
+    Merchant shows you his goods: 
+    </p>
+    <btn>option 1:sword</btn> # (+40 Strength), price 800$
+    <btn>option 2:apple</btn> # (+25Health, +5 Intelligence). price 40$ 
+
+    # If your intelligence > 30 Option 3 is visible like this
+    <btn>option 3: - knife</btn> # (+5 Strength) price 100$ is also visible
+
+    # if intelligence < 30 Option 3 is visible like this
+    <p>“I also have something special, but you have to show my some cash first”</p> # (give merchant 10$ to show you the last product) 
+
+    <btn>option 4: No thanks, I don't need anything</btn>
+
+    if( <btn>option 1:sword</btn> )
+        <p>where do you want to put sword:</p> 
+        <btn>pocket 1</btn>
+        ...
+    else if( <btn>option 2:apple</btn> )
+        <p>where do you want to put whisky:</p> 
+        <btn>pocket 1</btn>
+        ...
+    else if( <btn>option 3: - knife</btn> )
+        <p>where do you want to put knife:</p> 
+        <btn>pocket 1</btn>
+        ...
+    else( <btn>option 4: No thanks, I don't need anything</btn> )
+        <p>You reply: "Naaah, I'm good. Thanks.”</p>
+
+
 3.1.5.3 Desert Water
 <p>
 GM: For whatever reason, it is your 3rd day wandering aimlsesly around the 
