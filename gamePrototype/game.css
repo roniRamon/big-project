@@ -1,0 +1,109 @@
+/* TITLE SCREEN */
+/*......................................*/
+
+  #title-screen {
+    text-align: center;
+    margin-top: 100px;
+   }
+
+  #logo {
+    border-radius: 10em;
+    border: 1px solid black;
+  }
+
+/* HOME PAGE settings */
+/*......................................*/
+
+  #home-page-content {
+    display: flex;
+  }
+  /* Header #1 */
+  /*.....................*/
+  #project-details {
+    margin: 10px 50px;
+    font-size: 20px;
+  }
+  #info, #about {
+    margin-left: 10px;
+  }
+
+  #introduction {
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #eee; 
+    line-height: 2em;   
+  }
+
+  #accordion {
+    flex: 2;
+    margin: 20px;
+    text-align: left;
+    outline: none;
+  }
+
+/* MAIN GAME PAGE settings */
+/*......................................*/
+
+/* example settings for page background */
+ #tutorial-content {
+    background-color: #fff;
+    background-image: url("#");
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  /* external header settings */
+  #header2 {
+    background-color: rgba(0,0,0,.7);
+  }
+
+  #header2-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #header2-content #my-character {
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    flex: 2;
+    margin-top: 20px;
+    margin-right: 10px;
+  } 
+
+  #header2-content #user-points {
+    flex: 1;
+  }
+
+   #user-points input {
+    text-align: center;
+   }
+
+   /* container for 3 images with penguins */
+  #penguins {
+    text-align: center;
+    padding: 10px;
+    flex: 2;
+  }
+
+  .penguin {
+    background-image: url("images/penguin.png");
+    background-size: cover;
+    border: 1px solid white;
+    border-radius: 3em;
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+  }
+
+  #controls {
+    margin-top: 10px;
+    flex: 3;
+  }

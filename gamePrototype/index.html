@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Big Project</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="game.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+  <!-- Start of TITLE page -->
+<div data-role="page" id="page1">
+  <div role="main" class="ui-content" id="title-screen">
+    <img src="#" alt="Game Logo" id="logo" height="220" width="220"><br>
+    <a href="#home-page" class="ui-btn ui-btn-inline">START GAME</a>
+  </div>
+</div> <!-- end of title page -->
+
+
+<!-- Start of the second page: HOME PAGE -->
+<div data-role="page" class="ui-page-theme-a" id="home-page">
+
+<!-- HEADER #1 -->
+  <div data-role="header" id="header1" data-position="fixed">
+    <div class="ui-bar" id="project-details"> <!-- wrap content of the header#1 -->
+      <h1>Project Name</h1>
+      <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
+        <a href="#" data-icon="gear" id="info">Options</a>
+        <a href="#" data-icon="info" id="info">How to play</a>
+        <a href="#about-page" data-icon="star" id="about">About</a>
+      </div> <!-- end of grouped buttons -->
+    </div> <!-- end of content of header#1 -->
+  </div> <!-- end of header#1 -->
+
+<!-- main content of the home page -->
+  <div role="main" class="ui-content" id="home-page-content">
+      <div id="introduction">
+        <h1 id="welcome">Welcome message</h1>
+        <p id="intro-text">Short introduction to the game. Short description of what the user will do.
+        Complete three steps and press 'Begin adventure' to start your journey!</p>
+
+        <a href="#tutorial-page" id="begin" class="ui-btn ui-shadow ui-btn-inline ui-corner-all">BEGIN ADVENTURE</a>
+      </div>
+
+<!-- Accordion menu with 4 steps -->
+    <div data-role="collapsibleset" id="accordion">
+      <div data-role="collapsible" id="col1" data-collapsed="false">
+        <h3>STEP 1</h3>
+        <label for="name">Enter your name:</label>
+        <input type="text" name="name" id="name" value="" data-clear-btn="true" autofocus>
+        <input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check">
+      </div>
+
+      <div data-role="collapsible" id="col2">
+        <h3>STEP 2</h3>
+        <label for="select-choice-0" class="select">Choose your character</label>
+          <select name="select-choice-0" id="select-choice-0" data-native-menu="false" >
+            <option value="char1">Viking</option>
+            <option value="char2">Warrior Princess</option>
+            <option value="char3">Cheese</option>
+            <option value="char4">Pine Cone</option>
+          </select>
+          <input type="button" value="Next" id="next2" data-inline="true" data-mini="true" data-icon="check">
+      </div>
+
+      <div data-role="collapsible" id="col3">
+        <h3>STEP 3</h3>
+         <label for="select-choice-1" class="select">Choose a goal</label>
+          <select name="select-choice-1" id="select-choice-1" data-native-menu="false">
+            <option value="goal1">Save Prince</option>
+            <option value="goal2">Milk a Cow</option>
+            <option value="goal3">Plant a Tree</option>
+            <option value="goal4">Eat the most delicious ice cream in the world before it melts</option>
+          </select>
+          <input type="button" value="Next" id="next3" data-inline="true" data-mini="true" data-icon="check">
+      </div>
+
+      <!-- STEP 4: assign points -->
+      <div data-role="collapsible" id="col4">
+        <h3>STEP 4</h3>
+        <h4>You have 100 points. Distribute them accordingly (check 'Hints' for help)</h4>
+        <div class="ui-field-contain" id="assign-points">
+          <label for="health">Health</label><span id="errmsg"></span>
+          <input name="number" pattern="[0-9]*" id="health" value="" type="number" min="0" max="100" >
+          <label for="strength">Strength</label><span id="errmsg1"></span>
+          <input name="number" pattern="[0-9]*" id="strength" value="" type="number" min="0" max="100">
+          <label for="intelligence">Intelligence</label><span id="errmsg2"></span>
+          <input name="number" pattern="[0-9]*" id="intelligence" value="" type="number" min="0" max="100">
+        </div> <!-- end of container with inputs -->
+
+        <input type="button" value="Done!" id="ready" data-inline="true" data-mini="true" data-icon="check">
+        <input type="button" value="Reset" id="reset" data-inline="true" data-mini="true" data-icon="refresh">
+      </div> <!-- end of section#4 -->
+    </div><!--  end of accordion menu -->
+  </div><!--  end of content on home page -->
+</div> <!-- end of home page -->
+
+<!-- ABOUT PAGE -->
+  <div data-role="page" id="about-page">
+   <div class="ui-content" role="main">
+    <a href="#home-page" id="back-home" class="ui-btn ui-shadow ui-btn-inline ui-corner-all">Back to home page</a>
+    </div> <!-- end of content on About page -->
+  </div> <!-- end of About  page -->
+
+
+  <!--  A PANEL - BACKPACK -->
+  <div data-role="panel" data-theme="b" class="ui-panel ui-panel-position-left ui-panel-display-overlay" data-display="overlay" data-position="left" id="mypanel">
+      <!-- panel content goes here -->
+          <h3>Backpack</h3>
+          <p>Your backpack is now empty. Keep looking for the
+            useful items!</p>
+          <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+          <a href="#" class="ui-btn ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left" data-rel="close">Close panel</a>
+  </div><!-- end panel -->
+
+  <!-- EXTERNAL HEADER #2 FOR ALL LOWER PAGES -->
+  <!-- contains a bug as this header appers on pages1 and 2 as well - will be fixed later -->
+<div class="ui-header ui-bar-b" data-role="header" id="header2">
+  <!-- content of header#2 -->
+  <div class="ui-bar" id="header2-content">
+    <h1 id="my-character">Character: <span id="set-char"></span></h1>
+
+      <!-- grouped points fields in header#2 -->
+      <fieldset class="ui-grid-b" style="width:20%" id="user-points">
+        <div class="ui-block-a">
+               <label for="health-points">Health:</label></span>
+               <input data-mini="true" data-clear-btn="false" name="health-points" id="health-points" value="" type="text">
+        </div>
+        <div class="ui-block-b">
+            <label for="strength-points">Strength:</label></span>
+           <input data-mini="true" data-clear-btn="false" name="strength-points" id="strength-points" value="" type="text">
+         </div>
+         <div class="ui-block-c">
+              <label for="smart-points">Intelligence: </label></span>
+             <input data-mini="true" data-clear-btn="false" name="smart-points" id="smart-points" value="" type="text">
+          </div>
+      </fieldset>
+
+   <!--  PENGUINS  -->
+   <div id="penguins">
+      <div id="penguin1" class="penguin"></div>
+      <div id="penguin2" class="penguin"></div>
+      <div id="penguin3" class="penguin"></div>
+  </div>
+
+    <div data-role="controlgroup" data-type="horizontal" id="controls"> <!-- start of grouped buttonrights in the header#2 -->
+      <a href="#mypanel" class="ui-btn ui-shadow ui-btn-inline ui-icon-eye ui-btn-icon-left" id="open-backpack">What's in my backpack?</a>
+
+      <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="slidedown" class="ui-btn ui-shadow ui-btn-inline ui-icon-info ui-btn-icon-left">Hints</a> <!-- help button -->
+
+      <!-- START OF POPUP DIALOG BOX WITH HINTS -->
+      <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" class="ui-content" data-dismissible="false" style="max-width:400px;">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <div data-role="header" data-theme="a"> <!-- header in popup box -->
+            <h1>Things to Consider</h1>
+          </div>
+          <div role="main" class="ui-content"><!--  content of popup box -->
+              <p>Having trouble finding out where to go? Talk to the townsfolk!<br><br>
+               Is a lack of an item holding you back? Investigate even the weirdest places! You never know what you’ll find.<br><br>
+               Too weak to beat the bear? If you’re smart enough, try talking them down!<br><br>
+               Not smart enough to outwit the merchant? Break his legs! Not saying the town won’t come after you, though...<br><br>
+          </p>
+          </div>
+      </div> <!-- end of popup box -->
+      <a href="#home-page" class="ui-btn ui-shadow ui-btn-inline ui-icon-home ui-btn-icon-left">Quit</a> <!-- quit game button -->
+    </div> <!-- end of grouped buttons in header#2 -->
+  </div> <!-- end of header's content -->
+</div> <!-- end of header#2 -->
+
+
+<!-- Start of the game: Tutorial Page -->
+<div data-role="page" id="tutorial-page">
+
+  <!-- TUTORIAL MAIN CONTENT -->
+  <div role="main" class="ui-content" id="tutorial-content" style="text-align: center;">
+      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+          <legend style="text-align: justify; padding: 15px;"><p>Before you begin the game, hover over each object on this page for more information.
+          You will begin your game in the city and will return there to change the game area.
+          You will have 2 to 4 options to choose from in each step.
+           Once you make a choice, you can't go back.
+          Example options: 
+          </p></legend>
+              <input name="demo-choice-1" id="demo-choice-1" value="choice-1" type="radio">
+              <label for="demo-choice-1">Fight the enemy</label>
+              <input name="demo-choice-1" id="demo-choice-2" value="choice-2" type="radio" checked="checked">
+              <label for="demo-choice-2">Run from the enemy</label>
+              <input name="demo-choice-1" id="demo-choice-3" value="choice-3" type="radio">
+              <label for="demo-choice-3">Talk to the enemy</label>
+              <input name="demo-choice-1" id="demo-choice-4" value="choice-4" type="radio">
+              <label for="demo-choice-4">Additional option available in certain situations </label>
+              <a href="#city-page" class="ui-btn ui-shadow ui-btn-inline ui-icon-arrow-d ui-btn-icon-left">I'm ready to go to the City</a>
+      </fieldset>
+  </div><!-- end of tutorial's content-->
+  </div><!-- end of page#3 -->
+
+
+<!-- CITY/HUB PAGE -->
+  <div data-role="page" id="city-page">
+    <!-- CITY MAIN CONTENT -->
+  <div role="main" class="ui-content" id="city-content" style="text-align: center;">
+      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+          <p>You are in the city. You can choose one of the areas below to continue your journey
+          </p>
+          <a href="#forest-page" class="ui-btn ui-icon-arrow-d-l ui-btn-icon-left ui-corner-all">Go to the forest</a>
+          <a href="#mountain-page" class="ui-btn ui-icon-arrow-d-r ui-btn-icon-left ui-corner-all">Go to the mountain</a>
+          <a href="#desert-page" class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-corner-all">Go to the desert</a>
+      </fieldset>
+  </div> <!-- end of content on city page -->
+  </div> <!-- end of City page -->
+
+
+<!--  FOREST PAGE -->
+  <div data-role="page" id="forest-page">
+    <div role="main" class="ui-content" id="forest-content" style="text-align: center;">
+    
+      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+          <legend><h3>First adventure in the forest</h3></legend>
+              <input name="forest-choice-1" id="forest-choice-1" value="choice-1" type="radio">
+              <label for="forest-choice-1">Option 1</label>
+              <input name="forest-choice-1" id="forest-choice-2" value="choice-2" type="radio">
+              <label for="forest-choice-2">Option 2</label>
+              <input name="forest-choice-1" id="forest-choice-3" value="choice-3" type="radio">
+              <label for="forest-choice-3">Option 3</label>
+              <input name="forest-choice-1" id="forest-choice-4" value="choice-4" type="radio">
+              <label for="forest-choice-4">Option 4</label>
+      </fieldset>
+  </div><!-- end of Forest content -->
+  </div><!-- end of Forest Page -->
+  
+
+  <!-- MOUNTAIN PAGE -->
+  <div data-role="page" id="mountain-page">
+    <div class="ui-content" role="main" id="mountain-content" style="text-align: center;">
+      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+          <legend><h3>Some adventure in the mountains</h3></legend>
+              <input name="mountain-choice-1" id="mountain-choice-1" value="choice-1" type="radio">
+              <label for="mountain-choice-1">Option 1</label>
+              <input name="mountain-choice-1" id="mountain-choice-2" value="choice-2" type="radio">
+              <label for="mountain-choice-2">Option 2</label>
+              <input name="mountain-choice-1" id="mountain-choice-3" value="choice-3" type="radio">
+              <label for="mountain-choice-3">Option 3</label>
+              <input name="mountain-choice-1" id="mountain-choice-4" value="choice-4" type="radio">
+              <label for="mountain-choice-4">Option 4</label>
+      </fieldset>
+    </div> <!-- end of content on mountain page -->
+  </div> <!-- end of Mountain page -->
+
+  <!-- DESERT PAGE -->
+  <div data-role="page" id="desert-page">
+   <div class="ui-content" role="main" id="desert-content" style="text-align: center;">
+      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+        <legend><h3>Some adventure in the desert</h3></legend>
+          <input name="desert-choice-1" id="desert-choice-1" value="choice-1" type="radio">
+          <label for="desert-choice-1">Option 1</label>
+          <input name="desert-choice-1" id="desert-choice-2" value="choice-2" type="radio">
+          <label for="desert-choice-2">Option 2</label>
+          <input name="desert-choice-1" id="desert-choice-3" value="choice-3" type="radio">
+          <label for="deserty-choice-3">Option 3</label>
+          <input name="deserty-choice-1" id="deserty-choice-4" value="choice-4" type="radio">
+          <label for="desert-choice-4">Option 4</label>
+    </fieldset>
+    </div> <!-- end of content on desert page -->
+  </div><!--  end of Desert Page -->
+
+  <!-- FINAL BATTLE PAGE -->
+  <div data-role="page" id="final-battle-page">
+   <div class="ui-content" role="main" id="final-battle-content" style="text-align: center;">
+      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+      <legend><h3>FINAL BATTLE WITH THE BRICK!!!</h3></legend>
+        <input name="final-choice-1" id="final-choice-1" value="choice-1" type="radio">
+        <label for="final-choice-1">Option 1</label>
+        <input name="final-choice-1" id="final-choice-2" value="choice-2" type="radio">
+        <label for="final-choice-2">Option 2</label>
+        <input name="final-choice-1" id="final-choice-3" value="choice-3" type="radio">
+        <label for="final-choice-3">Option 3</label>
+  </fieldset>
+    </div> <!-- end of content on final battle page -->
+  </div> <!-- end of final-battle page -->
+ 
+
+  <!-- GAME OVER PAGE -->
+  <div data-role="page" id="game-over-page">
+   <div class="ui-content" role="main">
+    </div> <!-- end of content on game over page -->
+  </div> <!-- end of game over page -->
+
+
+  <script src="javascript/home.js"></script>
+  <script src="javascript/tutorial.js"></script>
+  <script src="javascript/forest.js"></script>
+  <script src="javascript/mountain.js"></script>
+  <script src="javascript/desert.js"></script>
+  <script src="javascript/final-battle.js"></script>
+
+</body>
+</html>
