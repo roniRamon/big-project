@@ -62,7 +62,52 @@ NICE TO HAVE: After finishing each event Player will be able to choose if they w
 
 
 3.1.4.1 Event Goat Adventure
-...
+<<p>>“You are crossing the meadow where group of goats are walking around. What do you do?</p>
+<<button 1.1>> Chase one of the goats and kill it. <</button1.1>>
+<<button 1.2>> Walk away <</button1.2>>
+<<button 1.3>> Pick some flowers and gets some rest <</button1.3>>
+
+Switch (button):
+	Case1 button 1.1:
+	  <p> “You have killed the goat, but all that running made you hungry. You set up the fire and roast the goat.(+30 Health)” </p>
+
+	  Health += 30;
+
+	Case 2 button 1.2:
+	  <p> When exiting the meadow you have found a goat-keeper sleeping in the bushes. You wake him up. “Hey there. You should watch out for your goats, because some animal might attach them. There are plenty of wild beasts in this forest, you know.”
+Goat-keeper thanks you for the warning and gives you some goat milk to drink. +5 Health </p>
+
+	  Health+=5;
+
+	Case 3 button 1.3:
+	  <p>You are hanging out on the meadow, watching goats when a grumpy goat-keeper comes to you
+GK: “What are you doing around my goats?” 
+You: “Just hanging out and getting some rest. Is there something wrong?”
+GK: “I already lost few goats this month, killed by some tramps like you. Go away or I’ll punch you.”
+What do you do?</p>
+
+  	  <<button 2.1>> Fight  <</button 2.1>>
+	  <<button 2.2>> Walk away<</button 2.2>>
+		Switch (button):
+			Case 1 button 2.1:
+			  <p> You attach the goat-keeper (Strength 100)</p>
+
+			  FightYou = Math.floor (Math.random() * Strength)
+			  FightOpponent = Math.floor (Math.random() * 100)
+
+			  if (FightYou > Fight Opponent):
+				<p>You have beaten up the goat keeper and took his money and food (+50$, +10 Health)</p>
+
+				Health += 10;
+				Money +=50;
+			  else:
+				<p>Goat keeper kicked your ass and left the meadow. (-20 Health).
+Feeling ashamed to be beaten up by a goat-keeper you are walking away promising yourself never to tell anyone about what has happened here. </p>
+
+				Health += 20;
+			Case 2 button 2.2:
+			  <p> Goat keeper curse you but you don't case and simply walk away. </p>
+
 
 3.1.4.2 Merchant
 
@@ -88,13 +133,16 @@ NICE TO HAVE: After finishing each event Player will be able to choose if they w
 3.1.5.1 Dessert Desert
 ...
 
-3.1.5.2 Desert Water
+3.1.5.2 Desert - Merchant
 
 ...
-3.1.5.3 Canyon Adventures
+3.1.5.3 Desert Water
 
 ...
-3.1.5.4 Merchant
+3.1.5.4 Canyon Adventures
+
+...
+3.1.5.5 Desert Pyramid
 
 ...
 
@@ -109,13 +157,13 @@ NICE TO HAVE: After finishing each event Player will be able to choose if they w
 3.1.6.1 Mountain Lion
 ...
 
-3.1.6.2  ...
+3.1.6.2  Ascending The Peak
 
 ...
-3.1.6.3 ...
+3.1.6.3 Merchant
 
 ...
-3.1.6.4 Merchant
+3.1.6.4 ...
 
 ...
 
