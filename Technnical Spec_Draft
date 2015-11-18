@@ -168,10 +168,286 @@ Feeling ashamed to be beaten up by a goat-keeper you are walking away promising 
 			Case 2 button 2.2:
 			  <p> Goat keeper curse you but you don't case and simply walk away. </p>
 
-
 3.1.4.2 Merchant
+<p>You are walking on the road and meeting a merchant with goods. What do you do?</p>
+<button 1.1> Ignore him and move on</button 1.1>
+<button 1.2> Attack and try to take his goods</button 1.2>
+<button 1.3> Try to buy something</button 1.3>
+if (intelligence > 40)
+	<button 1.4> Start conversation </button 1.4>
 
-...
+		Switch (button):
+			Case button 1.1:
+			  <p> Merchant is trying to sell you something, but you reply him "I am in the rush to <<insert game goal>> and cannot talk with you now. Maybe next time."</p>
+
+<<Next Event>>
+
+			Case button 1.2:
+			  <p> Merchant is fighting back. Strength 50.
+			  You say: "My name is Inigo Montoya. You killed my father. Prepare to die". </p>
+
+			  FightYou = Math.floor (Math.random() * Strength);
+			  FightOpponent = Math.floor (Math.random() * 100);
+
+			  <p> Your attack <<FightYout>>. Merchant's attack <<FightOpponent >> </p>
+
+			  if (FightYou < FightOpponent):
+				<p> You have lost the fight (-15 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) which you can put in your backpack or leave it.</p>
+
+				Health -= 15;
+
+				<button2.1>pocket 1</button2.1>
+				<button2.2>pocket 2</button2.2>
+				<button2.3>pocket 3</button2.3>
+				<button2.4>pocket 4</button2.4>
+				<button2.5>Don't take it</button2.5>
+
+				Switch (button):
+					Case button 2.1:
+					  Backpack [0] = whisky; 
+					  health += 5;
+					  intelligence -=10
+					  break;
+					Case button 2.2:
+					  Backpack [1] = whisky;
+					  health += 5;
+					  intelligence -=10
+					  break;
+					Case button 2.3:
+					  Backpack [2] = whisky;
+					  health += 5;
+					  intelligence -=10
+					  break;
+					Case button 2.4:
+					  Backpack [3] = whisky;
+					  health += 5;
+					  intelligence -=10
+					  break;
+					Case button 2.5:
+					  break;
+
+<<Next Event>>
+
+			else: // if you win fight
+			  <p> You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, knife (+5 Strength), sword (+20 Strength), whisky (+5Health, -10 Intelligence)
+			  Where do you want to put a knife? </p>
+			  strength += 5;
+			  money += 80
+
+			  <button3.1>pocket 1</button3.1>
+			  <button3.2>pocket 2</button3.2>
+			  <button3.3>pocket 3</button3.3>
+			  <button3.4>pocket 4</button3.4>
+			  <button3.5>Don't take it</button3.5>
+
+			  Switch (button):
+				Case button 3.1:
+				  Backpack [0] = knife; 
+				  strength += 5;
+				  break;
+			 	Case button 3.2:
+				  Backpack [1] = knife;
+				  strength += 5;
+				  break;
+				Case button 3.3:
+				  Backpack [2] = knife;
+				  strength += 5;
+				  break;
+				Case button 3.4:
+				  Backpack [3] = knife;
+				  strength += 5;
+				  break;
+				Case button 3.5:
+	   			  break;
+
+			<p>Where do you want to put a sword: </p>
+			<button4.1>pocket 1</button4.1>
+			<button4.2>pocket 2</button4.2>
+			<button4.3>pocket 3</button4.3>
+			<button4.4>pocket 4</button4.4>
+			<button4.5>Don't take it</button4.5>
+
+			Switch (button):
+			  Case button4.1:
+				Backpack [0] = sword; 
+				strength += 20;
+				break;
+			  Case button 4.2:
+				Backpack [1] = sword;
+				strength += 20;
+				break;
+			  Case button 4.3:
+				Backpack [2] = sword;
+				strength += 20;
+				break;
+		  	  Case button 4.4:
+				Backpack [3] = sword;
+				strength += 20;
+				break;
+			  Case button 4.5:
+				break;
+
+			<p>Where do you want to put whisky: </p>
+			<button5.1>pocket 1</button5.1>
+			<button5.2>pocket 2</button5.2>
+			<button5.3>pocket 3</button5.3>
+			<button5.4>pocket 4</button5.4>
+			<button5.5>Don't take it</button5.5>
+	
+			Switch (button):
+		  	  Case button 5.1:
+				Backpack [0] = whisky; 
+				health += 5;
+				intelligence -=10
+				break;
+		  	  Case button 5.2:
+				Backpack [1] = whisky;
+				health += 5;
+				intelligence -=10
+				break;
+		 	  Case button 5.3:
+				Backpack [2] = whisky;
+				health += 5;
+				intelligence -=10
+				break;
+			  Case button 5.4:
+				Backpack [3] = whisky;
+				health += 5;
+				intelligence -=10
+				break;
+			  Case button 5.5:
+				break;
+
+
+FightYou = 0;
+FightOpponent = 0;
+
+<<Next Event>>
+
+			Case button 1.3:  // buy something
+			<p> Merchant shows you his goods:</p>
+			<checkbox 1.1>sword (+20 Strength), price 500$</checkbox 1.1>
+			<checkbox 1.2>whisky (+5Health, -10 Intelligence). price 50$</checkbox 1.2>
+			
+			if (intelligence > 30):
+			<checkbox 1.3>knife (+5 Strength), price 200$</checkbox 1.3>
+			< checkbox 1.4> No thanks, I don't need anything. </ checkbox 1.4>
+			
+			<button 6.1> Submit </button 6.1>
+
+			if (checkbox1.4 == false)
+			  // sword purchase
+			if (checkbox 1.1 = true) 
+			  if (money >= 500)
+			    money-=500;
+			    <p>Where do you want to put a sword: </p>
+
+			    <button4.1>pocket 1</button4.1>
+			    <button4.2>pocket 2</button4.2>
+			    <button4.3>pocket 3</button4.3>
+			    <button4.4>pocket 4</button4.4>
+			    <button4.5>Don't take it</button4.5>
+	
+			    Switch (button):
+			      Case button4.1:
+			    	Backpack [0] = sword; 
+			    	strength += 20;
+				break;
+			      Case button 4.2:
+				Backpack [1] = sword;
+				strength += 20;
+				break;
+			      Case button 4.3:
+				Backpack [2] = sword;
+				strength += 20;
+				break;
+			      Case button 4.4:
+				Backpack [3] = sword;
+				strength += 20;
+				break;
+				Case button 4.5:
+				break;
+	
+			else // if money <500
+		  	  <p> You do cannot but this item. You don’t have enough money to buy a sword.</p>
+//whisky purchase
+		  if (checkbox 1.2 = true) 
+		    if (money >= 50)
+			money-=50;
+			  <p>Where do you want to put your whisky: </p>
+
+			  <button5.1>pocket 1</button5.1>
+			  <button5.2>pocket 2</button5.2>
+			  <button5.3>pocket 3</button5.3>
+			  <button5.4>pocket 4</button5.4>
+			  <button5.5>Don't take it</button5.5>
+
+			  Switch (button):
+			    Case button5.1:
+				Backpack [0] = whisky; 
+				health += 5;
+				intelligence -=10
+				break;
+			    Case button 5.2:
+				Backpack [1] = whisky;
+				health += 5;
+				intelligence -=10
+				break;
+			    Case button 5.3:
+				Backpack [2] = whisky;
+				health += 5;
+				intelligence -=10
+				break;
+			    Case button 5.4:
+				Backpack [3] = whisky;
+				health += 5;
+				intelligence -=10
+				break;
+				Case button 5.5:
+				break;
+
+		    else // if money <50
+		  	<p> You do cannot but this item. You don’t have enough money to buy whisky.</p>
+// knife purchase
+		if (checkbox 1.3 = true) 
+		  if (money >= 200)
+		    money-=200;
+		    <p>Where do you want to put a knife: </p>
+ 	    	<button6.1>pocket 1</button6.1>
+		<button6.2>pocket 2</button6.2>
+		<button6.3>pocket 3</button6.3>
+		<button6.4>pocket 4</button6.4>
+		<button6.5>Don't take it</button6.5>
+	
+		Switch (button):
+		  Case button6.1:
+			Backpack [0] = knife; 
+			strength += 5;
+			break;
+	  	  Case button 6.2:
+			Backpack [1] = knife;
+			strength += 5;
+			break;
+		  Case button 6.3:
+			Backpack [2] = knife;
+			strength += 5;
+			break;
+		  Case button 6.4:
+			Backpack [3] = knife;
+			strength += 5;
+			break;
+		  Case button 6.5:
+			break;
+
+		else // if money <200
+	  	  <p> You do cannot but this item. You don’t have enough money to buy knife.</p>
+
+<<Next Event>>
+
+		else // if checkbox don’t want to buy anything is on
+		  <p> You reply: "Hmm. Maybe next time. I don't see anything interesting."</p>
+
+<<Next Event>>
 3.1.4.3 Hole
 
 ...
