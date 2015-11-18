@@ -174,8 +174,8 @@ GM: => 3. Walk in the opposite path
     GM: your phone is receiving wifi again. You look up the weather and 
     GM: notice the weather app says it will only be cloudy. You do some
     GM: research and realize that it does not rain here. You decide to 
-    GM: once again walk towards Cactus Island, but you die of dehydration 
-    GM: 1 mile down the road.
+    GM: once again walk towards Cactus Island, 1 mile down the road.
+    GM: Health: -5, and change scenes to 2. cactus island.
 
     GM: 2. Continue walking towards Cactus Island
     GM: You decide to continue walking. You finally arrive at Cactus
@@ -189,25 +189,21 @@ GM: => 3. Walk in the opposite path
   GM: that you've made no progress so far. 
   GM: What do you do?
   GM: 1 => Continue digging
-  GM: 2 => Dig elsewhere
-  GM: 3 => Continue walking
+  GM: 2 => Continue walking
 
     GM: 1. Continue digging
     GM: You continue to dig. As you continue to dig, you begin to feel 
     GM: nauseous and fever-ish. Within the next minute, you fall into 
     GM: the hole you've dug.
+    GM: You die.
 
-    GM: 2. Dig elswhere
-    GM: You come to the realization that the hole you've dug contains no
-    GM: water, so you decide to dig elsewhere. You dig and dig and die.
-
-    GM: 3. Continue walking
+    GM: 2. Continue walking
     GM: You decide to continue walking. Within 4 hours, your phone begins
     GM: to receive wifi signal. You pull out your phone and google for the
     GM: nearest area with water. Siri tells you to goto Cactus Island
     GM: which is located 5 miles from where you are. You begin walking 
-    GM: towards Cactus Island. Unfortunately you fall flat on your face 
-    GM: and die within the next mile.
+    GM: towards Cactus Island. 
+    GM: change scenes to 2. Cactus Island
 
   GM: 3. Walk in the opposite path
   GM: You decide to walk in the path you came from. Within 4 hours, your 
@@ -219,7 +215,7 @@ GM: => 3. Walk in the opposite path
   GM: 2 => Continue walking towards the path you came from
 
     GM: 1. Walk towards Cactus Island
-    GM: You fall into your own death within the 2nd mile to dehydration.
+    GM: You fall into your own death within the 8th mile to dehydration.
 
     GM: 2. Continue walking towards the path you came from
     GM: You decide to continue walking. Within 2 miles you notice a 
@@ -231,9 +227,11 @@ GM: => 3. Walk in the opposite path
     GM: 1. Ignore the python
     GM: You decide to ignore the python and walk. As you begin to walk,
     GM: the python sneaks up from behind you. Before you can do anything 
-    GM: to stop it, it wraps itself around you. Too weak to fight back, 
-    GM: you lay idled until your own breath. Well, at least a life is 
-    GM: saved.
+    GM: to stop it, it wraps itself around you. 
+    GM: health: -5
+    GM: Fortunately, the snake is also weak due to dehydration. You are able
+    GM: to rip it apart and eat + drink its blood.
+    GM: You feel rejuvenated and continue walking until you make it to the city.
 
     GM: 2. Attempt to kill the python for its meat and blood
     GM: You run upto the python and grab it by its mouth. The snake 
@@ -351,14 +349,13 @@ and a mummy suddenly appears from no where. You…
 
     20 days have gone by and you are still lost. You look at the stack of gold you’ve
     picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you
-    that you have learned your lesson. In return, it wants the stack of gold back plus 
-    $1000.
-    * If you don’t have $1000, the angel mummy tells you “TOO BAD”, gives an evil laugh
-    and disappears.
-    * Else, you hand it the gold + money. You magically appear outside the pyramid.
+    that you have learned your lesson. In return, it wants the stack of gold back.
+    * If you don’t give back the gold, the angel mummy tells you “TOO BAD”, gives an 
+    * evil laugh and disappears.
+    * Else, you hand it the gold. You magically appear outside the pyramid.
 
     => 2: You decide to fight the mummy. 
-    * If you didn’t pick the flame torch, you die.
+    * If you didn’t pick the flame torch, you lose 10 health points.
     * Else, you burn the mummy to a 2nd death. 
 
-    => 3: You decide to talk the mummy. The mummy rips your head off. You die.
+    => 3: You decide to talk the mummy. The mummy ends up being friendly and offers you beer
