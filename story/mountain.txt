@@ -1,5 +1,5 @@
 ##########################
-# Story 1: Mountain Lion #
+# Event 1: Mountain Lion #
 ##########################
 
 # Game> You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU!
@@ -35,9 +35,9 @@
 	>> Next event
 	
 	=>2. Run the way you came from.
-	# Game> You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you're back at the City.
+	# Game> You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you're back where you started.
 	>> -20 Health
-	>> Go to City
+	>> Next event
 
 =>3. Show you're not a threat.
 # Game> Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving.
@@ -45,7 +45,7 @@
 >> Next event
 
 ###############################
-# Story 2: Ascending The Peak #
+# Event 2: Ascending The Peak #
 ###############################
 
 You enter the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it 
@@ -101,9 +101,9 @@ Your path finally leads you to a dark cave. Perhaps the penguin is inside, Perha
 
 <<Next Event>>
 
-###############################
-# Story 3 Mountain - Merchant #
-###############################
+################################
+# Event 3: Mountain - Merchant #
+################################
 
 # Game> You are walking on the road up the mountain when you see a merchant with goods coming down your way. What do you do?
 

@@ -1,5 +1,5 @@
 ###########################
-# Story 1: Dessert Desert #
+# Event 1: Dessert Desert #
 ###########################
 
 # Game> The world begings to blur. The sand below begins to stick the bottom of your feet.
@@ -59,9 +59,9 @@
 
 >> Next Event
 
-#############################
-# Story 2 Desert - Merchant #
-#############################
+##############################
+# Event 2: Desert - Merchant #
+##############################
 
 # Game> You are walking through the desert when somewhere on the horisont you see a figure approaching you. You recognize that he's a merchant with goods. What do you do?
 
@@ -141,9 +141,9 @@
 
 >>Next Event
 
-#########################
-# Story 3: Desert Water #
-#########################
+##################
+# Event 3: Water #
+##################
 
 GM: For whatever reason, it is your 3rd day wandering aimlsesly around the 
 GM: desert. You realize you haven't had water since the adventure and you
@@ -240,9 +240,9 @@ GM: => 3. Walk in the opposite path
     GM: made it back to the city.
 
 
-#########################
-# Story 4: Canyon Adventures
-#########################
+##############################
+# Event 4: Canyon Adventures #
+##############################
 
 After the tiring walking in the desert sands you reach an enormous canyon.
 It's very deep and foggy and you can't see the bottom or the other side if it.
@@ -320,9 +320,9 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 			. The moist weather and buttery diet undermine your health.
 			You stay in the canyon forever.
 
-##########################
-# story 5 Desert Pytamid #
-##########################
+####################
+# Event 5: Pyramid #
+####################
 
 You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid.
 As you walk in, the door shuts tight and you are now trapped. You notice three items 
