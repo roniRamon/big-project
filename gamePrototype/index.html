@@ -92,11 +92,11 @@
         <h4>You have 100 points. Distribute them accordingly (check 'Hints' for help)</h4>
         <div class="ui-field-contain" id="assign-points">
           <label for="health">Health</label><span id="errmsg"></span>
-          <input name="number" pattern="[0-9]*" id="health" value="" type="number" min="0" max="100" >
+          <input name="number" pattern="[0-9]*" id="health" value="0" type="number" min="0" max="100" >
           <label for="strength">Strength</label><span id="errmsg1"></span>
-          <input name="number" pattern="[0-9]*" id="strength" value="" type="number" min="0" max="100">
+          <input name="number" pattern="[0-9]*" id="strength" value="0" type="number" min="0" max="100">
           <label for="intelligence">Intelligence</label><span id="errmsg2"></span>
-          <input name="number" pattern="[0-9]*" id="intelligence" value="" type="number" min="0" max="100">
+          <input name="number" pattern="[0-9]*" id="intelligence" value="0" type="number" min="0" max="100">
         </div> <!-- end of container with inputs -->
 
         <input type="button" value="Done!" id="ready" data-inline="true" data-mini="true" data-icon="check">
@@ -144,6 +144,10 @@
          <div class="ui-block-c">
               <label for="smart-points">Intelligence: </label></span>
              <input data-mini="true" data-clear-btn="false" name="smart-points" id="smart-points" value="" type="text">
+          </div>
+	  <div class="ui-block-c">
+              <label for="money-points">Money: </label>
+             <input data-mini="true" data-clear-btn="false" name="money_points" id="money" value="500" type="text">
           </div>
       </fieldset>
 
