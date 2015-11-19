@@ -9,6 +9,13 @@
   <link rel="stylesheet" href="game.css">
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="javascript/home.js"></script>
+  <script src="javascript/tutorial.js"></script>
+  <script src="javascript/forest.js"></script>
+  <script src="javascript/mountain.js"></script>
+  <script src="javascript/desert.js"></script>
+  <script src="javascript/final-battle.js"></script>
+
 </head>
 <body>
 
@@ -218,19 +225,24 @@
     <div role="main" class="ui-content" id="forest-content" style="text-align: center;">
     
       <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
-          <legend><h3>First adventure in the forest</h3></legend>
+          <legend><h3 id="headerGame">You are crossing the meadow where group of goats are walking around. What do you do?</h3></legend>
+		  	<div id="select1">
               <input name="forest-choice-1" id="forest-choice-1" value="choice-1" type="radio">
-              <label for="forest-choice-1">Option 1</label>
-              <input name="forest-choice-1" id="forest-choice-2" value="choice-2" type="radio">
-              <label for="forest-choice-2">Option 2</label>
-              <input name="forest-choice-1" id="forest-choice-3" value="choice-3" type="radio">
-              <label for="forest-choice-3">Option 3</label>
-              <input name="forest-choice-1" id="forest-choice-4" value="choice-4" type="radio">
-              <label for="forest-choice-4">Option 4</label>
+              <label for="forest-choice-1">Chase one of the goats and kill it.</label>
+            </div>
+		  	<div id="select2">
+			   <input name="forest-choice-1" id="forest-choice-2" value="choice-2" type="radio">
+              <label for="forest-choice-2">Walk away</label>
+            </div> 
+		    <div id="select3">
+		  	  <input name="forest-choice-1" id="forest-choice-3" value="choice-3" type="radio">
+              <label for="forest-choice-3">Pick some flowers and gets some rest</label>
+			</div>
+		  	<div id="select4"></div>
+		  	</div>
       </fieldset>
   </div><!-- end of Forest content -->
-  </div><!-- end of Forest Page -->
-  
+  </div><!-- end of Forest Page -->  
 
   <!-- MOUNTAIN PAGE -->
   <div data-role="page" id="mountain-page">
@@ -289,12 +301,6 @@
   </div> <!-- end of game over page -->
 
 
-  <script src="javascript/home.js"></script>
-  <script src="javascript/tutorial.js"></script>
-  <script src="javascript/forest.js"></script>
-  <script src="javascript/mountain.js"></script>
-  <script src="javascript/desert.js"></script>
-  <script src="javascript/final-battle.js"></script>
 
 </body>
 </html>
