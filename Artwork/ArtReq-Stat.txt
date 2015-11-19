@@ -1,8 +1,7 @@
 History: !!-Urgent *-In Progress
 
 General:
-  Title screen
-  Logo
+  Title screen/Logo
   Game over screen(s)
 
 Landscape:
@@ -11,10 +10,10 @@ Landscape:
   Mountain
   Desert
   Forest
-  Cross Road
+  Cross Road*
 
 Characters:
-  M.Penguin
+  M. Penguin
   D. Penguin
   F. Penguin
   Python
