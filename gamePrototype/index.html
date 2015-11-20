@@ -146,7 +146,7 @@
           </div>
 	  <div class="ui-block-c">
               <label for="money-points">Money: </label>
-             <input data-mini="true" data-clear-btn="false" name="money_points" id="money" value="" type="text">
+             <input data-mini="true" data-clear-btn="false" name="money" id="money" value="500" type="text">
           </div>
       </fieldset>
 
@@ -305,8 +305,19 @@
 
   <script>
 	
-	$("#money").val(500);
+	var money = $("#money").val();
 	var backpack = [];	
+	  
+// show array items
+function arrayShowItem() {
+    var index;
+    var text = "<ul>";
+    for (index = 0; index < backpack.length; index++) {
+        text += "<li>" + backpack[index] + "</li>";
+    }
+    text += "</ul>";
+    document.getElementById("backpack").innerHTML = text;
+}
 	
 	//story 1 choice A 
 	$( "#forest-choice-1" ).click(function() {
@@ -366,7 +377,7 @@
 				$("#select1").empty();
 				$("#select2").empty();
 				$("#health-points").val(parseInt($("#health").val())+10);
-				parseInt($("#money").val())+50;	
+				$("#money").val(parseInt($("#money").val()) + 50);	
 				$("#headerGame").html(' You have beaten up the goat keeper and took his money and food  +50 money, +10 Health');
 				$('#select1').append('<input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check" class="next1">').trigger('create');
 				$(".next1").click(function(){ 
@@ -450,12 +461,12 @@
 						if(backpackCheak("whisky")){								
 							alert("you alrady have the whisky");
 						}
-						else if((!backpackCheak("whisky") )&& backpack.length <=4)
+						else if((!backpackCheak("whisky") )&& backpack.length <= 4)
 						{
 							backpack.push("whisky");											 //add wisky to backpack	
 							$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
 							$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
-							document.getElementById("backpack").innerHTML = backpack;
+							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
@@ -478,7 +489,7 @@
 				$('#select1').append('<input name="radio-choice-3" id="radio-choice-10" value="choice-1" type="radio"><label for="radio-choice-10">Don\'t take it.</label>').trigger('create'); 
 				$('#select2').append('<input name="radio-choice-3" id="radio-choice-11" value="choice-1" type="radio"><label for="radio-choice-11">take it..</label>').trigger('create');
 					$('#radio-choice-10').click(function() {
-						parseInt($("#money").val())+80;  					//add money
+						$("#money").val(parseInt($("#money").val()) + 80);  					//add money
 						if(backpackCheak("knife")){								
 							alert("you alrady have the knife");
 						}
@@ -486,7 +497,7 @@
 						{
 							backpack.push("knife");											//add knife to backpack
 							$("#strength-points").val(parseInt($("#strength").val())+5);	//knife add 5 to strength
-							document.getElementById("backpack").innerHTML = backpack;
+							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
@@ -499,7 +510,7 @@
 						{
 							backpack.push("sowrd");											 //add sword to backpack
 							$("#strength-points").val(parseInt($("#strength").val())+20);	//sword add 20 to strength
-							document.getElementById("backpack").innerHTML = backpack;
+							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
@@ -513,7 +524,7 @@
 							backpack.push("whisky");											 //add wisky to backpack	
 							$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
 							$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
-							document.getElementById("backpack").innerHTML = backpack;
+							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
@@ -527,7 +538,7 @@
 			}
 		}); 
 			
-	//story2 opthion 3
+	//story2 opthion 3 try to buy somthing
 		$('#radio-choice-8').click(function() {
 			$("#headerGame").html('Merchant shows you his goods:');
 			$("#select1").empty();
@@ -540,6 +551,7 @@
 					$('#select3').append('<input name="radio-choice-3" id="radio-choice-12" value="choice-1" type="radio"><label for="radio-choice-12">knife (+5 Strength) price 100$ is also visible .</label>').trigger('create');
 				}
 			$('#select4').append('<input name="radio-choice-3" id="radio-choice-13" value="choice-1" type="radio"><label for="radio-choice-13">No thanks, I don\'t need anything.</label>').trigger('create');
+			    //buy sword
 				$("#radio-choice-10").click(function(){
 					if(backpackCheak("sword")){								
 						alert("you alrady have the sword");
@@ -549,9 +561,9 @@
 						if(parseInt($("#money").val()) >= 500)
 						{
 							backpack.push("sowrd");											 //add sword to backpack
-							parseInt($("#money").val()-500);
+							$("#money").val(parseInt($("#money").val()) - 500);
 							$("#strength-points").val(parseInt($("#strength").val())+20);	//sword add 20 to strength
-							document.getElementById("backpack").innerHTML = backpack;
+							arrayShowItem();
 						}
 						else {
 							alert("you dont have enough money");} 
@@ -559,10 +571,11 @@
 					else if(backpack.length >4)
 					{
 						alert("you dont have any more space in your backpack!!");
-						document.getElementById("backpack").innerHTML = backpack;
+						arrayShowItem();
 					}
 					story3Forest(); //function to story 3	
 				});
+				// buy whisky
 				$("#radio-choice-11").click(function(){
 						if(backpackCheak("whisky")){								
 							alert("you alrady have the whisky");
@@ -572,10 +585,10 @@
 							if(parseInt($("#money").val()) >= 50)
 							{	
 								backpack.push("whisky");											 //add wisky to backpack
-								parseInt($("#money").val()-50);
+								$("#money").val(parseInt($("#money").val()) - 50);
 								$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
 								$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
-								document.getElementById("backpack").innerHTML = backpack;
+								arrayShowItem();
 							}
 							else {
 							alert("you dont have enough money");} 
@@ -586,6 +599,7 @@
 						}
 					story3Forest(); //function to story 3									
 				});
+				//buy knife
 				$("#radio-choice-12").click(function(){
 					if(backpackCheak("knife")){								
 							alert("you alrady have the knife");
@@ -595,9 +609,9 @@
 						if(parseInt($("#money").val()) >= 100)
 						{	
 							backpack.push("knife");											 //add knife to backpack
-							$("#money-points").val(parseInt($("#money").val())-100);
+							$("#money").val(parseInt($("#money").val()) - 100);
 							$("#strength-points").val(parseInt($("#strength").val())+5);   			//knife add 5 strength   	
-							document.getElementById("backpack").innerHTML = backpack;
+							arrayShowItem();
 						}
 						else {
 							alert("you dont have enough money");} 
@@ -608,7 +622,8 @@
 					}
 					story3Forest(); //function to story 3									
 				});
-				$("#radio-choice-10").click(function(){
+				//buy nothing
+				$("#radio-choice-13").click(function(){
 					story3Forest(); //function to story 3		
 				});		
 		});
@@ -635,11 +650,11 @@ function story3Forest() {
 	$("#select2").empty();
 	$("#select3").empty();	
 	$("#select4").empty();
-	$('#select1').append('<input name="radio-choice-4" id="radio-choice-13" value="choice-1" type="radio"><label for="radio-choice-13">Go in without any light.</label>').trigger('create'); 
+	$('#select1').append('<input name="radio-choice-4" id="radio-choice-13B" value="choice-1" type="radio"><label for="radio-choice-13B">Go in without any light.</label>').trigger('create'); 
 	$('#select2').append('<input name="radio-choice-4" id="radio-choice-14" value="choice-1" type="radio"><label for="radio-choice-14">Camp the night and wait for the morning.</label>').trigger('create');
 		
 	//story 3 option 1 go whithout a light
-	$("#radio-choice-13").click(function(){
+	$("#radio-choice-13B").click(function(){
 			$("#headerGame").html('Go in without any light.<br> You enter the forest without any light. You cannot see anything, its all dark around you. You make a few steps and you fall into a deep hole in the ground. What do you do?');
 			$("#select1").empty();
 			$("#select2").empty();
@@ -685,14 +700,14 @@ function story3Forest() {
 			$("#select2").empty();
 			$("#select3").empty();	
 			$("#select4").empty();
-			$("#money-points").val(parseInt($("#money").val())- 10);   // lose 10$
+			$("#money").val(parseInt($("#money").val()) - 10);   // lose 10$
 			$('#select1').append('<input name="radio-choice-4" id="radio-choice-15" value="choice-1" type="radio"><label for="radio-choice-15">you decide to fight him.</label>').trigger('create'); 
 			$('#select2').append('<input name="radio-choice-4" id="radio-choice-16" value="choice-1" type="radio"><label for="radio-choice-16">you pretend your still asleep.</label>').trigger('create');
 			$("#radio-choice-15").click(function(){
 				$("#select1").empty();
 				$("#select2").empty();
 				$("#headerGame").html('You decide to fight him: <br>You want to fight him but he runs away leaving behind him every thing he took from you and he also drops an axe. you pick the ax (if you have place in your backpack ) and the money(+10$)');
-				$("#money-points").val(parseInt($("#money").val())+10);
+				$("#money").val(parseInt($("#money").val()) + 10);
 				if(backpack.length >=4)
 				{
 				  alert("You dont have place for the ex");
@@ -700,7 +715,7 @@ function story3Forest() {
 				else if(backpack.length < 4 && (!backpackCheak("axe")))
 				{
 					backpack.push("axe");											 //add axe to backpack   			   	
-					document.getElementById("backpack").innerHTML = backpack;
+					arrayShowItem();
 				}
 				else
 				{
@@ -760,9 +775,9 @@ function story4Forest() {
 						$("#headerGame").html('the demon wins! you lose (-10 health)to keep going you have to pay him 10$');
 						$("#select1").empty();
 						$("#health-points").val(parseInt($("#health").val())-10);
-						if($("#money-points").val(parseInt($("#money").val())) > 10)
+						if($("#money").val(parseInt(money) ) > 10)
 						{
-							$("#money-points").val(parseInt($("#money").val())-10);
+							$("#money").val(parseInt($("#money").val()) - 10);
 							$('#select1').append('<input type="button" value="Next" id="next4" data-inline="true" data-mini="true" data-icon="check" class="next4">').trigger('create');
 							$(".next4").click(function(){
 								story5Forest();//next story 5
@@ -827,7 +842,7 @@ function story4Forest() {
 									$("#select1").empty();
 									$("#select2").empty();
 									$("#select3").empty();
-									$("#money-points").val(parseInt($("#money").val())-40);
+									$("#money").val(parseInt($("#money").val()) - 40);
 									$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 									$(".next5").click(function(){ 
 										story5Forest();//next story 5
@@ -839,7 +854,7 @@ function story4Forest() {
 								$("#select1").empty();
 								$("#select2").empty();
 								$("#select3").empty();
-								$("#money-points").val(parseInt($("#money").val())-40);
+								$("#money").val(parseInt($("#money").val()) - 40);
 								$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 								$(".next5").click(function(){ 
 									story5Forest();//next story 5
@@ -887,29 +902,30 @@ function story4Forest() {
 					if(backpackCheak("axe")|| backpackCheak("knife"))
 					{												 
 						$("#headerGame").html('You user your ax/knife to build a raft. you reached the other side of the river but your tired. you lose 5 point of strength.(-5 strength) ');	
+						$("#select1").empty();
+						$("#select2").empty();
+						$("#select3").empty();
+						$("#strength-points").val(parseInt($("#strength").val())-5); 
+						$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
+						$(".next5").click(function(){ 
+							story5Forest();//next story 5 
+						});	
+					}
+					else 
+					{
+						alert("You dont have an ex or a knife");
+					}
+				});
+				$("#radio-choice-22").click(function(){
+					$("#headerGame").html('You payed 15$ to the river keeper. the river keeper got you across safely but stole from you 25$.');	
 					$("#select1").empty();
 					$("#select2").empty();
 					$("#select3").empty();
-					$("#strength-points").val(parseInt($("#strength").val())-5); 
+					$("#money").val(parseInt($("#money").val()) - 40);
 					$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 					$(".next5").click(function(){ 
-						story5Forest();//next story 5 
-					});	
-					}
-				else {
-						alert("You dont have an ex or a knife");
-					}
-			});
-			$("#radio-choice-22").click(function(){
-				$("#headerGame").html('You payed 15$ to the river keeper. the river keeper got you across safely but stole from you 25$.');	
-				$("#select1").empty();
-				$("#select2").empty();
-				$("#select3").empty();
-				$("#money-points").val(parseInt($("#money").val())-40);
-				$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
-					$(".next5").click(function(){ 
 						story5Forest();//next story 5
-				});	
+					});	
 			});
 		});
 		$("#radio-choice-22").click(function(){
@@ -917,11 +933,11 @@ function story4Forest() {
 			$("#select1").empty();
 			$("#select2").empty();
 			$("#select3").empty();
-			$("#money-points").val(parseInt($("#money").val())-40);
+			$("#money").val(parseInt($("#money").val()) - 40);
 			$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
-				$(".next5").click(function(){ 
-					story5Forest();//next story 5 
-				});	
+			$(".next5").click(function(){ 
+				story5Forest();//next story 5 
+			});	
 		});
 	});
 
@@ -942,6 +958,7 @@ function story5Forest() {
 		$("#select1").empty();
 		$("#select2").empty();
 		backpack.splice(backpack.length-1, 1);
+		arrayShowItem()
 		$('#select1').append('<input type="button" value="Next" id="next6" data-inline="true" data-mini="true" data-icon="check" class="next6">').trigger('create');
 				$(".next6").click(function(){ 
 					//exit to the city 
@@ -952,35 +969,28 @@ function story5Forest() {
 		$("#headerGame").html('While examining the body you have found some money (+30$) and following artefacts: axe (+30 strength), book “The Mythical Man Month” (+25/ 15* Intelligence), book “Biography of Grace Hopper” ((+20/ 10* Intelligence), apple (+5 Health).What do you do:');
 		$("#select1").empty();
 		$("#select2").empty();
-		$("#money").val(parseInt(money) +30);
+		$("#money").val(parseInt($("#money").val()) + 30);
 		$('#select1').append('<input type="button" value="Next" id="next7" data-inline="true" data-mini="true" data-icon="check" class="next7">').trigger('create');
 			$(".next7").click(function(){ 
 				$("#headerGame").html('Do you whant to take the Axe?');
 				$("#select1").empty();
 				$("#select2").empty();
-				$('#select1').append('<input type="button" value="Yes" id="yesAxe" data-inline="true" data-mini="true" data-icon="check" class="yesAxe">').trigger('create');
-				$('#select2').append('<input type="button" value="No" id="noAxe" data-inline="true" data-mini="true" data-icon="check" class="noAxe">').trigger('create');
+				$('#select1').append('<input type="button" value="Yes" id="yesAxe" data-inline="true" data-mini="true" data-icon="check" class="yesAxe"><input type="button" value="No" id="noAxe" data-inline="true" data-mini="true" data-icon="check" class="noAxe">').trigger('create');
 				$(".yesAxe").click(function(){ 
 					axe();
 					$("#headerGame").html('Do you whant to take the book “The Mythical Man Month”?');
 					$("#select1").empty();
-					$("#select2").empty();
-					$('#select1').append('<input type="button" value="Yes" id="yesbook1" data-inline="true" data-mini="true" data-icon="check" class="yesbook1">').trigger('create');
-					$('#select2').append('<input type="button" value="No" id="nobook1" data-inline="true" data-mini="true" data-icon="check" class="nobook1">').trigger('create');
+					$('#select1').append('<input type="button" value="Yes" id="yesbook1" data-inline="true" data-mini="true" data-icon="check" class="yesbook1"><input type="button" value="No" id="nobook1" data-inline="true" data-mini="true" data-icon="check" class="nobook1">').trigger('create');
 					$(".yesbook1").click(function(){
 						book1();
 						$("#headerGame").html('Do you whant to take the book “Biography of Grace Hopper”?');
 						$("#select1").empty();
-						$("#select2").empty();
-						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2">').trigger('create');
-						$('#select2').append('<input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
+						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2"><input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
 						$(".yesbook2").click(function(){
 							book2();
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -992,9 +1002,7 @@ function story5Forest() {
 						$(".nobook2").click(function(){
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -1004,19 +1012,15 @@ function story5Forest() {
 							});
 						});
 					});
-					$("nobook1").click(function(){
+					$(".nobook1").click(function(){
 						$("#headerGame").html('Do you whant to take the book “Biography of Grace Hopper”?');
 						$("#select1").empty();
-						$("#select2").empty();
-						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2">').trigger('create');
-						$('#select2').append('<input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
+						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2"><input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
 						$(".yesbook2").click(function(){
 							book2();
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -1028,9 +1032,7 @@ function story5Forest() {
 						$(".nobook2").click(function(){
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -1044,23 +1046,17 @@ function story5Forest() {
 				$(".noAxe").click(function(){
 					$("#headerGame").html('Do you whant to take the book “The Mythical Man Month”?');
 					$("#select1").empty();
-					$("#select2").empty();
-					$('#select1').append('<input type="button" value="Yes" id="yesbook1" data-inline="true" data-mini="true" data-icon="check" class="yesbook1">').trigger('create');
-					$('#select2').append('<input type="button" value="No" id="nobook1" data-inline="true" data-mini="true" data-icon="check" class="nobook1">').trigger('create');
+					$('#select1').append('<input type="button" value="Yes" id="yesbook1" data-inline="true" data-mini="true" data-icon="check" class="yesbook1"><input type="button" value="No" id="nobook1" data-inline="true" data-mini="true" data-icon="check" class="nobook1">').trigger('create');
 					$(".yesbook1").click(function(){
 						book1();
 						$("#headerGame").html('Do you whant to take the book “Biography of Grace Hopper”?');
 						$("#select1").empty();
-						$("#select2").empty();
-						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2">').trigger('create');
-						$('#select2').append('<input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
+						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2"><input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
 						$(".yesbook2").click(function(){
 							book2();
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -1072,9 +1068,7 @@ function story5Forest() {
 						$(".nobook2").click(function(){
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -1084,19 +1078,15 @@ function story5Forest() {
 							});
 						});
 					});
-					$("nobook1").click(function(){
+					$(".nobook1").click(function(){
 						$("#headerGame").html('Do you whant to take the book “Biography of Grace Hopper”?');
 						$("#select1").empty();
-						$("#select2").empty();
-						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2">').trigger('create');
-						$('#select2').append('<input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
+						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2"><input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
 						$(".yesbook2").click(function(){
 							book2();
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -1108,9 +1098,7 @@ function story5Forest() {
 						$(".nobook2").click(function(){
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$("#select2").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">').trigger('create');
-							$('#select2').append('<input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
@@ -1138,7 +1126,7 @@ function axe(){
 	else if(backpack.length < 4 && (!backpackCheak("axe")))
 	{
 		backpack.push("axe");											 //add ex to backpack   			   	
-		document.getElementById("backpack").innerHTML = backpack;
+		arrayShowItem();
 		$("#strength-points").val(parseInt($("#strength").val())+30);
 	}
 	else
@@ -1146,6 +1134,7 @@ function axe(){
 		alert("you already have an axe in your backpack.");
 	}
 }
+	
 function book1() {
 	if(backpack.length >=4)
 	{
@@ -1154,15 +1143,16 @@ function book1() {
 	else if(backpack.length < 4 && (!backpackCheak("book “The Mythical Man Month” ")))
 	{
 		backpack.push("book “The Mythical Man Month” ");											 //add book “The Mythical Man Month” to backpack   			   	
-		document.getElementById("backpack").innerHTML = backpack;
-		alert($("#smart-points").val((parseInt($("#intelligence").val())*15)/25));
-		$("#smart-points").val((parseInt($("#intelligence").val())*15)/25);   
+		arrayShowItem();
+		$("#smart-points").val(parseInt($("#intelligence").val())+(parseInt($("#intelligence").val())*15)/25);
+		
 	}
 	else
 	{
-		alert("you already have the book “Biography of Grace Hopper” in your backpack.");
+		alert("you already have the book “The Mythical Man Month” in your backpack.");
 	}
 }
+	
 function book2(){
 	if(backpack.length >=4)
 	{
@@ -1171,15 +1161,15 @@ function book2(){
 	else if(backpack.length < 4 && (!backpackCheak("book “Biography of Grace Hopper”")))
 	{
 		backpack.push("book “Biography of Grace Hopper”");											 //add book Biography of Grace Hopper” to backpack   			   	
-		document.getElementById("backpack").innerHTML = backpack;
-		alert($("#smart-points").val((parseInt($("#intelligence").val())*10)/20));
-		$("#smart-points").val((parseInt($("#intelligence").val())*10)/20);   
+		arrayShowItem();
+		$("#smart-points").val(parseInt($("#intelligence").val())+(parseInt($("#intelligence").val())*10)/20);
 	}
 	else
 	{
 		alert("you already have the book “Biography of Grace Hopper” in your backpack.");
 	}
 }
+	
 function apple(){
 	if(backpack.length >=4)
 	{
@@ -1188,7 +1178,7 @@ function apple(){
 	else if(backpack.length < 4 && (!backpackCheak("apple")))
 	{
 		backpack.push("apple");											 //add apple   			   	
-		document.getElementById("backpack").innerHTML = backpack;
+		arrayShowItem();
 		$("#health-points").val(parseInt($("#health").val())+5);
 	}
 	else
@@ -1196,21 +1186,91 @@ function apple(){
 		alert("you already have an apple in your backpack.");
 	}
 }
-function keepGoingStory5(){
-	$("#headerGame").html('You walk away from the body and get back to the trail While you were taking further you find another body on the ground. What do you do?');
-	$("#select1").empty();
-	$("#select2").empty();
-	$('#select1').append('<input name="radio-choice-5" id="radio-choice-25" value="choice-1" type="radio"><label for="radio-choice-25">You are running away in case there is an attacker in the area.</label>').trigger('create'); 
-	$('#select2').append('<input name="radio-choice-5" id="radio-choice-26" value="choice-1" type="radio"><label for="radio-choice-26">You examine the body and the surroundings</label>').trigger('create');
-}
-
- 
 	
-					
-				
-}
+	function keepGoingStory5(){
+		$("#headerGame").html('You walk away from the body and get back to the trail While you were taking further you find another body on the ground. What do you do?');
+		$("#select1").empty();
+		$("#select2").empty();
+		$('#select1').append('<input name="radio-choice-5" id="radio-choice-25" value="choice-1" type="radio"><label for="radio-choice-25">You are running away in case there is an attacker in the area.</label>').trigger('create'); 
+		$('#select2').append('<input name="radio-choice-5" id="radio-choice-26" value="choice-1" type="radio"><label for="radio-choice-26">You examine the body and the surroundings</label>').trigger('create');
+		$("#radio-choice-25").click(function(){
+			$("#headerGame").html('You have run away in panic and lost one of your artefacts from your backpack ' + backpack[backpack.length -1]);
+			backpack.splice(backpack.length-1, 1);
+			arrayShowItem()
+			$("#select1").empty();
+			$("#select2").empty();
+			//back to city + pinguin
+		});
+		$("#radio-choice-26").click(function(){
+			$("#select1").empty();
+			$("#select2").empty();
+			$("#headerGame").html('When examining the body you have noticed that the man lying on the ground is only wounded and not dead. What do you do?');
+			$('#select1').append('<input name="radio-choice-5" id="radio-choice-27" value="choice-1" type="radio"><label for="radio-choice-27">Kill him and take his sword (+40 strenght).</label>').trigger('create'); 
+			$('#select2').append('<input name="radio-choice-5" id="radio-choice-28" value="choice-1" type="radio"><label for="radio-choice-28">Ask him what happened. surroundings</label>').trigger('create');
+		//kill him
+			$("#radio-choice-27").click(function(){
+				$("#headerGame").html('You have killed the man. Do you want to take his sword?');
+				$("#select1").empty();
+				$("#select2").empty();
+				$('#select1').append('<input name="radio-choice-5" id="radio-choice-29" value="choice-1" type="radio"><label for="radio-choice-29">Take it.</label>').trigger('create'); 
+				$('#select2').append('<input name="radio-choice-5" id="radio-choice-30" value="choice-1" type="radio"><label for="radio-choice-30">Dont take it.</label>').trigger('create');
+				$("#radio-choice-29").click(function(){
+					$("#select1").empty();
+					$("#select2").empty();
+					$("#headerGame").empty();
+					if(backpackCheak("sword"))
+					{								
+						alert("you alrady have the sword");
+					}
+					else if((!backpackCheak("sword") )&& backpack.length <=4)
+					{
+						backpack.push("sowrd");											 //add sword to backpack
+						$("#strength-points").val(parseInt($("#strength").val())+40);	//sword add 20 to strength
+						arrayShowItem();
+					}
+					else if(backpack.length >4)
+					{
+						alert("you dont have any more space in your backpack!!");
+						arrayShowItem();
+					}
+					//go back to city + pinguin
+					//alert earn pinguin
+				});//27
+				$("#radio-choice-30").click(function(){
+					$("#select1").empty();
+					$("#select2").empty();
+					//go back to city + pinguin
+					//alert earn pinguin
+				});
+			}); 
+			//ask him what happend	
+			$("#radio-choice-28").click(function(){
+				$("#select1").empty();
+				$("#select2").empty();
+				$("#headerGame").html(' Man: “I am private Jon Black, from the Hub City garrison. Our partol were attacked by the great shadow. I couldn’t see what it was, but it was vicious and killed almost everyone. Can you help me get to my station so I can report to my Captain.”');
+				$('#select1').append('<input name="radio-choice-5" id="radio-choice-29" value="choice-1" type="radio"><label for="radio-choice-29">Help the officer.</label>').trigger('create'); 
+				$('#select2').append('<input name="radio-choice-5" id="radio-choice-30" value="choice-1" type="radio"><label for="radio-choice-30">Don’t help him.</label>').trigger('create');
+				$("#radio-choice-29").click(function(){
+					$("#select1").empty();
+					$("#select2").empty();
+					$("#headerGame").html('You: “Sure, I will help you.” You are taking Jon to the nearby garrison where he gives a report to his Captain. After this Jon thanks you for saving his life and gives you his lucky amulet (+100 Health) which you hang on your neck');
+					$("#health-points").val(parseInt($("#health").val())+100);
+					//go back to city + pinguin
+					//alert earn pinguin
+				});//29
+				$("#radio-choice-30").click(function(){
+					$("#select1").empty();
+					$("#select2").empty();
+					$("#headerGame").html('You: “Sorry, I cannot help you. I’m on my way on a quest. Have a nice day”. You walk away and leave private where he was.');
+					//go back to city + pinguin
+					//alert earn pinguin
+				});//30
+			});//28
+		}); //kill him
 
-	
+	}//function closer
+}
+	  
 
 	
 ///valdetion for backpack(if element in array)
@@ -1219,7 +1279,6 @@ function keepGoingStory5(){
 		return true;
 	else
 		return false;
-    document.getElementById("demo").innerHTML = a;
 }
 
 </script>
