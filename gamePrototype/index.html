@@ -215,7 +215,7 @@
       <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
           <p>You are in the city. You can choose one of the areas below to continue your journey
           </p>
-          <a href="#forest-page" class="ui-btn ui-icon-arrow-d-l ui-btn-icon-left ui-corner-all">Go to the forest</a>
+          <a href="#forest-page" class="ui-btn ui-icon-arrow-d-l ui-btn-icon-left ui-corner-all" id="GoToTheForest">Go to the forest</a>
           <a href="#mountain-page" class="ui-btn ui-icon-arrow-d-r ui-btn-icon-left ui-corner-all">Go to the mountain</a>
           <a href="#desert-page" class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-corner-all">Go to the desert</a>
       </fieldset>
@@ -304,7 +304,11 @@
   </div> <!-- end of game over page -->
 
   <script>
-	
+	//hide penguins
+	$('#penguin1').hide();
+	$('#penguin2').hide();
+	$('#penguin3').hide();  
+	  
 	var money = $("#money").val();
 	var backpack = [];	
 	  
@@ -668,8 +672,13 @@ function story3Forest() {
 				$("#select1").empty();
 				$("#select2").empty();
 				$("#select3").empty();	
+				$('#select1').append('<input type="button" value="Next" id="next3" data-inline="true" data-mini="true" data-icon="check" class="next3">').trigger('create');
+					$(".next3").click(function(){ 
+						alert("You are dead!!! Start over");
+						window.location.replace('#home-page');
+						location.reload();
+				});
 				
-				// you die !!!!!!!!!!!!!!!!!!!!!!!!
 			});
 			$("#radio-choice-16").click(function(){
 				$("#headerGame").html('you start crying!! thinking that you will never leave this hole again. Someone heard your crying, you hear foot steps above you. someOne trow a rope to you, and you are climbing out. but when you get out there is nobody there!!!!');
@@ -959,9 +968,9 @@ function story5Forest() {
 		$("#select2").empty();
 		backpack.splice(backpack.length-1, 1);
 		arrayShowItem()
-		$('#select1').append('<input type="button" value="Next" id="next6" data-inline="true" data-mini="true" data-icon="check" class="next6">').trigger('create');
-				$(".next6").click(function(){ 
-					//exit to the city 
+		$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
+				$(".next8").click(function(){ 
+					forestEnd();
 				});	
 	});
 	//examine the body
@@ -1199,7 +1208,11 @@ function apple(){
 			arrayShowItem()
 			$("#select1").empty();
 			$("#select2").empty();
-			//back to city + pinguin
+			//go back to city + pinguin
+			$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
+			$(".next8").click(function(){ 
+				forestEnd();
+			});	
 		});
 		$("#radio-choice-26").click(function(){
 			$("#select1").empty();
@@ -1234,13 +1247,19 @@ function apple(){
 						arrayShowItem();
 					}
 					//go back to city + pinguin
-					//alert earn pinguin
-				});//27
+					$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
+					$(".next8").click(function(){ 
+						forestEnd();
+					});	
+				});
 				$("#radio-choice-30").click(function(){
 					$("#select1").empty();
 					$("#select2").empty();
 					//go back to city + pinguin
-					//alert earn pinguin
+					$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
+					$(".next8").click(function(){ 
+						forestEnd();
+					});	
 				});
 			}); 
 			//ask him what happend	
@@ -1256,22 +1275,40 @@ function apple(){
 					$("#headerGame").html('You: “Sure, I will help you.” You are taking Jon to the nearby garrison where he gives a report to his Captain. After this Jon thanks you for saving his life and gives you his lucky amulet (+100 Health) which you hang on your neck');
 					$("#health-points").val(parseInt($("#health").val())+100);
 					//go back to city + pinguin
-					//alert earn pinguin
-				});//29
+					$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
+					$(".next8").click(function(){ 
+						forestEnd();
+					});	
+				});
 				$("#radio-choice-30").click(function(){
 					$("#select1").empty();
 					$("#select2").empty();
 					$("#headerGame").html('You: “Sorry, I cannot help you. I’m on my way on a quest. Have a nice day”. You walk away and leave private where he was.');
+					$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
 					//go back to city + pinguin
-					//alert earn pinguin
-				});//30
-			});//28
-		}); //kill him
+					$(".next8").click(function(){    
+						forestEnd();
+					});	
+				});
+			});
+		}); 
 
-	}//function closer
+	}
 }
-	  
 
+//the ending of the forst story and back to city	  
+function forestEnd(){
+	$("#select1").empty();
+	$("#select2").empty();
+	$("#select3").empty();
+	$("#select4").empty();
+	alert('You finished the forest!');
+	$('#penguin1').show();
+	window.location.replace('#city-page');
+	$( "#GoToTheForest" ).button({
+  		disabled: true
+	});
+}
 	
 ///valdetion for backpack(if element in array)
 	function backpackCheak(ev) {
@@ -1281,6 +1318,9 @@ function apple(){
 		return false;
 }
 
+	  
+	  
+///////////////////////////////////////////////////////////////Mountain ///////////////////////////////////////////////////////////////////////////////////////////////	  
 </script>
 
 </body>
