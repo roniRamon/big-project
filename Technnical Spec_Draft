@@ -509,6 +509,8 @@ if (button 1.1)
         if (backpack contains cactus):
             <p> You rip apart the cactus and drink with joy. </p>
 
+	    // delete cactus from backpack list
+
             // next event
 
             health += 20;
@@ -1098,8 +1100,8 @@ Switch (button):
 Python is protecting the entrance to the Brick Hub. In order to get pass through Python 3 penguins has to be collected (one from each Location). 
 If a Player goes to the Python with less than 3 penguins Python will not let them through and the message appears: “I want you to bring me 3 penguins. Each of them is in different location in somewhere in the area. Only then I will let you through.”
 Once Player collects all penguins and will come to the Python’s Nest option appears:
-a.	Give penguins to the python 
-b.	Do not give penguins to the python
+a) Give penguins to the python 
+b) Do not give penguins to the python
 Ad a: message “Python ate you instead of penguins”
 Ad b: message “Python lets you through.” Brick Event Z2 is enabled. Button “Go to Bricks Hut”
 
@@ -1108,9 +1110,9 @@ Ad b: message “Python lets you through.” Brick Event Z2 is enabled. Button �
 3.1.8	Brick’s Hut
 The final battle with the Brick monster. Brick.strength = 200, Player.strength = from character attributes.
 
--	5 rounds of battle,
--	Player has to win at least 3 rounds.
--	Strength of player and Brick defined by random number between 0 and their strength parameters. 
+a) 5 rounds of battle,
+b) Player has to win at least 3 rounds.
+c) Strength of player and Brick defined by random number between 0 and their strength parameters. 
 If Player wins the round message: “You have won this round, but Brick is attacking you again”
 If Player wins the round message: “You have lost this round and Brick laughs at you”
 
@@ -1134,18 +1136,40 @@ NICE TO HAVE : in version 1.2
 
 3.2	Variables and objects
 
--	Health : int
--	Strength : int 
--	Intelligence: int
--	Money : int
--	PenguinCount : int
--	Backpack : Artifacts [] 
--	Knife : Artifact
--	Sword : Artifact
--	Apple : Artifact
--	Whiskey : Artifact
--	FightYou : int // your result of the fight random selected number multiplied by current strength
--	FightOpponent : int // your opponents result of the fight random selected number multiplied by current strength
+- health : int
+- strength : int 
+- intelligence: int
+- money : int
+- penguinCount : int
+
+- backpack : Artifacts [] 
+- apple : Artifact
+
+// 3.1.4.1: Goat Adventure
+- metGoalKeeper : boolean // boolean for 3.1.4.2: hole
+- fightYou : int // your result of the fight random selected number multiplied by current strength
+- fightOpponent : int // your opponents result of the fight random selected number multiplied by current strength
+
+// 3.1.4.2: Hole
+- stolenItem : Artifact // temporary variable
+
+// 3.1.5.1: Desert desert
+- buttonChoice : String // stores the button value the user picks
+
+// 3.1.5.2: Cactus Island
+- cactus : artifact // contains water
+
+// 3.1.5.4: Pyramid
+- temporaryItem : String // stores a temporary item for only that event
+
+// 3.1.4.3: River
+- playerRoll : int // gamble between human and demon
+- demonRoll : int
+
+// 3.1.6.3: Merchant
+- knife : Artifact // purchased object 
+- sword : Artifact // purchased object 
+- whiskey : Artifact // purchased object 
 
 
 3.3	Players attributes 
