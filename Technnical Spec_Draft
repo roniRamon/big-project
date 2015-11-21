@@ -17,9 +17,9 @@ Table of Contents
 3.1.4.4:              Dead Body					(need immediate attention)
 3.1.5:            Desert
 3.1.5.1:              Dessert Desert		(completed)
-3.1.5.2:              Desert Water		(completed)
+3.1.5.2:              Cactus Island		(completed)
 3.1.5.3:              Canyon Adventures				(issue with items)
-3.1.5.4:              Desert Pyramid		(completed)
+3.1.5.4:              Pyramid			(completed)
 3.1.6:            Mountains
 3.1.6.1:              Mountain Lion		(completed)
 3.1.6.2:              Ascending The Peak			(need immediate attention)
@@ -52,31 +52,31 @@ Table of Contents
 
 
 
-1.	Overview
+1.		Overview
 The objective of this document is to provide a comprehensive guide on the architecture and inner workings behind the implementation of “The Tale of Tux”. “The Tale of Tux” is a web-based text game and makes a perfect project for beginner developers looking to build their first web-application
 
 *****
 (Note: formatting is messy, but will furnish, such as tabs and spaces. will fix when tech spec is looking near complete)
 *****
 
-2.	Summary
+2.		Summary
 
 
-2.1	Background Story
+2.1		Background Story
 <<Name of the Location>> is an imaginary world full of exciting adventures waiting for the ones who seek excitement. The goal of the game (selected by the user) is protected by the evil but mysterious cuboid monster, The Brick. Unfortunately to get to him Player must pass series of tasks and quests to be allowed to reach him. Maybe that is for good, as during those adventures Player will gain certain skills and artifacts which can help them to in the final combat. 
 
 
-2.2	Overview of Game
+2.2		Overview of Game
 “The Tale of Tux” is a role-playing game which takes place in a imaginary world filled with excitement and evil monsters. Users will be able to create custom characters and go on quests in order to defeat the evil but mysterious cuboid monster, The Brick.
 
 
-3.	Game Play Look and Feel
+3.		Game Play Look and Feel
 
 
-3.1	Appearance
+3.1		Appearance
 
 
-3.1.1	Welcome page with Character selection
+3.1.1		Welcome page with Character selection
 On the entry page in the beginning of a game Player will select their Character from available list. Options are as follows:
 a) Viking
 b) Warrior Princess
@@ -100,7 +100,7 @@ User is given the total of 100 points to redistribute among all parameters. None
 After all points are redistributed Player will be able to go further to the next step.
 
 
-3.1.2	First quest – Event T
+3.1.2		First quest – Event T
 User is located IN FRONT of CITY GATES and will have to finish the first small quest which is linked with tutorial. Features will be shown on the page: 
 a) Character page: attributes 
 b) Backpack content and usage: removing items adding items, browsing through them (displaying attributes add-ons)
@@ -109,21 +109,21 @@ d) Go to City
 e) Hints Page: each event or location will have a small note attached to it with a hint how to progress. 
 
 
-3.1.3	City – the main hub
+3.1.3		City – the main hub
 Center location from where User has an option to go to selected locations:
 a) Mountains, 
 b) Forest
 c) Desert
 d) Python’s Nest
 
-3.1.4	 Forest
+3.1.4	 	Forest
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Forest events and only after finishing it will be able to go to other location. 
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
 
-3.1.4.1 Event Goat Adventure
+3.1.4.1 	Event Goat Adventure
 <p> You are crossing the meadow where group of goats are walking around. What do you do? </p>
 
 <button 1.1> Chase one of the goats and kill it. </button>
@@ -196,7 +196,7 @@ Switch (button):
 
 <<NEXT EVENT>>
 
-3.1.4.2 Hole
+3.1.4.2 	Hole
 <p> You want to enter the forest. The forest is dark. It's night. You need some kind of light to show you the way. </p>
 
 <button 1.1> Go back to the meadow and ask the goat-keeper for some candle or a flashlight. </button>
@@ -282,7 +282,7 @@ else // button 1.3
 <<NEXT EVENT>>
 
 
-3.1.4.3 River
+3.1.4.3 	River
 <p> You reached a crossroad in an enchanted forest. You can:
 
 <button 1.1> Go left to shortcut in the dark part of the forest. </button>
@@ -361,10 +361,10 @@ else // button 3.3
 <<NEXT EVENT>>
 
 
-3.1.4.4 Dead Body
+3.1.4.4 	Dead Body
 
 ...
-3.1.5	Desert
+3.1.5		Desert
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Desert events and only after finishing it will be able to go to other location. 
 
@@ -375,7 +375,7 @@ NICE TO HAVE: After finishing each event Player will be able to choose if they w
 # logic to story 1 - desert is confusing towards the end. What exactly happens?
 
 
-3.1.5.1 Dessert Desert
+3.1.5.1 	Dessert Desert
 <p>The world beginnings to blur. The sand below begins to stick the bottom of your feet. </p>
 
 <button 1.1> Continue walking. </button>
@@ -451,7 +451,7 @@ else // rock and row
 <<NEXT EVENT>>
 
 
-3.1.5.2 Desert Water
+3.1.5.2 	Cactus Island
 // note: The cactus island scene is used 4 times, so it may be a good idea to store this branch into a function.
 
 <p> It is your 3rd day wandering aimlessly around the desert. You realize you haven't had water since the adventure and you are now very very thirsty. Luckily you do have your iphone 5s on you. You decide to locate yourself on the map. You pull your iphone out. Unfortunately, the wifi does not work! Desperate, you look around your surroundings for water. You see no signs of water in your immediate path. 
@@ -585,7 +585,7 @@ else if (button 1.3)
 <<NEXT EVENT>>
 
 
-3.1.5.3 Canyon Adventures
+3.1.5.3 	Canyon Adventures
 // note: this story needs some modifications on the items section since items will be permenant.
 
 <p>After the tiring walking in the desert sands you reach an enormous canyon. It's very deep and foggy and you can't see the bottom or the other side if it.
@@ -669,7 +669,7 @@ else // button 1.3
 <<NEXT EVENT>>
 
 
-3.1.5.4 Desert Pyramid
+3.1.5.4 	Pyramid
 // the "Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit." story is used 3 times. Either set this event into a function or re-use it 3 times.
 
 <p> You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid. As you walk in, the door shuts tight and you are now trapped. You notice three items floating magically above a stone. Which of these items do you pick up? </p>
@@ -759,13 +759,13 @@ else (button 2.3)
 <<NEXT EVENT>>
 
 
-3.1.6	Mountains
+3.1.6		Mountains
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Mountains events and only after finishing it will be able to go to other location. 
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
-3.1.6.1 Mountain Lion
+3.1.6.1 	Mountain Lion
 <p> You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU! </p>
 
 <button 1.1> Fight the big cat. </button>
@@ -831,10 +831,10 @@ if (button 1.3)
 <<NEXT EVENT>>
 
 
-3.1.6.2  Ascending The Peak
+3.1.6.2  	Ascending The Peak
 
 ...
-3.1.6.3 Merchant
+3.1.6.3 	Merchant
 <p> You are walking on the road and meeting a merchant with goods. What do you do? </p>
 
 <button 1.1> Ignore him and move on</button>
@@ -1096,7 +1096,7 @@ Switch (button):
 <<NEXT EVENT>>
 
 
-3.1.7	Python’s Nest
+3.1.7		Python’s Nest
 Python is protecting the entrance to the Brick Hub. In order to get pass through Python 3 penguins has to be collected (one from each Location). 
 If a Player goes to the Python with less than 3 penguins Python will not let them through and the message appears: “I want you to bring me 3 penguins. Each of them is in different location in somewhere in the area. Only then I will let you through.”
 Once Player collects all penguins and will come to the Python’s Nest option appears:
@@ -1107,7 +1107,7 @@ Ad b: message “Python lets you through.” Brick Event Z2 is enabled. Button �
 
 
 
-3.1.8	Brick’s Hut
+3.1.8		Brick’s Hut
 The final battle with the Brick monster. Brick.strength = 200, Player.strength = from character attributes.
 
 a) 5 rounds of battle,
@@ -1123,18 +1123,18 @@ If Player loses at least 3 rounds message: “Buhu, you have lost with Brick and
 End of the Game
 
 
-3.1.9	Penguins
+3.1.9		Penguins
 Penguins are small creatures wandering around at the end of every locations path. Once Player finishes all the events in one location one penguin will join and will follow from now on. No backpack pocket is needed for a penguins’ collection. 
 Info of penguins collected should be visible on the user information. 
 
 
-3.1.10	Options/Settings 
+3.1.10		Options/Settings 
 
-3.1.10.1	Backpack  
+3.1.10.1  	Backpack  
 
 NICE TO HAVE : in version 1.2
 
-3.2	Variables and objects
+3.2		Variables and objects
 
 - health : int
 - strength : int 
@@ -1145,39 +1145,39 @@ NICE TO HAVE : in version 1.2
 - backpack : Artifacts [] 
 - apple : Artifact
 
-// 3.1.4.1: Goat Adventure
+// Goat Adventure
 - metGoalKeeper : boolean // boolean for 3.1.4.2: hole
 - fightYou : int // your result of the fight random selected number multiplied by current strength
 - fightOpponent : int // your opponents result of the fight random selected number multiplied by current strength
 
-// 3.1.4.2: Hole
+// Hole
 - stolenItem : Artifact // temporary variable
 
-// 3.1.5.1: Desert desert
+// Desert desert
 - buttonChoice : String // stores the button value the user picks
 
-// 3.1.5.2: Cactus Island
+// Cactus Island
 - cactus : artifact // contains water
 
-// 3.1.5.4: Pyramid
+// Pyramid
 - temporaryItem : String // stores a temporary item for only that event
 
-// 3.1.4.3: River
+// River
 - playerRoll : int // gamble between human and demon
 - demonRoll : int
 
-// 3.1.6.3: Merchant
+// Merchant
 - knife : Artifact // purchased object 
 - sword : Artifact // purchased object 
 - whiskey : Artifact // purchased object 
 
 
-3.3	Players attributes 
+3.3		Players attributes 
 Player will have 3 main attributes:
 ...
 
 
-3.4	Artifacts
+3.4		Artifacts
 
 Following artifacts will be available to collects in various events and their influence on Character’s parameters :
 
@@ -1194,12 +1194,12 @@ Some of the artifacts and goods (food items) if consumed in place will have lowe
 
 
 
-3.5	Strategies and Motivations
+3.5		Strategies and Motivations
 
 User can try to develop their character in more defensive or offensive way depending on the strategy of assigning points and collecting artifacts.
 …
  
-3.6	Level summary/Story progression
+3.6		Level summary/Story progression
 
 4.	Development Specifications
 4.1	System Requirements
@@ -1214,10 +1214,10 @@ o
 o	
 •	Sounds were generated using <<Insert tools here>>
 
-4.3	Algorithm Style
+4.3		Algorithm Style
 
 
-4.3.1	Development Algorithm
+4.3.1		Development Algorithm
 
 The key features of the game include:
 •	Frame is adjusted to fit both desktop and mobile view.
@@ -1237,16 +1237,16 @@ Figure x Backpack UML Structure
 
 
 
-5.	Disclaimer
+5.		Disclaimer
 This document was created as the educational project by City College of San Francisco students. 
 
 Any software used during this project and most objects will be used for personal, educational, non-commercial use only.
 
  
-6.	References 
+6.		References 
 
 
-6.1	Graphics References
+6.1		Graphics References
 	
 	
 	
@@ -1254,7 +1254,7 @@ Any software used during this project and most objects will be used for personal
 	
 
 
-6.2	Miscellaneous
+6.2		Miscellaneous
 Library Functions and other effects	
 
 
