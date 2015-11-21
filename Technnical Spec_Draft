@@ -22,10 +22,9 @@ Table of Contents
 3.1.5.3:              Canyon Adventures				(needs attention on items)
 3.1.5.4:              Desert Pyramid		(completed)
 3.1.6:            Mountains
-3.1.6.1:              Mountain Lion				(need immediate attention)
+3.1.6.1:              Mountain Lion		(completed)
 3.1.6.2:              Ascending The Peak			(need immediate attention)
 3.1.6.3:              Merchant					(need immediate attention)
-3.1.6.4:              ...					(need immediate attention)
 3.1.7:            Python’s Nest			(somewhat completed)
 3.1.8:            Brick’s Hut			(somewhat completed)
 3.1.9:            Penguins			(somewhat completed)
@@ -937,9 +936,6 @@ if (button 1.3)
 
 ...
 3.1.6.3 Merchant
-
-...
-3.1.6.4 ...
 
 ...
 
