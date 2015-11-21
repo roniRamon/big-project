@@ -134,54 +134,67 @@ NICE TO HAVE: After finishing each event Player will be able to choose if they w
 
 Switch (button):
     Case (button 1.1):
-    <p> You have killed the goat, but all that running made you hungry. You set up the fire and roast the goat. (+30 Health) </p>
+        <p> You have killed the goat, but all that running made you hungry. You set up the fire and roast the goat. (+30 Health) </p>
 
-    Health += 30;
+        health += 30;
+
+        // event ends
 
     Case (button 1.2):
-    <p> When exiting the meadow you have found a goat-keeper sleeping in the bushes. You wake him up. 
-    "Hey there. You should watch out for your goats, because some animal might attach them. There are plenty of wild beasts in this forest, you know."
-    Goat-keeper thanks you for the warning and gives you some goat milk to drink. +5 Health </p>
+        <p> When exiting the meadow you have found a goat-keeper sleeping in the bushes. You wake him up. 
+        "Hey there. You should watch out for your goats, because some animal might attach them. There are plenty of wild beasts in this forest, you know."
+        Goat-keeper thanks you for the warning and gives you some goat milk to drink. +5 Health </p>
 
-    Health+=5;
+        health += 5;
+
+        // event ends
 
     Case (button 1.3):
-    <p> You are hanging out on the meadow, watching goats when a grumpy goat-keeper comes to you
-    GK: "What are you doing around my goats?"
-    You: "Just hanging out and getting some rest. Is there something wrong?"
-    GK: "I already lost few goats this month, killed by some tramps like you. Go away or I’ll punch you."
-    What do you do? </p>
+        <p> You are hanging out on the meadow, watching goats when a grumpy goat-keeper comes to you
+        GK: "What are you doing around my goats?"
+        You: "Just hanging out and getting some rest. Is there something wrong?"
+        GK: "I already lost few goats this month, killed by some tramps like you. Go away or I’ll punch you."
+        What do you do? </p>
 
-    <button 2.1> Fight </button>
-    <button 2.2> Walk away </button>
+        <button 2.1> Fight </button>
+        <button 2.2> Walk away </button>
 
-    Switch (button):
-        Case (button 2.1):
-        <p> You attack the goat-keeper (Strength 100) </p>
+        Switch (button):
+            Case (button 2.1):
+                <p> You attack the goat-keeper (Strength 100) </p>
 
-        FightYou = Math.floor (Math.random() * Strength)
-        FightOpponent = Math.floor (Math.random() * 100)
+	        fightYou = Math.floor (Math.random() * Strength)
+	        fightOpponent = Math.floor (Math.random() * 100)
 
-        <p> Your attack: <<FightYout>>. Merchant's attack <<FightOpponent >> </p>
+	        <p> Your attack: <<fightYout>>. Merchant's attack <<fightOpponent >> </p>
 
-        if (FightYou >= Fight Opponent):
-            <p> You have beaten up the goat keeper and took his money and food (+50$, +10 Health) </p>
+	        if (fightYou >= fight Opponent):
+	            <p> You have beaten up the goat keeper and took his money and food (+50$, +10 Health) </p>
 
-            Health += 10;
-            Money +=50;
+	            health += 10;
+	            money +=50;
 
-        else:
-            <p> Goat keeper kicked your ass and left the meadow. (-20 Health).
-            Feeling ashamed to be beaten up by a goat-keeper you are walking away promising yourself never to tell anyone about what has happened here. </p>
+		    // event ends
 
-            Health -= 20;
+	        else:
+	            <p> Goat keeper kicked your ass and left the meadow. (-20 Health).
+	            Feeling ashamed to be beaten up by a goat-keeper you are walking away promising yourself never to tell anyone about what has happened here. </p>
 
-            if (Health <= 0):
-                <popup message> You have died. Game Lost</popup message>
-                <END OF GAME>
+	            health -= 20;
 
-        Case (button 2.2):
-            <p> Goat keeper curse you but you don't case and simply walk away. </p>
+	            if (health <= 0):
+	                <popup message> You have died. Game Lost</popup message>
+	                <END OF GAME>
+
+		    // event ends
+
+            Case (button 2.2):
+                <p> Goat keeper curse you but you don't case and simply walk away. </p>
+
+		// event ends
+
+<<NEXT EVENT>>
+
 
 3.1.4.2 Merchant
 <p> You are walking on the road and meeting a merchant with goods. What do you do? </p>
@@ -194,20 +207,22 @@ if intelligence > 40
 
 Switch (button):
     Case (button 1.1):
-    <p> Merchant is trying to sell you something, but you reply him "I am in the rush to <<insert game goal>> and cannot talk with you now. Maybe next time. </p>
+        <p> Merchant is trying to sell you something, but you reply him "I am in the rush to <<insert game goal>> and cannot talk with you now. Maybe next time. </p>
+
+        // next event
 
     Case (button 1.2):
         <p> Merchant is fighting back. Strength 50. You say: "My name is Inigo Montoya. You killed my father. Prepare to die". </p>
 
-        FightYou = Math.floor (Math.random() * Strength);
-        FightOpponent = Math.floor (Math.random() * 100);
+        fightYou = Math.floor (Math.random() * Strength);
+        fightOpponent = Math.floor (Math.random() * 100);
 
-        <p> Your attack: <<FightYout>>. Merchant's attack <<FightOpponent >> </p>
+        <p> Your attack: <<fightYout>>. Merchant's attack <<fightOpponent >> </p>
 
-        if (FightYou < FightOpponent):
+        if (fightYou < fightOpponent):
             Health -= 15;
 
-            if (Health <= 0):
+            if (health <= 0):
                 <popup message> You have died. Game Lost</popup message>
                 <END OF GAME>
 
@@ -223,11 +238,17 @@ Switch (button):
                     if (backpack.length < 4)
                         add.backpack(whisky)
 
+			// event ends
+
                     else  // we do not have space, all slots are filled
                         <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
 
+		        // event ends
+
                else:
                     <popup> You didn't take the whisky </popup>
+
+		    // event ends
 
         else: // if you win fight
             <p> You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, knife (+5 Strength), sword (+20 Strength), whisky (+5Health, -10 Intelligence) </p>
@@ -248,8 +269,12 @@ Switch (button):
                     add.backpack(knife)
                     strength += 5;
 
+		    // event ends
+
                 else:  // we do not have space, all slots are filled
                     <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+		    // event ends
 
             else:
                 <popup> You didn't take the knife </popup>
@@ -273,8 +298,8 @@ Switch (button):
 
             <p> Do you want to put whisky in your backpack </p>
 
-            <button 5.1> Yes</button4.1>
-            <button 5.2> No</button4.2>
+            <button 5.1> Yes</button>
+            <button 5.2> No</button>
 
             if (button 5.1) // yes, take it
 
@@ -282,11 +307,17 @@ Switch (button):
                     add.backpack(sword)
                     strength += 20;
 
+		    // next event 
+
                 else // we do not have space, all slots are filled
                     <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
 
+		    // next event
+
             else (button 5.2)
                 <popup> You didn't take the sword </popup>
+
+		// next event 
 
     Case (button 1.3):  // buy something
 	<p> Merchant shows you his goods:</p>
@@ -415,10 +446,16 @@ Switch (button):
 	        else // if money <200
 	            <p> You do cannot but this item. You don’t have enough money to buy knife.</p>
 
+	    // next event
+
 	else // if checkbox don’t want to buy anything is on
 	    <p> You reply: "Hmm. Maybe next time. I don't see anything interesting."</p>
 
+	    // next event
+
     // Note: Case (button 4: start conversation) isn't filled out, but not necessary
+
+<<NEXT EVENT>>
 
 
 3.1.4.3 Hole
@@ -499,7 +536,12 @@ if (button 4.1)
     <button 5.2>Freak out! </button>
 
     if (button 5.1)
-        <p> You try to walk out of this mess </p>
+        <p> You try to walk out of this mess. You got out!! </p>
+
+        strength += 10;
+        health += 5;
+
+        // next event
 
     else
         <p> "You freak out hardcore, and continue to sink. </p>
@@ -507,6 +549,11 @@ if (button 4.1)
 
 else // rock and row
     <p> You do a barrel roll, again and again until you're out of this sticky mess. </p>
+
+    // next event
+
+<<NEXT EVENT>>
+
 
 3.1.5.2 Desert Water
 // note: The cactus island scene is used 4 times, so it may be a good idea to store this branch into a function.
@@ -546,6 +593,7 @@ if (button 1.1)
         <button 3.2> NO, those things are spikey </button>
 
         if (button 3.1)
+
             if (backpack is full)
                 <p> Sorry, no more room </p>
 
@@ -564,6 +612,9 @@ if (button 1.1)
 
         if (backpack contains cactus):
             <p> You rip apart the cactus and drink with joy. </p>
+
+            // next event
+
             health += 20;
         else
             <p> You look into your backpack and regret not obtaining a cactus. 20 miles down the road, you die. </p>
@@ -586,7 +637,7 @@ else if (button 1.2):
 
     // reuse Cactus Island scene 
 
-if (button 1.3)
+else if (button 1.3)
     <p> You decide to walk in the path you came from. Within 4 hours, your phone picks up wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island, which is located 25 miles from where you are.
     What do you do? </p>
 
@@ -626,8 +677,14 @@ if (button 1.3)
                 health += 10;
                 strength += 10;
 
+		// next event 
+
         else (button 6.2)
             <p> You run unto the python and grab it by its mouth. The snake wiggles for a minute and then becomes motionless. You eat the python and feel rejuvenated. You continue to walk and barely made it back. </p>
+
+	    // next event 
+
+<<NEXT EVENT>>
 
 
 3.1.5.3 Canyon Adventures
@@ -652,11 +709,17 @@ if (button 1.1)
     if (button 2.1)
         <p> You are fighting the troll. Luckily he is so sick and absent-minded he can't catch you. He gets upset, starts to cry and tells you his name is Karl. Very dirty and sticky you search his pockets and get water (++Health) and the giant needle (+Item).</p>
 
+	// next event 
+
     else if (button 2.2)
 	<p> The troll catches you! He puts you in his pocket and carries back to his dank home at the bottom of the canyon. You have to cook, clean and bear the thundering sneezing till the rest of your life.</p>
 
+	// next event
+
     else // button 2.3
 	<p> You are flying through the fog and land in the lake. You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (-Item). You manage to find a path to the city and return weak and wet.</p>
+
+	// next event
 
 else if (button 1.2)
     <p>At twilight you hear flapping of the wings and the pair of coloured birds lands near you. The lizard-looking riders get down from them and demand that you leave. 
@@ -667,15 +730,21 @@ else if (button 1.2)
     <button 3.3> You jump into the canyon and disappear in the fog.</button>
 
     if (button 3.1)
-	 <p> You give them your shoes and in return they carry you in the city 
-	 (+Strength as you rest during the journey).
-	 During the fly you manage to sneak a bag of money (+Item). </p>
+	<p> You give them your shoes and in return they carry you in the city 
+	(+Strength as you rest during the journey).
+	During the fly you manage to sneak a bag of money (+Item). </p>
+
+	// next event
 
     else if (button 3.2)
-	 <p> Bummer! The bird is smart! She makes a circle and flies back to the owner. He is not pleased and bites you. You are poisoned and stay in the desert forever. </p>
+        <p> Bummer! The bird is smart! She makes a circle and flies back to the owner. He is not pleased and bites you. You are poisoned and stay in the desert forever. </p>
+
+	// next event
 
     else // button 3.3
-	 <p> You reach the giant trampoline at the bottom and jump out of the canyon. You frostbite your ears during the flight (-Health), but find a tree with juicy lematos on the other side. You eat a fruit (+Health) and find a way to the city. </p>
+	<p> You reach the giant trampoline at the bottom and jump out of the canyon. You frostbite your ears during the flight (-Health), but find a tree with juicy lematos on the other side. You eat a fruit (+Health) and find a way to the city. </p>
+
+	// next event
 
 else // button 1.3
     <p>You find a tiny path and descend into the canyon. At the lower lever you enter a lovely village of butter-eating leprechauns. They seem hospitable and serve you a dinner (which is made mainly of butter), but oh no! they are not going to let you leave!
@@ -687,14 +756,24 @@ else // button 1.3
 	if (button 4.1)
 	    <p> You are reaching the bottom of the canyon. You spend a lot of power by going through bushes (-Strength) and quench your thirst at a spring (+Health). Finally you manage to find a way back to the city.</p>
 
+	    // next event 
+
 	else if (button 4.2)
 	    <p> Your detailed descriptions of all the yummy food besides butter that there is the world inspire leprechauns and they decide to leave the village and the canyon! They inflate the hot air balloon and take you to the city. As a gift you receive a pack of magical butter that makes one invulnerable.</p>
+
+	    // next event 
 
 	else // button 4.3
 	    <p> You learn the Irish step dance and grow a beard so long that sometimes you make a hammock out of it and spend all day swinging in it. The moist weather and buttery diet undermine your health. You stay in the canyon forever.</p>
 
+	    // next event
+
+<<NEXT EVENT>>
+
 
 3.1.5.4 Desert Pyramid
+// the "Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit." story is used 3 times. Either set this event into a function or re-use it 3 times.
+
 <p> You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid. As you walk in, the door shuts tight and you are now trapped. You notice three items floating magically above a stone. Which of these items do you pick up? </p>
 
 // note: these items do not go into the backpack. They are temporary
@@ -717,11 +796,18 @@ if (button 2.1)
     if (temporaryItem == compass )
         <p> You found the exit! </p>
 
+        // next event 
+
     else // you picked gold or torch
         <p> you continue to walk around looking for an exit. You suddenly see a glimpse of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse of light, the tombs open and the mummies all come out of it. They are now walking towards you with their arms out.
 
         if (temporaryItem == "flame torch") 
-            <p> You picked the flame torch, you pull it out and all the mummies get scared and goes back into their tomb. You exit safely.
+            <p> You picked the flame torch, you pull it out and all the mummies get scared and goes back into their tomb. You exit safely. </p>
+
+            if (temporaryItem == "gold")
+                <p> You reach into your pocket and the gold has turned into sand. Bummer. </p>
+
+	    // next event 
 
         else // you picked up gold
             <p> you run in the opposite direction and FALL into another pit trap. </p>
@@ -743,6 +829,8 @@ if (button 2.1)
                 intelligence += 20;
                 // note to coders: use your judgement on what you think these should be based on other events
 
+		// next event 
+
              else // you greedy sob
                  <p> You don’t give back the gold, the angel mummy tells you “TOO BAD”, gives an evil laugh and disappears. 100 days go by and you become a mummy yourself </p>
                  <END GAME>
@@ -760,11 +848,18 @@ else if (button 2.2)
 
         Strength += 10;
 
-else (button 2.3)
-    <p> The mummy ends up being friendly and offers you beer </p>
+    // change scenes to button 2.1 ("Along the way you fell...")
 
-    health += 10;
+else (button 2.3)
+    <p> The mummy chases you and you fell into a pit </p>
+
+    health -= 5;
     intelligence += 10;
+
+    // change scenes to button 2.1 ("Along the way you fell...")
+
+<<NEXT EVENT>>
+
 
 3.1.6	Mountains
 Player will go through series of events in this location. 
@@ -773,7 +868,70 @@ In the 1.0 version Player will go through all Mountains events and only after fi
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
 3.1.6.1 Mountain Lion
-...
+<p> You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU! </p>
+
+<button 1.1> Fight the big cat. </button>
+<button 1.2> Run away. </button>
+if (intellegence > 12): // then option 3 is visible
+    <button 1.3> Show you're not a threat. </button>
+
+if (button 1.1):
+    <p>You're not going to let Garfield deter you from your quest. You put your fists up. The feline lunges. </p>
+
+    yourStrength = random(from 0 to Strength.Max), 
+    pumaStrength = random(from 0 to 20)
+
+    <p> Your attack: <<yourStrength>>. Mountain lion's attack: <<pumaStrength>>. </p>
+
+    if (yourStrength < pumaStrength)
+	<p>The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off. </p>
+
+	health -= 10;
+
+        if (health < 0)
+            <END GAME>
+
+	else
+	    <p>  You grab the cat out of the air and hurl it off the mountainside. Manly. </p>
+	    strength += 3;
+
+	    // next event
+
+if (button 1.2):
+    <p>You're allergic to cats. You decide to get out of there. </p>
+
+    <button 2.1> Run ahead. </button>
+    <button 2.2> Run the way you came from. </button>
+
+    if (button 2.1):
+	<p> You run towards the cat. Startled, it turns around and books it. Ain't gonna deal with someone crazy enough to chase a mountain lion. </p>
+
+	// next event
+	
+    else
+	<p> You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you're back where you started. </p>
+
+	health -= 20;
+        if (health < 0):
+            <END GAME>
+
+	// mext event
+
+if (button 1.3)
+    <p> Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving.
+    Item: Mountain lion tooth (+25 Health) 
+    Do you accept? </p>
+
+    <button 3.1> Yes </button>
+    <button 3.2> No </button>
+
+    if (button 3.1):
+        health += 25;
+
+    // next event
+
+<<NEXT EVENT>>
+
 
 3.1.6.2  Ascending The Peak
 
