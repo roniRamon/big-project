@@ -272,15 +272,17 @@
   <div data-role="page" id="desert-page">
    <div class="ui-content" role="main" id="desert-content" style="text-align: center;">
       <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
-        <legend><h3>Some adventure in the desert</h3></legend>
-          <input name="desert-choice-1" id="desert-choice-1" value="choice-1" type="radio">
-          <label for="desert-choice-1">Option 1</label>
-          <input name="desert-choice-1" id="desert-choice-2" value="choice-2" type="radio">
-          <label for="desert-choice-2">Option 2</label>
-          <input name="desert-choice-1" id="desert-choice-3" value="choice-3" type="radio">
-          <label for="deserty-choice-3">Option 3</label>
-          <input name="deserty-choice-1" id="deserty-choice-4" value="choice-4" type="radio">
-          <label for="desert-choice-4">Option 4</label>
+        <legend><h3 id="desertHeadre">The world begings to blur. The sand below begins to stick the bottom of your feet.</h3></legend>
+		 <div id="desert-select1">
+          	<input name="desert-choice-1" id="desert-choice-1" value="choice-1" type="radio">
+          	<label for="desert-choice-1">Continue walking</label>
+		 </div> 
+		 <div id="desert-select2">
+		 	<input name="desert-choice-1" id="desert-choice-2" value="choice-2" type="radio">
+          	<label for="desert-choice-2">Investigate</label> 
+		 </div>
+		 <div id="desert-select3"></div>
+		<div id="desert-select4"></div>	
     </fieldset>
     </div> <!-- end of content on desert page -->
   </div><!--  end of Desert Page -->
@@ -314,10 +316,14 @@
 	$('#penguin3').hide();  
 	  
 	var money = $("#money").val();
-	var backpack = [];	
+	var backpack = [];
+	var health =  parseInt($("#health").val()) + 0;  
+	var strength =  parseInt($("#strength").val()) + 0;
+	var intelligence = parseInt($("#intelligence").val()) + 0;  
 	  
 // show array items
-function arrayShowItem() {
+function arrayShowItem() 
+{
     var index;
     var text = "<ul>";
     for (index = 0; index < backpack.length; index++) {
@@ -1325,9 +1331,7 @@ function forestEnd(){
 	  
 	  
 ///////////////////////////////////////////////////////////////Mountain ///////////////////////////////////////////////////////////////////////////////////////////////	 
-var health =  parseInt($("#health").val()) + 0;  
-var strength =  parseInt($("#strength").val()) + 0;
-var intelligence = parseInt($("#intelligence").val()) + 0;	  
+	  
 	
 //Event 1: Mountain Lion 	  
   //Fight the big cat	  
@@ -1389,6 +1393,7 @@ var intelligence = parseInt($("#intelligence").val()) + 0;
 	  
   });
   
+	  //#################need to change to show option if intelligence > 12 
   //Show you're not a threat.	  
   $("#mountain-choice-3").click(function(){
 	  $("#mountain-headr").html('Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving. Item: Mountain lion tooth (+25 Health)');
@@ -1424,6 +1429,34 @@ var intelligence = parseInt($("#intelligence").val()) + 0;
 								   
 	  
  ///////////////////////////////////////////////////////////////Dessert  ///////////////////////////////////////////////////////////////////////////////////////////////
+	
+//Continue 	  
+  $('#desert-choice-1').click(function(){
+	  $("#desertHeadre").html('You continue walking. Your feet are growing heavy.');
+	  $("#desert-select1").empty();
+	  $("#desert-select2").empty();
+	  $("#desert-select1").append('<input name="radio-choice-20" id="desert1" value="choice-1" type="radio"><label for="desert1">Continue walking...</label>').trigger('create'); 
+	  if( parseInt($('#smart-points').val()) > 12 )
+	 	$("#desert-select2").append('<input name="radio-choice-20" id="desert2" value="choice-2" type="radio"><label for="desert2">Investigate.</label>').trigger('create'); 
+	  
+  });
+  	  	  
+//	Investigate  
+  if ( parseInt($('#smart-points').val()+0) < 12 )	
+  {
+	$("#desert-select2").hide();
+  }
+  else
+	$("#desert-select2").show();  
+	  
+  $('#desert-choice-2').click(function(){
+	 $("#desertHeadre").html('You get down on one knee for a closer look at the sand. It smells sugary.');
+	 $("#desert-select1").empty();
+	 $("#desert-select2").empty(); 
+	 $("#desert-select1").append('<input name="radio-choice-20" id="desert3" value="choice-1" type="radio"><label for="desert3">Continue walking.</label>').trigger('create');
+	 $("#desert-select2").append('<input name="radio-choice-20" id="desert4" value="choice-1" type="radio"><label for="desert4">Investigate closer.</label>').trigger('create');
+  });
+	  
 </script>
 
 </body>
