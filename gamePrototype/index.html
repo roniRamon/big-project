@@ -242,7 +242,6 @@
               <label for="forest-choice-3">Pick some flowers and gets some rest</label>
 			</div>
 		  	<div id="select4"></div>
-		  	</div>
       </fieldset>
   </div><!-- end of Forest content -->
   </div><!-- end of Forest Page -->  
@@ -251,15 +250,20 @@
   <div data-role="page" id="mountain-page">
     <div class="ui-content" role="main" id="mountain-content" style="text-align: center;">
       <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
-          <legend><h3>Some adventure in the mountains</h3></legend>
+          <legend><h3 id="mountain-headr">You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU!</h3></legend>
+		  	<div id="mountain-select-1">
               <input name="mountain-choice-1" id="mountain-choice-1" value="choice-1" type="radio">
-              <label for="mountain-choice-1">Option 1</label>
+              <label for="mountain-choice-1">Fight the big cat.</label>
+			</div>
+		    <div id="mountain-select-2">
               <input name="mountain-choice-1" id="mountain-choice-2" value="choice-2" type="radio">
-              <label for="mountain-choice-2">Option 2</label>
+              <label for="mountain-choice-2">Run away</label>
+			</div>
+		    <div id="mountain-select-3">
               <input name="mountain-choice-1" id="mountain-choice-3" value="choice-3" type="radio">
-              <label for="mountain-choice-3">Option 3</label>
-              <input name="mountain-choice-1" id="mountain-choice-4" value="choice-4" type="radio">
-              <label for="mountain-choice-4">Option 4</label>
+              <label for="mountain-choice-3">Show you're not a threat.</label>
+			</div>
+		    <div id="mountain-select-4"></div>
       </fieldset>
     </div> <!-- end of content on mountain page -->
   </div> <!-- end of Mountain page -->
@@ -1320,7 +1324,106 @@ function forestEnd(){
 
 	  
 	  
-///////////////////////////////////////////////////////////////Mountain ///////////////////////////////////////////////////////////////////////////////////////////////	  
+///////////////////////////////////////////////////////////////Mountain ///////////////////////////////////////////////////////////////////////////////////////////////	 
+var health =  parseInt($("#health").val()) + 0;  
+var strength =  parseInt($("#strength").val()) + 0;
+var intelligence = parseInt($("#intelligence").val()) + 0;	  
+	
+//Event 1: Mountain Lion 	  
+  //Fight the big cat	  
+  $("#mountain-choice-1").click(function(){
+	  $('#mountain-headr').html('You\'re not going to let Garfield deter you from your quest. You put your fists up. The feline lunges.');
+	  $("#mountain-select-1").empty();
+	  $("#mountain-select-2").empty();
+	  $("#mountain-select-3").empty();
+	  var pumaScore = Math.floor((Math.random() * 20));
+	  var player = Math.floor((Math.random() *  strength));
+	  alert('Your attack: ' + player+ '. Mountain lion\'s attack: '+ pumaScore + '.' );
+			if (player < pumaScore)  //puma win
+			{   
+				$("#health-points").val(parseInt($("#health").val())-10);
+				$("#mountain-headr").html('The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off. -10 Health');
+				$('#mountain-select-1').append('<input type="button" value="Next" id="Mnext1" data-inline="true" data-mini="true" data-icon="check" class="Mnext1">').trigger('create');
+				$(".Mnext1").click(function(){ 
+				peak();
+				});
+			}
+			else if(player >= pumaScore) //puma lose
+			{
+				$("#mountain-headr").html('You grab the cat out of the air and hurl it off the mountainside. Manly. +3 Strength');
+				$("#strength-points").val(parseInt($("#strength").val())+3);
+				$('#mountain-select-1').append('<input type="button" value="Next" id="Mnext1" data-inline="true" data-mini="true" data-icon="check" class="Mnext1">').trigger('create');
+				$(".Mnext1").click(function(){ 
+				peak();
+				});
+			} 
+  });
+
+  //Run away	  
+  $("#mountain-choice-2").click(function(){
+	  $("#mountain-headr").html('You\'re allergic to cats. You decide to get out of there.');
+	  $("#mountain-select-1").empty();
+	  $("#mountain-select-2").empty();
+	  $("#mountain-select-3").empty();
+	  $("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-2-1" value="choice-1" type="radio"><label for="mountain-choice-2-1">Run ahead.</label>').trigger('create'); 
+	  $("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-2-2" value="choice-1" type="radio"><label for="mountain-choice-2-2">Run the way you came from.</label>').trigger('create');
+	  $('#mountain-choice-2-1').click(function(){     //Run ahead.
+	  	$("#mountain-headr").html('You run towards the cat. Startled, it turns around and books it. Ain\'t gonna deal with someone crazy enough to chase a mountain lion.');
+	  	$("#mountain-select-1").empty();
+	  	$("#mountain-select-2").empty();
+		$('#mountain-select-1').append('<input type="button" value="Next" id="Mnext1" data-inline="true" data-mini="true" data-icon="check" class="Mnext1">').trigger('create');
+		$(".Mnext1").click(function(){ 
+			peak();
+		});  
+	  });
+	  $('#mountain-choice-2-2').click(function(){     //Run the way you came from.
+	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you\'re back where you started. -20 Health');
+		$("#health-points").val(parseInt($("#health").val())-20);  
+	  	$("#mountain-select-1").empty();
+	  	$("#mountain-select-2").empty();
+		$('#mountain-select-1').append('<input type="button" value="Next" id="Mnext1" data-inline="true" data-mini="true" data-icon="check" class="Mnext1">').trigger('create');
+		$(".Mnext1").click(function(){ 
+			peak();
+		});  
+	  });
+	  
+  });
+  
+  //Show you're not a threat.	  
+  $("#mountain-choice-3").click(function(){
+	  $("#mountain-headr").html('Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving. Item: Mountain lion tooth (+25 Health)');
+	  $("#mountain-select-1").empty();
+	  $("#mountain-select-2").empty();
+	  $("#mountain-select-3").empty();
+	  if(backpackCheak("Mountain lion tooth"))
+	  {								
+		alert("you alrady have the Mountain lion tooth");
+	  }
+	  else if((!backpackCheak("Mountain lion tooth") )&& backpack.length <=4)
+	  {
+		backpack.push("Mountain lion tooth");							//add Mountain lion tooth to backpack
+		$("#health-points").val(parseInt($("#health").val())+25); 	//Mountain lion tooth add 25 to health
+		arrayShowItem();
+	  }
+	  else if(backpack.length >4)
+	 {
+		alert("you dont have any more space in your backpack!!");
+		arrayShowItem();
+	 }
+	 $('#mountain-select-1').append('<input type="button" value="Next" id="Mnext1" data-inline="true" data-mini="true" data-icon="check" class="Mnext1">').trigger('create');
+		$(".Mnext1").click(function(){ 
+			peak();
+		});   
+  });
+	
+  //Event 2: Ascending The Peak
+  function peak() {
+  	$("#mountain-headr").html('You enter the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. You could use a little break, and she\'s genuinely interested in how such an intriguing creature has found itself in the mountains.  After some time spent discussing your adventures, you catch the glisten of a jewel-encrusted sword in her backpack, it looks powerful. She notices your gaze and understands what it means; You want the sword. "Please, this sword is a family heirloom. It\'s value to me cannot be measured in coin; It\'s not for sale."');
+  
+  }
+								   
+	  
+ ///////////////////////////////////////////////////////////////Dessert  ///////////////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 </body>
