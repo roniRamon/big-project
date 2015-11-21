@@ -201,22 +201,22 @@ Switch (button):
 
 <button 1.1> Go back to the meadow and ask the goat-keeper for some candle or a flashlight. </button>
 
-if (metGoatKeeper == true)
 // THIS CAN BE VISIBLE ONLY IF IN THE FOREST EVENT 1- GOATS YOU HAVE MET A GOATKEEPER - IN THE FIRST SELECTION OPTION 2 OR 3 WERE CHOOSEN>>
-
-<button 1.2> Go in without any light. </button>
-<button 1.3> Camp the night and wait for the morning. </button>
+if (metGoatKeeper == true)
+    <button 1.2> Go in without any light. </button>
+    <button 1.3> Camp the night and wait for the morning. </button>
    
 if (button 1.1)
-<p> You went back to the goat-keeper for some kind of candle. but the goat-keeper disappeared. All you see in the meadow is coals from the goat-keeper fire. You pick up a branch and light it up with a coal. Now you can enter the forest. </p>
+    <p> You went back to the goat-keeper for some kind of candle. but the goat-keeper disappeared. All you see in the meadow is coals from the goat-keeper fire. You pick up a branch and light it up with a coal. Now you can enter the forest. </p>
 
 // event end
 
 else if (button 1.2)
-<p> You enter the forest without any light. You cannot see anything, its all dark around you. You make a few steps and you fall into a deep hole in the ground.
-<button 2.1> Try to climb out with your hands. </button>
-<button 2.2> Start crying. </button>
-<button 2.3> You make a rope out of your cloth. </button>
+    <p> You enter the forest without any light. You cannot see anything, its all dark around you. You make a few steps and you fall into a deep hole in the ground.
+
+    <button 2.1> Try to climb out with your hands. </button>
+    <button 2.2> Start crying. </button>
+    <button 2.3> You make a rope out of your cloth. </button>
 
     if (button 2.1) 
 	<p> You try to climb up… You start climbing and in the middle of the hole you fall back and brake your back. Nobody know you are stuck there so after a few days you die of starvation. </p>
