@@ -8,7 +8,7 @@
 3:        Game Play Look and Feel
 3.1:          Appearance					(need immediate attention)
 3.1.1:            Welcome Page			(completed)
-3.1.2:            First quest – Event T		(completed)
+3.1.2:            First quest – Event T				(need immediate attention)
 3.1.3:            City – the main hub		(completed)
 3.1.4:            Forest
 3.1.4.1:              Event Goat Adventure	(completed)
@@ -18,28 +18,28 @@
 3.1.4.5:              Dead Body					(need immediate attention)
 3.1.5:            Desert
 3.1.5.1:              Dessert Desert		(completed)
-3.1.5.2:              Merchant 	                                (need immediate attention
+3.1.5.2:              Merchant 	        	(completed)                        
 3.1.5.3:              Cactus Island		(completed)
 3.1.5.4:              Canyon Adventures				(issue with items)
 3.1.5.5:              Pyramid			(completed)
 3.1.6:            Mountains
 3.1.6.1:              Mountain Lion		(completed)
 3.1.6.2:              Ascending The Peak			(need immediate attention)
-3.1.6.3:              Merchant			(somewhat completed)
-3.1.7:            Python’s Nest			(somewhat completed)
-3.1.8:            Brick’s Hut			(somewhat completed)
+3.1.6.3:              Merchant			(completed)
+3.1.7:            Python’s Nest			(completed)
+3.1.8:            Brick’s Hut			(completed)
 3.1.9:            Penguins			(somewhat completed)
 3.1.10:           Options/Settings
 3.1.10.1:             Backpack  				(need immediate attention)
 3.2:          Variables and objects				(incomplete list)
 3.3:          Players attributes 				(incomplete list)
 3.4:          Artifacts						(incomplete list)
-3.5:          Strategies and Motivations	(somewhat completed)
+3.5:          Strategies and Motivations			(need immediate attention)
 3.6:          Level summary/Story progression			(need immediate attention)
 
 4:        Development Specifications
-4.1:          System Requirements		(completed)
-4.2:          Development Specifications	(completed)
+4.1:          System Requirements				(need immediate attention)
+4.2:          Development Specifications			(need immediate attention)
 4.3:          Algorithm Style
 4.3.1:            Development Algorithm				(need immediate attention)
 
@@ -113,9 +113,9 @@ e) Hints Page: each event or location will have a small note attached to it with
 
 3.1.3		City – the main hub
 Center location from where User has an option to go to selected locations:
-a) Mountains, 
-b) Forest
-c) Desert
+a) Mountains, disabled after all events are finished 
+b) Forest, disabled after all events are finished
+c) Desert, disabled after all events are finished
 d) Python’s Nest
 
 3.1.4	 	Forest
@@ -630,92 +630,283 @@ switch (button):
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Desert events and only after finishing it will be able to go to other location. 
 
-NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
+NICE TO HAVE (not in this phase): After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
 # some notes:
 # What will the items in merchant story do?
-# logic to story 1 - desert is confusing towards the end. What exactly happens?
+# logic to story 1: simplified and given some other logic.
 
 
 3.1.5.1 	Dessert Desert
 <p>The world beginnings to blur. The sand below begins to stick the bottom of your feet. </p>
 
-<button 1.1> Continue walking. </button>
-if (intelligence > 12) # then option 2 is visible
-    <button 1.2> Investigate. </button>
+<button 1> Continue walking. </button>
+if (intelligence > 12) // then option 2 is visible
+    <button 2> Investigate. </button>
 
-buttonChoice = <<button>>
+switch (button):
+	case (button 1) // walk 1
+    		<p> You continue walking. Your feet are growing heavy. </p>
 
-while (buttonChoice != button 1.1)
-    <p> You continue walking. Your feet are growing heavy. </p>
+    		<button 1.1> Continue walking.. </button>
+  		  if (intelligence > 12) # then option 2 is visible
+        	    <button 1.2> Investigate. </button>
+		  
+		  switch (button):
+			case (button 1.1): //walk2
+				<p>You continue walking. Your feet are growing heavy. You look down and see what's wrong: You're sinking and you are already in the sand till your knees</p>
+			
+				<button 1.1.1>Make like a rock and roll.</button>	
+				<button 1.1.2>Freak out!</button>
+				
+				switch (button):
+					case (button 1.1.1): //rock and roll
+						<p>You do a barrel roll, again and again until you're out of the quicksand.</p>				
 
-    <button 1.1> Continue walking.. </button>
-    if (intelligence > 12) # then option 2 is visible
-        <button 1.2> Investigate. </button>
+					case (button 1.1.2): // freakout
+						<p>You freak out hardcore, and continue to sink. Unfortunately the more you struggle the more you sink it. Now you realize that staying cool and rolling off would be wiser, but it's too late. You die. GAME OVER</p>	
 
-    buttonChoice = <<button>>
+<END OF GAME>
+	
+			case (button 1.2): // investigate2
+				<p>You investigate the area and see that you are ankles deep in the sand. That is something not right. You return back by your steps without any sudden move. You have realized that was the beginning of quicksand. You would be in great trouble if you didn't notice that on time. Find a way around this dangerous area and circle around the quicksand. </p>
+	
+<<NEXT EVENT>>
+	
+	case (button 2): // investigate1
+    		<p> You get down on one knee for a closer look at the sand. It smells sugary. You lean in closer to smell the sand. Definitely sugar. </p>
 
-# once the user clicks button: investigate 
-<p> You get down on one knee for a closer look at the sand. It smells sugary. </p>
+    		<button 2.1> Continue walking.. </button>
+        	<button 2.2> Lick the sand. </button>
 
-<button 2.1> Continue walking.. </p>
-<button 2.2> Investigate. </p>
+		switch (button):
+			case (button 2.1): //walk3
+				<p>You have decided that you are loosing your mind and have to leave as soon as possible from this horrible place. You continue walking until weird sensation is gone. </p>
 
-buttonChoice = <<button>>
+<<NEXT EVENT>>
 
-while( buttonChoice != button 2.2 )
-    <p> You continue walking. Your feet are growing heavy. </p>
+			case (button 2.2): //lick
+				<p>It's super weird but you lick the sand. It tastes like sugar. It's definitely sugar. Yum. Your health is increasing (+5 Health) </p>
+				health +=5;
 
-    <button 2.1> Continue walking. </button>
-    if (intelligence > 12) # then option 2 is visible
-        <button 2.2> Investigate. </button>
+<<NEXT EVENT>>
 
-# once the user clicks 2. investigate 
-<p>You lean in closer to smell the sand. Definitely sugar.</p>
 
-<button 3.1>Continue walking.</button>
-<button 3.2>Lick the sand.</button>
 
-if (button 3.2)
-<p> Definitely sugar. Yum. -> +1 Health </p>
 
-health += 1;
-
-else // walk
-<p> It's become increasingly hard to walk. </p>
-
-<button 4.1> 1. Continue walking... </button>
-<button 4.2> Make like a rock and roll. </button>
-
-if (button 4.1)
-    <p> You're sinking>
-
-    <button 5.1>Continue walking... </button>
-    <button 5.2>Freak out! </button>
-
-    if (button 5.1)
-        <p> You try to walk out of this mess. You got out!! </p>
-
-        strength += 10;
-        health += 5;
-
-        // next event
-
-    else
-        <p> "You freak out hardcore, and continue to sink. </p>
-        <GAME END>
-
-else // rock and row
-    <p> You do a barrel roll, again and again until you're out of this sticky mess. </p>
-
-    // next event
 
 <<NEXT EVENT>>
 
 
 3.1.5.2 	Merchant
 
-..
+
+<p> You are walking through the desert when somewhere on the horisont you see a figure approaching you. You recognize that he's a merchant with goods. What do you do? </p>
+
+<button 1> Ignore him and move on</button>
+<button 2> Attack and try to take his goods</button>
+<button 3> Try to buy something</button>
+if intelligence > 30
+    <button 4> Start conversation </button>
+
+Switch (button):
+    Case (button 1):
+        <p> Merchant is trying to sell you something, but you reply him "Naaaah. I'm good." and you walk away.</p>
+
+<<NEXT EVENT>>
+
+    Case (button 2):
+        <p> Merchant is fighting back. Strength 30. You say: "Hasta la vista baby!" </p>
+
+        fightYou = Math.floor (Math.random() * Strength);
+        fightOpponent = Math.floor (Math.random() * 30);
+
+        <p> Your attack: <<fightYou>>. Merchant's attack <<fightOpponent>> </p>
+
+        if (fightYou < fightOpponent):
+            Health -= 20;
+
+            if (health <= 0):
+                <popup message> You have died. Game Lost</popup message>
+
+<END OF GAME>
+
+            else: // you lose the fight but you are still alive
+                <p> You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases and gives you an apple (+25 health, +5 Intelligence)
+                Do you want to put it in your backpack? </p>
+
+                <button 2.1> Yes </button>
+                <button 2.2> No </button>
+
+		Switch (button):
+		    Case (button 2.1): // yes, take it
+                
+                      if (backpack.length < backpackSize)
+                        add.backpack(apple)
+			Health += 25;
+	    		Intelligence += 5
+<<NEXT EVENT>>
+
+                      else  // not space in backpack, all slots are filled
+                        <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+<<NEXT EVENT>>
+
+                    Case (button 2.1):
+                      <popup> You didn't take the apple</popup>
+
+<<NEXT EVENT>>
+
+        else: // if you win fight
+            <p> You have won the fight (Strength +10), but you leave the merchant go after taking his goods: money 1000, pocket knife (+5 Strength), short sword (+40 Strength), apple (+25Health, +5 Intelligence) </p>
+
+            Money += 1000;
+            Strength += 10; // gained at the fight
+            
+
+            <p> Do you want to put a pocket knife in your backpack? </p>
+
+            <button 2.1.1> Yes</button>
+            <button 2.1.2> No</button>
+
+            if (button 2.1.1) // yes, take it
+
+                if (backpack.length < backpackSize):
+                    add.backpack(pocketKnife)
+                    strength += 5;
+
+
+                else:  // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+
+            if (button 2.1.2): // don't take it
+                <popup> You didn't take the knife </popup>
+			 
+            <p> Do you want to put a short sword in yout backpack? </p>
+
+            <button 2.2.1> Yes </button>
+            <button 2.2.2> No </button>
+
+            if (button 2.2.1) // yes, take it
+
+                if (backpack.length < backpackSize)
+                    add.backpack(shortSword)
+                    strength += 40;
+
+                else // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+
+            if (button 2.2.2)
+                <popup> You didn't take the sword </popup>
+
+            <p> Do you want to put an apple in your backpack?</p>
+
+            <button 5.1> Yes</button>
+            <button 5.2> No</button>
+
+            if (button 5.1) // yes, take it
+
+                if (backpack.length < backpackSize)
+                    add.backpack(apple)
+                    health += 25;
+		    intelligence += 5;
+
+
+                else // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+
+            if (button 5.2):
+                <popup> You didn't take the apple</popup>
+
+<<NEXT EVENT>>
+
+    Case (button 3):  // buy something
+	<p> Merchant shows you his goods:</p>
+
+	<checkbox 1.1> Sword (+40 Strength), price 800$ </checkbox>
+
+	<checkbox 1.2> Apple(+25Health, +5 Intelligence). price 40$ </checkbox>
+
+	<checkbox 1.3> Pocket Knife (+5 Strength), price 100$ </checkbox>
+
+	<checkbox 1.4> No thanks, I don't need anything. </checkbox>
+
+
+	<button 3.1> Submit </button>
+
+	if (checkbox 1.4 == false)
+
+	    // short sword purchase
+	    if (checkbox 1.1 == true) 
+
+	        if (money >= 800)
+	            money -= 800;
+
+	       		if (backpack.length < backpackSize)
+               		      add.backpack(shortSword)
+              		      strength+= 40;
+			  
+
+                	else // we do not have space, all slots are filled
+                              <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+			      money +=800;
+			     
+		else // if money <800
+		    <p> You don’t have enough money to buy a sword.</p>
+
+	    //apple purchase
+	    if (checkbox 1.2 == true) 
+
+	        if (money >= 40)
+	            money-=40;
+
+            		  if (backpack.length < backpackSize)
+               		      add.backpack(apple)
+              		      health += 25;
+		   	      intelligence += 5;
+			  
+
+                	  else // we do not have space, all slots are filled
+                                <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				money +=40;
+	
+		     
+		else // if money <40
+		    <p> You don’t have enough money to buy an apple.</p>
+
+	    // pocket knife purchase
+	    if (checkbox 3.3 == true) 
+
+	        if (money >= 100)
+	            money-=100;
+
+            		    if (backpack.length < backpackSize)
+               		      add.backpack(pocketKnife)
+              		      strength += 5;
+			  
+                	    else // we do not have space, all slots are filled
+                                <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				money+=100;
+		     
+		else // if money <100
+		    <p> You don’t have enough money to buy a pocket knife.</p>	            
+	   
+<<NEXT EVENT>>
+
+	else // if checkbox don’t want to buy anything is on
+	    <p> You reply: "No thanks, I don't need anything"</p>
+
+<<NEXT EVENT>>
+
+	Case (button 4): //start conversation
+		<p>You start conversation with the merchant, but after he realizes that you are not interested in his goods, he walks away. </p>
+
+<<NEXT EVENT>>
+
+
 3.1.5.3 	Cactus Island
 // note: The cactus island scene is used 4 times, so it may be a good idea to store this branch into a function.
 
@@ -1124,6 +1315,7 @@ if (button 1.3) // convince cat
 <<... waiting for the story logic to be corrected ... >>
 
 3.1.6.3		Merchant in Mountains
+
 <p> You are walking on the road up the mountain when you see a merchant with goods. What do you do? </p>
 
 <button 1> Ignore him and move on</button>
@@ -1269,7 +1461,7 @@ Switch (button):
 	    if (checkbox 1.1 == true) 
 
 	        if (money >= 450)
-	            money -= 500;
+	            money -= 450;
 
 	       		if (backpack.length < backpackSize)
                		      add.backpack(sword)
@@ -1465,12 +1657,13 @@ Forest:
 - ax : Artifact // found object
 
 Desert:
-// Desert desert
-- buttonChoice : String // stores the button value the user picks
- 
+// Desert Merchant
+- apple : Aritefact 
+- pocketKnife : Aritefact
+- shortSword : Aritefact 
 
 // Cactus Island
-- cactus : artifact // contains water
+- cactus : Artifact // contains water
 
 // Pyramid
 - temporaryItem : String // stores a temporary item for only that event
@@ -1499,15 +1692,16 @@ Following artifacts will be available to collects in various events and their in
 Name			   Strength	Health	Intelligence	price
 Knife (forest merchant)		+10				200
 Sword (forest merchant) 	+40				500		
-Super Sword (??)		+ 60		
 Whisky (forest merchant)		+5		-10	50
-Apple				+5	
+Apple (desert merchant)			+25		+5	40
 Small Ax (forest hole)		+35			
 Ax (forest dead body)		+30
 Tooth (mountain lion)			+25
 whisky (mountain merchant)		+5		-10	50
 sword (mountain merchant)	+25				450
 knife (mountain merchant)	+5				100
+pocketKnife(desert merchant)	+5				100
+shortSword (desert merchant)	+40				800
 	
 
 
