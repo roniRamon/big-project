@@ -21,8 +21,8 @@
 3.1.5.1:              Dessert Desert		(completed)
 3.1.5.2:              Merchant 	        	(completed)                        
 3.1.5.3:              Cactus Island		(completed)
-3.1.5.4:              Canyon Adventures				(issue with items)
-3.1.5.5:              Pyramid			(completed)
+3.1.5.4:              Canyon Adventures				(need immediate attention)
+3.1.5.5:              Pyramid					(need immediate attention)
 3.1.5.6		      Desert Penguin		(completed)
 3.1.6:            Mountains
 3.1.6.1:              Mountain Lion		(completed)
@@ -1047,85 +1047,104 @@ switch (button):
 3.1.5.4 	Canyon Adventures
 // note: this story needs some modifications on the items section since items will be permenant.
 
-<p>After the tiring walking in the desert sands you reach an enormous canyon. It's very deep and foggy and you can't see the bottom or the other side if it.
-What do you do? </p>
-<button 1.1> You are making a loud shout right in the canyon. </button>
-<button 1.2> You decide to have a rest and wait for the fog to clear out. </button>
-if intelligence is high
+<p>After the tiring walking in the desert sands you reach an enormous canyon. It's very deep and foggy and you can't see the bottom or the other side if it. What do you do? </p>
+
+<button 1> You are making a loud shout right in the canyon. </button>
+<button 2> You decide to have a rest and wait for the fog to clear out. </button>
+if (intelligence > 15):
     <button 1.3> You are cautiously exploring the edge of the canyon.</button>
 
-if (button 1.1)
-    <p>Oh no! Suddenly the ground is shaking and the giant ugly troll is climbing out from the canyon!
-    He has a stupid face and a cold. He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk!
-    What do you do? </p>
+switch (button):
+	case (button 1): // shout in canyon
+		<p>Oh no! Suddenly the ground is shaking and the giant ugly troll is climbing out from the canyon! He has a stupid face and a cold. He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk! What do you do? </p>
 
-    <button 2.1> You fight the troll. </button>
-    <button 2.2> You run like hell back to the desert. </button>
-    <button 2.3> You jump into the canyon right between troll's legs. </button>
+		<button 1.1> You fight the troll. </button>
+    		<button 1.2> You run like hell back to the desert. </button>
+		<button 1.3> You jump into the canyon right between troll's legs. </button>
 
-    if (button 2.1)
-        <p> You are fighting the troll. Luckily he is so sick and absent-minded he can't catch you. He gets upset, starts to cry and tells you his name is Karl. Very dirty and sticky you search his pockets and get water (++Health) and the giant needle (+Item).</p>
+		switch (button):
+			case (button 1.1)
+			        <p> You are fighting the troll. Luckily he is so sick and absent-minded he can't catch you. He gets upset, starts to cry and tells you his name is Karl. Very dirty and sticky you search his pockets and get water (+5 Health) and the giant needle. Do you want to accept the giant needle (+10 Strength)? </p>
+				<button 1.1.1> Yes </button>
+				<button 1.1.2> No </button>
 
-	// next event 
+				switch (button):
+					case (button 1.1.1): //yes, take it	
+			                	if (backpack.length < backpackSize)
+							add.backpack(needle)
+			   				strength+= 10;
 
-    else if (button 2.2)
-	<p> The troll catches you! He puts you in his pocket and carries back to his dank home at the bottom of the canyon. You have to cook, clean and bear the thundering sneezing till the rest of your life.</p>
-
-	// next event
-
-    else // button 2.3
-	<p> You are flying through the fog and land in the lake. You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (-Item). You manage to find a path to the city and return weak and wet.</p>
-
-	// next event
-
-else if (button 1.2)
-    <p>At twilight you hear flapping of the wings and the pair of coloured birds lands near you. The lizard-looking riders get down from them and demand that you leave. 
-    What do you do? </p>
-
-    <button 3.1> You bargain with them.</button>
-    <button 3.2> You jump on one of the birds and try to fly away.</button>
-    <button 3.3> You jump into the canyon and disappear in the fog.</button>
-
-    if (button 3.1)
-	<p> You give them your shoes and in return they carry you in the city 
-	(+Strength as you rest during the journey).
-	During the fly you manage to sneak a bag of money (+Item). </p>
-
-	// next event
-
-    else if (button 3.2)
-        <p> Bummer! The bird is smart! She makes a circle and flies back to the owner. He is not pleased and bites you. You are poisoned and stay in the desert forever. </p>
-
-	// next event
-
-    else // button 3.3
-	<p> You reach the giant trampoline at the bottom and jump out of the canyon. You frostbite your ears during the flight (-Health), but find a tree with juicy lematos on the other side. You eat a fruit (+Health) and find a way to the city. </p>
-
-	// next event
-
-else // button 1.3
-    <p>You find a tiny path and descend into the canyon. At the lower lever you enter a lovely village of butter-eating leprechauns. They seem hospitable and serve you a dinner (which is made mainly of butter), but oh no! they are not going to let you leave!
-    What do you do? </p>
-	<button 4.1> You distract them and jump deeper into the canyon. </button>
-	<button 4.2> You rely on your eloquence and begin to persuade them. </button>
-	<button 4.3> You decide to stay. </button>
-
-	if (button 4.1)
-	    <p> You are reaching the bottom of the canyon. You spend a lot of power by going through bushes (-Strength) and quench your thirst at a spring (+Health). Finally you manage to find a way back to the city.</p>
-
-	    // next event 
-
-	else if (button 4.2)
-	    <p> Your detailed descriptions of all the yummy food besides butter that there is the world inspire leprechauns and they decide to leave the village and the canyon! They inflate the hot air balloon and take you to the city. As a gift you receive a pack of magical butter that makes one invulnerable.</p>
-
-	    // next event 
-
-	else // button 4.3
-	    <p> You learn the Irish step dance and grow a beard so long that sometimes you make a hammock out of it and spend all day swinging in it. The moist weather and buttery diet undermine your health. You stay in the canyon forever.</p>
-
-	    // next event
+				                else // we do not have space, all slots are filled
+        			   	        	<popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+		
+        	  			case (button 1.1.2) // don't take it
+                	    			<popup> You didn't take the needle</popup>
 
 <<NEXT EVENT>>
+
+		case (button 1.2): //run back to desert
+			<p> The troll catches you! He puts you in his pocket and carries back to his dank home at the bottom of the canyon. You have to cook, clean and bear the thundering sneezing till the rest of your life. GAME OVER</p>
+
+<END OF GAME>
+
+		case (button 1.3): // jump between troll's legs
+			<p> You are flying through the fog and land in the lake. You have injured your hand (-10 Health). You manage to find a path and return to your search of penguin very weak and wet.</p>
+
+
+<<NEXT EVENT>>
+
+	case (button 2): // rest and wait for fog to clear
+		<p>At twilight you hear flapping of the wings and the pair of coloured birds lands near you. The lizard-looking riders get down from them and demand that you leave. What do you do? </p>
+
+		<button 2.1> You bargain with them.</button>
+		<button 2.2> You jump on one of the birds and try to fly away.</button>
+		<button 2.3> You jump into the canyon and disappear in the fog.</button>
+
+		switch (button):
+
+			case (button 2.1):
+				<p> You give them your shoes and in return they give you money (+200$). </p>
+				money += 200;
+<<NEXT EVENT>>
+
+
+			case (button 2.2):
+				<p> Bummer! The bird is smart! She makes a circle and flies back to the owner. He is not pleased and bites you. You are poisoned and stay in the desert forever. GAME OVER </p>
+
+<END OF GAME>
+
+			case (button 2.3):
+				<p> You reach the giant trampoline at the bottom and jump out of the canyon. You frostbite your ears during the flight (-5 Health), but find a tree with juicy lematos on the other side. You eat a fruit (+10 Health) and get back on the search for penguins. </p>
+				health +=5;
+
+<<NEXT EVENT>>
+
+	case (button 3): // explore canyon
+		<p>You find a tiny path and descend into the canyon. At the lower lever you enter a lovely village of butter-eating leprechauns. They seem hospitable and serve you a dinner (which is made mainly of butter), but oh no! they are not going to let you leave! What do you do? </p>
+
+	<button 3.1> You distract them and jump deeper into the canyon. </button>
+	<button 3.2> You rely on your eloquence and begin to persuade them. </button>
+	<button 3.3> You decide to stay. </button>
+
+	switch (button):
+		case (button 3.1):
+			<p> You are reaching the bottom of the canyon. You spend a lot of power by going through bushes (-5 Strength) and quench your thirst at a spring (+ 10 Health). Finally you manage to find a that could lead to penguins. </p>
+			strength -= 5;
+			health += 10;
+
+<<NEXT EVENT>>
+
+		case (button 3.2):
+			<p> Your detailed descriptions of all the yummy food besides butter that there is the world inspire leprechauns and they decide to leave the village and the canyon! They inflate the hot air balloon and take you further on your quest. As a gift you receive a pack of magical butter that makes one invulnerable. (+50 Health)</p>
+			health += 50;
+
+
+<<NEXT EVENT>>
+
+		case (button 3.3):
+			<p> You learn the Irish step dance and grow a beard so long that sometimes you make a hammock out of it and spend all day swinging in it. The moist weather and buttery diet undermine your health. You stay in the canyon forever and give up the search for penguins and other quests. GAME OVER. </p>
+
+<END OF GAME>
 
 
 3.1.5.5 	Pyramid
@@ -1686,6 +1705,9 @@ Desert:
 // Cactus Island
 - cactus : Artifact // contains water
 
+//Canyon
+- needle : Aritefact
+
 // Pyramid
 - temporaryItem : String // stores a temporary item for only that event
 
@@ -1731,7 +1753,7 @@ smallKnife (mountain merchant)	+5				100
 pocketKnife(desert merchant)	+5				100
 shortSword (desert merchant)	+40				800
 Cactus (desert cactus island)		+5	
-
+Needle (desert canyon)		+10
 
 …			
 
