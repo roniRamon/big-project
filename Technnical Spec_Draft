@@ -1154,87 +1154,85 @@ switch (button):
 
 // note: these items do not go into the backpack. They are temporary
 
-<button 1.1> compass</button>
-<button 1.2> flame torch</button>
-<button 1.3> stack of gold</button>
+<button 1> compass</button>
+<button 2> flame torch</button>
+<button 3> stack of gold</button>
 
-temporaryItem = <<button>>
+switch (button):
+	case (button 1):
+		temporaryItem = "compass";
 
-<p> You decide to pick up <<temporaryItem>>>. The other items turns into dust. You walk down the path and a mummy suddenly appears from no where. You... </p>
 
-<button 2.1> run for your life </button>
-<button 2.2> fight the mummy </button>
-<button 2.3> talk to the mummy </button>
+	case (button 2):
+		temporaryItem = "flame torch";
 
-if (button 2.1)
-    <p> Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit. </p>
 
-    if (temporaryItem == compass )
-        <p> You found the exit! </p>
+	case (button 3):
+		temporaryItem = "stack of gold";
 
-        // next event 
 
-    else // you picked gold or torch
-        <p> you continue to walk around looking for an exit. You suddenly see a glimpse of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse of light, the tombs open and the mummies all come out of it. They are now walking towards you with their arms out.
+<p> You decide to pick up <<temporaryItem>>>. The other items turns into dust. You walk down the path and a mummy suddenly appears from nowhere. You... </p>
 
-        if (temporaryItem == "flame torch") 
-            <p> You picked the flame torch, you pull it out and all the mummies get scared and goes back into their tomb. You exit safely. </p>
+<button 1.1> run for your life </button>
+<button 1.2> fight the mummy </button>
+<button 1.3> talk to the mummy </button>
 
-            if (temporaryItem == "gold")
-                <p> You reach into your pocket and the gold has turned into sand. Bummer. </p>
+switch (button):
+	case (button 1.1) //run 
+		<p> Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit. </p>
+		switch (temporary Item):
+			case ("compass"):
+		        <p> You found the exit! </p>
+<<NEXT EVENT>>
 
-	    // next event 
-
-        else // you picked up gold
-            <p> you run in the opposite direction and FALL into another pit trap. </p>
-
-            health -= 10;
-            if (health < 0):
-                <END GAME>
-
-            <p> 20 days have gone by and you are still lost. You look at the stack of gold you’ve picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you that you have learned your lesson. In return, it wants the stack of gold back.
-            Give gold back? </p>
-
-            <button 3.1> Yes </button>
-            <button 3.2> Hell NO </button>
-
-            if (button 3.1):
-                <p> you hand it the gold. You magically appear outside the pyramid. </p>
-
-                strength += 10;
-                intelligence += 20;
-                // note to coders: use your judgement on what you think these should be based on other events
-
-		// next event 
-
-             else // you greedy sob
-                 <p> You don’t give back the gold, the angel mummy tells you “TOO BAD”, gives an evil laugh and disappears. 100 days go by and you become a mummy yourself </p>
-                 <END GAME>
-
-else if (button 2.2)
-    if (temporaryItem != "flame torch")
-        <p> The mummy looks at you and paralyzes you. It gets bored and walks away. </p>
-
-        health -= 10;
-        if (health < 0)
-            <END GAME>
-   
-    else
-        <p> You burn the mummy to a 2nd death. </p>
-
-        Strength += 10;
-
-    // change scenes to button 2.1 ("Along the way you fell...")
-
-else (button 2.3)
-    <p> The mummy chases you and you fell into a pit </p>
-
-    health -= 5;
-    intelligence += 10;
-
-    // change scenes to button 2.1 ("Along the way you fell...")
+			case ("flame torch")
+				<p>You suddenly see a glimpse of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse of light, the tombs open and the mummies all come out of it. Luckly you have a flame torch. You pull it out and all the mummies get scared and goes back into their tomb. You exit safely. </p>
 
 <<NEXT EVENT>>
+			case ("stack of gold")
+				<p> You continue to walk around looking for an exit. You suddenly see a glimpse of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse of light, the tombs open and the mummies all come out of it. You run in the opposite direction and FALL into another pit trap. 20 days have gone by and you are still lost. You look at the stack of gold you’ve picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you that you have learned your lesson. In return, it wants the stack of gold back. What do you do? </p>
+				<button 1.1.1> Don’t give back the gold </button>
+				<button 1.1.2> Hand it the gold </button>			
+
+				switch (button):
+					case (button 1.1.1):
+						<p> the angel mummy tells you “TOO BAD”, gives an evil laugh and disappears. You cannot leave the pyramid and you die there. GAME OVER</p>
+
+<END OF GAME>
+					case (button 1.1.2):
+						<p> You gave the gold back. You magically appear outside the pyramid.</p>				
+   
+<<NEXT EVENT>>
+
+	case (button 1.2): // fight mummy
+		<p>You decide to fight the mummy.</p>
+		if (temporaryItem != "flame torch")
+			<p> You don't have anything to fight mummy off, so mummy attacks you (-10 Health), but since you are easy target for her, gets quickly borred and leave you alone. </p> 
+			health -= 10;
+			
+			if (health < 0)
+				<popup message> You have died. Game Lost</popup message>
+
+<END OF GAME>
+	
+			else // you survived mummy's attack
+				<p>You manage to crawl back to the exit. </p> 
+
+<<NEXT EVENT>>
+
+		else: // you have flame torch
+			<p> You burn the mummy to a 2nd death and leave the pyramid. </p>
+
+<<NEXT EVENT>>
+
+
+	case (button 1.3): // talk to mummy
+    		<p> You decide to talk the mummy. The mummy ends up being friendly and offers you beer. You accept it and go with mummy outside the pyramid to the local bar. After a beer or two you continue your search for desert penguin. </p>
+
+<<NEXT EVENT>>
+
+
+
 
 3.1.5.6 Desert Penguin
 <p>You have reached the end of the desert where you have found Desert Penguin. He follows you back to the city. </p>
@@ -1670,10 +1668,8 @@ NICE TO HAVE : in version 1.2
 - forestPenguin : boolean;
 - mountainPenguin : boolean;
 
-
 - backpack : Artifacts [backpackSize] 
 - backpackSize : int
-- apple : Artifact
 
 Forest:
 // Merchant forest
