@@ -263,14 +263,19 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 
 		1.1.Result: You are fighting the troll. Luckily he is so sick and absent-minded he can't catch you.
 		He gets upset, starts to cry and tells you his name is Karl.
-		Very dirty and sticky you search his pockets and get water (++Health) and the giant needle (+Item).
+		Very dirty and sticky you search his pockets and get water (++Health) and the giant needle.
+		Do you want to keep the needle?
+			-Yes (+Item)
+			-No
+		Karl gets you to the other side of the canyon and you continue your journey.
 
 		1.2.Result. The troll catches you!
 		He puts you in his pocket and carries back to his dank home at the bottom of the canyon.
 		You have to cook, clean and bear the thundering sneezing till the rest of your life.
 
 		1.3.Result. You are flying through the fog and land in the lake.
-		You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (-Item).
+		You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (--Money if there are any).
+		 You manage to find a path to the other side of the canyon and continue your journey weak and wet.
 		You manage to find a path to the city and return weak and wet.
 
 
@@ -284,16 +289,16 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 			 2.1.Result. 
 			 a) You give them your shoes and in return they carry you in the city 
 			 (+Stength as you rest during the journey).
-			 During the fly you manage to sneak a bag of money (+Item). 
+			 During the flight you find a bag of money hidden under the saddle. Do you want to steal it?
+			 	-Yes (+Item)
+			 	-No
 
 			 2.2.Result. Bummer! The bird is smart! She makes a cirle and flies back to the owner.
 			 He is not pleased and bites you. You are poisoned and stay in the desert forever. 
 
 			 2.3.Result. You reach the giant trampoline at the bottom and jump out of the canyon.
 			 You frostbite your ears during the flight (-Health),
-			 but find a tree with juicy lematos on the other side.
-			 You eat a fruit (+Health) and find a way to the city. 
-
+			but find a magical money tree on the other side! (+Money).
 
 	Option 3. You find a tiny path and descend into the canyon. 
 	At the lower lever you enter a lovely village of butter-eating leprechauns.
@@ -307,13 +312,16 @@ Option 3 (if intelligence is high): You are cautiously exploring the edge of the
 
 			3.1.Result. You are reaching the bottom of the canyon. 
 			You spend a lot of power by going through bushes (-Strength)
-			and quench yout thirst at a spring (+Health).
-			Finally you manage to find a way back to the city.
+			and quench yout thirst at a spring (+Health). 
+			Finally you manage to find a way to the other side of the canyon.
 
 			3.2. Result. Your detailed descriptions of all the yummy food besides butter that there is the world 
 			inspire leprechans and they decide to leave the village and the canyon!
-			They inflate the hot air baloon and take you to the city.
-			As a gift you receive a pack of magical butter that makes one invulnerable.
+			They inflate the hot air baloon and take you to the side of the canyon.
+			As a gift they offer you a pack of magical butter that makes one invulnerable. 
+			Do you want to keep the present?
+				-Yes (+Item)
+				-No
 
 			3.3.Result. You learn the Irish stepdance and grow a beard so long 
 			that sometimes you make a hammock out of it and spend all day swinging in it
