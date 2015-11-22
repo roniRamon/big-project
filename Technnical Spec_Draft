@@ -21,8 +21,8 @@
 3.1.5.1:              Dessert Desert		(completed)
 3.1.5.2:              Merchant 	        	(completed)                        
 3.1.5.3:              Cactus Island		(completed)
-3.1.5.4:              Canyon Adventures				(need immediate attention)
-3.1.5.5:              Pyramid					(need immediate attention)
+3.1.5.4:              Canyon Adventures		(completed)
+3.1.5.5:              Pyramid			(completed)
 3.1.5.6		      Desert Penguin		(completed)
 3.1.6:            Mountains
 3.1.6.1:              Mountain Lion		(completed)
@@ -632,6 +632,7 @@ switch (button):
 3.1.4.6 Forest Penguin
 <p>You have reached the end of the forest where you have found Forest Penguin. He follows you back to the city. </p>
 forestPenguin += true;
+penguinCount ++;
 
 <button1>RETURN TO CITY </button>
 <<RETURN TO CITY>>
@@ -1237,6 +1238,7 @@ switch (button):
 3.1.5.6 Desert Penguin
 <p>You have reached the end of the desert where you have found Desert Penguin. He follows you back to the city. </p>
 desertPenguin += true;
+penguinCount ++;
 
 
 <button1>RETURN TO CITY </button>
@@ -1556,7 +1558,7 @@ Switch (button):
 3.1.6.4 Mountain Penguin
 <p>You have reached the top of the mountain where you have found Mountain Penguin. He follows you back to the city. </p>
 mountainPenguin += true;
-
+penguinCount ++;
 
 <button1>RETURN TO CITY </button>
 <<RETURN TO CITY>>
@@ -1647,8 +1649,10 @@ End of the Game
 
 
 3.1.9		Penguins
-Penguins are small creatures wandering around at the end of every locations path. Once Player finishes all the events in one location one penguin will join and will follow from now on. No backpack pocket is needed for a penguins’ collection. 
-Info of penguins collected should be visible on the user information. 
+Penguins are small creatures wandering around at the end of every locations path. Once Player finishes all the events in one location one penguin will join and will follow from now on. No backpack pocket is needed for a penguins’ collection. Info of penguins collected should be visible on the tool bar. 
+There will be 4 variables created for recording penguins collection. Three boolean for each locations' penguin marking that this penguin from that particular location has been collected and one integer variable for penguin count where counting of penguins will be recorded. 
+Boolean variables will be used to mark down if the location should be disabled (in case all events from that location were finished and penguin was found).
+Integer variable will be used to check in Pythons' nest if player has collected all three penguins.
 
 
 3.1.10		Options/Settings 
