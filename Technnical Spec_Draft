@@ -216,7 +216,7 @@ Switch (button):
         <p> Merchant is fighting back. Strength 50. You say: "My name is Inigo Montoya. You killed my father. Prepare to die". </p>
 
         fightYou = Math.floor (Math.random() * Strength);
-        fightOpponent = Math.floor (Math.random() * 100);
+        fightOpponent = Math.floor (Math.random() * 50);
 
         <p> Your attack: <<fightYou>>. Merchant's attack <<fightOpponent>> </p>
 
@@ -1031,36 +1031,38 @@ In the 1.0 version Player will go through all Mountains events and only after fi
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
 3.1.6.1 	Mountain Lion
-<p> You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU! </p>
+<p> You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma (strength 20). Despite its many names, it wants only one thing: to eat YOU! </p>
 
 <button 1.1> Fight the big cat. </button>
 <button 1.2> Run away. </button>
 if (intellegence > 12): // then option 3 is visible
     <button 1.3> Show you're not a threat. </button>
 
-if (button 1.1):
+
+if (button 1.1): // fight cat
     <p>You're not going to let Garfield deter you from your quest. You put your fists up. The feline lunges. </p>
 
-    yourStrength = random(from 0 to Strength.Max), 
-    pumaStrength = random(from 0 to 20)
+    fightYou = Math.floor (Math.random() * Strength), 
+    fightOpponent = Math.floor (Math.random() * 20)
 
-    <p> Your attack: <<yourStrength>>. Mountain lion's attack: <<pumaStrength>>. </p>
+    <p> Your attack: <<fightYou>>. Mountain lion's attack: <<fightOpponent>>. </p>
 
-    if (yourStrength < pumaStrength)
+    if (fightYou < fightOpponent) // you loose fight
 	<p>The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off. </p>
 
 	health -= 10;
 
         if (health < 0)
-            <END GAME>
 
-	else
-	    <p>  You grab the cat out of the air and hurl it off the mountainside. Manly. </p>
+<END OF GAME>
+
+     else // you won fight
+	 <p>  You grab the cat out of the air and hurl it off the mountainside. Manly. Your strength increeses (Strength +3) </p>
 	    strength += 3;
 
-	    // next event
+<<NEXT EVENT>>
 
-if (button 1.2):
+if (button 1.2): // run 
     <p>You're allergic to cats. You decide to get out of there. </p>
 
     <button 2.1> Run ahead. </button>
@@ -1069,50 +1071,341 @@ if (button 1.2):
     if (button 2.1):
 	<p> You run towards the cat. Startled, it turns around and books it. Ain't gonna deal with someone crazy enough to chase a mountain lion. </p>
 
-	// next event
-	
-    else
-	<p> You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you're back where you started. </p>
+<<NEXT EVENT>>
+
+    if (button 2.2):
+	<p> You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you're back where you started your climb up the mountain. Your leg hurt and got few bruisers from the fall (-20 Health). </p>
 
 	health -= 20;
         if (health < 0):
-            <END GAME>
+	<p> You died. Game over.</p>
 
-	// mext event
+<END OF GAME>
 
-if (button 1.3)
-    <p> Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving.
-    Item: Mountain lion tooth (+25 Health) 
-    Do you accept? </p>
+	else:
 
-    <button 3.1> Yes </button>
-    <button 3.2> No </button>
+<<NEXT EVENT>>
 
-    if (button 3.1):
-        health += 25;
 
-    // next event
+
+
+if (button 1.3) // convince cat
+    <p> Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before  leaving. Item: Mountain lion tooth (+25 Health) </p> 
+  
+            if (button 3.1) // yes, take it
+
+                if (backpack.length < backpackSize)
+                    add.backpack(tooth)
+                    health += 25;
+
+                else // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+            if (button 3.2)
+                <popup> You didn't take the tooth. </popup>
+
 
 <<NEXT EVENT>>
 
 
 3.1.6.2  	Ascending The Peak
 
-...
+<p>You enter the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. You could use a little break, and she's genuinely interested in how such an intriguing creature has found itself in the mountains.  After some time spent discussing your adventures, you catch the glisten of a jewel-encrusted sword in her backpack, it looks powerful. She notices your gaze and understands what it means; You want the sword. 
+"Please, this sword is a family heirloom. It's value to me cannot be measured in coin; It's not for sale."</p>
+
+<button 1>Fight her for the sword</button>
+
+<button 1>Leave her alone and continue your journey</button>
+
+<button 1>Ask if she would like to join your adventure</button>
+
+
+
+<<... waiting for the story logic to be corrected ... >>
+
+3.1.6.3		Merchant in Mountains
+<p> You are walking on the road up the mountain when you see a merchant with goods. What do you do? </p>
+
+<button 1> Ignore him and move on</button>
+<button 2> Attack and try to take his goods</button>
+<button 3> Try to buy something</button>
+if intelligence > 40
+    <button 4> Start conversation </button>
+
+Switch (button):
+    Case (button 1):
+        <p> Merchant is trying to sell you something, but you reply him "If you don't have any penguins I'm afraid I don't need anything else". You walk away.</p>
+
+<<NEXT EVENT>>
+
+    Case (button 2):
+        <p> Merchant is fighting back. Strength 70. You say: "Fear me, if you dare". </p>
+
+        fightYou = Math.floor (Math.random() * Strength);
+        fightOpponent = Math.floor (Math.random() * 70);
+
+        <p> Your attack: <<fightYou>>. Merchant's attack <<fightOpponent>> </p>
+
+        if (fightYou < fightOpponent):
+            Health -= 25;
+
+            if (health <= 0):
+                <popup message> You have died. Game Lost</popup message>
+
+<END OF GAME>
+
+            else: // you lose the fight but you are still alive
+                <p> You have lost the fight (-25 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) 
+                Do you want to put it in your backpack or leave it. </p>
+
+                <button 2.1> Yes </button>
+                <button 2.2> No </button>
+
+		Switch (button):
+		    Case (button 2.1): // yes, take it
+                
+                      if (backpack.length < backpackSize)
+                        add.backpack(whisky)
+			Health += 5;
+	                Intelligence -= 10;
+
+<<NEXT EVENT>>
+
+                      else  // not space in backpack, all slots are filled
+                        <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+<<NEXT EVENT>>
+
+                    Case (button 2.1):
+                      <popup> You didn't take the whisky </popup>
+
+<<NEXT EVENT>>
+
+        else: // if you win fight
+            <p> You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, knife (+5 Strength), sword (+25 Strength), whisky (+5Health, -10 Intelligence) </p>
+
+            Money += 80;
+            Strength += 5; // gained at the fight
+            
+
+            <p> Do you want to put a knife in your backpack? </p>
+
+            <button 2.1.1> Yes</button>
+            <button 2.1.2> No</button>
+
+            if (button 2.1.1) // yes, take it
+
+                if (backpack.length < backpackSize):
+                    add.backpack(knife)
+                    strength += 5;
+
+
+
+                else:  // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+
+            if (button 2.1.2): // don't take it
+                <popup> You didn't take the knife </popup>
+			 
+            <p> Do you want to put a sword in yout backpack? </p>
+
+            <button 2.2.1> Yes </button>
+            <button 2.2.2> No </button>
+
+            if (button 2.2.1) // yes, take it
+
+                if (backpack.length < backpackSize)
+                    add.backpack(sword)
+                    strength += 20;
+
+                else // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+
+            if (button 2.2.2)
+                <popup> You didn't take the sword </popup>
+
+            <p> Do you want to put whisky in your backpack?</p>
+
+            <button 5.1> Yes</button>
+            <button 5.2> No</button>
+
+            if (button 5.1) // yes, take it
+
+                if (backpack.length < backpackSize)
+                    add.backpack(whisky)
+                    health += 5;
+		    intelligence -= 10;
+
+
+                else // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+
+            if (button 5.2):
+                <popup> You didn't take the whisky</popup>
+
+<<NEXT EVENT>>
+
+    Case (button 3):  // buy something
+	<p> Merchant shows you his goods:</p>
+
+	<checkbox 1.1> sword (+25 Strength), price 450$ </checkbox>
+
+	<checkbox 1.2> whisky (+5Health, -10 Intelligence). price 50$ </checkbox>
+
+	if (intelligence > 30):
+	    <checkbox 1.3>knife (+5 Strength), price 100$ </checkbox>
+
+	<checkbox 1.4> No thanks, I don't need anything. </checkbox>
+
+
+	<button 3.1> Submit </button>
+
+	if (checkbox 1.4 == false)
+
+	    // sword purchase
+	    if (checkbox 1.1 == true) 
+
+	        if (money >= 450)
+	            money -= 500;
+
+	       		if (backpack.length < backpackSize)
+               		      add.backpack(sword)
+              		      strength+= 25;
+			  
+
+                	    else // we do not have space, all slots are filled
+                                <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				money +=450;
+			     
+		else // if money <450
+		    <p> You don’t have enough money to buy a sword.</p>
+
+	    //whisky purchase
+	    if (checkbox 1.2 == true) 
+
+	        if (money >= 50)
+	            money-=50;
+
+            		  if (backpack.length < backpackSize)
+               		      add.backpack(whisky)
+              		      health += 5;
+		   	      intelligence -= 10;
+			  
+
+                	  else // we do not have space, all slots are filled
+                                <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				money +=50;
+	
+		     
+		else // if money <50
+		    <p> You don’t have enough money to buy whisky.</p>
+
+	    // knife purchase
+	    if (checkbox 3.3 == true) 
+
+	        if (money >= 100)
+	            money-=100;
+
+            		    if (backpack.length < backpackSize)
+               		      add.backpack(knife)
+              		      strength += 5;
+			  
+                	    else // we do not have space, all slots are filled
+                                <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+				money+=100;
+		     
+		else // if money <100
+		    <p> You don’t have enough money to buy a knife.</p>	            
+	   
+<<NEXT EVENT>>
+
+	else // if checkbox don’t want to buy anything is on
+	    <p> You reply: "No thanks, I don't need anything"</p>
+
+<<NEXT EVENT>>
+
+	Case (button 4): //start conversation
+		<p>You start conversation with the merchant, but after he realizes that you are not interested in his goods, he walks away. </p>
+
+<<NEXT EVENT>>
+
+
+
+
+
 
 
 3.1.7		Python’s Nest
-Python is protecting the entrance to the Brick Hub. In order to get pass through Python 3 penguins has to be collected (one from each Location). 
-If a Player goes to the Python with less than 3 penguins Python will not let them through and the message appears: “I want you to bring me 3 penguins. Each of them is in different location in somewhere in the area. Only then I will let you through.”
+<<Python is protecting the entrance to the Brick Hub. In order to get pass through Python 3 penguins has to be collected (one from each Location). 
+If a Player goes to the Python with less than 3 penguins Python will not let them through >>
+
+if (penguinCount <3):
+	<p>“I want you to bring me 3 penguins. Each of them is in different location in somewhere in the area. Only then I will let you through.” </p>
+
 Once Player collects all penguins and will come to the Python’s Nest option appears:
-a) Give penguins to the python 
-b) Do not give penguins to the python
-Ad a: message “Python ate you instead of penguins”
-Ad b: message “Python lets you through.” Brick Event Z2 is enabled. Button “Go to Bricks Hut”
+
+if (penguinCount = 3)
+	<p> Python says: “I can see you have brought me penguins. Let me take care of them from now on." What do you do? </p>
+	
+	<button 1> Do not give penguins to the python  </button>
+	<button 2> Give penguins to the python </button>
+
+	if (button 1):
+		<p> You didn't give penguins to the Pythons and tried to protectem. Python ate you instead of penguins. You died. Game OVER.</p>
+
+<END OF GAME>
+
+	if (button 1):
+		<p> Python ate penguins, but lets you through.</p>
+		<button 1.1> Go to Mysterious Hut</button>
+
+<<NEXT EVENT : Bricks Hut>>
 
 
 3.1.8		Brick’s Hut
-The final battle with the Brick monster. Brick.strength = 200, Player.strength = from character attributes.
+<<The final battle with the Brick monster. Brick.strength = 200, Player.strength = from character attributes.>>
+
+
+<p>You have found what you have been looking for all the way. The only thing that prevents you from fulfilling your mission is the mysterious monster hiding in his hut. You can finally fight him to <<gameGoal>>. The monster is a Brick </p> 
+
+do: 	
+	roundNo = 1
+	finalBattleScore = 0
+
+	<p> Round <<roundNo>>  </p> 
+	<button 1.1> Fight</button>
+	
+	roundNo ++;
+	fightYou = Math.floor (Math.random() * Strength);
+	fightOpponent = Math.floor (Math.random() * 200);
+
+        <p> Your attack: <<fightYou>>. Brick's attack <<fightOpponent>> </p>
+		
+
+        if (fightYou < fightOpponent): // you loose round
+	<p> You lost the round <<roundNo>. </p>          
+
+        else: // you won round
+	<p> You won the round <<roundNo>></p>
+	finalBattleScore ++;
+
+	
+while (round <6)
+
+if (finalBattleScore <3)
+	<p> You were too weak to fight off the Brick. You lost the game. GAME OVER
+
+<END OF GAME>
+
+else:	
+	<p> Congrats!! You won the fight with the Brick and you have managed to <<gameGoal>>. Well Done!!! The End.</p>
+
+<END OF GAME>
+
+
 
 a) 5 rounds of battle,
 b) Player has to win at least 3 rounds.
@@ -1188,6 +1481,12 @@ Mountains:
 //
 
 
+Bricks Hut:
+- roundNo : int // number of the current fight round with Brick
+- finalBattleScore : int // count of won rounds with brick
+
+
+
 3.3		Players attributes 
 Player will have 3 main attributes:
 ...
@@ -1205,6 +1504,13 @@ Whisky (forest merchant)		+5		-10	50
 Apple				+5	
 Small Ax (forest hole)		+35			
 Ax (forest dead body)		+30
+Tooth (mountain lion)			+25
+whisky (mountain merchant)		+5		-10	50
+sword (mountain merchant)	+25				450
+knife (mountain merchant)	+5				100
+	
+
+
 …			
 
 
