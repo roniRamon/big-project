@@ -11,22 +11,21 @@ Table of Contents
 3.1.2:            First quest – Event T		(completed)
 3.1.3:            City – the main hub		(completed)
 3.1.4:            Forest
-3.1.4.1:              Event Goat Adventure	(need formatting)
-3.1.4.2:              Merchant			(need attention)
-3.1.4.3:              Hole					(need immediate attention)
-3.1.4.4:              River					(need immediate attention)
+3.1.4.1:              Event Goat Adventure	(completed)
+3.1.4.2:              Merchant                  (completed)
+3.1.4.3:              Hole			(completed)
+3.1.4.4:              River			(completed)
 3.1.4.5:              Dead Body					(need immediate attention)
 3.1.5:            Desert
-3.1.5.1:              Dessert Desert				(logic needs attention)
-3.1.5.2:              Desert - Merchant		(need formatting)
-3.1.5.3:              Desert Water		(need formatting)
-3.1.5.4:              Canyon Adventures		(need formatting)
-3.1.5.5:              Desert Pyramid		(need formatting)
+3.1.5.1:              Dessert Desert		(completed)
+3.1.5.2:              Merchant 	                                (need immediate attention
+3.1.5.3:              Cactus Island		(completed)
+3.1.5.4:              Canyon Adventures				(issue with items)
+3.1.5.5:              Pyramid			(completed)
 3.1.6:            Mountains
-3.1.6.1:              Mountain Lion				(need immediate attention)
+3.1.6.1:              Mountain Lion		(completed)
 3.1.6.2:              Ascending The Peak			(need immediate attention)
-3.1.6.3:              Merchant					(need immediate attention)
-3.1.6.4:              ...					(need immediate attention)
+3.1.6.3:              Merchant			(somewhat completed)
 3.1.7:            Python’s Nest			(somewhat completed)
 3.1.8:            Brick’s Hut			(somewhat completed)
 3.1.9:            Penguins			(somewhat completed)
@@ -55,341 +54,582 @@ Table of Contents
 
 
 
-1.	Overview
+1.		Overview
 The objective of this document is to provide a comprehensive guide on the architecture and inner workings behind the implementation of “The Tale of Tux”. “The Tale of Tux” is a web-based text game and makes a perfect project for beginner developers looking to build their first web-application
 
 *****
 (Note: formatting is messy, but will furnish, such as tabs and spaces. will fix when tech spec is looking near complete)
 *****
 
+2.		Summary
 
-2.	Summary
-2.1	Background Story
+
+2.1		Background Story
 <<Name of the Location>> is an imaginary world full of exciting adventures waiting for the ones who seek excitement. The goal of the game (selected by the user) is protected by the evil but mysterious cuboid monster, The Brick. Unfortunately to get to him Player must pass series of tasks and quests to be allowed to reach him. Maybe that is for good, as during those adventures Player will gain certain skills and artifacts which can help them to in the final combat. 
 
-2.2	Overview of Game
+
+2.2		Overview of Game
 “The Tale of Tux” is a role-playing game which takes place in a imaginary world filled with excitement and evil monsters. Users will be able to create custom characters and go on quests in order to defeat the evil but mysterious cuboid monster, The Brick.
 
-3.	Game Play Look and Feel
-3.1	Appearance
 
-3.1.1	Welcome page with Character selection
+3.		Game Play Look and Feel
 
+
+3.1		Appearance
+
+
+3.1.1		Welcome page with Character selection
 On the entry page in the beginning of a game Player will select their Character from available list. Options are as follows:
--	Viking
--	Warrior Princess
--	Cheese
--	Pine Cone
--	Horny Mushroom
+a) Viking
+b) Warrior Princess
+c) Cheese
+d) Pine Cone
+e) Horny Mushroom
 
- 
 After select the character, Player will choose their main goal. Options are as follows:
--	Save Prince
--	Milk Cow
--	Plant Tree
--	Eat the most delicious ice-cream in the world before it melts
+a) Save Prince
+b) Milk Cow
+c) Plant Tree
+d) Eat the most delicious ice-cream in the world before it melts
 
 The last option to select will be starting character’s attributes. Those include:
--	Strength (offensive)
--	Health (defensive)
--	Intelligence (giving more options in some events)
+a) Strength (offensive)
+b) Health (defensive)
+c) Intelligence (giving more options in some events)
+
 User is given the total of 100 points to redistribute among all parameters. None of the parameters can be set to less than 10 points. 
 
 After all points are redistributed Player will be able to go further to the next step.
 
-3.1.2	First quest – Event T
+
+3.1.2		First quest – Event T
 User is located IN FRONT of CITY GATES and will have to finish the first small quest which is linked with tutorial. Features will be shown on the page: 
--	Character page: attributes 
--	Backpack content and usage: removing items adding items, browsing through them (displaying attributes add-ons)
--	Options: 
-•	Go to City
--	Hints Page: each event or location will have a small note attached to it with a hint how to progress. 
+a) Character page: attributes 
+b) Backpack content and usage: removing items adding items, browsing through them (displaying attributes add-ons)
+c) Options 
+d) Go to City
+e) Hints Page: each event or location will have a small note attached to it with a hint how to progress. 
 
-3.1.3	City – the main hub
+
+3.1.3		City – the main hub
 Center location from where User has an option to go to selected locations:
--	Mountains, 
--	Forest
--	Desert
--	Python’s Nest
+a) Mountains, 
+b) Forest
+c) Desert
+d) Python’s Nest
 
-3.1.4	 Forest
+3.1.4	 	Forest
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Forest events and only after finishing it will be able to go to other location. 
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
 
-3.1.4.1 Event Goat Adventure
-<<p>>“You are crossing the meadow where group of goats are walking around. What do you do?</p>
-<<button 1.1>> Chase one of the goats and kill it. <</button1.1>>
-<<button 1.2>> Walk away <</button1.2>>
-<<button 1.3>> Pick some flowers and gets some rest <</button1.3>>
+3.1.4.1 	Event Goat Adventure
+<p> You are crossing the meadow where group of goats are walking around. What do you do? </p>
+
+<button 1.1> Chase one of the goats and kill it. </button>
+<button 1.2> Walk away </button>
+<button 1.3> Pick some flowers and gets some rest </button>
 
 Switch (button):
-	Case1 button 1.1:
-	  <p> “You have killed the goat, but all that running made you hungry. You set up the fire and roast the goat.(+30 Health)” </p>
+    Case (button 1.1):
+        <p> You have killed the goat, but all that running made you hungry. You set up the fire and roast the goat. (+30 Health) </p>
 
-	  Health += 30;
+        health += 30;
 
-	Case 2 button 1.2:
-	  <p> When exiting the meadow you have found a goat-keeper sleeping in the bushes. You wake him up. “Hey there. You should watch out for your goats, because some animal might attach them. There are plenty of wild beasts in this forest, you know.”
-Goat-keeper thanks you for the warning and gives you some goat milk to drink. +5 Health </p>
+        // event ends
 
-	  Health+=5;
+    Case (button 1.2):
+        <p> When exiting the meadow you have found a goat-keeper sleeping in the bushes. You wake him up. 
+        "Hey there. You should watch out for your goats, because some animal might attach them. There are plenty of wild beasts in this forest, you know."
+        Goat-keeper thanks you for the warning and gives you some goat milk to drink. +5 Health </p>
 
-	Case 3 button 1.3:
-	  <p>You are hanging out on the meadow, watching goats when a grumpy goat-keeper comes to you
-GK: “What are you doing around my goats?” 
-You: “Just hanging out and getting some rest. Is there something wrong?”
-GK: “I already lost few goats this month, killed by some tramps like you. Go away or I’ll punch you.”
-What do you do?</p>
+        health += 5;
+	metGoatKeeper = true; // this boolean is important for the next event
 
-  	  <<button 2.1>> Fight  <</button 2.1>>
-	  <<button 2.2>> Walk away<</button 2.2>>
-		Switch (button):
-			Case 1 button 2.1:
-			  <p> You attach the goat-keeper (Strength 100)</p>
+        // event ends
 
-			  FightYou = Math.floor (Math.random() * Strength)
-			  FightOpponent = Math.floor (Math.random() * 100)
+    Case (button 1.3):
+        <p> You are hanging out on the meadow, watching goats when a grumpy goat-keeper comes to you
+        GK: "What are you doing around my goats?"
+        You: "Just hanging out and getting some rest. Is there something wrong?"
+        GK: "I already lost few goats this month, killed by some tramps like you. Go away or I’ll punch you."
+        What do you do? </p>
 
-			  if (FightYou > Fight Opponent):
-				<p>You have beaten up the goat keeper and took his money and food (+50$, +10 Health)</p>
+	metGoatKeeper = true; // this boolean is important for the next event
 
-				Health += 10;
-				Money +=50;
-			  else:
-				<p>Goat keeper kicked your ass and left the meadow. (-20 Health).
-Feeling ashamed to be beaten up by a goat-keeper you are walking away promising yourself never to tell anyone about what has happened here. </p>
+        <button 2.1> Fight </button>
+        <button 2.2> Walk away </button>
 
-				Health += 20;
-			Case 2 button 2.2:
-			  <p> Goat keeper curse you but you don't case and simply walk away. </p>
+        Switch (button):
+            Case (button 2.1):
+                <p> You attack the goat-keeper (Strength 100) </p>
 
-3.1.4.2 Merchant
-<p>You are walking on the road and meeting a merchant with goods. What do you do?</p>
-<button 1.1> Ignore him and move on</button 1.1>
-<button 1.2> Attack and try to take his goods</button 1.2>
-<button 1.3> Try to buy something</button 1.3>
-if (intelligence > 40)
-	<button 1.4> Start conversation </button 1.4>
+	        fightYou = Math.floor (Math.random() * Strength)
+	        fightOpponent = Math.floor (Math.random() * 100)
 
-		Switch (button):
-			Case button 1.1:
-			  <p> Merchant is trying to sell you something, but you reply him "I am in the rush to <<insert game goal>> and cannot talk with you now. Maybe next time."</p>
+	        <p> Your attack: <<fightYout>>. Merchant's attack <<fightOpponent >> </p>
 
-<<Next Event>>
+	        if (fightYou >= fight Opponent):
+	            <p> You have beaten up the goat keeper and took his money and food (+50$, +10 Health) </p>
 
-			Case button 1.2:
-			  <p> Merchant is fighting back. Strength 50.
-			  You say: "My name is Inigo Montoya. You killed my father. Prepare to die". </p>
+	            health += 10;
+	            money +=50;
 
-			  FightYou = Math.floor (Math.random() * Strength);
-			  FightOpponent = Math.floor (Math.random() * 100);
+		    // event ends
 
-			  <p> Your attack <<FightYout>>. Merchant's attack <<FightOpponent >> </p>
+	        else:
+	            <p> Goat keeper kicked your ass and left the meadow. (-20 Health).
+	            Feeling ashamed to be beaten up by a goat-keeper you are walking away promising yourself never to tell anyone about what has happened here. </p>
 
-			  if (FightYou < FightOpponent):
-			    Health -= 15;
-			    if (Health <= 0):
-				<popup message> You have died. Game Lost </popup message>
-<<END OF GAME>>
-			    else:
-				<p> You have lost the fight (-15 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) 
-				Do you want to put it in your backpack or leave it.</p>
-				<button2.1> Yes</button2.1>
-				<button2.2> No</button2.2>
-				if (button2.1) // yes, take it
-				  if backpack.length =4 // we do not have space, all slots are filled
-				    add.backpack(whisky)
-				  else	
-				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
-				else if (botton2.1)
-				  <popup> You didn't take the whisky </popup>
-<<Next Event>>
+	            health -= 20;
 
-			else: // if you win fight
-			  <p> You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, knife (+5 Strength), sword (+20 Strength), whisky (+5Health, -10 Intelligence)
-			  Do you want to put a knife in your backpack? </p>
-			  
-			  money += 80
-			  
-			  <button2.1> Yes</button2.1>
-			  <button2.2> No</button2.2>
-				if (button2.1) // yes, take it
-				  if backpack.length =4 // we do not have space, all slots are filled
-				    add.backpack(knife)
-				    strength += 5;
-				    
-				  else	
-				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
-				else if (botton2.2)
-				  <popup> You didn't take the knife </popup>
+	            if (health <= 0):
+	                <popup message> You have died. Game Lost</popup message>
+	                <END OF GAME>
+
+		    // event ends
+
+            Case (button 2.2):
+                <p> Goat keeper curse you but you don't case and simply walk away. </p>
+
+		// event ends
+
+<<NEXT EVENT>>
+
+
+3.1.4.2 	Merchant
+<p> You are walking on the road and meeting a merchant with goods. What do you do? </p>
+
+<button 1.1> Ignore him and move on</button>
+<button 1.2> Attack and try to take his goods</button>
+<button 1.3> Try to buy something</button>
+if intelligence > 40
+    <button 1.4> Start conversation </button>
+
+Switch (button):
+    Case (button 1.1):
+        <p> Merchant is trying to sell you something, but you reply him "I am in the rush to <<insert game goal>> and cannot talk with you now. Maybe next time. </p>
+
+        // next event
+
+    Case (button 1.2):
+        <p> Merchant is fighting back. Strength 50. You say: "My name is Inigo Montoya. You killed my father. Prepare to die". </p>
+
+        fightYou = Math.floor (Math.random() * Strength);
+        fightOpponent = Math.floor (Math.random() * 100);
+
+        <p> Your attack: <<fightYout>>. Merchant's attack <<fightOpponent >> </p>
+
+        if (fightYou < fightOpponent):
+            Health -= 15;
+
+            if (health <= 0):
+                <popup message> You have died. Game Lost</popup message>
+                <END OF GAME>
+
+            else: // you lose the fight but you are still alive
+                <p> You have lost the fight (-15 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) 
+                Do you want to put it in your backpack or leave it. </p>
+
+                <button 2.1> Yes </button>
+                <button 2.2> No </button>
+
+                if (button 2.1): // yes, take it
+
+                    if (backpack.length < 4)
+                        add.backpack(whisky)
+
+			// event ends
+
+                    else  // we do not have space, all slots are filled
+                        <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+		        // event ends
+
+               else:
+                    <popup> You didn't take the whisky </popup>
+
+		    // event ends
+
+        else: // if you win fight
+            <p> You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, knife (+5 Strength), sword (+20 Strength), whisky (+5Health, -10 Intelligence) </p>
+
+            Money += 80;
+            Strength += 20 + 5;
+            Health += 5;
+            Intelligence -= 10;
+
+            <p> Do you want to put a knife in your backpack? </p>
+
+            <button 3.1> Yes</button>
+            <button 3.2> No</button>
+
+            if (button 3.1) // yes, take it
+
+                if (backpack.length < 4):
+                    add.backpack(knife)
+                    strength += 5;
+
+		    // event ends
+
+                else:  // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+		    // event ends
+
+            else:
+                <popup> You didn't take the knife </popup>
 			 
-			<p> Do you want to put a sword in yout backpack? </p>
-			<button3.1> Yes</button3.1>
-			<button3.2> No</button3.2>
-				if (button3.1) // yes, take it
-				  if backpack.length =4 // we do not have space, all slots are filled
-				    add.backpack(sword)
-				    strength += 20;
-				  else	
-				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
-				else if (botton2.3)
-				  <popup> You didn't take the sword </popup>
-			
-			<p> Do you want to put whisky in your backpack </p>
-			<button4.1> Yes</button4.1>
-			<button4.2> No</button4.2>
-				if (button4.1) // yes, take it
-				  if backpack.length =4 // we do not have space, all slots are filled
-				    add.backpack(sword)
-				    strength += 20;
-				  else	
-				    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
-				else if (botton4.2)
-				  <popup> You didn't take the sword </popup>
+            <p> Do you want to put a sword in yout backpack? </p>
+
+            <button 4.1> Yes </button>
+            <button 4.2> No </button>
+
+            if (button 4.1) // yes, take it
+
+                if (backpack.length < 4)
+                    add.backpack(sword)
+                    strength += 20;
+
+                else // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+            else
+                <popup> You didn't take the sword </popup>
+
+            <p> Do you want to put whisky in your backpack </p>
+
+            <button 5.1> Yes</button>
+            <button 5.2> No</button>
+
+            if (button 5.1) // yes, take it
+
+                if (backpack.length < 4)
+                    add.backpack(sword)
+                    strength += 20;
+
+		    // next event 
+
+                else // we do not have space, all slots are filled
+                    <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+		    // next event
+
+            else (button 5.2)
+                <popup> You didn't take the sword </popup>
+
+		// next event 
+
+    Case (button 1.3):  // buy something
+	<p> Merchant shows you his goods:</p>
+
+	<checkbox 1.1> sword (+20 Strength), price 500$ </checkbox>
+	<checkbox 1.2> whisky (+5Health, -10 Intelligence). price 50$ </checkbox 1.2>
+	if (intelligence > 30):
+	    <checkbox 1.3>knife (+5 Strength), price 200$ </checkbox>
+	<checkbox 1.4> No thanks, I don't need anything. </checkbox>
+	<button 6.1> Submit </button>
+
+	if (checkbox 1.4 == false)
+
+	    // sword purchase
+	    if (checkbox 1.1 == true) 
+
+	        if (money >= 500)
+	            money -= 500;
+
+	            <p> Where do you want to put a sword: </p>
+
+	            <button 7.1>pocket 1</button>
+	            <button 7.2>pocket 2</button>
+	            <button 7.3>pocket 3</button>
+	            <button 7.4>pocket 4</button>
+	            <button 7.5>Don't take it</button>
 	
-FightYou = 0;
-FightOpponent = 0;
+		    Switch (button):
+			Case button 7.1:
+			    Backpack [0] = sword; 
+ 	                    strength += 20;
+        	            break;
+      			Case button 7.2:
+			    Backpack [1] = sword;
+			    strength += 20;
+			    break;
+			Case button 7.3:
+			    Backpack [2] = sword;
+			    strength += 20;
+			    break;
+			Case button 7.4:
+			    Backpack [3] = sword;
+			    strength += 20;
+			    break;
+			Case button 7.5:
+			    break;
 
-<<Next Event>>
+		else // if money <500
+		    <p> You do cannot but this item. You don’t have enough money to buy a sword.</p>
 
-			Case button 1.3:  // buy something
-			<p> Merchant shows you his goods:</p>
-			<checkbox 1.1>sword (+20 Strength), price 500$</checkbox 1.1>
-			<checkbox 1.2>whisky (+5Health, -10 Intelligence). price 50$</checkbox 1.2>
-			
-			if (intelligence > 30):
-			<checkbox 1.3>knife (+5 Strength), price 200$</checkbox 1.3>
-			< checkbox 1.4> No thanks, I don't need anything. </ checkbox 1.4>
-			
-			<button 6.1> Submit </button 6.1>
+	    //whisky purchase
+	    if (checkbox 1.2 == true) 
 
-			if (checkbox1.4 == false)
-			  // sword purchase
-			if (checkbox 1.1 = true) 
-			  if (money >= 500)
-			    money-=500;
-			    <p>Where do you want to put a sword: </p>
+	        if (money >= 50)
+	            money-=50;
 
-			    <button4.1>pocket 1</button4.1>
-			    <button4.2>pocket 2</button4.2>
-			    <button4.3>pocket 3</button4.3>
-			    <button4.4>pocket 4</button4.4>
-			    <button4.5>Don't take it</button4.5>
+	            <p>Where do you want to put your whisky: </p>
+
+	            <button 8.1>pocket 1</button>
+	            <button 8.2>pocket 2</button>
+	            <button 8.3>pocket 3</button>
+	            <button 8.4>pocket 4</button>
+	            <button 8.5>Don't take it</button>
+
+	            Switch (button):
+	                Case (button 8.1):
+	                    Backpack [0] = whisky; 
+	                    health += 5;
+	                    intelligence -=1
+	                    break;
+	                Case button 8.2:
+	                    Backpack [1] = whisky;
+	                    health += 5;
+	                    intelligence -=10
+	                    break;
+	                Case button 8.3:
+	                    Backpack [2] = whisky;
+	                    health += 5;
+	                    intelligence -=10
+	                    break;
+	                Case button 8.4:
+	                    Backpack [3] = whisky;
+	                    health += 5;
+	                    intelligence -=10
+	                    break;
+	                Case button 8.5:
+	                    break;
+
+	        else // if money <50
+	            <p> You do cannot but this item. You don’t have enough money to buy whisky.</p>
+
+	    // knife purchase
+	    if (checkbox 1.3 == true) 
+
+	        if (money >= 200)
+	            money-=200;
+
+	            <p>Where do you want to put a knife: </p>
+
+	            <button 9.1>pocket 1</button>
+	            <button 9.2>pocket 2</button>
+	            <button 9.3>pocket 3</button>
+	            <button 9.4>pocket 4</button>
+	            <button 9.5>Don't take it</button>
 	
-			    Switch (button):
-			      Case button4.1:
-			    	Backpack [0] = sword; 
-			    	strength += 20;
-				break;
-			      Case button 4.2:
-				Backpack [1] = sword;
-				strength += 20;
-				break;
-			      Case button 4.3:
-				Backpack [2] = sword;
-				strength += 20;
-				break;
-			      Case button 4.4:
-				Backpack [3] = sword;
-				strength += 20;
-				break;
-				Case button 4.5:
-				break;
-	
-			else // if money <500
-		  	  <p> You do cannot but this item. You don’t have enough money to buy a sword.</p>
-//whisky purchase
-		  if (checkbox 1.2 = true) 
-		    if (money >= 50)
-			money-=50;
-			  <p>Where do you want to put your whisky: </p>
+	            Switch (button):
+	                Case button 9.1:
+	                    Backpack [0] = knife; 
+	                    strength += 5;
+	                    break;
+	                Case button 6.2:
+	                    Backpack [1] = knife;
+	                    strength += 5;
+	                    break;
+	                Case button 6.3:
+	                    Backpack [2] = knife;
+	                    strength += 5;
+	                    break;
+	                Case button 6.4:
+	                    Backpack [3] = knife;
+	                    strength += 5;
+	                    break;
+	                Case button 6.5:
+	                    break;
 
-			  <button5.1>pocket 1</button5.1>
-			  <button5.2>pocket 2</button5.2>
-			  <button5.3>pocket 3</button5.3>
-			  <button5.4>pocket 4</button5.4>
-			  <button5.5>Don't take it</button5.5>
+	        else // if money <200
+	            <p> You do cannot but this item. You don’t have enough money to buy knife.</p>
 
-			  Switch (button):
-			    Case button5.1:
-				Backpack [0] = whisky; 
-				health += 5;
-				intelligence -=10
-				break;
-			    Case button 5.2:
-				Backpack [1] = whisky;
-				health += 5;
-				intelligence -=10
-				break;
-			    Case button 5.3:
-				Backpack [2] = whisky;
-				health += 5;
-				intelligence -=10
-				break;
-			    Case button 5.4:
-				Backpack [3] = whisky;
-				health += 5;
-				intelligence -=10
-				break;
-				Case button 5.5:
-				break;
+	    // next event
 
-		    else // if money <50
-		  	<p> You do cannot but this item. You don’t have enough money to buy whisky.</p>
-// knife purchase
-		if (checkbox 1.3 = true) 
-		  if (money >= 200)
-		    money-=200;
-		    <p>Where do you want to put a knife: </p>
- 	    	<button6.1>pocket 1</button6.1>
-		<button6.2>pocket 2</button6.2>
-		<button6.3>pocket 3</button6.3>
-		<button6.4>pocket 4</button6.4>
-		<button6.5>Don't take it</button6.5>
-	
-		Switch (button):
-		  Case button6.1:
-			Backpack [0] = knife; 
-			strength += 5;
-			break;
-	  	  Case button 6.2:
-			Backpack [1] = knife;
-			strength += 5;
-			break;
-		  Case button 6.3:
-			Backpack [2] = knife;
-			strength += 5;
-			break;
-		  Case button 6.4:
-			Backpack [3] = knife;
-			strength += 5;
-			break;
-		  Case button 6.5:
-			break;
+	else // if checkbox don’t want to buy anything is on
+	    <p> You reply: "Hmm. Maybe next time. I don't see anything interesting."</p>
 
-		else // if money <200
-	  	  <p> You do cannot but this item. You don’t have enough money to buy knife.</p>
+	    // next event
 
-<<Next Event>>
+    // Note: Case (button 4: start conversation) isn't filled out, but not necessary
 
-		else // if checkbox don’t want to buy anything is on
-		  <p> You reply: "Hmm. Maybe next time. I don't see anything interesting."</p>
+<<NEXT EVENT>>
 
-<<Next Event>>
-3.1.4.3 Hole
+
+3.1.4.3 	Hole
+<p> You want to enter the forest. The forest is dark. It's night. You need some kind of light to show you the way. </p>
+
+<button 1.1> Go back to the meadow and ask the goat-keeper for some candle or a flashlight. </button>
+
+// THIS CAN BE VISIBLE ONLY IF IN THE FOREST EVENT 1- GOATS YOU HAVE MET A GOATKEEPER - IN THE FIRST SELECTION OPTION 2 OR 3 WERE CHOOSEN>>
+if (metGoatKeeper == true)
+    <button 1.2> Go in without any light. </button>
+    <button 1.3> Camp the night and wait for the morning. </button>
+   
+if (button 1.1)
+    <p> You went back to the goat-keeper for some kind of candle. but the goat-keeper disappeared. All you see in the meadow is coals from the goat-keeper fire. You pick up a branch and light it up with a coal. Now you can enter the forest. </p>
+
+// event end
+
+else if (button 1.2)
+    <p> You enter the forest without any light. You cannot see anything, its all dark around you. You make a few steps and you fall into a deep hole in the ground.
+
+    <button 2.1> Try to climb out with your hands. </button>
+    <button 2.2> Start crying. </button>
+    <button 2.3> You make a rope out of your cloth. </button>
+
+    if (button 2.1) 
+	<p> You try to climb up… You start climbing and in the middle of the hole you fall back and brake your back. Nobody know you are stuck there so after a few days you die of starvation. </p>
+
+	<<GAME ENDS>>
+
+    else if (button 2.2)
+	<p> you start crying!! thinking that you will never leave this hole again. Someone heard your crying, you hear foot steps above you. Someone throw a rope to you, and you are climbing out When you get out there is nobody there!!!!
+
+	// event end 
+
+    else
+	<p> You make a rope out of your clothes. You made a rope out of your clothes. You are more intelligent than you gave your self credit (+10 intelligence). You got out of the hole.
+
+	intellegence += 10;
+
+else // button 1.3
+<p> You camp through the night outside the forest. At night a robber comes and takes 50% of your money. </p>
+    stolenMoney = money *= 0.5;
+
+    if (backpack has knife)
+        <p> The robber also sees a cool knife and decides to take it from you.
+
+        stolenItem = backpack[<index of knife>].pop();
+
+    <p> You decide to: </p>
+
+    <button 3.1> Fight him </button>
+    <button 3.2> Pretend your still asleep.
+
+    if (button 3.1)
+	<p> You want to fight him but he runs away leaving behind him every thing he took from you and he also drops an ax. </p>
+
+	money += stolenMoney;
+
+        <p> Do you wish to keep your knife? </p>
+
+        <button 4.1> Yes </button>
+	<button 4.2> No </button>
+
+	if (button 4.1):
+	    backpack.push("knife");
+
+	<p> Do you wish to pick up the ax? </p>
+
+        <button 5.1> Yes </button>
+	<button 5.2> No </button>
+
+	if (button 5.1):
+
+	    if (backpack.length >= 4)
+		<p> You're backpack is full! </p>
+	    else
+		backpack.push("ax");
+
+		// event end
+
+    if (button 3.2) // You pretend your still asleep.
+	<p> You pretend to sleep and actually did fall asleep. You proceed to wake up the next morning and regret not fighting back. Time to enter the forest...
+
+	// event end
+
+<<NEXT EVENT>>
+
+
+3.1.4.4 	River
+<p> You reached a crossroad in an enchanted forest. You can:
+
+<button 1.1> Go left to shortcut in the dark part of the forest. </button>
+<button 1.2> Go through the long and safe way of the forest. </button>
+
+if (button 1.1)
+    <p> You reached a one eye demon, if you want to pass this way you have to fight.
+Roll the dice to see if you can bit him (demon roll dice too). </p>
+
+playerRoll = Math.random() * 6 + 1;
+demonRoll = Math.random() * 6 + 1;
+
+while (demonRoll != playerRoll)
+    playerRoll = Math.random() * 6 + 1;
+    demonRoll = Math.random() * 6 + 1;
+
+if (playerRoll > demonRoll)
+    <p> You win! you can keep going through the path.
+
+else if (demonRoll > playerRoll)
+    <p> the demon wins! you lose (-10 health). To keep going you have to pay him 10$ (-10$) </p>
+
+    if (health < 0)
+	health -= 10;
+        <GAME ENDS>
+    if (money < 10)
+	<GAME ENDS>
+
+    money -= 10;
+
+    // event ends
+
+if (button 1.2):
+    <p> The player keep walking and he reached a river which he have to 
+cross. </p>
+
+if (backpack contains knife or ax):
+    <button 2.1> You can build a raft if you have an ax/knife. </button>
+<button 2.2> Try to swim across </button>
+<button 2.3> Pay the river keeper 15$ to get him across safely. </button>
+
+    if (button 2.1):
+	<p> You user your ax/knife to build a raft. you reached the other
+side of the river but your tired. you lose 5 point of strength. </p>
+
+    strength -= 5;
+
+    if (button 2.2):
+	<p> You try to swim across and you didn’t made it...
+You lose 5 point of strength, And you are back on the same (-5 strength)
+side of the river with the option to: </p>
+
+<button 3.1> build a raft </button>
+<button 3.2> Try to swim across </button>
+if (money >= 15)
+    <button 3.3> Pay the river keeper 15$ to get him across safely </button>
+
+if (button 3.1 or button 3.2)
+    <p> You made it across! </p>
+
+    // next event
+
+else // button 3.3
+    if (money >= 40)
+        money -= 40;
+
+        <p> You payed 15$ to the river keeper. The river keeper got you across safely but stole from you $25. </p>
+
+    else // you have less than 40 dollars
+	money = 0;
+
+	<p> You payed 15$ to the river keeper. The river keeper got you across safely but stole from you the rest of your money.
+
+    // event ends
+
+<<NEXT EVENT>>
+
+
+3.1.4.5 	Dead Body
 
 ...
-3.1.4.4 River
-
-...
-3.1.4.5 Dead Body
-
-...
-
-3.1.5	Desert
+3.1.5		Desert
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Desert events and only after finishing it will be able to go to other location. 
 
@@ -400,465 +640,486 @@ NICE TO HAVE: After finishing each event Player will be able to choose if they w
 # logic to story 1 - desert is confusing towards the end. What exactly happens?
 
 
-3.1.5.1 Dessert Desert
-<p>
-The world beginnings to blur. The sand below begins to stick the bottom of your feet.
-</p>
-<btn>1. Continue walking.</btn>
-#(if intelligence > 12 option 2 is visible)
-<btn>2. Investigate.</btn>
+3.1.5.1 	Dessert Desert
+<p>The world beginnings to blur. The sand below begins to stick the bottom of your feet. </p>
 
+<button 1.1> Continue walking. </button>
+if (intelligence > 12) # then option 2 is visible
+    <button 1.2> Investigate. </button>
 
-while( <btn> != 2. Investigate )
-    <p>
-    You continue walking. Your feet are growing heavy.
-    </p>
-    <btn>1. Continue walking..</btn>
-    #(if intelligence > 12 option 2 is visible)
-    <btn>2. Investigate.</btn>
+buttonChoice = <<button>>
 
-# once the user clicks 2. investigate 
-<p>You get down on one knee for a closer look at the sand. It smells sugary.</p>
+while (buttonChoice != button 1.1)
+    <p> You continue walking. Your feet are growing heavy. </p>
 
-while( <btn> != 2. Investigate )
-    <p>
-    You continue walking. Your feet are growing heavy.
-    </p>
-    <btn>1. Continue walking.</btn>
-    #(if intelligence > 12 option 2 is visible)
-    <btn>2. Investigate closer.</btn>
+    <button 1.1> Continue walking.. </button>
+    if (intelligence > 12) # then option 2 is visible
+        <button 1.2> Investigate. </button>
+
+    buttonChoice = <<button>>
+
+# once the user clicks button: investigate 
+<p> You get down on one knee for a closer look at the sand. It smells sugary. </p>
+
+<button 2.1> Continue walking.. </p>
+<button 2.2> Investigate. </p>
+
+buttonChoice = <<button>>
+
+while( buttonChoice != button 2.2 )
+    <p> You continue walking. Your feet are growing heavy. </p>
+
+    <button 2.1> Continue walking. </button>
+    if (intelligence > 12) # then option 2 is visible
+        <button 2.2> Investigate. </button>
 
 # once the user clicks 2. investigate 
 <p>You lean in closer to smell the sand. Definitely sugar.</p>
-<btn>Continue walking.</btn>
-<btn>2. Lick the sand.</btn>
 
-####    NOTE TO STORY WRITER
-###     
-##      <!-- HAZY LOGIC FROM HERE -->
-#
-      =>1. Continue
-      # Game> You continue walking. Your feet are growing heavy.
-      # Game> 1. Continue walking..
-      # Game> 2. Lick the sand.
+<button 3.1>Continue walking.</button>
+<button 3.2>Lick the sand.</button>
 
-      =>2. Lick
-      # Game> Definitely sugar. Yum. -> +1 Health
-      # Game> 1. Continue walking..
+if (button 3.2)
+<p> Definitely sugar. Yum. -> +1 Health </p>
 
-=>1. Continue
-# Game> It's become increasingly hard to walk.
-# Game> 1. Continue walking...
-# Game> 2. Make like a rock and roll.
+health += 1;
 
-=>1. Continue
-# Game> You're sinking.
-# Game> 1. Continue walking....
-# Game> 2. Freak out!
+else // walk
+<p> It's become increasingly hard to walk. </p>
 
-   => 1. Continue
-   # Game> You try to walk out of this mess, but continue to sink. -> Death
+<button 4.1> 1. Continue walking... </button>
+<button 4.2> Make like a rock and roll. </button>
 
-   => 2. Freak
-   # Game> You freak out hardcore, and continue to sink. -> Death
+if (button 4.1)
+    <p> You're sinking>
 
-=>2. Roll
-# Game> You do a barrel roll, again and again until you're out of this sticky mess.
+    <button 5.1>Continue walking... </button>
+    <button 5.2>Freak out! </button>
 
-####
-###
-##      <!-- UNTIL HERE -->  
-#
+    if (button 5.1)
+        <p> You try to walk out of this mess. You got out!! </p>
+
+        strength += 10;
+        health += 5;
+
+        // next event
+
+    else
+        <p> "You freak out hardcore, and continue to sink. </p>
+        <GAME END>
+
+else // rock and row
+    <p> You do a barrel roll, again and again until you're out of this sticky mess. </p>
+
+    // next event
+
+<<NEXT EVENT>>
 
 
-3.1.5.2 Desert - Merchant
-<p>You are walking through the desert when somewhere on the horizon you see a figure approaching you. You recognize that he's a merchant with goods. What do you do?
-</p>
+3.1.5.2 	Merchant
 
-<btn>1.Ignore him and move on.</btn>
-<btn>2.Attack and try to take his goods.</btn>
-<btn>3.Try to buy something.</btn>
-#(if intelligence > 30 option 4 is visible)</btn>
-<btn>4.Start conversation</btn>
+..
+3.1.5.3 	Cactus Island
+// note: The cactus island scene is used 4 times, so it may be a good idea to store this branch into a function.
 
-if( <btn>1.Ignore him and move on.</btn> )
-    <p>
-    Merchant is trying to sell you something, but you reply him "Naaaah. I'm good." and you walk away.
+<p> It is your 3rd day wandering aimlessly around the desert. You realize you haven't had water since the adventure and you are now very very thirsty. Luckily you do have your iphone 5s on you. You decide to locate yourself on the map. You pull your iphone out. Unfortunately, the wifi does not work! Desperate, you look around your surroundings for water. You see no signs of water in your immediate path. 
+What do you do? </p>
+
+<button 1.1>Continue walking</button>
+<button 1.2>Dig into the ground</button>
+<button 1.3>Walk in the opposite path</button>
+
+if (button 1.1)
+    <p> You decide to keep walking. Within a few miles, your phone picks up wifi. You ask siri where to find water and siri points you towards Cactus Island about 10 miles away. As you continue to walk, you feeltired as hell. You really want to stop walking. You look up into the sky and notice the clouds are getting heavy and dark. Is this a sign of rain? 
+    What do you do? </p>
+
+    <button 2.1>Wait for rain</button>
+    <button 2.2>Continue walking towards Cactus Island</button>
+
+    if(button 2.1)
+        <p> You decide to wait. Your phone has no wifi so you decide to play Angry Birds while you wait for the rain. 4 hours has passed and your phone is receiving wifi again. You look up the weather and notice the weather app says it will only be cloudy. You do some research and realize that it does not rain here. You decide to  once again walk towards Cactus Island, 1 mile down the road.
+        (Health: -5) </p>
+
+        Health -= 5;
+        if (Health <= 0):
+            <popup message> You have died. Game Lost</popup message>
+            <END OF GAME>
+
+        else // you're alive
+            // change scenes to "Cactus Island" (see else statement immediately below).
+
+
+    else (button 2.2)
+        <p> You decide to continue walking. You finally arrive at Cactus Island. What a heavenly place!! You pick up a cactus, open it, drink the water, and are now replenished! Now you are replenished!
+        Do you want to bring a cactus with you? </p>
+
+        <button 3.1> Yes, I might need water again </button>
+        <button 3.2> NO, those things are spikey </button>
+
+        if (button 3.1)
+
+            if (backpack is full)
+                <p> Sorry, no more room </p>
+
+            else
+                <p> You've obtained a cactus! But it poked you. </p>
+                health -= 2;
+
+                if (Health <= 0):
+                    <popup message> You have died. Game Lost</popup message>
+                    <END OF GAME>
+
+        else // no cactus
+            <p> You decide not to take a cactus. The narrator is laughing at your stupidity. </p>
+
+        <p>Another 2 days has gone by. You are now thirsty again. You reach into your backpack and </p>
+
+        if (backpack contains cactus):
+            <p> You rip apart the cactus and drink with joy. </p>
+
+	    // delete cactus from backpack list
+
+            // next event
+
+            health += 20;
+        else
+            <p> You look into your backpack and regret not obtaining a cactus. 20 miles down the road, you die. </p>
+            <END GAME>
+
+else if (button 1.2):
+    <p> You dig into the ground. 4 hours in, you've come to the realization that you've made no progress so far. 
+    What do you do? </p>
+
+    <button 4.1> Continue digging </button>
+    <button 4.2> Continue walking </button>
     </p>
 
-else if( <btn>2.Attack and try to take his goods.</btn> )
-    <p> 
-    Merchant is fighting back. Strength 30. 
-    You say: "Hasta la vista baby!".
-    your.strenght = random(from 0 to Strength.Max), 
-    merchant.strength = random(from 0 to 30)
-    Your attack <<your.strength>>. Merchant's attack <<merchant.strength>>.
+    if (button 4.1)
+        <p> You continue to dig. As you continue to dig, you begin to feel nauseous and feverish. Within the next minute, you fall into the hole you've dug. You die. </p>
+        <END GAME>
+
+    else
+    <p> You decide to continue walking. Within 4 hours, your phone begins to receive wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island which is located 5 miles from where you are. You begin walking towards Cactus Island. </p>
+
+    // reuse Cactus Island scene 
+
+else if (button 1.3)
+    <p> You decide to walk in the path you came from. Within 4 hours, your phone picks up wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island, which is located 25 miles from where you are.
+    What do you do? </p>
+
+    <button 5.1> Walk towards Cactus Island </button>
+    <button 5.2> Continue walking towards the path you came from </button>
+
+    if (button 5.1)
+        if (health < 10)
+            <p> You fall into your own death within the 8th mile to dehydration. </p>
+            <END GAME>
+
+        else
+            health -= 10;
+            <p> You barely made it!! </p>
+
+            // change scenes to cactus island
+
+    else (button 5.2)
+        <p> You decide to continue walking. Within 2 miles you notice a python crawling around the desert.
+        What do you do? </p>
+
+        <button 6.1> Ignore the python </button>
+        <button 6.2> Attempt to kill the python for its meat and blood </button>
+
+        if (button 6.1)
+            <p> You decide to ignore the python and walk. As you begin to walk, the python sneaks up from behind you. Before you can do anything to stop it, it wraps itself around you. </p>
+
+            if (health < 20)
+                <popup message> You have died. Game Lost</popup message>
+                <END OF GAME>
+
+            else
+                health -= 20;
+
+                <p>Fortunately, the snake is also weak due to dehydration. You are able to rip it apart and eat and drink its blood. You feel rejuvenated and continue walking until you make it to the city.
+
+                health += 10;
+                strength += 10;
+
+		// next event 
+
+        else (button 6.2)
+            <p> You run unto the python and grab it by its mouth. The snake wiggles for a minute and then becomes motionless. You eat the python and feel rejuvenated. You continue to walk and barely made it back. </p>
+
+	    // next event 
+
+<<NEXT EVENT>>
 
 
-    # If  your.strength < merchant.strength -> -20 Health. 
-        <p>
-        You have lost the fight but merchant lets you go. He feels pity for you and your poor phrases 
-        and gives you an apple  (+5 health) which 
-        you can put in your backpack or leave it.'
-        Where do you want to put apple: 
-        </p>
-        <btn>pocket 1</btn>
-        <btn>pocket 2</btn>
-        <btn>pocket 3</btn>
-        <btn>pocket 4</btn>
-        <btn>Don't take it</btn> 
-        #(TechNote: if user selects a pocket with some goods already there goods will be replaced and previous artefact will be thrown away without possibility to get it back. If “Don’t take i” option is selected then user will throw away new artifact)
+3.1.5.4 	Canyon Adventures
+// note: this story needs some modifications on the items section since items will be permenant.
 
-    #If your.strength > merchant.strength -> +10 Strength,
-        <p>
-        You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), # #Game> sword (+50 Strength), apple (+25 Health, +5 Intelligence)
-        Where do you want to put a knife: 
-        </p>
-        <btn>pocket 1</btn>
-        <btn>pocket 2</btn>
-        <btn>pocket 3</btn>
-        <btn>pocket 4</btn>
-        <btn>Don't take it</btn>
+<p>After the tiring walking in the desert sands you reach an enormous canyon. It's very deep and foggy and you can't see the bottom or the other side if it.
+What do you do? </p>
+<button 1.1> You are making a loud shout right in the canyon. </button>
+<button 1.2> You decide to have a rest and wait for the fog to clear out. </button>
+if intelligence is high
+    <button 1.3> You are cautiously exploring the edge of the canyon.</button>
 
-        <p>
-        Where do you want to put a sword: 
-        </p>
-        <btn>pocket 1</btn>
-        ...
+if (button 1.1)
+    <p>Oh no! Suddenly the ground is shaking and the giant ugly troll is climbing out from the canyon!
+    He has a stupid face and a cold. He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk!
+    What do you do? </p>
 
-        <p>
-        Where do you want to put an apple: 
-        </p>
-        <btn>pocket 1</btn>
-        ...
+    <button 2.1> You fight the troll. </button>
+    <button 2.2> You run like hell back to the desert. </button>
+    <button 2.3> You jump into the canyon right between troll's legs. </button>
 
-else if( <btn>3.Try to buy something.</btn> )
-    <p>
-    Merchant shows you his goods: 
-    </p>
-    <btn>option 1:sword</btn> # (+40 Strength), price 800$
-    <btn>option 2:apple</btn> # (+25Health, +5 Intelligence). price 40$ 
+    if (button 2.1)
+        <p> You are fighting the troll. Luckily he is so sick and absent-minded he can't catch you. He gets upset, starts to cry and tells you his name is Karl. Very dirty and sticky you search his pockets and get water (++Health) and the giant needle (+Item).</p>
 
-    # If your intelligence > 30 Option 3 is visible like this
-    <btn>option 3: - knife</btn> # (+5 Strength) price 100$ is also visible
+	// next event 
 
-    # if intelligence < 30 Option 3 is visible like this
-    <p>“I also have something special, but you have to show my some cash first”</p> # (give merchant 10$ to show you the last product) 
+    else if (button 2.2)
+	<p> The troll catches you! He puts you in his pocket and carries back to his dank home at the bottom of the canyon. You have to cook, clean and bear the thundering sneezing till the rest of your life.</p>
 
-    <btn>option 4: No thanks, I don't need anything</btn>
+	// next event
 
-    if( <btn>option 1:sword</btn> )
-        <p>where do you want to put sword:</p> 
-        <btn>pocket 1</btn>
-        ...
-    else if( <btn>option 2:apple</btn> )
-        <p>where do you want to put whisky:</p> 
-        <btn>pocket 1</btn>
-        ...
-    else if( <btn>option 3: - knife</btn> )
-        <p>where do you want to put knife:</p> 
-        <btn>pocket 1</btn>
-        ...
-    else( <btn>option 4: No thanks, I don't need anything</btn> )
-        <p>You reply: "Naaah, I'm good. Thanks.”</p>
+    else // button 2.3
+	<p> You are flying through the fog and land in the lake. You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (-Item). You manage to find a path to the city and return weak and wet.</p>
 
+	// next event
 
-3.1.5.3 Desert Water
-<p>
-GM: For whatever reason, it is your 3rd day wandering aimlessly around the 
-GM: desert. You realize you haven't had water since the adventure and you
-GM: are now very very thirsty. Luckily you do have your iphone 5s on you. 
-GM: You decide to locate yourself on the map. You pull your iphone out. 
-GM: Unfortunately, the wifi does not work! Desperate, you look around your 
-GM: surroundings for water. You see no signs of water in your immediate 
-GM: path. 
-GM: What do you do?
-</p>
-<p>
-GM: What do you do?
-GM: <button>1. Continue walking</button>
-GM: <button>2. Dig into the ground</button>
-GM: <button>3. Walk in the opposite path</button>
-</p>
+else if (button 1.2)
+    <p>At twilight you hear flapping of the wings and the pair of coloured birds lands near you. The lizard-looking riders get down from them and demand that you leave. 
+    What do you do? </p>
 
-if( <button>1. Continue walking</button> )
-  <p>
-  GM: You decide to keep walking. Within a few miles, your phone picks up 
-  GM: wifi. You ask siri where to find water and siri points you towards
-  GM: Cactus Island about 10 miles away. As you continue to walk, you feel
-  GM: tired as hell. You really want to stop walking. You look up into the 
-  GM: sky and notice the clouds are getting heavy and dark. Is this a sign 
-  GM: of rain? 
-  GM: What do you do?
-  GM: <button>1 => Wait for rain</button>
-  GM: <button>2 => Continue walking towards Cactus Island</button>
-  </p>
+    <button 3.1> You bargain with them.</button>
+    <button 3.2> You jump on one of the birds and try to fly away.</button>
+    <button 3.3> You jump into the canyon and disappear in the fog.</button>
 
-  if( <button>1 => Wait for rain</button> )
-    <p>
-    GM: You decide to wait. Your phone has no wifi so you decide to play 
-    GM: Angry Birds while you wait for the rain. 4 hours has passed and 
-    GM: your phone is receiving wifi again. You look up the weather and 
-    GM: notice the weather app says it will only be cloudy. You do some
-    GM: research and realize that it does not rain here. You decide to 
-    GM: once again walk towards Cactus Island, 1 mile down the road.
-    GM: Health: -5, and change scenes to 2. cactus island.
-    </p>
+    if (button 3.1)
+	<p> You give them your shoes and in return they carry you in the city 
+	(+Strength as you rest during the journey).
+	During the fly you manage to sneak a bag of money (+Item). </p>
 
-  else( <button>2 => Continue walking towards Cactus Island</button> )
-    <p>
-    GM: You decide to continue walking. You finally arrive at Cactus
-    GM: Island. What a heavenly place!! You pick up a cactus, open it, 
-    GM: drink the water, and are now replenished! You decide to pack
-    GM: your bag with a cactus to last yourself with at least another
-    GM: week's worth of water supply.
-    </p>
+	// next event
 
-else if( <button>2. Dig into the ground</button> )
-  <p>
-  GM: You dig into the ground. 4 hours in, you've come to the realization 
-  GM: that you've made no progress so far. 
-  GM: What do you do?
-  GM: <button>1 => Continue digging</button>
-  GM: <button>2 => Continue walking</button>
-  </p>
+    else if (button 3.2)
+        <p> Bummer! The bird is smart! She makes a circle and flies back to the owner. He is not pleased and bites you. You are poisoned and stay in the desert forever. </p>
 
-  if( <button>1 => Continue digging</button> )
-    <p>
-    GM: You continue to dig. As you continue to dig, you begin to feel 
-    GM: nauseous and feverish. Within the next minute, you fall into 
-    GM: the hole you've dug.
-    GM: You die.
-    </p>
+	// next event
 
-  else ( <button>2 => Continue walking</button> )
-    <p>
-    GM: You decide to continue walking. Within 4 hours, your phone begins
-    GM: to receive wifi signal. You pull out your phone and google for the
-    GM: nearest area with water. Siri tells you to goto Cactus Island
-    GM: which is located 5 miles from where you are. You begin walking 
-    GM: towards Cactus Island. 
-    GM: change scenes to 2. Cactus Island
-    </p>
+    else // button 3.3
+	<p> You reach the giant trampoline at the bottom and jump out of the canyon. You frostbite your ears during the flight (-Health), but find a tree with juicy lematos on the other side. You eat a fruit (+Health) and find a way to the city. </p>
 
-if( <button>3. Walk in the opposite path</button> )
-  <p> 
-  GM: 3. Walk in the opposite path
-  GM: You decide to walk in the path you came from. Within 4 hours, your 
-  GM: phone picks up wifi signal. You pull out your phone and google for 
-  GM: the nearest area with water. Siri tells you to goto Cactus Island,
-  GM: which is located 25 miles from where you are.
-  GM: What do you do?
-  GM: <button>1 => Walk towards Cactus Island</button>
-  GM: <button>2 => Continue walking towards the path you came from</button>
-  </p>
+	// next event
 
-  if( <button>1 => Walk towards Cactus Island</button> )
-    <p>
-    GM: You fall into your own death within the 8th mile to dehydration.
-    </p>
+else // button 1.3
+    <p>You find a tiny path and descend into the canyon. At the lower lever you enter a lovely village of butter-eating leprechauns. They seem hospitable and serve you a dinner (which is made mainly of butter), but oh no! they are not going to let you leave!
+    What do you do? </p>
+	<button 4.1> You distract them and jump deeper into the canyon. </button>
+	<button 4.2> You rely on your eloquence and begin to persuade them. </button>
+	<button 4.3> You decide to stay. </button>
 
-  else( <button>2 => Continue walking towards the path you came from</button> )
-    <p>
-    GM: You decide to continue walking. Within 2 miles you notice a 
-    GM: python crawling around the desert.
-    GM: What do you do?
-    GM: <button>1 => Ignore the python</button>
-    GM: <button>2 => Attempt to kill the python for its meat and blood</button>
-    </p>
+	if (button 4.1)
+	    <p> You are reaching the bottom of the canyon. You spend a lot of power by going through bushes (-Strength) and quench your thirst at a spring (+Health). Finally you manage to find a way back to the city.</p>
 
-    if( <button>1 => Ignore the python</button> )
-      <p>
-      GM: You decide to ignore the python and walk. As you begin to walk,
-      GM: the python sneaks up from behind you. Before you can do anything 
-      GM: to stop it, it wraps itself around you. 
-      GM: health: -5
-      GM: Fortunately, the snake is also weak due to dehydration. You are able
-      GM: to rip it apart and eat + drink its blood.
-      GM: You feel rejuvenated and continue walking until you make it to the city.
-      </p>
+	    // next event 
 
-    else( <button>2 => Attempt to kill the python for its meat and blood</button> )
-      <p>
-      GM: 2. Attempt to kill the python for its meat and blood
-      GM: You run unto the python and grab it by its mouth. The snake 
-      GM: wiggles for a minute and then becomes motionless. You eat 
-      GM: the python and feel rejuvenated. You continue to walk and barely 
-      GM: made it back to the city.
-      </p>
+	else if (button 4.2)
+	    <p> Your detailed descriptions of all the yummy food besides butter that there is the world inspire leprechauns and they decide to leave the village and the canyon! They inflate the hot air balloon and take you to the city. As a gift you receive a pack of magical butter that makes one invulnerable.</p>
+
+	    // next event 
+
+	else // button 4.3
+	    <p> You learn the Irish step dance and grow a beard so long that sometimes you make a hammock out of it and spend all day swinging in it. The moist weather and buttery diet undermine your health. You stay in the canyon forever.</p>
+
+	    // next event
+
+<<NEXT EVENT>>
 
 
-3.1.5.4 Canyon Adventures
-<p>After the tiring walking in the desert sands you reach an enormous canyon.
-It's very deep and foggy and you can't see the bottom or the other side if it.
-What do you do?<p>
-<btn>Option 1: You are making a loud shout right in the canyon.</btn>
-<btn>Option 2: You decide to have a rest and wait for the fog to clear out.</btn>
-<btn>Option 3 (if intelligence is high): You are cautiously exploring the edge of the canyon.</btn>
+3.1.5.5 	Pyramid
+// the "Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit." story is used 3 times. Either set this event into a function or re-use it 3 times.
 
-if( <btn>Option 1: You are making a loud shout right in the canyon.</btn> )
-	<p>Oh no! Suddenly the ground is shaking and the giant ugly troll is climbing out from the canyon!
-	He has a stupid face and a cold.
-	He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk!
-	What do you do?</p>
-	<btn>1.1.You fight the troll.</btn>
-	<btn>1.2.You run like hell back to the desert.</btn>
-	<btn>1.3. You jump into the canyon right between troll's legs.</btn>
+<p> You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid. As you walk in, the door shuts tight and you are now trapped. You notice three items floating magically above a stone. Which of these items do you pick up? </p>
 
-	if( <btn>1.1.You fight the troll.</btn> )
-		<p>Result: You are fighting the troll. Luckily he is so sick and absent-minded he can't catch you.
-		He gets upset, starts to cry and tells you his name is Karl.
-		Very dirty and sticky you search his pockets and get water (++Health) and the giant needle (+Item).</p>
+// note: these items do not go into the backpack. They are temporary
 
-	else if( <btn>1.2.You run like hell back to the desert.</btn> )
-		<p>Result. The troll catches you!
-		He puts you in his pocket and carries back to his dank home at the bottom of the canyon.
-		You have to cook, clean and bear the thundering sneezing till the rest of your life.</p>
+<button 1.1> compass</button>
+<button 1.2> flame torch</button>
+<button 1.3> stack of gold</button>
 
-	else( <btn>1.3. You jump into the canyon right between troll's legs.</btn> )
-		<p>Result. You are flying through the fog and land in the lake.
-		You have injured your hand (-Health) and get robbed on the lake bank by the band of wild suricatas (-Item).
-		You manage to find a path to the city and return weak and wet.</p>
+temporaryItem = <<button>>
 
-else if( <btn>Option 2: You decide to have a rest and wait for the fog to clear out.</btn> )
-	<p>At twilight you hear flapping of the wings and the pair of coloured birds lands near you.
-	The lizard-looking riders get down from them and demand that you leave. What do you do?</p>
-	<btn>2.1. You bargain with them.</btn>
-	<btn>2.2. You jump on one of the birds and try to fly away.</btn>
-	<btn>2.3. You jump into the canyon and disappear in the fog.</btn>
+<p> You decide to pick up <<temporaryItem>>>. The other items turns into dust. You walk down the path and a mummy suddenly appears from no where. You... </p>
 
-	if( <btn>2.1. You bargain with them.</btn> )
-		 <p>2.1.Result. 
-		 a) You give them your shoes and in return they carry you in the city 
-		 (+Strength as you rest during the journey).
-		 During the fly you manage to sneak a bag of money (+Item). </p>
+<button 2.1> run for your life </button>
+<button 2.2> fight the mummy </button>
+<button 2.3> talk to the mummy </button>
 
-	else if( <btn>2.2. You jump on one of the birds and try to fly away.</btn> )
-		 <p>2.2.Result. Bummer! The bird is smart! She makes a circle and flies back to the owner.
-		 He is not pleased and bites you. You are poisoned and stay in the desert forever. </p>
+if (button 2.1)
+    <p> Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit. </p>
 
-	else( <btn>2.3. You jump into the canyon and disappear in the fog.</btn> )
-		 <p>2.3.Result. You reach the giant trampoline at the bottom and jump out of the canyon.
-		 You frostbite your ears during the flight (-Health),
-		 but find a tree with juicy lematos on the other side.
-		 You eat a fruit (+Health) and find a way to the city. </p>
+    if (temporaryItem == compass )
+        <p> You found the exit! </p>
 
-else( <btn>Option 3 (if intelligence is high): You are cautiously exploring the edge of the canyon.</btn> )
-	<p>You find a tiny path and descend into the canyon. 
-	At the lower lever you enter a lovely village of butter-eating leprechauns.
-	They seem hospitable and serve you a dinner (which is made mainly of butter),
-	but oh no! they are not going to let you leave!
-	What do you do?</p>
-	<btn>3.1. You distract them and jump deeper into the canyon.</btn>
-	<btn>3.2. You rely on your eloquence and begin to persuade them.</btn>
-	<btn>3.3. You decide to stay.</btn>
+        // next event 
 
-	if( <btn>3.1. You distract them and jump deeper into the canyon.</btn> )
-		<p>Result. You are reaching the bottom of the canyon. 
-		You spend a lot of power by going through bushes (-Strength)
-		and quench your thirst at a spring (+Health).
-		Finally you manage to find a way back to the city.</p>
+    else // you picked gold or torch
+        <p> you continue to walk around looking for an exit. You suddenly see a glimpse of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse of light, the tombs open and the mummies all come out of it. They are now walking towards you with their arms out.
 
-	else if( <btn>3.2. You rely on your eloquence and begin to persuade them.</btn> )
-		<p>Result. Your detailed descriptions of all the yummy food besides butter that there is the world 
-		inspire leprechauns and they decide to leave the village and the canyon!
-		They inflate the hot air balloon and take you to the city.
-		As a gift you receive a pack of magical butter that makes one invulnerable.</p>
+        if (temporaryItem == "flame torch") 
+            <p> You picked the flame torch, you pull it out and all the mummies get scared and goes back into their tomb. You exit safely. </p>
 
-	else( <btn>3.3. You decide to stay.</btn> )
-		<p>Result. You learn the Irish step dance and grow a beard so long 
-		that sometimes you make a hammock out of it and spend all day swinging in it
-		. The moist weather and buttery diet undermine your health.
-		You stay in the canyon forever.</p>
+            if (temporaryItem == "gold")
+                <p> You reach into your pocket and the gold has turned into sand. Bummer. </p>
+
+	    // next event 
+
+        else // you picked up gold
+            <p> you run in the opposite direction and FALL into another pit trap. </p>
+
+            health -= 10;
+            if (health < 0):
+                <END GAME>
+
+            <p> 20 days have gone by and you are still lost. You look at the stack of gold you’ve picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you that you have learned your lesson. In return, it wants the stack of gold back.
+            Give gold back? </p>
+
+            <button 3.1> Yes </button>
+            <button 3.2> Hell NO </button>
+
+            if (button 3.1):
+                <p> you hand it the gold. You magically appear outside the pyramid. </p>
+
+                strength += 10;
+                intelligence += 20;
+                // note to coders: use your judgement on what you think these should be based on other events
+
+		// next event 
+
+             else // you greedy sob
+                 <p> You don’t give back the gold, the angel mummy tells you “TOO BAD”, gives an evil laugh and disappears. 100 days go by and you become a mummy yourself </p>
+                 <END GAME>
+
+else if (button 2.2)
+    if (temporaryItem != "flame torch")
+        <p> The mummy looks at you and paralyzes you. It gets bored and walks away. </p>
+
+        health -= 10;
+        if (health < 0)
+            <END GAME>
+   
+    else
+        <p> You burn the mummy to a 2nd death. </p>
+
+        Strength += 10;
+
+    // change scenes to button 2.1 ("Along the way you fell...")
+
+else (button 2.3)
+    <p> The mummy chases you and you fell into a pit </p>
+
+    health -= 5;
+    intelligence += 10;
+
+    // change scenes to button 2.1 ("Along the way you fell...")
+
+<<NEXT EVENT>>
 
 
-3.1.5.5 Desert Pyramid
-<p>
-You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid.
-As you walk in, the door shuts tight and you are now trapped. You notice three items 
-floating magically above a stone. Which of these items do you pick up?
-</p>
-<btn>1: compass</btn>
-<btn>2: flame torch</btn>
-<btn>3: stack of gold</btn>
-
-<p>
-You decide to pick up <ITEM>. The other items turns into dust. You walk down the path 
-and a mummy suddenly appears from no where. You…
-</p>
-<btn>1: run for your life</btn>
-<btn>2: fight the mummy</btn>
-<btn>3: talk to the mummy</btn>
-
-if( <btn>1: run for your life</btn> )
-    <p>
-    Along the way, you fall into a pit trap.
-    You are lost. You continue walking around looking for an exit. 
-    </p>
-
-    * If you picked the compass, you find the exit
-    * Else, you continue to walk around looking for an exit. You suddenly see a glimpse 
-      of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse 
-      of light, the tombs open and the mummies all come out of it.
-        * If you picked the flame torch, you pull it out and all the mummies get scared 
-        *    and goes back into their tomb. You exit safely.
-        * Else, you run in the opposite direction and FALL into another pit trap.
-
-        <p>
-        20 days have gone by and you are still lost. You look at the stack of gold you’ve
-        picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you
-        that you have learned your lesson. In return, it wants the stack of gold back.
-        </p>
-        * If you don’t give back the gold, the angel mummy tells you “TOO BAD”, gives an 
-        *    evil laugh and disappears.
-        * Else, you hand it the gold. You magically appear outside the pyramid.
-
-else if( <btn>2: fight the mummy</btn> )
-    * If you didn’t pick the flame torch, you lose 10 health points.
-    * Else, you burn the mummy to a 2nd death. 
-
-else( <btn>3: talk to the mummy</btn> )
-    <p>
-    The mummy ends up being friendly and offers you beer
-    </p>
-
-3.1.6	Mountains
+3.1.6		Mountains
 Player will go through series of events in this location. 
 In the 1.0 version Player will go through all Mountains events and only after finishing it will be able to go to other location. 
 
 NICE TO HAVE: After finishing each event Player will be able to choose if they want to go to the next event or want to return to the City. In case Player returns to the city system will remember which was the last finished event in the location which was left. After coming back to the Forest again system will open the first not started event 
 
-3.1.6.1 Mountain Lion
+3.1.6.1 	Mountain Lion
+<p> You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU! </p>
+
+<button 1.1> Fight the big cat. </button>
+<button 1.2> Run away. </button>
+if (intellegence > 12): // then option 3 is visible
+    <button 1.3> Show you're not a threat. </button>
+
+if (button 1.1):
+    <p>You're not going to let Garfield deter you from your quest. You put your fists up. The feline lunges. </p>
+
+    yourStrength = random(from 0 to Strength.Max), 
+    pumaStrength = random(from 0 to 20)
+
+    <p> Your attack: <<yourStrength>>. Mountain lion's attack: <<pumaStrength>>. </p>
+
+    if (yourStrength < pumaStrength)
+	<p>The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off. </p>
+
+	health -= 10;
+
+        if (health < 0)
+            <END GAME>
+
+	else
+	    <p>  You grab the cat out of the air and hurl it off the mountainside. Manly. </p>
+	    strength += 3;
+
+	    // next event
+
+if (button 1.2):
+    <p>You're allergic to cats. You decide to get out of there. </p>
+
+    <button 2.1> Run ahead. </button>
+    <button 2.2> Run the way you came from. </button>
+
+    if (button 2.1):
+	<p> You run towards the cat. Startled, it turns around and books it. Ain't gonna deal with someone crazy enough to chase a mountain lion. </p>
+
+	// next event
+	
+    else
+	<p> You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you're back where you started. </p>
+
+	health -= 20;
+        if (health < 0):
+            <END GAME>
+
+	// mext event
+
+if (button 1.3)
+    <p> Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving.
+    Item: Mountain lion tooth (+25 Health) 
+    Do you accept? </p>
+
+    <button 3.1> Yes </button>
+    <button 3.2> No </button>
+
+    if (button 3.1):
+        health += 25;
+
+    // next event
+
+<<NEXT EVENT>>
+
+
+3.1.6.2  	Ascending The Peak
+
 ...
 
-3.1.6.2  Ascending The Peak
 
-...
-3.1.6.3 Merchant
-
-...
-3.1.6.4 ...
-
-...
-
-
-3.1.7	Python’s Nest
+3.1.7		Python’s Nest
 Python is protecting the entrance to the Brick Hub. In order to get pass through Python 3 penguins has to be collected (one from each Location). 
 If a Player goes to the Python with less than 3 penguins Python will not let them through and the message appears: “I want you to bring me 3 penguins. Each of them is in different location in somewhere in the area. Only then I will let you through.”
 Once Player collects all penguins and will come to the Python’s Nest option appears:
-a.	Give penguins to the python 
-b.	Do not give penguins to the python
+a) Give penguins to the python 
+b) Do not give penguins to the python
 Ad a: message “Python ate you instead of penguins”
 Ad b: message “Python lets you through.” Brick Event Z2 is enabled. Button “Go to Bricks Hut”
 
 
-
-3.1.8	Brick’s Hut
+3.1.8		Brick’s Hut
 The final battle with the Brick monster. Brick.strength = 200, Player.strength = from character attributes.
 
--	5 rounds of battle,
--	Player has to win at least 3 rounds.
--	Strength of player and Brick defined by random number between 0 and their strength parameters. 
+a) 5 rounds of battle,
+b) Player has to win at least 3 rounds.
+c) Strength of player and Brick defined by random number between 0 and their strength parameters. 
 If Player wins the round message: “You have won this round, but Brick is attacking you again”
 If Player wins the round message: “You have lost this round and Brick laughs at you”
 
@@ -869,39 +1130,61 @@ If Player loses at least 3 rounds message: “Buhu, you have lost with Brick and
 End of the Game
 
 
-3.1.9	Penguins
+3.1.9		Penguins
 Penguins are small creatures wandering around at the end of every locations path. Once Player finishes all the events in one location one penguin will join and will follow from now on. No backpack pocket is needed for a penguins’ collection. 
 Info of penguins collected should be visible on the user information. 
 
 
-3.1.10	Options/Settings 
+3.1.10		Options/Settings 
 
-3.1.10.1	Backpack  
+3.1.10.1  	Backpack  
 
 NICE TO HAVE : in version 1.2
 
-3.2	Variables and objects
+3.2		Variables and objects
 
--	Health : int
--	Strength : int 
--	Intelligence: int
--	Money : int
--	PenguinCount : int
--	Backpack : Artifacts [] 
--	Knife : Artifact
--	Sword : Artifact
--	Apple : Artifact
--	Whiskey : Artifact
--	FightYou : int // your result of the fight random selected number multiplied by current strength
--	FightOpponent : int // your opponents result of the fight random selected number multiplied by current strength
+- health : int
+- strength : int 
+- intelligence: int
+- money : int
+- penguinCount : int
+
+- backpack : Artifacts [] 
+- apple : Artifact
+
+// Merchant
+- knife : Artifact // purchased object 
+- sword : Artifact // purchased object 
+- whiskey : Artifact // purchased object 
+
+// Goat Adventure
+- metGoalKeeper : boolean // boolean for 3.1.4.2: hole
+- fightYou : int // your result of the fight random selected number multiplied by current strength
+- fightOpponent : int // your opponents result of the fight random selected number multiplied by current strength
+
+// Hole
+- stolenItem : Artifact // temporary variable
+
+// Desert desert
+- buttonChoice : String // stores the button value the user picks
+
+// Cactus Island
+- cactus : artifact // contains water
+
+// Pyramid
+- temporaryItem : String // stores a temporary item for only that event
+
+// River
+- playerRoll : int // gamble between human and demon
+- demonRoll : int
 
 
-3.3	Players attributes 
+3.3		Players attributes 
 Player will have 3 main attributes:
 ...
 
 
-3.4	Artifacts
+3.4		Artifacts
 
 Following artifacts will be available to collects in various events and their influence on Character’s parameters :
 
@@ -918,12 +1201,12 @@ Some of the artifacts and goods (food items) if consumed in place will have lowe
 
 
 
-3.5	Strategies and Motivations
+3.5		Strategies and Motivations
 
 User can try to develop their character in more defensive or offensive way depending on the strategy of assigning points and collecting artifacts.
 …
  
-3.6	Level summary/Story progression
+3.6		Level summary/Story progression
 
 4.	Development Specifications
 4.1	System Requirements
@@ -938,10 +1221,10 @@ o
 o	
 •	Sounds were generated using <<Insert tools here>>
 
-4.3	Algorithm Style
+4.3		Algorithm Style
 
 
-4.3.1	Development Algorithm
+4.3.1		Development Algorithm
 
 The key features of the game include:
 •	Frame is adjusted to fit both desktop and mobile view.
@@ -961,16 +1244,16 @@ Figure x Backpack UML Structure
 
 
 
-5.	Disclaimer
+5.		Disclaimer
 This document was created as the educational project by City College of San Francisco students. 
 
 Any software used during this project and most objects will be used for personal, educational, non-commercial use only.
 
  
-6.	References 
+6.		References 
 
 
-6.1	Graphics References
+6.1		Graphics References
 	
 	
 	
@@ -978,7 +1261,7 @@ Any software used during this project and most objects will be used for personal
 	
 
 
-6.2	Miscellaneous
+6.2		Miscellaneous
 Library Functions and other effects	
 
 
