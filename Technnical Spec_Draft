@@ -1331,19 +1331,119 @@ if (button 1.3) // convince cat
 
 3.1.6.2  	Ascending The Peak
 
-<p>You enter the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. You could use a little break, and she's genuinely interested in how such an intriguing creature has found itself in the mountains.  After some time spent discussing your adventures, you catch the glisten of a jewel-encrusted sword in her backpack, it looks powerful. She notices your gaze and understands what it means; You want the sword. 
+<p>You are going up in the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. You could use a little break, and you are genuinely interested in how such an intriguing creature has found itself in the mountains.  After some time spent discussing your adventures, you catch the glimpse of a jewel-encrusted sword in her backpack, it looks powerful. She notices your gaze and understands what it means; You want the sword. 
 "Please, this sword is a family heirloom. It's value to me cannot be measured in coin; It's not for sale."</p>
 
 <button 1>Fight her for the sword</button>
 
-<button 1>Leave her alone and continue your journey</button>
+<button 1>Leave her alone and continue your journey.</button>
 
 <button 1>Ask if she would like to join your adventure</button>
 
+switch:
+	Case (button 1): // attack fairy
+        	<p> You have decided to attack the fairy (strenght 60) and take the sword from her.</p>
+		
+      		fightYou = Math.floor (Math.random() * Strength);
+      		fightOpponent = Math.floor (Math.random() * 60);
+
+        	<p> Your attack: <<fightYou>>. Fairy's attack <<fightOpponent>> </p>
 
 
-<<... waiting for the story logic to be corrected ... >>
+        	if (fightYou < fightOpponent):
+	        	Health -= 25;
 
+		        if (health <= 0):
+        	        	<popup message> No one simply attacks fairy and leave alive. You have died. Game Lost</popup message>
+
+<END OF GAME>
+
+	     		else: // you lose the fight but you are still alive
+		                <p> You have lost the fight (-25 Health), but you are still alive. Pleading for mercy you are spared by a fairy who leaves you on the ground. In te evening you are finally able to move and continue your journey. </p>	
+
+		else: // if you win fight
+           		<p> You have won the fight (Strength +20) and you take the super sword (+60 Strength) from dead fairy
+		
+			Do you want to put it in your backpack ?</p>
+			
+             			<button 2.1> Yes </button>	
+				<button 2.2> No </button>
+				
+				strength += 20;// from the fight
+
+				Switch (button):
+		  		  Case (button 2.1): // yes, take it
+                
+                	          if (backpack.length < backpackSize)
+                        		add.backpack(superSword)
+					Strength += 60
+<<NEXT EVENT>>
+
+	                          else  // not space in backpack, all slots are filled
+		                        <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+<<NEXT EVENT>>
+
+
+	case (button 2): // leave fairy
+		<p> You are looking at the sword  with hungry eyes, but you resists the temptation to get it by force. You respect the fact that it's a fairys heirloom and her belonging. After you rest you bid good bye to fairy and both of you are going your own way. </p>
+
+<<NEXT EVENT>>		
+
+	case (button 3): // ask for the sword
+		<p> You are looking at the sword with hungry eyes and ask fairy to give it to you (trying to use your natural charm. It doesn't work on fairys (like on any other species). But fairy rethinks your offer and says she might give you the sword if you fight of the dragon which is not letting her go through on the nearby path. What do you do? </p>
+		<button 3.1>Yes, you will kill the dragon. </button>
+		<button 3.2>No, the risk is too high for such a small reward as sword (even nice one). </button>
+		
+		switch (button):
+			case (button 3.1): // attack dragon
+				<p> Fairy shows you where the dragon is and you see how big it is. Trying to look brave you attack the dragon (Strength 150).
+				
+        			fightYou = Math.floor (Math.random() * Strength);
+			        fightOpponent = Math.floor (Math.random() * 150);
+
+			        <p> Your attack: <<fightYou>>. Dragon's attack <<fightOpponent>> </p>
+
+		        	if (fightYou < fightOpponent):
+	        			Health -= 50;
+
+					if (health <= 0):
+                				<popup message> You have died. Game Lost</popup message>		
+<END OF GAME>
+
+				       	else: // you lost the fight but you are still alive
+        				       <p> You have lost the fight (-50 Health), but you are still alive. You run away from the dragon and stupid fairy who got you into this. After you are far far away you only stop to get some rest and promise yourself never to fight a dragon for any fairy. NEVER.</p>	
+
+				else: // if you win fight
+           				<p> You have won the fight (Strength +50) and fairy gives you take the super sword (+60 Strength).
+					Do you want to put it in your backpack ?</p>
+			
+             				<button 2.1> Yes </button>	
+					<button 2.2> No </button>
+				
+					strength += 50; // from the fight
+
+					Switch (button):
+			  		  Case (button 2.1): // yes, take it
+                	
+                		          if (backpack.length < backpackSize)
+                        			add.backpack(superSword)
+						Strength += 60
+<<NEXT EVENT>>
+
+		                          else  // not space in backpack, all slots are filled
+			                        <popup> Sorry, your backpack is full. You cannot add anything more to your backpack <popup>
+
+<<NEXT EVENT>>
+
+
+
+
+			case (button 3.2): // don't attach dragon
+				<p> You think "This fairy must be crazy if she thinks I will go for that." You reject fairy's offer and go back on your quest for search for mountain penguin</p>
+<<NEXT EVENT>>
+
+	
 3.1.6.3		Merchant in Mountains
 
 <p> You are walking on the road up the mountain when you see a merchant with goods. What do you do? </p>
@@ -1722,7 +1822,8 @@ Mountains:
 - largeSword : Aritefact
 - smallKnife : Aritefact
 
-
+Ascending the peak:
+- superSword : Aritefact
 
 Bricks Hut:
 - roundNo : int // number of the current fight round with Brick
@@ -1754,7 +1855,7 @@ pocketKnife(desert merchant)	+5				100
 shortSword (desert merchant)	+40				800
 Cactus (desert cactus island)		+5	
 Needle (desert canyon)		+10
-
+superSword			+60
 …			
 
 
