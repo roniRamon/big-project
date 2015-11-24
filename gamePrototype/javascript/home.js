@@ -1,3 +1,5 @@
+
+
 // ACCORDION MENU SETTINGS
   $( document ).ready(function() { 
 
@@ -16,6 +18,24 @@
       $( "#begin" ).button({
         disabled: true
       });
+	  
+	  //disable textinput so cant be changed	  
+   $( "#health-points" ).textinput({
+  	disabled: true
+   });
+  
+   $( "#strength-points" ).textinput({
+  	disabled: true
+   });
+  
+   $( "#smart-points" ).textinput({
+  	disabled: true
+   });
+
+  
+   $( "#money" ).textinput({
+  	disabled: true
+   });
 
     // when user sets the name, release lower accordion section
     $("#next1").click(function() {
@@ -32,6 +52,7 @@
         $( "#col2" ).collapsible("enable" );
         $( "#col3" ).collapsible("enable" );
     });
+	  
 // when user sets the goal, release lower accordion section
     $("#next3").click(function() {
         $( "#col4" ).collapsible( "expand" );
@@ -47,7 +68,7 @@
                return false;
     }
    });
-    
+  
   //if the letter is not digit then display error and don't type anything   
   $("#strength").keypress(function (e) {
      if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
@@ -112,3 +133,4 @@
     // initialize the external header#2
     $( "#header2" ).toolbar();
 });
+
