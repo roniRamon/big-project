@@ -2377,12 +2377,12 @@ function desert5story() {
 
 //the ending of the forst story and back to city	  
 function desertEnd(){
-	$("#headerGame").html('You have reached the end of the desert where you have found Desert Penguin. He follows you back to the city.');
-	$("#select1").empty();
-	$("#select2").empty();
-	$("#select3").empty();
-	$("#select4").empty();
-	$('#select1').append('<input type="button" value="Next" id="next9" data-inline="true" data-mini="true" data-icon="check" class="next9">').trigger('create');
+	$("#desertHeadre").html('You have reached the end of the desert where you have found Desert Penguin. He follows you back to the city.');
+	$("#desert-select1").empty();
+	$("#desert-select2").empty();
+	$("#desert-select3").empty();
+	$("#desert-select4").empty();
+	$("#desert-select1").append('<input type="button" value="Next" id="next9" data-inline="true" data-mini="true" data-icon="check" class="next9">').trigger('create');
 	$(".next9").click(function(){    	
 		$('#penguin3').show();
 		window.location.replace('#city-page');
