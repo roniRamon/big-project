@@ -217,7 +217,7 @@
           </p>
           <a href="#forest-page" class="ui-btn ui-icon-arrow-d-l ui-btn-icon-left ui-corner-all" id="GoToTheForest">Go to the forest</a>
           <a href="#mountain-page" class="ui-btn ui-icon-arrow-d-r ui-btn-icon-left ui-corner-all">Go to the mountain</a>
-          <a href="#desert-page" class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-corner-all">Go to the desert</a>
+          <a href="#desert-page" class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-corner-all" id="GoToTheDesert">Go to the desert</a>
       </fieldset>
   </div> <!-- end of content on city page -->
   </div> <!-- end of City page -->
@@ -1308,15 +1308,18 @@ function apple(){
 
 //the ending of the forst story and back to city	  
 function forestEnd(){
+	$("#headerGame").html('You have reached the end of the forest where you have found Forest Penguin. He follows you back to the city.');
 	$("#select1").empty();
 	$("#select2").empty();
 	$("#select3").empty();
 	$("#select4").empty();
-	alert('You finished the forest!');
-	$('#penguin1').show();
-	window.location.replace('#city-page');
-	$( "#GoToTheForest" ).button({
-  		disabled: true
+	$('#select1').append('<input type="button" value="Next" id="next9" data-inline="true" data-mini="true" data-icon="check" class="next9">').trigger('create');
+	$(".next9").click(function(){    	
+		$('#penguin1').show();
+		window.location.replace('#city-page');
+		$( "#GoToTheForest" ).button({
+			disabled: true
+		});
 	});
 }
 	
@@ -1430,73 +1433,93 @@ function forestEnd(){
 	  
  ///////////////////////////////////////////////////////////////Dessert  ///////////////////////////////////////////////////////////////////////////////////////////////
 	
-//Continue 	  
+//Continue walking	  
   $('#desert-choice-1').click(function(){
 	  $("#desertHeadre").html('You continue walking. Your feet are growing heavy.');
 	  $("#desert-select1").empty();
 	  $("#desert-select2").empty();
 	  $("#desert-select1").append('<input name="radio-choice-20" id="desert1" value="choice-1" type="radio"><label for="desert1">Continue walking...</label>').trigger('create'); 
 	  if( parseInt($('#smart-points').val()) > 12 )
-	 	$("#desert-select2").append('<input name="radio-choice-20" id="desert2" value="choice-2" type="radio"><label for="desert2">Investigate.</label>').trigger('create'); 
+	  	$("#desert-select2").append('<input name="radio-choice-20" id="desert2" value="choice-2" type="radio"><label for="desert2">Investigate.</label>').trigger('create');
+	  ////Continue walking	
+	  $('#desert1').click(function(){
+	  	$("#desertHeadre").html('You continue walking. Your feet are growing heavy. You look down and see what\'s wrong: You\'re sinking and you are already in the sand till your knees');
+	  	$("#desert-select1").empty();
+	  	$("#desert-select2").empty(); 
+		$("#desert-select1").append('<input name="radio-choice-20" id="desert3" value="choice-1" type="radio"><label for="desert3">Make like a rock and roll.</label>').trigger('create'); 
+	  	$("#desert-select2").append('<input name="radio-choice-20" id="desert4" value="choice-2" type="radio"><label for="desert4">Freak out!</label>').trigger('create'); 
+	  		$('#desert3').click(function(){ 
+				//Make like a rock and roll
+				$("#desertHeadre").html('You do a barrel roll, again and again until you\'re out of the quicksand.');
+	  			$("#desert-select1").empty();
+	  			$("#desert-select2").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next2-2" data-inline="true" data-mini="true" data-icon="check" class="next2-2">').trigger('create');
+				$(".next2-2").click(function(){ 
+					desert2story(); //next event desert 2
+				});
+			});
+		  	//Freak out!
+		    $('#desert4').click(function(){ 
+				$("#desertHeadre").html('You freak out hardcore, and continue to sink. Unfortunately the more you struggle the more you sink it. Now you realize that staying cool and rolling off would be wiser, but it\'s too late. You die. GAME OVER');
+	  			$("#desert-select1").empty();
+	  			$("#desert-select2").empty(); 
+				//you die
+				$('#desert-select1').append('<input type="button" value="Next" id="next2-2" data-inline="true" data-mini="true" data-icon="check" class="next2-2">').trigger('create');
+				$(".next2-2").click(function(){ 
+					alert("You are dead!!! Start over");
+					window.location.replace('#home-page');      //player die
+					location.reload();
+				});
+			});
+	  });
+	  //Investigate
+	  $('#desert2').click(function(){
+	  	$("#desertHeadre").html('You investigate the area and see that you are ankles deep in the sand. That is something not right. You return back by your steps without any sudden move. You have realized that was the beginning of quicksand. You would be in great trouble if you didn\'t notice that on time. Find a way around this dangerous area and circle around the quicksand.');
+	  	$("#desert-select1").empty();
+	 	$("#desert-select2").empty();
+		$('#desert-select1').append('<input type="button" value="Next" id="next2-2" data-inline="true" data-mini="true" data-icon="check" class="next2-2">').trigger('create');
+		$(".next2-2").click(function(){ 
+			desert2story(); //next event desert 2
+		});
+	  });
 	  
   });
   	  	  
 //	Investigate  
-//  if ( parseInt($('#smart-points').val()+0) > 12 )	>>>> need to add show option 2
-
-	  
+//  if ( parseInt($('#smart-points').val()+0) > 12 )	>>>> need to add show option 2  
   $('#desert-choice-2').click(function(){
-	 $("#desertHeadre").html('You get down on one knee for a closer look at the sand. It smells sugary.');
+	 $("#desertHeadre").html('You get down on one knee for a closer look at the sand. It smells sugary. You lean in closer to smell the sand. Definitely sugar.');
 	 $("#desert-select1").empty();
 	 $("#desert-select2").empty(); 
 	 $("#desert-select1").append('<input name="radio-choice-20" id="desert3" value="choice-1" type="radio"><label for="desert3">Continue walking.</label>').trigger('create');
-	 $("#desert-select2").append('<input name="radio-choice-20" id="desert4" value="choice-1" type="radio"><label for="desert4">Investigate closer.</label>').trigger('create');
+	 $("#desert-select2").append('<input name="radio-choice-20" id="desert4" value="choice-1" type="radio"><label for="desert4">Lick the sand.</label>').trigger('create');
 	 $('#desert3').click(function(){
-	 $("#desertHeadre").html('You continue walking. Your feet are growing heavy.');
+	 $("#desertHeadre").html('You have decided that you are loosing your mind and have to leave as soon as possible from this horrible place. You continue walking until weird sensation is gone.');
 		 $("#desert-select1").empty();
 	 	 $("#desert-select2").empty(); 
-		 $("#desert-select1").append('<input name="radio-choice-20" id="desert5" value="choice-1" type="radio"><label for="desert5">Continue walking.</label>').trigger('create');
-		 if ( parseInt($('#smart-points').val()+0) > 12 )
-		 {
-	 	 	$("#desert-select2").append('<input name="radio-choice-20" id="desert6" value="choice-1" type="radio"><label for="desert6">Investigate closer.</label>').trigger('create');	
-		 }
-		 
-		 
+		 $('#desert-select1').append('<input type="button" value="Next" id="next2-2" data-inline="true" data-mini="true" data-icon="check" class="next2-2">').trigger('create');
+		 $(".next2-2").click(function(){ 
+			desert2story(); //next event desert 2
+		}); 
 	 });
 	 $('#desert4').click(function(){
-	 $("#desertHeadre").html('You lean in closer to smell the sand. Definitely sugar.');
+	 $("#desertHeadre").html('It\'s super weird but you lick the sand. It tastes like sugar. It\'s definitely sugar. Yum. Your health is increasing (+5 Health)');
 		 $("#desert-select1").empty();
 	 	 $("#desert-select2").empty(); 
-		 $("#desert-select1").append('<input name="radio-choice-20" id="desert5" value="choice-1" type="radio"><label for="desert5">Continue walking.</label>').trigger('create');
-	 	 $("#desert-select2").append('<input name="radio-choice-20" id="desert6" value="choice-1" type="radio"><label for="desert6">Lick the sand.</label>').trigger('create');	
-		 $('#desert5').click(function(){
-	 		$("#desertHeadre").html('You continue walking. Your feet are growing heavy.');
-			$("#desert-select1").empty();
-			$("#desert-select2").empty(); 
-			$("#desert-select1").append('<input name="radio-choice-20" id="desert7" value="choice-1" type="radio"><label for="desert7">Continue walking.</label>').trigger('create');
-			$("#desert-select2").append('<input name="radio-choice-20" id="desert8" value="choice-1" type="radio"><label for="desert8">Lick the sand.</label>').trigger('create');	
-		 });
-		 $('#desert6').click(function(){
-	 		$("#desertHeadre").html('Definitely sugar. Yum. -> +1 Health');
-			$("#desert-select1").empty();
-			$("#desert-select2").empty();
-			$("#health-points").val(parseInt($("#health").val())+1); 
-			$("#desert-select1").append('<input name="radio-choice-20" id="desert7" value="choice-1" type="radio"><label for="desert7">Continue walking.</label>').trigger('create');
-			
-			// =>1. Continue
-//# Game> It's become increasingly hard to walk.
-//# Game> 1. Continue walking...
-//# Game> 2. Make like a rock and roll.
-		 });
+		 $("#health-points").val(parseInt($("#health").val())+5);
+		 $('#desert-select1').append('<input type="button" value="Next" id="next2-2" data-inline="true" data-mini="true" data-icon="check" class="next2-2">').trigger('create');
+		 $(".next2-2").click(function(){ 
+			desert2story(); //next event desert 2
+		 }); 
+	  });
 		
 		 
-	 });
-
   });
+
 	  
 	  
   function desert2story(){
-	  $("#desertHeadre").html('You are walking through the desert when somewhere on the horisont you see a figure approaching you. You recognize that he\'s a merchant with goods. What do you do?');
+	  	$("#desertHeadre").html('You are walking through the desert when somewhere on the horisont you see a figure approaching you. You recognize that he\'s a merchant with goods. What do you do?');
 		$("#desert-select1").empty();
 		$("#desert-select2").empty();
 		$("#desert-select3").empty();	
@@ -1516,7 +1539,7 @@ function forestEnd(){
 			$("#desert-select4").empty();
 			$('#desert-select1').append('<input type="button" value="Next" id="next22" data-inline="true" data-mini="true" data-icon="check" class="next22">').trigger('create');
 				$(".next22").click(function(){ 
-					//story3desert(); //function to story 3	desert
+					desert3story(); //function to story 3	desert
 				});
 		});
 		
@@ -1549,14 +1572,14 @@ function forestEnd(){
 						{
 							alert("you dont have any more space in your backpack!!");
 						}
-						 //function to story 3	desert
+						desert3story(); //function to story 3	desert
 					});
 					$('#radio-choice-30').click(function() {
-						 //function to story 3	desert
+						 desert3story();//function to story 3	desert
 					});
 			}
 			
-			//plater win fight
+			//player win fight
 			else if(mrVSplayer2 >= merchant2) {   
 				$("#desertHeadr").html('You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), sword (+50 Strength), apple (+25 Health, +5 Intelligence) Where do you want to put a knife');    					//#backpack  !!!!!!!!!
 				$("#desert-select1").empty();
@@ -1607,10 +1630,10 @@ function forestEnd(){
 						{
 							alert("you dont have any more space in your backpack!!");
 						}
-						 //function to story 3	desert								
+						 desert3story();//function to story 3	desert								
 					});
 					$('#radio-choice-30').click(function() {
-						//function to story 3 desert
+						desert3story();//function to story 3 desert
 					});
 			}
 		}); 
@@ -1626,7 +1649,7 @@ function forestEnd(){
 			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-33" value="choice-1" type="radio"><label for="radio-choice-33">apple (+25Health, +5 Intelligence). price 40$</label>').trigger('create');
 			if(intelligence > 30) 
 			{
-				$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-34" value="choice-1" type="radio"><label for="radio-choice-34">knife (+5 Strength) price 100$.</label>').trigger('create');
+			  $('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-34" value="choice-1" type="radio"><label for="radio-choice-34">knife (+5 Strength) price 100$.</label>').trigger('create');
 			}
 			$('#desert-select4').append('<input name="radio-choice-3" id="radio-choice-35" value="choice-1" type="radio"><label for="radio-choice-35">No thanks, I don\'t need anything.</label>').trigger('create');
 			    //buy sword
@@ -1654,7 +1677,7 @@ function forestEnd(){
 						alert("you dont have any more space in your backpack!!");
 						arrayShowItem();
 					}
-					story3Forest(); //function to story 3	
+					desert3story(); //function to story 3	
 				});
 				// buy apple
 				$("#radio-choice-33").click(function(){
@@ -1681,7 +1704,7 @@ function forestEnd(){
 						{
 							alert("you dont have any more space in your backpack!!");
 						}
-					story3Forest(); //function to story 3									
+					desert3story(); //function to story 3									
 				});
 				//buy knife
 				$("#radio-choice-34").click(function(){
@@ -1707,31 +1730,31 @@ function forestEnd(){
 					{
 						alert("you dont have any more space in your backpack!!");
 					}
-					//function to story 3 desert									
+					desert3story();//function to story 3 desert									
 				});
 				//buy nothing
 				$("#radio-choice-35").click(function(){
-					//function to story 3 deser	
+					desert3story();//function to story 3 deser	
 				});		
 		});
 		
 		//story 2 option 4 conversation   //need to be change option no there!!!! ########################
 		$("#radio-choice-29").click(function(){
-			$("#desertHeadr").html('Start conversation: ');    					
+			$("#desertHeadre").html('Start conversation: ');    					
 			$("#desert-select1").empty();
 			$("#desert-select2").empty();
 			$("#desert-select3").empty();	
 			$("#desert-select4").empty();
 			$('#desert-select1').append('<input type="button" value="Next" id="next22" data-inline="true" data-mini="true" data-icon="check" class="next22">').trigger('create');
 				$(".next22").click(function(){ 
-				 //function to story 3	desert	
+				 desert3story();//function to story 3	desert	
 			});
 		});
   }
 	  
 //story 3 desert	  
 function desert3story(){
-	$("#desertHeadr").html('For whatever reason, it is your 3rd day wandering aimlsesly around the desert. You realize you haven\'t had water since the adventure and you are now very very thirsty. Luckily you do have your iphone 5s on you. You decide to locate yourself on the map. You pull your iphone out. Unfortunately, the wifi does not work! Desperate, you look around your surroundings for water. You see no signs of water in your immediate path. What do you do?');    					
+	$("#desertHeadre").html('It is your 3rd day wandering aimlessly around the desert. You realize you haven\'t had water since the last adventure and you are now very very thirsty. Luckily you do have your iphone 5s on you. You decide to locate yourself on the map. You pull your iphone out. Unfortunately, the wifi does not work! Desperate, you look around your surroundings for water. You see no signs of water in your immediate path. What do you do?');    					
 		$("#desert-select1").empty();
 		$("#desert-select2").empty();
 		$("#desert-select3").empty();	
@@ -1739,46 +1762,97 @@ function desert3story(){
 		$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-36" value="choice-1" type="radio"><label for="radio-choice-36">Continue walking.</label>').trigger('create'); 
 		$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-37" value="choice-1" type="radio"><label for="radio-choice-37">Dig into the ground.</label>').trigger('create');
 		$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-38" value="choice-1" type="radio"><label for="radio-choice-38">Walk in the opposite path</label>').trigger('create');
+			//Continue walking.
 			$("#radio-choice-36").click(function(){
-				$("#desertHeadr").html('You decide to keep walking. Within a few miles, your phone picks up wifi. You ask siri where to find water and siri points you towards Cactus Island about 10 miles away. As you continue to walk, you feeltired as hell. You really want to stop walking. You look up into the sky and notice the clouds are getting heavy and dark. Is this a sign of rain? What do you do?');    		
+				$("#desertHeadre").html('You decide to keep walking. Within a few miles, your phone picks up wifi. You ask siri where to find water and siri points you towards Cactus Island about 10 miles away. As you continue to walk, you feeltired as hell. You really want to stop walking. You look up into the sky and notice the clouds are getting heavy and dark. Is this a sign of rain? What do you do?');    		
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();	
 				$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-39" value="choice-1" type="radio"><label for="radio-choice-39">Wait for rain.</label>').trigger('create'); 
 				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Continue walking towards Cactus Island.</label>').trigger('create');
 				$("#radio-choice-39").click(function(){
-					$("#desertHeadr").html('You decide to wait. Your phone has no wifi so you decide to play Angry Birds while you wait for the rain. 4 hours has passed and your phone is receiving wifi again. You look up the weather and notice the weather app says it will only be cloudy. You do some research and realize that it does not rain here. You decide to once again walk towards Cactus Island, 1 mile down the road. Health: -5.')
+					$("#desertHeadre").html('You decide to wait. Your phone has no wifi so you decide to play Angry Birds while you wait for the rain. 4 hours has passed and your phone is receiving wifi again. You look up the weather and notice the weather app says it will only be cloudy. You do some research and realize that it does not rain here. You decide to once again walk towards Cactus Island, 1 mile down the road. Health: -5.');
+					$("#health-points").val(parseInt($("#health").val())-5);
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
 					$("#desert-select3").empty();
 					$('#desert-select1').append('<input type="button" value="Next" id="next23" data-inline="true" data-mini="true" data-icon="check" class="next23">').trigger('create');
 						$(".next23").click(function(){ 
-				 			$("#desertHeadr").html('You decide to continue walking. You finally arrive at Cactus Island. What a heavenly place!! You pick up a cactus, open it, drink the water, and are now replenished! You decide to pack your bag with a cactus to last yourself with at least another week\'s worth of water supply.')
+				 			$("#desertHeadre").html('You decide to continue walking. You finally arrive at Cactus Island. What a heavenly place!! You pick up a cactus, open it, drink the water, and are now replenished! Now you are replenished! Do you want to bring a cactus with you? ');
 							$("#desert-select1").empty();
 							$("#desert-select2").empty();
 							$("#desert-select3").empty();
-							$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
+							$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Yes, I might need water again.</label>').trigger('create'); 
+							$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-41" value="choice-1" type="radio"><label for="radio-choice-41">NO, those things are spikey.  </label>').trigger('create');
+							$("#radio-choice-40").click(function(){
+								if(backpackCheak("cactus"))
+								{								
+									alert("you alrady have the cactus");
+								}
+								else if((!backpackCheak("cactus") )&& backpack.length <=4)
+								{	
+									backpack.push("cactus");											 //add cactus to backpack
+									$("#health-points").val(parseInt($("#health").val())+3);   			//cactus add 3 strength  
+									alert("You've obtained a cactus! But it poked you. (+5 Health, - 2 Health)");
+									arrayShowItem();
+								}
+								else 
+								{
+								   alert("Sorry, your backpack is full. You cannot add anything more to your backpack");
+								}
+								desert4story();//next event desert 4
+							}); //40
+							$("#radio-choice-41").click(function(){
+								$("#desertHeadre").html('You decide not to take a cactus. The narrator is laughing at your stupidity.');
+								$("#desert-select1").empty();
+								$("#desert-select2").empty();
+								$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 								$(".next24").click(function(){ 
-									//next story 4 desert
+									desert4story();//next story 4 desert
 								});
-						});
-				
-				});
+							});//41
+						}); //.23
+				}); //39
+				//walk to cactus island
 				$("#radio-choice-40").click(function(){
-					$("#desertHeadr").html('You decide to continue walking. You finally arrive at Cactus Island. What a heavenly place!! You pick up a cactus, open it, drink the water, and are now replenished! You decide to pack your bag with a cactus to last yourself with at least another week\'s worth of water supply.')
-					$("#desert-select1").empty();
-					$("#desert-select2").empty();
-					$("#desert-select3").empty();
-					$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
-						$(".next24").click(function(){ 
-							//next story 4 desert
-						});
-				});
-				
-			});		
+					$("#desertHeadre").html('You decide to continue walking. You finally arrive at Cactus Island. What a heavenly place!! You pick up a cactus, open it, drink the water, and are now replenished! Now you are replenished! Do you want to bring a cactus with you? ');
+							$("#desert-select1").empty();
+							$("#desert-select2").empty();
+							$("#desert-select3").empty();
+							$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Yes, I might need water again.</label>').trigger('create'); 
+							$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-41" value="choice-1" type="radio"><label for="radio-choice-41">NO, those things are spikey.  </label>').trigger('create');
+							$("#radio-choice-40").click(function(){
+								if(backpackCheak("cactus"))
+								{								
+									alert("you alrady have the cactus");
+								}
+								else if((!backpackCheak("cactus") )&& backpack.length <=4)
+								{	
+									backpack.push("cactus");											 //add cactus to backpack
+									$("#health-points").val(parseInt($("#health").val())+3);   			//cactus add 3 strength  
+									alert("You've obtained a cactus! But it poked you. (+5 Health, - 2 Health)");
+									arrayShowItem();
+								}
+								else 
+								{
+								   alert("Sorry, your backpack is full. You cannot add anything more to your backpack");
+								}
+								desert4story();//next event desert 4
+							}); //40
+							$("#radio-choice-41").click(function(){
+								$("#desertHeadre").html('You decide not to take a cactus. The narrator is laughing at your stupidity.');
+								$("#desert-select1").empty();
+								$("#desert-select2").empty();
+								$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
+								$(".next24").click(function(){ 
+									desert4story();//next story 4 desert
+								});
+							}); //41
+						}); //40
+			});	 //36	
 			// Dig into the ground
 			$("#radio-choice-37").click(function(){
-				$("#desertHeadr").html('You dig into the ground. 4 hours in, you\'ve come to the realization that you\'ve made no progress so far. What do you do?');    					
+				$("#desertHeadre").html('You dig into the ground. 4 hours in, you\'ve come to the realization that you\'ve made no progress so far. What do you do?');    					
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
@@ -1786,7 +1860,7 @@ function desert3story(){
 				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Continue walking.</label>').trigger('create');
 				//Continue digging
 				$("#radio-choice-39").click(function(){
-					$("#desertHeadr").html('You continue to dig. As you continue to dig, you begin to feel nauseous and fever-ish. Within the next minute, you fall into the hole you\'ve dug. You die.')
+					$("#desertHeadre").html('You continue to dig. As you continue to dig, you begin to feel nauseous and fever-ish. Within the next minute, you fall into the hole you\'ve dug. You die.');
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
 					//you die
@@ -1799,26 +1873,50 @@ function desert3story(){
 				});
 				// Continue walking
 				$("#radio-choice-40").click(function(){
-					$("#desertHeadr").html('You decide to continue walking. Within 4 hours, your phone begins to receive wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island which is located 5 miles from where you are. You begin walking towards Cactus Island.');
+					$("#desertHeadre").html(' You decide to continue walking. Within 4 hours, your phone begins to receive wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island which is located 5 miles from where you are. You begin walking towards Cactus Island.');
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
-					//scenes to 2. Cactus Island
-					$('#desert-select1').append('<input type="button" value="Next" id="next23" data-inline="true" data-mini="true" data-icon="check" class="next23">').trigger('create');
-						$(".next23").click(function(){ 
-				 			$("#desertHeadr").html('You decide to continue walking. You finally arrive at Cactus Island. What a heavenly place!! You pick up a cactus, open it, drink the water, and are now replenished! You decide to pack your bag with a cactus to last yourself with at least another week\'s worth of water supply.')
-							$("#desert-select1").empty();
-							$("#desert-select2").empty();
-							$("#desert-select3").empty();
-							$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
+					$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-40B" value="choice-1" type="radio"><label for="radio-choice-40B"> walking towards Cactus Island.</label>').trigger('create'); 
+					$("#radio-choice-40B").click(function(){
+						$("#desertHeadre").html('You decide to continue walking. You finally arrive at Cactus Island. What a heavenly place!! You pick up a cactus, open it, drink the water, and are now replenished! Now you are replenished! Do you want to bring a cactus with you? ');
+						$("#desert-select1").empty();
+						$("#desert-select2").empty();
+						$("#desert-select3").empty();
+						$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Yes, I might need water again.</label>').trigger('create'); 
+						$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-41" value="choice-1" type="radio"><label for="radio-choice-41">NO, those things are spikey.  </label>').trigger('create');
+						$("#radio-choice-40").click(function(){
+							if(backpackCheak("cactus"))
+							{								
+								alert("you alrady have the cactus");
+							}
+							else if((!backpackCheak("cactus") )&& backpack.length <=4)
+							{	
+								backpack.push("cactus");											 //add cactus to backpack
+								$("#health-points").val(parseInt($("#health").val())+3);   			//cactus add 3 strength  
+								alert("You've obtained a cactus! But it poked you. (+5 Health, - 2 Health)");
+								arrayShowItem();
+							}
+							else
+							{
+							   alert("Sorry, your backpack is full. You cannot add anything more to your backpack");
+							}
+							desert4story();//next event desert 4
+						}); //40
+							$("#radio-choice-41").click(function(){
+								$("#desertHeadre").html('You decide not to take a cactus. The narrator is laughing at your stupidity.');
+								$("#desert-select1").empty();
+								$("#desert-select2").empty();
+								$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 								$(".next24").click(function(){ 
-									//next story 4 desert
+									desert4story();//next story 4 desert
 								});
-						});
-				});
-			});	
+							}); //41
+				}); //40B
+			}); //40
+		}); //37
 			//Walk in the opposite path
 			$("#radio-choice-38").click(function(){
-				$("#desertHeadr").html('You decide to walk in the path you came from. Within 4 hours, your phone picks up wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island, which is located 25 miles from where you are. What do you do?');    					
+				$("#desertHeadre").html('You decide to walk in the path you came from. Within 4 hours, your phone picks up wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island, which is located 25 miles from where you are.What do you do?');    					
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
@@ -1826,50 +1924,474 @@ function desert3story(){
 				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Continue walking towards the path you came from.</label>').trigger('create');
 				//Walk towards Cactus Island
 				$("#radio-choice-39").click(function(){
-					$("#desertHeadr").html('You fall into your own death within the 8th mile to dehydration.')
+					$("#desertHeadre").html('You are getting more tired than ever (-10 Health)');
+					$("#health-points").val(parseInt($("#health").val())-10);
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
-					//you die
 					$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 					$(".next24").click(function(){ 
-						alert("You are dead!!! Start over");
-						window.location.replace('#home-page');      //player die
-						location.reload();
+						if (health < 0)
+						{
+							$("#desertHeadre").html('You fall into your own death within the 8th mile to dehydration. GAME OVER');
+							$("#desert-select1").empty();
+							$("#desert-select2").empty();
+							//you die
+							$('#desert-select1').append('<input type="button" value="Next" id="next25" data-inline="true" data-mini="true" data-icon="check" class="next25">').trigger('create');
+							$(".next25").click(function(){ 
+								alert("You are dead!!! Start over");
+								window.location.replace('#home-page');      //player die
+								location.reload();
+							});
+						}
+						else // you are still alive  
+						{
+            				$("#desertHeadre").html('You barely made it!! You have reached Cactus Island and drank water from cactuses (+5 Health).');
+							$("#desert-select1").empty();
+							$("#desert-select2").empty();
+							$("#health-points").val(parseInt($("#health").val())+5);
+							$('#desert-select1').append('<input type="button" value="Next" id="next23" data-inline="true" data-mini="true" data-icon="check" class="next25">').trigger('create');
+							$(".next25").click(function(){ 
+								desert4story();//next event desert 4
+							});
+						}
 					});
 				});
 				//Continue walking towards the path you came from
 				$("#radio-choice-40").click(function(){
-					$("#desertHeadr").html('Continue walking towards the path you came from You decide to continue walking. Within 2 miles you notice a python crawling around the desert. What do you do?');
+					$("#desertHeadre").html('You decide to continue walking back from where you came from. Within 2 miles you notice a snake crawling around the desert. What do you do?');
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
 					$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-41" value="choice-1" type="radio"><label for="radio-choice-41">Ignore the python.</label>').trigger('create'); 
 					$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-42" value="choice-1" type="radio"><label for="radio-choice-42">Attempt to kill the python for its meat and blood.</label>').trigger('create');
 					//Ignore the python
 					$("#radio-choice-41").click(function(){
-						$("#desertHeadr").html('You decide to ignore the python and walk. As you begin to walk, python sneaks up from behind you. Before you can do anything to stop it, it wraps itself around you. health: -5 Fortunately, the snake is also weak due to dehydration. You are able to rip it apart and eat + drink its blood. You feel rejuvenated and continue walking until you make it to the city.');
+						$("#desertHeadre").html('You decide to ignore the python and walk. As you begin to walk, the python sneaks up from behind you. Before you can do anything to stop it, it strikes at you. (-20 Health)');
 						$("#desert-select1").empty();
 						$("#desert-select2").empty();
-						$("#health-points").val(parseInt($("#health").val())-5); 
+						$("#health-points").val(parseInt($("#health").val())-20); 
 						$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 						$(".next24").click(function(){ 
-							//next story desert 4
+							$("#desertHeadre").html('Fortunately, the snake is also weak due to dehydration and it\'s venom was not that strong. You are able to grab him, rip him apart and eat and drink its blood (+10 Health, +10 Strength). You feel rejuvenated and continue your search for penguin.');
+							$("#desert-select1").empty();
+							$("#desert-select2").empty();
+							$("#health-points").val(parseInt($("#health").val())+10); 
+							$("#strength-points").val(parseInt($("#strength").val())+10);
+							$('#desert-select1').append('<input type="button" value="Next" id="next25" data-inline="true" data-mini="true" data-icon="check" class="next25">').trigger('create');
+							$(".next24").click(function(){ 
+								desert4story();//next story desert 4
 						});
 					});
 					//Attempt to kill the python for its meat and blood
 					$("#radio-choice-42").click(function(){
-						$("#desertHeadr").html('You run upto the python and grab it by its mouth. The snake wiggles for a minute and then becomes motionless. You eat the python and feel rejuvinated. You continue to walk and barely made it back to the city.');
+						$("#desertHeadre").html('You run unto the python and grab it by its mouth. The snake wiggles for a minute and then becomes motionless. You eat the python and feel rejuvenated (+15 Health, +15 Strength). You continue  your search for penguin.');
 						$("#desert-select1").empty();
 						$("#desert-select2").empty();
-						('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
+						$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 						$(".next24").click(function(){ 
-							//next story desert 4
+							desert4story();//next story desert 4
 						});
 					});
 			});	
 		});
+	});
 }
-  
-	 
+	  
+//story 4 desert Canyon Adventures
+function desert4story(){
+		$("#desertHeadre").html('After the tiring walking in the desert sands you reach an enormous canyon. It\'s very deep and foggy and you can\'t see the bottom or the other side if it. What do you do? ');		
+		$("#desert-select1").empty();
+		$("#desert-select2").empty();
+		$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-50" value="choice-1" type="radio"><label for="radio-choice-50">You are making a loud shout right in the canyon.</label>').trigger('create'); 	
+		$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-51" value="choice-1" type="radio"><label for="radio-choice-51">You decide to have a rest and wait for the fog to clear out.</label>').trigger('create'); 
+		if (intelligence > 15)
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-52" value="choice-1" type="radio"><label for="radio-choice-52">You are cautiously exploring the edge of the canyon.</label>').trigger('create');
+		//shout in canyon		
+		$("#radio-choice-50").click(function(){
+			$("#desertHeadre").html('Oh no! Suddenly the ground is shaking and the giant ugly troll is climbing out from the canyon! He has a stupid face and a cold. He is sneezing so hard that in few minutes everything is covered in his snivel. Yuk! What do you do?');
+			$("#desert-select1").empty();
+			$("#desert-select2").empty();
+			$("#desert-select3").empty();
+			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-53" value="choice-1" type="radio"><label for="radio-choice-53">You fight the troll.</label>').trigger('create'); 
+			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-54" value="choice-1" type="radio"><label for="radio-choice-54">You run like hell back to the desert.</label>').trigger('create'); 
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-55" value="choice-1" type="radio"><label for="radio-choice-55">You jump into the canyon right between troll\'s legs.</label>').trigger('create'); 
+			//You fight the troll.
+			$("#radio-choice-53").click(function(){
+				$("#desertHeadre").html('You are fighting the troll. Luckily he is so sick and absent-minded he can\'t catch you. He gets upset, starts to cry and tells you his name is Karl. Very dirty and sticky you search his pockets and get water (+5 Health) and the giant needle. Do you want to accept the giant needle (+10 Strength)?');
+				$("#health-points").val(parseInt($("#health").val())+5);
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-55" value="choice-1" type="radio"><label for="radio-choice-55">Yes.</label>').trigger('create'); 
+				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-56" value="choice-1" type="radio"><label for="radio-choice-56">No.</label>').trigger('create');
+				$("#radio-choice-55").click(function(){
+					if(backpackCheak("needle"))
+					{								
+						alert("you alrady have the needle");
+					}
+					else if((!backpackCheak("needle") )&& backpack.length <=4)
+					{	
+						backpack.push("needle");											 //add needle to backpack
+						$("#strength-points").val(parseInt($("#strength").val())+10);   	//needle add 10 strength  
+						alert("You've obtained a needle!");
+						arrayShowItem();
+					}
+					else
+					{
+						alert("Sorry, your backpack is full. You cannot add anything more to your backpack");
+					}
+					desert5story(); //next event story 5
+				});
+				$("#radio-choice-56").click(function(){
+					alert("You didn't take the needle");
+					desert5story(); //next event story 5
+				});	
+			});
+			//You run like hell back to the desert
+			$("#radio-choice-54").click(function(){
+				$("#desertHeadre").html('The troll catches you! He puts you in his pocket and carries back to his dank home at the bottom of the canyon. You have to cook, clean and bear the thundering sneezing till the rest of your life. GAME OVER');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				//you die
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+					$(".next30").click(function(){ 
+						alert("You are dead!!! Start over");
+						window.location.replace('#home-page');      //player die
+						location.reload();
+					});
+			});
+			//You jump into the canyon
+			$("#radio-choice-55").click(function(){
+				$("#desertHeadre").html('You are flying through the fog and land in the lake. You have injured your hand (-10 Health). You manage to find a path and return to your search of penguin very weak and wet.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+					$(".next30").click(function(){ 
+						desert5story(); //next event story 5
+					});
+			});
+		});
+		// rest and wait for fog to clear		
+		$("#radio-choice-51").click(function(){
+			$("#desertHeadre").html('At twilight you hear flapping of the wings and the pair of coloured birds lands near you. The lizard-looking riders get down from them and demand that you leave. What do you do?');
+			$("#desert-select1").empty();
+			$("#desert-select2").empty();
+			$("#desert-select3").empty();
+			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-53" value="choice-1" type="radio"><label for="radio-choice-53">You bargain with them.</label>').trigger('create'); 
+			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-54" value="choice-1" type="radio"><label for="radio-choice-54">You jump on one of the birds and try to fly away.</label>').trigger('create'); 
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-55" value="choice-1" type="radio"><label for="radio-choice-55">You jump into the canyon and disappear in the fog.</label>').trigger('create');
+			//You bargain with them
+			$("#radio-choice-53").click(function(){
+				$("#desertHeadre").html('You give them your shoes and in return they give you money (+200$).');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$("#money").val(parseInt($("#money").val()) + 200);
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+					$(".next30").click(function(){ 
+						desert5story(); //next event story 5
+					});
+			});
+			//You jump on one of the birds and try to fly away
+			$("#radio-choice-54").click(function(){
+				$("#desertHeadre").html('Bummer! The bird is smart! She makes a circle and flies back to the owner. He is not pleased and bites you. You are poisoned and stay in the desert forever. GAME OVER');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				//you die
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+				$(".next30").click(function(){ 
+					alert("You are dead!!! Start over");
+					window.location.replace('#home-page');      //player die
+					location.reload();
+				});
+			});
+			//>You jump into the canyon and disappear
+			$("#radio-choice-55").click(function(){
+				$("#desertHeadre").html('You reach the giant trampoline at the bottom and jump out of the canyon. You frostbite your ears during the flight (-5 Health), but find a tree with juicy lematos on the other side. You eat a fruit (+10 Health) and get back on the search for penguins.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$("#health-points").val(parseInt($("#health").val())+10);
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+				$(".next30").click(function(){ 
+						desert5story(); //next event story 5
+					});
+			});
+		});
+		// explore canyon		
+		$("#radio-choice-52").click(function(){
+			$("#desertHeadre").html('You find a tiny path and descend into the canyon. At the lower lever you enter a lovely village of butter-eating leprechauns. They seem hospitable and serve you a dinner (which is made mainly of butter), but oh no! they are not going to let you leave! What do you do?');
+			$("#desert-select1").empty();
+			$("#desert-select2").empty();
+			$("#desert-select3").empty();
+			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-53" value="choice-1" type="radio"><label for="radio-choice-53">You distract them and jump deeper into the canyon.</label>').trigger('create'); 
+			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-54" value="choice-1" type="radio"><label for="radio-choice-54">You rely on your eloquence and begin to persuade them..</label>').trigger('create'); 
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-55" value="choice-1" type="radio"><label for="radio-choice-55">You decide to stay.</label>').trigger('create');
+			//You distract them and jump deeper into the canyon.
+			$("#radio-choice-53").click(function(){
+				$("#desertHeadre").html('You are reaching the bottom of the canyon. You spend a lot of power by going through bushes (-5 Strength) and quench your thirst at a spring (+ 10 Health). Finally you manage to find a that could lead to penguins.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$("#health-points").val(parseInt($("#health").val())+10);
+				$("#strength-points").val(parseInt($("#strength").val())-5); 
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+				$(".next30").click(function(){ 
+					desert5story(); //next event story 5
+				});
+			});
+			//You rely on your eloquence and begin to persuade them.
+			$("#radio-choice-54").click(function(){
+				$("#desertHeadre").html('Your detailed descriptions of all the yummy food besides butter that there is the world inspire leprechauns and they decide to leave the village and the canyon! They inflate the hot air balloon and take you further on your quest. As a gift you receive a pack of magical butter that makes one invulnerable. (+50 Health)');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$("#health-points").val(parseInt($("#health").val())+50);
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+				$(".next30").click(function(){ 
+					desert5story(); //next event story 5
+				});
+			});
+			//You decide to stay.
+			$("#radio-choice-55").click(function(){
+				$("#desertHeadre").html(' You learn the Irish step dance and grow a beard so long that sometimes you make a hammock out of it and spend all day swinging in it. The moist weather and buttery diet undermine your health. You stay in the canyon forever and give up the search for penguins and other quests. GAME OVER.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				//you die
+				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
+					$(".next30").click(function(){ 
+						alert("You are dead!!! Start over");
+						window.location.replace('#home-page');      //player die
+						location.reload();
+					});
+			});
+		});		
+}
+ 
+//story 5 desert Pyramid 
+function desert5story() {
+	$("#desertHeadre").html('You enter a pyramid. Curiosity got the best of you and you decided to enter the pyramid. As you walk in, the door shuts tight and you are now trapped. You notice three items floating magically above a stone. Which of these items do you pick up?');		
+		$("#desert-select1").empty();
+		$("#desert-select2").empty();
+		$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-60" value="choice-1" type="radio"><label for="radio-choice-60">compass.</label>').trigger('create'); 	
+		$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-61" value="choice-1" type="radio"><label for="radio-choice-61">flame torch.</label>').trigger('create'); 
+		$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-62" value="choice-1" type="radio"><label for="radio-choice-62">stack of gold.</label>').trigger('create');
+		//compass
+		$("#radio-choice-60").click(function(){
+			$("#desertHeadre").html('You decide to pick up compass. The other items turns into dust. You walk down the path and a mummy suddenly appears from nowhere. You...');
+			$("#desert-select1").empty();
+			$("#desert-select2").empty();
+			$("#desert-select3").empty();
+			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-63" value="choice-1" type="radio"><label for="radio-choice-63">run for your life.</label>').trigger('create'); 
+			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-64" value="choice-1" type="radio"><label for="radio-choice-64">fight the mummy.</label>').trigger('create'); 
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-65" value="choice-1" type="radio"><label for="radio-choice-65">talk to the mummy.</label>').trigger('create');
+			//run for your life.
+			$("#radio-choice-63").click(function(){
+				$("#desertHeadre").html('Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next35" data-inline="true" data-mini="true" data-icon="check" class="next35">').trigger('create');
+				$(".next35").click(function(){ 
+					$("#desertHeadre").html('Thanks to your compass You found the exit!');
+					$("#desert-select1").empty();
+					$('#desert-select1').append('<input type="button" value="Next" id="next36" data-inline="true" data-mini="true" data-icon="check" class="next36">').trigger('create');
+						$(".next36").click(function(){ 
+							//next event end of desert
+						});
+				}); //.35	
+			}); //63
+			//fight the mummye.
+			$("#radio-choice-64").click(function(){
+				$("#desertHeadre").html('You decide to fight the mummy.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next37" data-inline="true" data-mini="true" data-icon="check" class="next37">').trigger('create');
+				$(".next37").click(function(){ 
+					$("#desertHeadre").html('You don\'t have anything to fight mummy off, so mummy attacks you (-10 Health), but since you are easy target for her, gets quickly borred and leave you alone.');
+					$("#desert-select1").empty();
+					$("#health-points").val(parseInt($("#health").val())-10);
+					$('#desert-select1').append('<input type="button" value="Next" id="next38" data-inline="true" data-mini="true" data-icon="check" class="next38">').trigger('create');
+					$(".next38").click(function(){
+						$("#desertHeadre").html('You manage to crawl back to the exit.');
+						$("#desert-select1").empty();
+						$('#desert-select1').append('<input type="button" value="Next" id="next39" data-inline="true" data-mini="true" data-icon="check" class="next39">').trigger('create');
+						$(".next39").click(function(){
+							//next event end of desert
+						});
+					});  //.38
+				}); //.37
+				 
+			});//64
+			//talk to the mummy
+			$("#radio-choice-65").click(function(){
+				$("#desertHeadre").html('You decide to talk the mummy. The mummy ends up being friendly and offers you beer. You accept it and go with mummy outside the pyramid to the local bar. After a beer or two you continue your search for desert penguin.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next39" data-inline="true" data-mini="true" data-icon="check" class="next39">').trigger('create');
+					$(".next39").click(function(){
+						//next event end of desert
+					});
+			});//65
+			
+		}); //60
+		//flame
+		$("#radio-choice-61").click(function(){
+			$("#desertHeadre").html('You decide to pick up flame torch. The other items turns into dust. You walk down the path and a mummy suddenly appears from nowhere. You...');
+			$("#desert-select1").empty();
+			$("#desert-select2").empty();
+			$("#desert-select3").empty();
+			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-63" value="choice-1" type="radio"><label for="radio-choice-63">run for your life.</label>').trigger('create'); 
+			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-64" value="choice-1" type="radio"><label for="radio-choice-64">fight the mummy.</label>').trigger('create'); 
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-65" value="choice-1" type="radio"><label for="radio-choice-65">talk to the mummy.</label>').trigger('create');
+			//run for your life.
+			$("#radio-choice-63").click(function(){
+				$("#desertHeadre").html('Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next35" data-inline="true" data-mini="true" data-icon="check" class="next35">').trigger('create');
+				$(".next35").click(function(){ 
+					$("#desertHeadre").html('You suddenly see a glimpse of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse of light, the tombs open and the mummies all come out of it. Luckly you have a flame torch. You pull it out and all the mummies get scared and goes back into their tomb. You exit safely.');
+					$("#desert-select1").empty();
+					$('#desert-select1').append('<input type="button" value="Next" id="next36" data-inline="true" data-mini="true" data-icon="check" class="next36">').trigger('create');
+					$(".next36").click(function(){ 
+						//next event end of desert
+					});
+			});//.35
+		});//63
+			//fight the mummye.
+			$("#radio-choice-64").click(function(){
+				$("#desertHeadre").html('You decide to fight the mummy.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next37" data-inline="true" data-mini="true" data-icon="check" class="next37">').trigger('create');
+				$(".next37").click(function(){ 
+					$("#desertHeadre").html('You burn the mummy to a 2nd death and leave the pyramid.');
+					$("#desert-select1").empty();
+					$('#desert-select1').append('<input type="button" value="Next" id="next38" data-inline="true" data-mini="true" data-icon="check" class="next38">').trigger('create');
+					$(".next38").click(function(){
+							//next event end of desert
+					});
+				}); //.37
+			});//64
+			//talk to the mummy
+			$("#radio-choice-65").click(function(){
+				$("#desertHeadre").html('You decide to talk the mummy. The mummy ends up being friendly and offers you beer. You accept it and go with mummy outside the pyramid to the local bar. After a beer or two you continue your search for desert penguin.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next39" data-inline="true" data-mini="true" data-icon="check" class="next39">').trigger('create');
+					$(".next39").click(function(){
+						//next event end of desert
+					});
+			});//65
+	}); //61
+	    //gold
+		$("#radio-choice-62").click(function(){
+			$("#desertHeadre").html('You decide to pick up stack of gold. The other items turns into dust. You walk down the path and a mummy suddenly appears from nowhere. You...');
+			$("#desert-select1").empty();
+			$("#desert-select2").empty();
+			$("#desert-select3").empty();
+			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-63" value="choice-1" type="radio"><label for="radio-choice-63">run for your life.</label>').trigger('create'); 
+			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-64" value="choice-1" type="radio"><label for="radio-choice-64">fight the mummy.</label>').trigger('create'); 
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-65" value="choice-1" type="radio"><label for="radio-choice-65">talk to the mummy.</label>').trigger('create');
+			//run for your life.
+			$("#radio-choice-63").click(function(){
+				$("#desertHeadre").html('Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next35" data-inline="true" data-mini="true" data-icon="check" class="next35">').trigger('create');
+				$(".next35").click(function(){ 
+					$("#desertHeadre").html('You continue to walk around looking for an exit. You suddenly see a glimpse of light, but there are 50 tombs surrounding it. As you walk closer to the glimpse of light, the tombs open and the mummies all come out of it. You run in the opposite direction and FALL into another pit trap. 20 days have gone by and you are still lost. You look at the stack of gold you’ve picked up and feel stupid. All of a sudden, an angel mummy appears. It tells you that you have learned your lesson. In return, it wants the stack of gold back. What do you do?');
+					$("#desert-select1").empty();
+					$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-66" value="choice-1" type="radio"><label for="radio-choice-66">Don’t give back the gold.</label>').trigger('create'); 
+					$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-67" value="choice-1" type="radio"><label for="radio-choice-67">Hand it the gold.</label>').trigger('create'); 
+					//Don’t give back the gold
+					$("#radio-choice-66").click(function(){
+						$("#desertHeadre").html('the angel mummy tells you “TOO BAD”, gives an evil laugh and disappears. You cannot leave the pyramid and you die there. GAME OVER');
+						$("#desert-select1").empty();
+						$("#desert-select2").empty();
+						//die
+						$('#desert-select1').append('<input type="button" value="Next" id="next37" data-inline="true" data-mini="true" data-icon="check" class="next37">').trigger('create');
+						$(".next37").click(function(){ 
+							alert("You are dead!!! Start over");
+							window.location.replace('#home-page');      //player die
+							location.reload();
+						});
+					});//66
+					//Hand it the gold
+					$("#radio-choice-67").click(function(){
+						$("#desertHeadre").html('You gave the gold back. You magically appear outside the pyramid.');
+						$("#desert-select1").empty();
+						$("#desert-select2").empty();
+						$('#desert-select1').append('<input type="button" value="Next" id="next36" data-inline="true" data-mini="true" data-icon="check" class="next36">').trigger('create');
+						$(".next36").click(function(){ 
+							//next event end of desert
+						});
+					});//67
+					
+			});//.35
+		});//63
+			//fight the mummye.
+			$("#radio-choice-64").click(function(){
+				$("#desertHeadre").html('You decide to fight the mummy.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next37" data-inline="true" data-mini="true" data-icon="check" class="next37">').trigger('create');
+				$(".next37").click(function(){ 
+					$("#desertHeadre").html('You don\'t have anything to fight mummy off, so mummy attacks you (-10 Health), but since you are easy target for her, gets quickly borred and leave you alone.');
+					$("#desert-select1").empty();
+					$("#health-points").val(parseInt($("#health").val())-10);
+					$('#desert-select1').append('<input type="button" value="Next" id="next38" data-inline="true" data-mini="true" data-icon="check" class="next38">').trigger('create');
+					$(".next38").click(function(){
+						$("#desertHeadre").html('You manage to crawl back to the exit.');
+						$('#desert-select1').append('<input type="button" value="Next" id="next39" data-inline="true" data-mini="true" data-icon="check" class="next39">').trigger('create');
+						$(".next39").click(function(){
+							//next event end of desert
+						});
+					});//.38
+				});//.37
+			});//64
+			//talk to the mummy
+			$("#radio-choice-65").click(function(){
+				$("#desertHeadre").html('You decide to talk the mummy. The mummy ends up being friendly and offers you beer. You accept it and go with mummy outside the pyramid to the local bar. After a beer or two you continue your search for desert penguin.');
+				$("#desert-select1").empty();
+				$("#desert-select2").empty();
+				$("#desert-select3").empty();
+				$('#desert-select1').append('<input type="button" value="Next" id="next39" data-inline="true" data-mini="true" data-icon="check" class="next39">').trigger('create');
+				$(".next39").click(function(){
+					//next event end of desert
+				});
+			});//65				
+	});//62
+}	
+
+//the ending of the forst story and back to city	  
+function desertEnd(){
+	$("#headerGame").html('You have reached the end of the desert where you have found Desert Penguin. He follows you back to the city.');
+	$("#select1").empty();
+	$("#select2").empty();
+	$("#select3").empty();
+	$("#select4").empty();
+	$('#select1').append('<input type="button" value="Next" id="next9" data-inline="true" data-mini="true" data-icon="check" class="next9">').trigger('create');
+	$(".next9").click(function(){    	
+		$('#penguin3').show();
+		window.location.replace('#city-page');
+		$( "#GoToTheDesert" ).button({
+			disabled: true
+		});
+	});
+}
+			 
 </script>
 
 </body>
