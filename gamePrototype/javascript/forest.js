@@ -1481,7 +1481,7 @@ function MerchantInMountains(){
 
 //the ending of the mountain story and back to city	  
 function mountainEnd(){
-	$("#mountain-headr").html('You have reached the end of the forest where you have found Forest Penguin. He follows you back to the city.');
+	$("#mountain-headr").html('You have reached the top of the mountain where you have found Mountain Penguin. He follows you back to the city.');
 	$("#mountain-select-1").empty();
 	$("#mountain-select-2").empty();
 	$("#mountain-select-3").empty();
