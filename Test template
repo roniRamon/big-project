@@ -1,0 +1,50 @@
+<<Your Name>
+<<Location 1>>
+<Step 1 Name>
+<Step 2 Name>
+<Step 3 Name>
+
+Comment : <<Your comment>>
+...
+
+<<Location x>>
+<Step 1 Name>
+<Step 2 Name>
+<Step 3 Name>
+
+Comment : <<Your comment>>
+...
+
+
+Eg:
+Gosha
+Begining of the game:
+1. Entry page 
+2. enter basic info
+3. enter stats
+Comment: entry page missing logo; entry stats do not have validation (the total of the points can be < 100)
+
+...
+
+Forest: Goats:
+1. pick flowers
+2.walk away
+Comment:
+OK
+
+Forest: merchant:
+1. Attack -> loose
+2. take whisky
+
+Comment: stats are not changed after the fight. Started with 10 health and nothing got deducted. At the page of taking whisky typo "take it" Should be  "Take it" on the button.
+Stats at whisky - OK.
+
+
+
+
+
+
+
+
+
+
