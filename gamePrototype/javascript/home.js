@@ -15,10 +15,6 @@
         disabled: true
       });
 
-      $( "#begin" ).button({
-        disabled: true
-      });
-	  
 	  //disable textinput so cant be changed	  
    $( "#health-points" ).textinput({
   	disabled: true
@@ -96,38 +92,41 @@
       }
       else {
         // enable the start button
-        $( "#begin" ).button({
-            disabled: false
-        });
+	  $( "#begin" ).removeAttr('disabled').removeClass( 'ui-state-disabled' );
       };
 
       // replace the introduction text with the chosen options
-      $("#welcome").html("Get ready, " + $("#name").val() + "!");
+	var userName = $("#name").val();
       var selectedChar = $("#select-choice-0 option:selected" ).text();
       var selectedGoal = $("#select-choice-1 option:selected" ).text();
 
+      $("#welcome").html("Get ready, " + userName + "!");
 
       var introText = "Your character is: " + selectedChar + "<br>Your goal is: " + selectedGoal + 
       "<br>Your initial points are:" +
       "<br>Health: " + $("#health").val() +
       "<br>Strength: " + $("#strength").val() +
       "<br>Intelligence: " + $("#intelligence").val() +
-      "<br>Your backpack is now empty" +
+      "<br>Initial money: 500 coins" +
       "<br>GOOD LUCK!";
       // set the new text
       $("#intro-text").html(introText); 
 
       // set the character and goal on the GAME PAGE
       $("#set-char").html(selectedChar.toUpperCase());
+      $("#set-goal").html(selectedGoal.toUpperCase());
+      $("#set-name").html(userName.toUpperCase());
 
       // set the initial points on the GAME PAGE
       $("#health-points").val($("#health").val());
       $("#strength-points").val($("#strength").val());
       $("#smart-points").val($("#intelligence").val());
   });
-
+    // reset points in input fields
     $("#reset").click(function() {
-      $("#health").textinput("refresh");
+      $("#health").val('0');
+      $("#strength").val('0');
+      $("#intelligence").val('0');
     });
 
     // initialize the external header#2
