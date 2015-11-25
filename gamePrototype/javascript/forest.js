@@ -1056,14 +1056,14 @@ function forestEnd(){
   });
 
   //Run away	  
-  $("#mountain-choice-4").click(function(){
+  $("#mountain-choice-2").click(function(){
 	  $("#mountain-headr").html('You\'re allergic to cats. You decide to get out of there.');
 	  $("#mountain-select-1").empty();
 	  $("#mountain-select-2").empty();
 	  $("#mountain-select-3").empty();
 	  $("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-4" value="choice-1" type="radio"><label for="mountain-choice-4">Run ahead.</label>').trigger('create'); 
 	  $("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-5" value="choice-1" type="radio"><label for="mountain-choice-5">Run the way you came from.</label>').trigger('create');
-	  $('#mountain-choice-3').click(function(){     //Run ahead.
+	  $('#mountain-choice-4').click(function(){     //Run ahead.
 	  	$("#mountain-headr").html('You run towards the cat. Startled, it turns around and books it. Ain\'t gonna deal with someone crazy enough to chase a mountain lion.');
 	  	$("#mountain-select-1").empty();
 	  	$("#mountain-select-2").empty();
@@ -1488,7 +1488,7 @@ function mountainEnd(){
 	$("#mountain-select-4").empty();
 	$('#mountain-select-1').append('<input type="button" value="Next" id="next75" data-inline="true" data-mini="true" data-icon="check" class="next75">').trigger('create');
 		$(".next75").click(function(){    	
-		$('#penguin1').show();
+		$('#penguin2').show();
 		window.location.replace('#city-page');
 		$( "#GoToTheMountain" ).button({
 			disabled: true
@@ -2462,4 +2462,99 @@ function desertEnd(){
 	});
 }
 	
+	///////////////////////////////Python’s Nest
+
+	$('#GoToThePython').hide();
+	
+	if($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible'))
+	{
+	  $('#GoToThePython').show()
+	}
+	
+	//Do not give penguins
+	$('#final-choice-1').click(function(){
+		$("#pythonHeader").html('You didn\'t give penguins to the Pythons and tried to protectem. Python ate you instead of penguins. You died. Game OVER.');
+		$("#python-select1").empty();
+		$("#python-select2").empty();
+		$('#python-select1').append('<input type="button" value="Next" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
+		$(".next100").click(function(){ 
+			alert("You are dead!!! Start over");
+			window.location.replace('#home-page');      //player die
+			location.reload();
+		});
+		
+	});
+	
+	//give penguins
+	$('#final-choice-2').click(function(){
+		$('#pythonHeader').html('Python ate penguins, but lets you through.');
+		$("#python-select1").empty();
+		$("#python-select2").empty();
+		$('#python-select1').append('<input type="button" value="Go to Mysterious Hut" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
+		$(".next100").click(function(){ 
+			$('#pythonHeader').html('You have found what you have been looking for all the way. The only thing that prevents you from fulfilling your mission is the mysterious monster hiding in his hut. You can finally fight him to ' + $("#select-choice-1 option:selected" ).text() +'. The monster is a Brick ');
+			$("#python-select1").empty();
+			$('#python-select1').append('<input type="button" value="Fight" id="next110" data-inline="true" data-mini="true" data-icon="check" class="next110">').trigger('create');
+			$(".next110").click(function(){ 
+			//	var roundNo = 1
+			//	var finalBattleScore = 0
+				
+			//	var playerVSbrick = Math.floor (Math.random() * (parseInt($("#strength").val()) + 0));
+			//	var brick = Math.floor (Math.random() * 200);
+			//	$('#pythonHeader').html('Round '+ roundNo + '<br>Your attack: ' + playerVSbrick + '.<br>Brick\'s attack ' + brick +'.');
+			//	$("#python-select1").empty();
+			//	$("#python-select2").empty();
+			//	$('#python-select1').append('<input type="button" value="Next" id="next120" data-inline="true" data-mini="true" data-icon="check" class="next120">').trigger('create');
+			//	$(".next120").click(function(){
+			//		roundNo ++;
+			//		if (playerVSbrick < brick)
+			//		{// you loose round
+			//			$('#pythonHeader').html('You lost the round '+ (roundNo -1)  + '.');
+			//			$("#python-select1").empty();
+			//			$("#python-select2").empty();
+			//			$('#python-select1').append('<input type="button" value="Fight" id="next110" data-inline="true" data-mini="true" data-icon="check" class="next110">').trigger('create');
+			//			$(".next110").click(function(){ 
+			//			});
+						
+			//		 }
+			//		else if(playerVSbrick >= brick)// you won round
+			//		{
+			//			$('#pythonHeader').html('You won the round '+ (roundNo -1) + '.');
+			//			$("#python-select1").empty();
+			//			$("#python-select2").empty();
+			//			finalBattleScore ++;
+			//			$(".next110").click(function(){ 
+			//			});
+			//		}
+			//	});
+						  
+				
+				
+				
+				
+			//	if (finalBattleScore < 3)
+			//	{
+			//		$('#pythonHeader').html('You were too weak to fight off the Brick. You lost the game. GAME OVER	');
+			//		$("#python-select1").empty();
+			//		$("#python-select2").empty();
+			//		$('#python-select1').append('<input type="button" value="Next" id="next102" data-inline="true" data-mini="true" data-icon="check" class="next102">').trigger('create');
+			//		$(".next102").click(function(){ 
+			//			alert("You are dead!!! Start over");
+			//			window.location.replace('#home-page');      //player die
+			//			location.reload();
+			//		});
+			//	}
+			//	else
+			//	{
+			//		$('#pythonHeader').html('Congrats!! You won the fight with the Brick and you have managed to ' + $("#select-choice-1 option:selected" ).text() + '. Well Done!!! The End.');
+			//		$("#python-select1").empty();
+			//		$("#python-select2").empty();
+			//	}
+			});
+			
+		});
+	});
+	
+	
+
 });

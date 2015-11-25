@@ -87,7 +87,7 @@
         <h3>STEP 4</h3>
         <h4>You have 100 points. Distribute them accordingly (check 'Hints' for help)</h4>
         <div class="ui-field-contain" id="assign-points">
-          <label for="health" id="health">Health</label><span id="errmsg"></span>
+          <label for="health" >Health</label><span id="errmsg"></span>
           <input name="number" pattern="[0-9]*" id="health" value="0" type="number" min="0" max="100" >
           <label for="strength">Strength</label><span id="errmsg1"></span>
           <input name="number" pattern="[0-9]*" id="strength" value="0" type="number" min="0" max="100">
@@ -212,9 +212,12 @@
       <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
           <p>You are in the city. You can choose one of the areas below to continue your journey
           </p>
-          <a href="#forest-page" class="ui-btn ui-icon-arrow-d-l ui-btn-icon-left ui-corner-all" id="GoToTheForest">Go to the forest</a>
-          <a href="#mountain-page" class="ui-btn ui-icon-arrow-d-r ui-btn-icon-left ui-corner-all" id="GoToTheMountain">Go to the mountain</a>
-          <a href="#desert-page" class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-corner-all" id="GoToTheDesert">Go to the desert</a>
+		  <div id="citySelect">
+			<a href="#forest-page" class="ui-btn ui-icon-arrow-d-l ui-btn-icon-left ui-corner-all" id="GoToTheForest">Go to the forest</a>
+          	<a href="#mountain-page" class="ui-btn ui-icon-arrow-d-r ui-btn-icon-left ui-corner-all" id="GoToTheMountain">Go to the mountain</a>
+			<a href="#desert-page" class="ui-btn ui-icon-arrow-d ui-btn-icon-left ui-corner-all" id="GoToTheDesert">Go to the desert</a>
+			<a href="#python-page" class="ui-btn ui-icon-arrow-u ui-btn-icon-left ui-corner-all" id="GoToThePython">Go to the Python’s Nest</a>
+		  </div>	  
       </fieldset>
   </div> <!-- end of content on city page -->
   </div> <!-- end of City page -->
@@ -285,16 +288,19 @@
   </div><!--  end of Desert Page -->
 
   <!-- FINAL BATTLE PAGE -->
-  <div data-role="page" id="final-battle-page">
+  <div data-role="page" id="python-page">
    <div class="ui-content" role="main" id="final-battle-content" style="text-align: center;">
       <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
-      <legend><h3>FINAL BATTLE WITH THE BRICK!!!</h3></legend>
-        <input name="final-choice-1" id="final-choice-1" value="choice-1" type="radio">
-        <label for="final-choice-1">Option 1</label>
-        <input name="final-choice-1" id="final-choice-2" value="choice-2" type="radio">
-        <label for="final-choice-2">Option 2</label>
-        <input name="final-choice-1" id="final-choice-3" value="choice-3" type="radio">
-        <label for="final-choice-3">Option 3</label>
+      <legend><h3 id="pythonHeader">Python says: “I can see you have brought me penguins. Let me take care of them from now on." What do you do? </h3></legend>
+		 <div id="python-select1"> 
+        	<input name="final-choice-1" id="final-choice-1" value="choice-1" type="radio">
+			 <label for="final-choice-1">Do not give penguins to the python</label>
+		 </div>
+		 <div id="python-select2"> 
+        	<input name="final-choice-1" id="final-choice-2" value="choice-2" type="radio">
+        	<label for="final-choice-2">Give penguins to the python</label>
+		</div>
+		<div id="python-select3"></div>	
   </fieldset>
     </div> <!-- end of content on final battle page -->
   </div> <!-- end of final-battle page -->
