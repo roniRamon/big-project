@@ -17,6 +17,9 @@
 
   <!-- Start of TITLE page -->
 <div data-role="page" id="page1">
+   <!--  empty header needed to hide external header -->
+  <div data-role="header" id="empty-header">
+  </div>
   <div role="main" class="ui-content" id="title-screen">
     <img src="#" alt="Game Logo" id="logo" height="220" width="220"><br>
     <a href="#home-page" class="ui-btn ui-btn-inline">START GAME</a>
@@ -30,7 +33,7 @@
 <!-- HEADER #1 -->
   <div data-role="header" id="header1" data-position="fixed">
     <div class="ui-bar" id="project-details"> <!-- wrap content of the header#1 -->
-      <h1>Project Name</h1>
+      <h1>The Tale of Tux</h1>
       <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
         <a href="#" data-icon="gear" id="info">Options</a>
         <a href="#" data-icon="info" id="info">How to play</a>
@@ -104,6 +107,16 @@
 
 <!-- ABOUT PAGE -->
   <div data-role="page" id="about-page">
+     <div data-role="header" id="about-page-header" data-position="fixed">
+    <div class="ui-bar" id="project-details"> <!-- wrap content of the header -->
+      <h1>The Tale of Tux</h1>
+      <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
+        <a href="#home-page" data-icon="star" id="about">Home</a>
+      </div> <!-- end of grouped buttons -->
+    </div> <!-- end of content of header -->
+  </div> <!-- end of header -->
+
+
    <div class="ui-content" role="main">
     <a href="#home-page" id="back-home" class="ui-btn ui-shadow ui-btn-inline ui-corner-all">Back to home page</a>
     </div> <!-- end of content on About page -->
@@ -128,7 +141,7 @@
     <h1 id="my-character">Character: <span id="set-char"></span></h1>
 
       <!-- grouped points fields in header#2 -->
-      <fieldset class="ui-grid-b" style="width:20%" id="user-points">
+      <fieldset class="ui-grid-c" style="width:20%" id="user-points">
         <div class="ui-block-a">
                <label for="health-points">Health:</label></span>
                <input data-mini="true" data-clear-btn="false" name="health-points" id="health-points" value="" type="text">
@@ -141,7 +154,7 @@
               <label for="smart-points">Intelligence: </label></span>
              <input data-mini="true" data-clear-btn="false" name="smart-points" id="smart-points" value="" type="text">
           </div>
-	  <div class="ui-block-c">
+	  <div class="ui-block-d">
               <label for="money">Money: </label>
              <input data-mini="true" data-clear-btn="false" name="money" id="money" value="500" type="text">
           </div>
@@ -287,6 +300,24 @@
     </div> <!-- end of content on desert page -->
   </div><!--  end of Desert Page -->
 
+  <!-- PYTHON'S NEST PAGE -->
+  <div data-role="page" id="nest-page">
+   <div class="ui-content" role="main" id="nest-content" style="text-align: center;">
+      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+        <legend><h3>You meet a python.</h3></legend>
+          <input name="nest-choice-1" id="nest-choice-1" value="choice-1" type="radio">
+          <label for="nest-choice-1">Option 1</label>
+          <input name="nest-choice-1" id="nest-choice-2" value="choice-2" type="radio">
+          <label for="nest-choice-2">Option 2</label>
+          <input name="nest-choice-1" id="nest-choice-3" value="choice-3" type="radio">
+          <label for="nest-choice-3">Option 3</label>
+          <input name="nest-choice-1" id="nest-choice-4" value="choice-4" type="radio">
+          <label for="nest-choice-4">Option 4</label>
+    </fieldset>
+    </div> <!-- end of content on python's nest page -->
+  </div><!--  end of python's nest Page -->
+
+
   <!-- FINAL BATTLE PAGE -->
   <div data-role="page" id="python-page">
    <div class="ui-content" role="main" id="final-battle-content" style="text-align: center;">
@@ -309,6 +340,8 @@
   <!-- GAME OVER PAGE -->
   <div data-role="page" id="game-over-page">
    <div class="ui-content" role="main">
+	<h1>GAME OVER!</h1>
+    <a href="#home-page" id="restart" class="ui-btn ui-shadow ui-btn-inline ui-corner-all">Restart</a>
     </div> <!-- end of content on game over page -->
   </div> <!-- end of game over page -->
 

@@ -134,3 +134,14 @@
     $( "#header2" ).toolbar();
 });
 
+
+
+ // hide external header if the page has internal header
+  $(document).on("pagecontainerbeforeshow",function(event, ui) {
+    var activePage = ui.toPage;
+    if(activePage.find("div[data-role=header]").length > 0 ) {
+        $("#header2").hide();
+    } else {
+        $("#header2").show();
+    }
+  });

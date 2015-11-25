@@ -1,6 +1,5 @@
 /* TITLE SCREEN */
 /*......................................*/
-
   #title-screen {
     text-align: center;
     margin-top: 100px;
@@ -28,13 +27,15 @@
   }
 
   #introduction {
+    border: 1px solid black;
     flex: 1;
-    height: 100%;
     text-align: center;
     padding: 10px 20px;
     border-radius: 6px;
-    background-color: #eee; 
     line-height: 2em;   
+    overflow: scroll;
+    background-color: #E9E9E9;
+    padding: 20px;
   }
 
   #accordion {
@@ -42,6 +43,49 @@
     margin: 20px;
     text-align: left;
     outline: none;
+  }
+
+  #begin {
+    border: 1px solid green;
+  }
+
+  /* ABOUT PAGE SETTINGS */
+  /*....................................*/
+
+  #about-page-content {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  /* div containing info about all group members */
+  #group-members {
+    display: flex;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
+   -webkit-align-content: space-between;
+   align-content: space-between;
+  }
+
+  /* div container for each member */
+  .member {
+    background-color: #E9E9E9;
+    padding: 20px;
+    display: 1;
+    text-align: center;
+    margin: 15px;
+    -moz-border-radius-topleft: 90px;
+    -webkit-border-top-left-radius: 90px;
+    border-top-left-radius: 90px;
+    -moz-border-radius-bottomright: 90px;
+    -webkit-border-bottom-right-radius: 90px;
+    border-bottom-right-radius: 90px;
+  }
+  /* text about each member */
+  .about-member {  
   }
 
 /* MAIN GAME PAGE settings */
@@ -62,37 +106,37 @@
   }
 
   #header2-content {
+    padding-right: 20px;
+    padding-left: 20px;
     text-align: center;
     width: 100%;
     display: flex;
-    justify-content: space-around;
   }
 
-  #header2-content #my-character {
-    text-align: left;
-    width: 100%;
-    display: inline-block;
-    flex: 2;
-    margin-top: 20px;
-    margin-right: 10px;
-  } 
+#header2-content #set-description {
+  flex: 3;
+  line-height: 20px;
+  text-align: left;
+  display: block;
+}
 
   #header2-content #user-points {
-    flex: 1;
+    flex: 2;
+    display: inline;
   }
 
-   #user-points input {
-    text-align: center;
+   #header2-content #user-points input {
+      text-align: center;
    }
 
    /* container for 3 images with penguins */
-  #penguins {
+  #header2-content #penguins {
     text-align: center;
     padding: 10px;
     flex: 2;
   }
 
-  .penguin {
+  #header2-content .penguin {
     background-image: url("images/penguin.png");
     background-size: cover;
     border: 1px solid white;
@@ -103,7 +147,9 @@
     display: inline-block;
   }
 
-  #controls {
+  #header2-content #controls {
     margin-top: 10px;
-    flex: 3;
+    margin-right: 20px;
+    flex: 2;
   }
+
