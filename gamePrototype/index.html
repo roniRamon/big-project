@@ -130,10 +130,11 @@
   <div data-role="panel" data-theme="b" class="ui-panel ui-panel-position-left ui-panel-display-overlay" data-display="overlay" data-position="left" id="mypanel">
       <!-- panel content goes here -->
           <h3>Backpack</h3>
+	  <p id="demoItem"></p>
           <p id="backpack">Your backpack is now empty. Keep looking for the
             useful items!<br>
             To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-          <a href="#" class="ui-btn ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left" data-rel="close">Close panel</a>
+          <a href="#" class="ui-btn ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left" data-rel="close">Close backpack</a>
   </div><!-- end panel -->
 
   <!-- EXTERNAL HEADER FOR ALL LOWER PAGES -->
@@ -204,21 +205,24 @@
   <!-- TUTORIAL MAIN CONTENT -->
   <div role="main" class="ui-content" id="tutorial-content" style="text-align: center;">
       <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
-          <legend style="text-align: justify; padding: 15px;"><p>Before you begin the game, hover over each object on this page for more information.
-          You will begin your game in the city and will return there to change the game area.
-          You will have 2 to 4 options to choose from in each step.
-           Once you make a choice, you can't go back.
-          Example options: 
+          <legend style="text-align: justify; padding: 15px;"><p>Before you begin the game, hover over each object on this page for more information. For example, you meet an enemy. What do you do? Click 'Fight' to see what can happen.
           </p></legend>
+		<div id="demo-select1">
               <input name="demo-choice-1" id="demo-choice-1" value="choice-1" type="radio">
-              <label for="demo-choice-1">Fight the enemy</label>
-              <input name="demo-choice-1" id="demo-choice-2" value="choice-2" type="radio" checked="checked">
-              <label for="demo-choice-2">Run from the enemy</label>
+              <label for="demo-choice-1" id="demo-label1">Fight the enemy</label>
+          </div>
+          <div id="demo-select2">
+              <input name="demo-choice-1" id="demo-choice-2" value="choice-2" type="radio">
+              <label for="demo-choice-2" id="demo-label2">Run from the enemy</label>
+          </div>
+          <div id="demo-select3">
               <input name="demo-choice-1" id="demo-choice-3" value="choice-3" type="radio">
               <label for="demo-choice-3">Talk to the enemy</label>
+            </div>
+            <div id="demo-select4">
               <input name="demo-choice-1" id="demo-choice-4" value="choice-4" type="radio">
-              <label for="demo-choice-4">Additional option available in certain situations </label>
-              <a href="#city-page" class="ui-btn ui-shadow ui-btn-inline ui-icon-arrow-d ui-btn-icon-left">I'm ready to go to the City</a>
+              <label for="demo-choice-4">Additional option available if your intelligence is high</label>
+            </div>
       </fieldset>
   </div><!-- end of tutorial's content-->
   </div><!-- end of page#3 -->
