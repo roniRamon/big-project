@@ -1,8 +1,8 @@
 $(document).ready(function(){
 //hide penguins
-	$('#penguin1').hide();
-	$('#penguin2').hide();
-	$('#penguin3').hide();  
+	//$('#penguin1').hide();
+	//$('#penguin2').hide();
+	//$('#penguin3').hide();  
 	  
 	var money = $("#money").val();
 	var backpack = [];
@@ -2496,63 +2496,56 @@ function desertEnd(){
 			$("#python-select1").empty();
 			$('#python-select1').append('<input type="button" value="Fight" id="next110" data-inline="true" data-mini="true" data-icon="check" class="next110">').trigger('create');
 			$(".next110").click(function(){ 
-			//	var roundNo = 1
-			//	var finalBattleScore = 0
+				var roundNo = 1
+				var finalBattleScore = 0
 				
-			//	var playerVSbrick = Math.floor (Math.random() * (parseInt($("#strength").val()) + 0));
-			//	var brick = Math.floor (Math.random() * 200);
-			//	$('#pythonHeader').html('Round '+ roundNo + '<br>Your attack: ' + playerVSbrick + '.<br>Brick\'s attack ' + brick +'.');
-			//	$("#python-select1").empty();
-			//	$("#python-select2").empty();
-			//	$('#python-select1').append('<input type="button" value="Next" id="next120" data-inline="true" data-mini="true" data-icon="check" class="next120">').trigger('create');
-			//	$(".next120").click(function(){
-			//		roundNo ++;
-			//		if (playerVSbrick < brick)
-			//		{// you loose round
-			//			$('#pythonHeader').html('You lost the round '+ (roundNo -1)  + '.');
-			//			$("#python-select1").empty();
-			//			$("#python-select2").empty();
-			//			$('#python-select1').append('<input type="button" value="Fight" id="next110" data-inline="true" data-mini="true" data-icon="check" class="next110">').trigger('create');
-			//			$(".next110").click(function(){ 
-			//			});
-						
-			//		 }
-			//		else if(playerVSbrick >= brick)// you won round
-			//		{
-			//			$('#pythonHeader').html('You won the round '+ (roundNo -1) + '.');
-			//			$("#python-select1").empty();
-			//			$("#python-select2").empty();
-			//			finalBattleScore ++;
-			//			$(".next110").click(function(){ 
-			//			});
-			//		}
-			//	});
-						  
+				do{
 				
+		
+					var playerVSbrick = Math.floor (Math.random() * (parseInt($("#strength").val()) + 0));
+					var brick = Math.floor (Math.random() * 50);
+					alert('Round '+ roundNo + '\nYour attack: ' + playerVSbrick + '.\nBrick\'s attack ' + brick +'.\n');
+					$("#python-select1").empty();
+					$("#python-select2").empty();
+					roundNo ++;
+					if (playerVSbrick < brick)
+					{// you loose round
+						alert('You lost the round '+ (roundNo -1)  + '.');
+						$("#python-select1").empty();
+						$("#python-select2").empty();
+					
+					}
+					else if(playerVSbrick >= brick)// you won round
+					{
+						alert('You won the round '+ (roundNo -1) + '.');
+						$("#python-select1").empty();
+						$("#python-select2").empty();
+						finalBattleScore ++;
+					}
+				}while(roundNo < 6)
 				
-				
-				
-			//	if (finalBattleScore < 3)
-			//	{
-			//		$('#pythonHeader').html('You were too weak to fight off the Brick. You lost the game. GAME OVER	');
-			//		$("#python-select1").empty();
-			//		$("#python-select2").empty();
-			//		$('#python-select1').append('<input type="button" value="Next" id="next102" data-inline="true" data-mini="true" data-icon="check" class="next102">').trigger('create');
-			//		$(".next102").click(function(){ 
-			//			alert("You are dead!!! Start over");
-			//			window.location.replace('#home-page');      //player die
-			//			location.reload();
-			//		});
-			//	}
-			//	else
-			//	{
-			//		$('#pythonHeader').html('Congrats!! You won the fight with the Brick and you have managed to ' + $("#select-choice-1 option:selected" ).text() + '. Well Done!!! The End.');
-			//		$("#python-select1").empty();
-			//		$("#python-select2").empty();
-			//	}
-			});
+				if (finalBattleScore < 3)
+				{
+					$('#pythonHeader').html('You were too weak to fight off the Brick. You lost the game. GAME OVER	');
+					$("#python-select1").empty();
+					$("#python-select2").empty();
+					$('#python-select1').append('<input type="button" value="Next" id="next102" data-inline="true" data-mini="true" data-icon="check" class="next102">').trigger('create');
+					$(".next102").click(function(){ 
+						alert("You are dead!!! Start over");
+						window.location.replace('#home-page');      //player die
+						location.reload();
+					});
+				}
+				else
+				{
+					$('#pythonHeader').html('Congrats!! You won the fight with the Brick and you have managed to ' + $("#select-choice-1 option:selected" ).text() + '. Well Done!!! The End.');
+					$("#python-select1").empty();
+					$("#python-select2").empty();
+				}
+		});//next10
 			
 		});
+	
 	});
 	
 	
