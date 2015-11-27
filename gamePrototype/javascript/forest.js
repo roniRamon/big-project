@@ -1,8 +1,9 @@
 $(document).ready(function(){
 //hide penguins
-	//$('#penguin1').hide();
-	//$('#penguin2').hide();
-	//$('#penguin3').hide();  
+		
+	$('#penguin1').hide();
+	$('#penguin2').hide();
+	$('#penguin3').hide();  
 	  
 	var money = $("#money").val();
 	var backpack = [];
@@ -10,6 +11,7 @@ $(document).ready(function(){
 	var strength =  parseInt($("#strength").val()) + 0;
 	var intelligence = parseInt($("#intelligence").val()) + 0;  
 	  
+	
 // show array items
 function arrayShowItem() 
 {
@@ -73,7 +75,7 @@ function arrayShowItem()
 			$("#select1").empty();
 			$("#select2").empty();
 			var gkScore = Math.floor((Math.random() * 100));
-			var gkVSplayer = Math.floor((Math.random() *  strength));
+			var gkVSplayer = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('goat-keeper score: ' + gkScore + '\n You\'r score :' + gkVSplayer );
 			$('#select2').append('<p id=gkFightplayer>You:' + gkVSplayer + '</p>');
 			if (gkScore < gkVSplayer) {    //gk lose
@@ -88,14 +90,23 @@ function arrayShowItem()
 			});
 			}
 			else if(gkScore >= gkVSplayer){   //gk wins
-				$("#select1").empty();
-				$("#select2").empty();
-				$("#health-points").val(parseInt($("#health").val())-20);
-				$("#headerGame").html('Goat keeper kicked your ass and left the meadow. (-20 Health) Feeling ashamed to be beaten up by a goat-keeper you are walking away promising yourself never to tell anyone about what has happened here. -20 Health');
-				$('#select1').append('<input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check" class="next1">').trigger('create');
-				$(".next1").click(function(){ 
-				story2Forest();	
-			});
+				if(parseInt($("#health").val()) <= 20)
+				{
+					window.location.replace('#home-page');
+					alert("You are dead!!! Start over");      //player die
+					location.reload();
+				}
+				else
+				{
+					$("#select1").empty();
+					$("#select2").empty();
+					$("#health-points").val(parseInt($("#health").val())-20);
+					$("#headerGame").html('Goat keeper kicked your ass and left the meadow. (-20 Health) Feeling ashamed to be beaten up by a goat-keeper you are walking away promising yourself never to tell anyone about what has happened here. -20 Health');
+					$('#select1').append('<input type="button" value="Next" id="next1" data-inline="true" data-mini="true" data-icon="check" class="next1">').trigger('create');
+					$(".next1").click(function(){ 
+						story2Forest();	
+					});
+				}
 			}
 		});
 		$('#radio-choice-5').click(function(){       //option C:B
@@ -150,7 +161,7 @@ function arrayShowItem()
 								  'You say: "My name is Inigo Montoya. You killed my father. Prepare to die".<br> '+
 								  'your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 50)');
 			var merchant = Math.floor((Math.random() * 50));
-			var mrVSplayer = Math.floor((Math.random() *  strength));
+			var mrVSplayer = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + mrVSplayer  + ' Merchant\'s attack:' + merchant);
 			if(mrVSplayer < merchant) {   //player lose fight
 				$("#headerGame").html('You have lost the fight but merchant lets your go. He feels pity for an orphant and gives you a bottle of whisky (+5 health, -10 intelligence) which you can put in your backpack or leave it.');   //#backpack !!!!!!!
@@ -167,8 +178,8 @@ function arrayShowItem()
 						else if((!backpackCheak("whisky") )&& backpack.length <= 4)
 						{
 							backpack.push("whisky");											 //add wisky to backpack	
-							$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
-							$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
+							$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
+							$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -199,7 +210,7 @@ function arrayShowItem()
 						else if((!backpackCheak("knife") )&& backpack.length <=4)
 						{
 							backpack.push("knife");											//add knife to backpack
-							$("#strength-points").val(parseInt($("#strength").val())+5);	//knife add 5 to strength
+							$(".strengthp").val(parseInt($("#strength-points").val())+5); 	//knife add 5 to strength
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -212,7 +223,7 @@ function arrayShowItem()
 						else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
 							backpack.push("sowrd");											 //add sword to backpack
-							$("#strength-points").val(parseInt($("#strength").val())+20);	//sword add 20 to strength
+							$(".strengthp").val(parseInt($("#strength-points").val())+20);	//sword add 20 to strength
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -225,8 +236,8 @@ function arrayShowItem()
 						else if((!backpackCheak("whisky") )&& backpack.length <=4)
 						{
 							backpack.push("whisky");											 //add wisky to backpack	
-							$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
-							$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
+							$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
+							$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -265,7 +276,7 @@ function arrayShowItem()
 						{
 							backpack.push("sowrd");											 //add sword to backpack
 							$("#money").val(parseInt($("#money").val()) - 500);
-							$("#strength-points").val(parseInt($("#strength").val())+20);	//sword add 20 to strength
+							$(".strengthp").val(parseInt($("#strength-points").val())+20);	//sword add 20 to strength
 							arrayShowItem();
 						}
 						else {
@@ -289,8 +300,8 @@ function arrayShowItem()
 							{	
 								backpack.push("whisky");											 //add wisky to backpack
 								$("#money").val(parseInt($("#money").val()) - 50);
-								$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
-								$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
+								$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
+								$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
 								arrayShowItem();
 							}
 							else {
@@ -313,7 +324,7 @@ function arrayShowItem()
 						{	
 							backpack.push("knife");											 //add knife to backpack
 							$("#money").val(parseInt($("#money").val()) - 100);
-							$("#strength-points").val(parseInt($("#strength").val())+5);   			//knife add 5 strength   	
+							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
 						}
 						else {
@@ -394,7 +405,7 @@ function story3Forest() {
 				$("#select1").empty();
 				$("#select2").empty();
 				$("#select3").empty();
-				$("#smart-points").val(parseInt($("#intelligence").val())+10);  //(+10 intelligence)
+				$(".smartp").val(parseInt($("#smart-points").val())+10);  //(+10 intelligence)
 				$('#select1').append('<input type="button" value="Next" id="next3" data-inline="true" data-mini="true" data-icon="check" class="next3">').trigger('create');
 				$(".next3").click(function(){ 
 				story4Forest(); //function to story 4
@@ -478,12 +489,12 @@ function story4Forest() {
 							story5Forest(); //function to story 5
 						});
 					}
-					else if(d1Player < d2Demon)   //demon win
+					else if(d1Player < d2Demon && (parseInt($("#health-points").val()) > 10))   //demon win
 					{
 						$("#headerGame").html('the demon wins! you lose (-10 health)to keep going you have to pay him 10$');
 						$("#select1").empty();
-						$("#health-points").val(parseInt($("#health").val())-10);
-						if($("#money").val(parseInt(money) ) > 10)
+						$(".healthp").val(parseInt($("#health-points").val())-10); 
+						if(parseInt($("#money").val()) > 10)
 						{
 							$("#money").val(parseInt($("#money").val()) - 10);
 							$('#select1').append('<input type="button" value="Next" id="next4" data-inline="true" data-mini="true" data-icon="check" class="next4">').trigger('create');
@@ -535,7 +546,7 @@ function story4Forest() {
 										$("#select1").empty();
 										$("#select2").empty();
 										$("#select3").empty();
-										$("#strength-points").val(parseInt($("#strength").val())-5); 
+										$(".strengthp").val(parseInt($("#strength-points").val())-5); 
 										$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 										$(".next5").click(function(){ 
 											story5Forest();//next story 5 
@@ -571,6 +582,13 @@ function story4Forest() {
 						});	
 					}
 				}
+				else if(parseInt($("#health-points").val()) <= 20)
+					{
+						window.location.replace('#home-page');
+						alert("You are dead!!! Start over");      //player die
+						location.reload();
+					}
+				
 			}	
 		 });
 	});
@@ -583,20 +601,20 @@ function story4Forest() {
 		$('#select2').append('<input name="radio-choice-5" id="radio-choice-21" value="choice-1" type="radio"><label for="radio-choice-21">Try to swim across.</label>').trigger('create');
 		$('#select3').append('<input name="radio-choice-5" id="radio-choice-22" value="choice-1" type="radio"><label for="radio-choice-22"> Pay the river keeper 15$ to get him across safely.</label>').trigger('create');
 		$("#radio-choice-20").click(function(){
-			if(backpackCheak("knife")|| backpackCheak("ex"))
+			if(backpackCheak("knife")|| backpackCheak("axe"))
 			{												 
-				$("#headerGame").html('You user your ax/knife to build a raft. you reached the other side of the river but your tired. you lose 5 point of strength.(-5 strength) ');	
+				$("#headerGame").html('You user your axe/knife to build a raft. you reached the other side of the river but your tired. you lose 5 point of strength.(-5 strength) ');	
 				$("#select1").empty();
 				$("#select2").empty();
 				$("#select3").empty();
-				$("#strength-points").val(parseInt($("#strength").val())-5); 
+				$(".strengthp").val(parseInt($("#strength-points").val())-5); 
 				$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 					$(".next5").click(function(){ 
 						story5Forest();//next story 5
 					});	
 		}
 		else {
-			alert("You dont have an ex or a knife");
+			alert("You dont have an axe or a knife");
 		}
 	})
 		$("#radio-choice-21").click(function(){ 
@@ -613,7 +631,7 @@ function story4Forest() {
 						$("#select1").empty();
 						$("#select2").empty();
 						$("#select3").empty();
-						$("#strength-points").val(parseInt($("#strength").val())-5); 
+						$(".strengthp").val(parseInt($("#strength-points").val())-5);
 						$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 						$(".next5").click(function(){ 
 							story5Forest();//next story 5 
@@ -621,7 +639,7 @@ function story4Forest() {
 					}
 					else 
 					{
-						alert("You dont have an ex or a knife");
+						alert("You dont have an axe or a knife");
 					}
 				});
 				$("#radio-choice-22").click(function(){
@@ -835,7 +853,7 @@ function axe(){
 	{
 		backpack.push("axe");											 //add ex to backpack   			   	
 		arrayShowItem();
-		$("#strength-points").val(parseInt($("#strength").val())+30);
+		$(".strengthp").val(parseInt($("#strength-points").val())+30);
 	}
 	else
 	{
@@ -852,7 +870,7 @@ function book1() {
 	{
 		backpack.push("book “The Mythical Man Month” ");											 //add book “The Mythical Man Month” to backpack   			   	
 		arrayShowItem();
-		$("#smart-points").val(parseInt($("#intelligence").val())+(parseInt($("#intelligence").val())*15)/25);
+		$(".smartp").val(parseInt($("#smart-points").val())+(parseInt($("#smart-points").val())*15)/25);
 		
 	}
 	else
@@ -870,7 +888,7 @@ function book2(){
 	{
 		backpack.push("book “Biography of Grace Hopper”");											 //add book Biography of Grace Hopper” to backpack   			   	
 		arrayShowItem();
-		$("#smart-points").val(parseInt($("#intelligence").val())+(parseInt($("#intelligence").val())*10)/20);
+		$(".smartp").val(parseInt($("#smart-points").val())+(parseInt($("#smart-points").val())*10)/20);
 	}
 	else
 	{
@@ -887,7 +905,7 @@ function apple(){
 	{
 		backpack.push("apple");											 //add apple   			   	
 		arrayShowItem();
-		$("#health-points").val(parseInt($("#health").val())+5);
+		$(".healthp").val(parseInt($("#health-points").val())+5);
 	}
 	else
 	{
@@ -937,7 +955,7 @@ function apple(){
 					else if((!backpackCheak("sword") )&& backpack.length <=4)
 					{
 						backpack.push("sowrd");											 //add sword to backpack
-						$("#strength-points").val(parseInt($("#strength").val())+40);	//sword add 20 to strength
+						$(".strengthp").val(parseInt($("#strength-points").val())+40);	//sword add 20 to strength
 						arrayShowItem();
 					}
 					else if(backpack.length >4)
@@ -972,7 +990,7 @@ function apple(){
 					$("#select1").empty();
 					$("#select2").empty();
 					$("#headerGame").html('You: “Sure, I will help you.” You are taking Jon to the nearby garrison where he gives a report to his Captain. After this Jon thanks you for saving his life and gives you his lucky amulet (+100 Health) which you hang on your neck');
-					$("#health-points").val(parseInt($("#health").val())+100);
+					$(".healthp").val(parseInt($("#health-points").val())+100);
 					//go back to city + pinguin
 					$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
 					$(".next8").click(function(){ 
@@ -1033,12 +1051,12 @@ function forestEnd(){
 	  $("#mountain-select-2").empty();
 	  $("#mountain-select-3").empty();
 	  var pumaScore = Math.floor((Math.random() * 20));
-	  var player = Math.floor((Math.random() *  strength));
+	  var player = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 	  alert('Your attack: ' + player+ '. Mountain lion\'s attack: '+ pumaScore + '.' );
-			if (player < pumaScore)  //puma win
+			if (player < pumaScore && (parseInt($("#health").val()) > 10))  //puma win
 			{   
 				$("#mountain-headr").html('The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off. -10 Health');
-				$("#health-points").val(parseInt($("#health").val())-10);
+				$(".healthp").val(parseInt($("#health-points").val())-10);
 				$('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
 				$(".next70").click(function(){ 
 					peak(); // next event peak
@@ -1047,12 +1065,18 @@ function forestEnd(){
 			else if(player >= pumaScore) //puma lose
 			{
 				$("#mountain-headr").html('You grab the cat out of the air and hurl it off the mountainside. Manly. Your strength increeses (Strength +3)');
-				$("#strength-points").val(parseInt($("#strength").val())+3);
+				$(".strengthp").val(parseInt($("#strength-points").val())+3);
 				$('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
 				$(".next70").click(function(){ 
 					peak();  // next event peak
 				});
-			} 
+			}
+	  		else if (parseInt($("#health").val()) <= 10)
+			{
+				window.location.replace('#home-page');
+				alert("You are dead!!! Start over");      //player die
+				location.reload();
+			}
   });
 
   //Run away	  
@@ -1074,13 +1098,22 @@ function forestEnd(){
 	  });
 	  $('#mountain-choice-5').click(function(){     //Run the way you came from.
 	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you\'re back where you started your climb up the mountain. Your leg hurt and got few bruisers from the fall (-20 Health).');
-		$("#health-points").val(parseInt($("#health").val())-20);  
-	  	$("#mountain-select-1").empty();
-	  	$("#mountain-select-2").empty();
-		$('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
-		$(".next70").click(function(){ 
-			peak();
-		});  
+		 if (parseInt($("#health").val()) <= 20)
+			{
+				window.location.replace('#home-page');
+				alert("You are dead!!! Start over");      //player die
+				location.reload();
+			}
+		  else
+		  {
+				$(".healthp").val(parseInt($("#health-points").val())-20);  
+			  	$("#mountain-select-1").empty();
+	  			$("#mountain-select-2").empty();
+				$('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
+				$(".next70").click(function(){ 
+					peak();
+				});
+		  }
 	  });
 	  
   });
@@ -1098,7 +1131,7 @@ function forestEnd(){
 	  else if((!backpackCheak("Mountain lion tooth") )&& backpack.length <=4)
 	  {
 		backpack.push("Mountain lion tooth");							//add Mountain lion tooth to backpack
-		$("#health-points").val(parseInt($("#health").val())+25); 	//Mountain lion tooth add 25 to health
+		$(".healthp").val(parseInt($("#health-points").val())+25); 	//Mountain lion tooth add 25 to health
 		arrayShowItem();
 	  }
 	  else
@@ -1127,21 +1160,21 @@ function forestEnd(){
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
 		var fairy = Math.floor((Math.random() * 60));
-		var playerVSfairy = Math.floor((Math.random() *  strength));
+		var playerVSfairy = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 		alert('Your attack: ' + playerVSfairy + '. Fairy\'s attack: '+ fairy + '.' );
 		if (playerVSfairy < fairy)  //fairy win
 		{   
 			$("#mountain-headr").html('You have lost the fight (-25 Health), but you are still alive. Pleading for mercy you are spared by a fairy who leaves you on the ground. In te evening you are finally able to move and continue your journey.');
-			$("#health-points").val(parseInt($("#health").val())-25);
+			$(".healthp").val(parseInt($("#health-points").val())-25);
 			$('#mountain-select-1').append('<input type="button" value="Next" id="next71" data-inline="true" data-mini="true" data-icon="check" class="next71">').trigger('create');
 			$(".next71").click(function(){ 
 				MerchantInMountains();//next event story 3 mountain
 			});
 		}
-		else if(playerVSfairy >= fairy) //fairy lose
+		else if(playerVSfairy >= fairy && (parseInt($("#health").val()) > 25)) //fairy lose
 		{
 			$("#mountain-headr").html('You have won the fight (Strength +20) and you take the super sword (+60 Strength) from dead fairy');
-			$("#strength-points").val(parseInt($("#strength").val())+20);
+			$$(".strengthp").val(parseInt($("#strength-points").val())+20);
 			$('#mountain-select-1').append('<input type="button" value="Next" id="next71" data-inline="true" data-mini="true" data-icon="check" class="next71">').trigger('create');
 			$(".next71").click(function(){ 
 				$("#mountain-headr").html('Do you want to put it in your backpack ?');
@@ -1156,7 +1189,7 @@ function forestEnd(){
 	  				else if((!backpackCheak("super sword") )&& backpack.length <=4)
 	  				{
 						backpack.push("super sword");							//add super swordto backpack
-						$("#strength-points").val(parseInt($("#strength").val())+60); 	//super sword add 60 to strength
+						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
 	  				else
@@ -1171,6 +1204,12 @@ function forestEnd(){
 				});
 			}); 
 	   }
+		else if (parseInt($("#health").val()) <= 25)
+			{
+				window.location.replace('#home-page');
+				alert("You are dead!!! Start over");      //player die
+				location.reload();
+			}
 	 });   
 	//Leave her alone and continue your journey.
 	 $("#mountain-choice-7").click(function(){ 
@@ -1198,12 +1237,12 @@ function forestEnd(){
 			$("#mountain-select-2").empty();
 			$("#mountain-select-3").empty();
 			var dragon = Math.floor((Math.random() * 150));
-			var playerVSdragon = Math.floor((Math.random() *  strength));
+			var playerVSdragon = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + playerVSdragon + '. Dragon\'s attack '+ dragon + '.' );
-			if (playerVSdragon < dragon)  //dragon win
+			if (playerVSdragon < dragon && (parseInt($("#health").val()) > 50))  //dragon win
 			{   
 				$("#mountain-headr").html('You have lost the fight (-50 Health), but you are still alive. You run away from the dragon and stupid fairy who got you into this. After you are far far away you only stop to get some rest and promise yourself never to fight a dragon for any fairy. NEVER.');
-				$("#health-points").val(parseInt($("#health").val())-50);
+				$(".healthp").val(parseInt($("#health-points").val())-50);
 				$('#mountain-select-1').append('<input type="button" value="Next" id="next71" data-inline="true" data-mini="true" data-icon="check" class="next71">').trigger('create');
 				$(".next71").click(function(){ 
 					MerchantInMountains();//next event story 3 mountain
@@ -1216,6 +1255,7 @@ function forestEnd(){
 				$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-11" value="choice-1" type="radio"><label for="mountain-choice-11">Yes.</label>').trigger('create'); 
 				$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-12" value="choice-1" type="radio"><label for="mountain-choice-12">No.</label>').trigger('create');
 				$("#mountain-choice-11").click(function(){ 
+					$(".strengthp").val(parseInt($("#strength-points").val())+50);
 					if(backpackCheak("super sword"))
 	  				{								
 						alert("you alrady have the super sword");
@@ -1223,7 +1263,7 @@ function forestEnd(){
 	  				else if((!backpackCheak("super sword") )&& backpack.length <=4)
 	  				{
 						backpack.push("super sword");									//add super swordto backpack
-						$("#strength-points").val(parseInt($("#strength").val())+60); 	//super sword add 60 to strength
+						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
 	  				else
@@ -1236,6 +1276,12 @@ function forestEnd(){
 				$("#mountain-choice-12").click(function(){ 
 					MerchantInMountains();//next event story 3 mountain
 				});
+			}
+			else if (parseInt($("#health").val()) <= 50)
+			{
+				window.location.replace('#home-page');
+				alert("You are dead!!! Start over");      //player die
+				location.reload();
 			}
 		});
 		// don't attach dragon
@@ -1283,13 +1329,13 @@ function MerchantInMountains(){
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
 		$("#mountain-select-4").empty();
-		var fightYou = Math.floor (Math.random() * Strength);
+		var fightYou = Math.floor (Math.random() * (parseInt($("#strength-points").val())) );
         var fightOpponent = Math.floor (Math.random() * 70);
 		alert('Your attack: ' + fightYou + '. Merchant\'s attack '+ fightOpponent + '.' );
-		if (fightYou < fightOpponent)  //Merchant win
+		if (fightYou < fightOpponent && (parseInt($("#health").val()) > 25))  //Merchant win
 		{   
 			$("#mountain-headr").html('You have lost the fight (-25 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) Do you want to put it in your backpack or leave it.');
-			$("#health-points").val(parseInt($("#health").val())- 25);
+			$$(".healthp").val(parseInt($("#health-points").val())-25);
 			$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-20" value="choice-1" type="radio"><label for="mountain-choice-20">Yes.</label>').trigger('create'); 
 			$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-21" value="choice-1" type="radio"><label for="mountain-choice-21">No.</label>').trigger('create');
 			$("#mountain-choice-20").click(function(){ 
@@ -1300,8 +1346,8 @@ function MerchantInMountains(){
 	  		else if((!backpackCheak("whisky") )&& backpack.length <=4)
 	  		{
 				backpack.push("whisky");										//add whisky to backpack
-				$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
-				$("#smart-points").val(parseInt($("#intelligence").val())-10);	//less 10 from intelligence
+				$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
+				$(".smartp").val(parseInt($("#smart-points").val())-10);	//less 10 from intelligence
 				arrayShowItem();
 	  		}
 	  		else
@@ -1321,7 +1367,7 @@ function MerchantInMountains(){
 			$("#mountain-select-4").empty();
 			$('#mountain-select-1').append('<input type="button" value="Next" id="next73" data-inline="true" data-mini="true" data-icon="check" class="next73">').trigger('create');
 			$(".next73").click(function(){ 
-				$("#strength-points").val(parseInt($("#strength").val())+5);
+				$$(".strengthp").val(parseInt($("#strength-points").val())+5);
 				$("#money").val(parseInt($("#money").val()) + 80);  					//add money
 				if(backpackCheak("knife"))
 				{								
@@ -1330,7 +1376,7 @@ function MerchantInMountains(){
 				else if((!backpackCheak("knife") )&& backpack.length <=4)
 				{
 					backpack.push("knife");											//add knife to backpack
-					$("#strength-points").val(parseInt($("#strength").val())+5);	//knife add 5 to strength
+					$(".strengthp").val(parseInt($("#strength-points").val())+5);	//knife add 5 to strength
 					arrayShowItem();
 				}
 				else if(backpack.length >4)
@@ -1343,7 +1389,7 @@ function MerchantInMountains(){
 				else if((!backpackCheak("sword") )&& backpack.length <=4)
 				{
 					backpack.push("sowrd");											 //add sword to backpack
-					$("#strength-points").val(parseInt($("#strength").val())+25);	//sword add 25 to strength
+					$(".strengthp").val(parseInt($("#strength-points").val())+25);	//sword add 25 to strength
 					arrayShowItem();
 				}
 				else if(backpack.length >4)
@@ -1356,8 +1402,8 @@ function MerchantInMountains(){
 				else if((!backpackCheak("whisky") )&& backpack.length <=4)
 				{
 					backpack.push("whisky");											 //add wisky to backpack	
-					$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
-					$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
+					$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
+					$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
 					arrayShowItem();
 				}
 				else if(backpack.length >4)
@@ -1368,6 +1414,12 @@ function MerchantInMountains(){
 			});
 			
 	}
+	else if (parseInt($("#health").val()) <= 25)
+	{
+		window.location.replace('#home-page');
+		alert("You are dead!!! Start over");      //player die
+		location.reload();
+	}	
 			$("#mountain-choice-21").click(function(){ 
 				mountainEnd();//next event end of mountain
 			});
@@ -1396,7 +1448,7 @@ function MerchantInMountains(){
 						{
 							backpack.push("sowrd");											 //add sword to backpack
 							$("#money").val(parseInt($("#money").val()) - 450);
-							$("#strength-points").val(parseInt($("#strength").val())+25);	//sword add 25 to strength
+							$(".strengthp").val(parseInt($("#strength-points").val())+25); //sword add 25 to strength
 							arrayShowItem();
 						}
 						else {
@@ -1420,8 +1472,8 @@ function MerchantInMountains(){
 							{	
 								backpack.push("whisky");											 //add wisky to backpack
 								$("#money").val(parseInt($("#money").val()) - 50);
-								$("#health-points").val(parseInt($("#health").val())+5);   			//whisky add 5 health
-								$("#smart-points").val(parseInt($("#intelligence").val())-10);   	//whisky sub 10 Intelligence
+								$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
+								$(".strengthp").val(parseInt($("#strength-points").val())-10);  	//whisky sub 10 Intelligence
 								arrayShowItem();
 							}
 							else {
@@ -1444,7 +1496,7 @@ function MerchantInMountains(){
 						{	
 							backpack.push("knife");											 //add knife to backpack
 							$("#money").val(parseInt($("#money").val()) - 100);
-							$("#strength-points").val(parseInt($("#strength").val())+5);   			//knife add 5 strength   	
+							$$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
 						}
 						else {
@@ -1617,9 +1669,10 @@ function mountainEnd(){
 		$('#radio-choice-27').click(function() {
 			$("#desertHeadr").html('Merchant is fighting back. Strength 30. You say: "Hasta la vista baby!". your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 30)');
 			var merchant2 = Math.floor((Math.random() * 50));
-			var mrVSplayer2 = Math.floor((Math.random() *  strength));
+			var mrVSplayer2 = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + mrVSplayer2  + ' Merchant\'s attack:' + merchant2);
-			if(mrVSplayer2 < merchant2) {   //player lose fight
+			if(mrVSplayer2 < merchant2 && (parseInt($("#health").val()) > 20)) 
+			{   //player lose fight
 				$("#desertHeadr").html('-20 Health. You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases and gives you an apple  (+5 health) which you can put in your backpack or leave it.');   //#backpack !!!!!!!
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
@@ -1627,7 +1680,7 @@ function mountainEnd(){
 				$("#desert-select4").empty();
 				$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-30" value="choice-1" type="radio"><label for="radio-choice-30">Don\'t take it.</label>').trigger('create'); 
 				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-31" value="choice-1" type="radio"><label for="radio-choice-31">take it..</label>').trigger('create');
-				$("#health-points").val(parseInt($("#health").val())-20); 
+				$(".healthp").val(parseInt($("#health-points").val())-20);
 					$('#radio-choice-31').click(function() {
 						if(backpackCheak("apple")){								
 							alert("you alrady have the apple");
@@ -1635,7 +1688,7 @@ function mountainEnd(){
 						else if((!backpackCheak("apple") )&& backpack.length <= 4)
 						{
 							backpack.push("apple");											 //add apple to backpack	
-							$("#health-points").val(parseInt($("#health").val())+5);   		 //apple add 5 health   	
+							$(".healthp").val(parseInt($("#health-points").val())+5);   		 //apple add 5 health   	
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -1650,7 +1703,8 @@ function mountainEnd(){
 			}
 			
 			//player win fight
-			else if(mrVSplayer2 >= merchant2) {   
+			else if(mrVSplayer2 >= merchant2) 
+			{   
 				$("#desertHeadr").html('You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), sword (+50 Strength), apple (+25 Health, +5 Intelligence) Where do you want to put a knife');    					//#backpack  !!!!!!!!!
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
@@ -1666,7 +1720,7 @@ function mountainEnd(){
 						else if((!backpackCheak("knife") )&& backpack.length <=4)
 						{
 							backpack.push("knife");											//add knife to backpack
-							$("#strength-points").val(parseInt($("#strength").val())+25);	//knife add 25 to strength
+							$(".strengthp").val(parseInt($("#strength-points").val())+25);	//knife add 25 to strength
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -1679,7 +1733,7 @@ function mountainEnd(){
 						else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
 							backpack.push("sowrd");											 //add sword to backpack
-							$("#strength-points").val(parseInt($("#strength").val())+50);	//sword add 50 to strength
+							$(".strengthp").val(parseInt($("#strength-points").val())+50);	//sword add 50 to strength
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -1692,8 +1746,8 @@ function mountainEnd(){
 						else if((!backpackCheak("apple") )&& backpack.length <=4)
 						{
 							backpack.push("apple");											 //add apple to backpack	
-							$("#health-points").val(parseInt($("#health").val())+25);   			//apple add 25 health
-							$("#smart-points").val(parseInt($("#intelligence").val())+5);   	//apple add 5 Intelligence
+							$(".healthp").val(parseInt($("#health-points").val())+25);   			//apple add 25 health
+							$(".smartp").val(parseInt($("#smart-points").val())+5);   	//apple add 5 Intelligence
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -1706,6 +1760,12 @@ function mountainEnd(){
 						desert3story();//function to story 3 desert
 					});
 			}
+			else if (parseInt($("#health").val()) <= 20)
+			{
+				window.location.replace('#home-page');
+				alert("You are dead!!! Start over");      //player die
+			location.reload();
+			}	
 		}); 
 			
 	//story2 opthion 3 try to buy somthing
@@ -1734,7 +1794,7 @@ function mountainEnd(){
 						{
 							backpack.push("sowrd");											 //add sword to backpack
 							$("#money").val(parseInt($("#money").val()) - 800);
-							$("#strength-points").val(parseInt($("#strength").val())+40);	//sword add 20 to strength
+							$(".strengthp").val(parseInt($("#strength-points").val())+40);	//sword add 40 to strength
 							arrayShowItem();
 						}
 						else 
@@ -1761,8 +1821,8 @@ function mountainEnd(){
 							{	
 								backpack.push("apple");											 //add apple to backpack
 								$("#money").val(parseInt($("#money").val()) - 40);
-								$("#health-points").val(parseInt($("#health").val())+25);   			//apple add 5 health
-								$("#smart-points").val(parseInt($("#intelligence").val())+ 5);   	//apple add 5 Intelligence
+								$(".healthp").val(parseInt($("#health-points").val())+25);   			//apple add 25 health
+								$(".smartp").val(parseInt($("#smart-points").val())+5);   	//apple add 5 Intelligence
 								arrayShowItem();
 							}
 							else 
@@ -1788,7 +1848,7 @@ function mountainEnd(){
 						{	
 							backpack.push("knife");											 //add knife to backpack
 							$("#money").val(parseInt($("#money").val()) - 100);
-							$("#strength-points").val(parseInt($("#strength").val())+5);   			//knife add 5 strength   	
+							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
 						}
 						else 
@@ -1842,7 +1902,16 @@ function desert3story(){
 				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Continue walking towards Cactus Island.</label>').trigger('create');
 				$("#radio-choice-39").click(function(){
 					$("#desertHeadre").html('You decide to wait. Your phone has no wifi so you decide to play Angry Birds while you wait for the rain. 4 hours has passed and your phone is receiving wifi again. You look up the weather and notice the weather app says it will only be cloudy. You do some research and realize that it does not rain here. You decide to once again walk towards Cactus Island, 1 mile down the road. Health: -5.');
-					$("#health-points").val(parseInt($("#health").val())-5);
+					if (parseInt($("#health").val()) <= 5)
+					{
+						window.location.replace('#home-page');
+						alert("You are dead!!! Start over");      //player die
+						location.reload();
+					}
+					else 
+					{
+						$(".healthp").val(parseInt($("#health-points").val())-5);
+					}
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
 					$("#desert-select3").empty();
@@ -1862,7 +1931,7 @@ function desert3story(){
 								else if((!backpackCheak("cactus") )&& backpack.length <=4)
 								{	
 									backpack.push("cactus");											 //add cactus to backpack
-									$("#health-points").val(parseInt($("#health").val())+3);   			//cactus add 3 strength  
+									$(".healthp").val(parseInt($("#health-points").val())+3);   			//cactus add 3 strength  
 									alert("You've obtained a cactus! But it poked you. (+5 Health, - 2 Health)");
 									arrayShowItem();
 								}
@@ -1899,7 +1968,7 @@ function desert3story(){
 								else if((!backpackCheak("cactus") )&& backpack.length <=4)
 								{	
 									backpack.push("cactus");											 //add cactus to backpack
-									$("#health-points").val(parseInt($("#health").val())+3);   			//cactus add 3 strength  
+									$(".healthp").val(parseInt($("#health-points").val())+3);   			//cactus add 3 strength  
 									alert("You've obtained a cactus! But it poked you. (+5 Health, - 2 Health)");
 									arrayShowItem();
 								}
@@ -1962,7 +2031,7 @@ function desert3story(){
 							else if((!backpackCheak("cactus") )&& backpack.length <=4)
 							{	
 								backpack.push("cactus");											 //add cactus to backpack
-								$("#health-points").val(parseInt($("#health").val())+3);   			//cactus add 3 strength  
+								$(".healthp").val(parseInt($("#health-points").val())+3);   			//cactus add 3 strength  
 								alert("You've obtained a cactus! But it poked you. (+5 Health, - 2 Health)");
 								arrayShowItem();
 							}
@@ -1984,6 +2053,7 @@ function desert3story(){
 				}); //40B
 			}); //40
 		}); //37
+	
 			//Walk in the opposite path
 			$("#radio-choice-38").click(function(){
 				$("#desertHeadre").html('You decide to walk in the path you came from. Within 4 hours, your phone picks up wifi signal. You pull out your phone and google for the nearest area with water. Siri tells you to goto Cactus Island, which is located 25 miles from where you are.What do you do?');    					
@@ -1995,12 +2065,12 @@ function desert3story(){
 				//Walk towards Cactus Island
 				$("#radio-choice-39").click(function(){
 					$("#desertHeadre").html('You are getting more tired than ever (-10 Health)');
-					$("#health-points").val(parseInt($("#health").val())-10);
+					$(".healthp").val(parseInt($("#health-points").val())-10);
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
 					$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 					$(".next24").click(function(){ 
-						if (health < 0)
+						if (parseInt($("#health").val()) < 0)
 						{
 							$("#desertHeadre").html('You fall into your own death within the 8th mile to dehydration. GAME OVER');
 							$("#desert-select1").empty();
@@ -2018,7 +2088,7 @@ function desert3story(){
             				$("#desertHeadre").html('You barely made it!! You have reached Cactus Island and drank water from cactuses (+5 Health).');
 							$("#desert-select1").empty();
 							$("#desert-select2").empty();
-							$("#health-points").val(parseInt($("#health").val())+5);
+							$(".healthp").val(parseInt($("#health-points").val())+5);
 							$('#desert-select1').append('<input type="button" value="Next" id="next23" data-inline="true" data-mini="true" data-icon="check" class="next25">').trigger('create');
 							$(".next25").click(function(){ 
 								desert4story();//next event desert 4
@@ -2038,14 +2108,23 @@ function desert3story(){
 						$("#desertHeadre").html('You decide to ignore the python and walk. As you begin to walk, the python sneaks up from behind you. Before you can do anything to stop it, it strikes at you. (-20 Health)');
 						$("#desert-select1").empty();
 						$("#desert-select2").empty();
-						$("#health-points").val(parseInt($("#health").val())-20); 
+						if (parseInt($("#health").val()) <= 20)
+						{
+							window.location.replace('#home-page');
+							alert("You are dead!!! Start over");      //player die
+							location.reload();
+						}
+						else
+						{
+							$(".healthp").val(parseInt($("#health-points").val())-20); 
+						}
 						$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 						$(".next24").click(function(){ 
 							$("#desertHeadre").html('Fortunately, the snake is also weak due to dehydration and it\'s venom was not that strong. You are able to grab him, rip him apart and eat and drink its blood (+10 Health, +10 Strength). You feel rejuvenated and continue your search for penguin.');
 							$("#desert-select1").empty();
 							$("#desert-select2").empty();
-							$("#health-points").val(parseInt($("#health").val())+10); 
-							$("#strength-points").val(parseInt($("#strength").val())+10);
+							$(".healthp").val(parseInt($("#health-points").val())+10);
+							$(".strengthp").val(parseInt($("#strength-points").val())+10);
 							$('#desert-select1').append('<input type="button" value="Next" id="next25" data-inline="true" data-mini="true" data-icon="check" class="next25">').trigger('create');
 							$(".next24").click(function(){ 
 								desert4story();//next story desert 4
@@ -2087,7 +2166,7 @@ function desert4story(){
 			//You fight the troll.
 			$("#radio-choice-53").click(function(){
 				$("#desertHeadre").html('You are fighting the troll. Luckily he is so sick and absent-minded he can\'t catch you. He gets upset, starts to cry and tells you his name is Karl. Very dirty and sticky you search his pockets and get water (+5 Health) and the giant needle. Do you want to accept the giant needle (+10 Strength)?');
-				$("#health-points").val(parseInt($("#health").val())+5);
+				$(".healthp").val(parseInt($("#health-points").val())+5);
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
@@ -2101,7 +2180,7 @@ function desert4story(){
 					else if((!backpackCheak("needle") )&& backpack.length <=4)
 					{	
 						backpack.push("needle");											 //add needle to backpack
-						$("#strength-points").val(parseInt($("#strength").val())+10);   	//needle add 10 strength  
+						$(".strengthp").val(parseInt($("#strength-points").val())+10);   	//needle add 10 strength  
 						alert("You've obtained a needle!");
 						arrayShowItem();
 					}
@@ -2136,6 +2215,16 @@ function desert4story(){
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
+				if (parseInt($("#health").val()) <= 10)
+				{
+					window.location.replace('#home-page');
+					alert("You are dead!!! Start over");      //player die
+					location.reload();
+				}
+				else
+				{
+					$(".healthp").val(parseInt($("#health-points").val())-10);
+				}
 				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
 					$(".next30").click(function(){ 
 						desert5story(); //next event story 5
@@ -2183,7 +2272,7 @@ function desert4story(){
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
-				$("#health-points").val(parseInt($("#health").val())+10);
+				$(".healthp").val(parseInt($("#health-points").val())+5);
 				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
 				$(".next30").click(function(){ 
 						desert5story(); //next event story 5
@@ -2205,8 +2294,8 @@ function desert4story(){
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
-				$("#health-points").val(parseInt($("#health").val())+10);
-				$("#strength-points").val(parseInt($("#strength").val())-5); 
+				$(".healthp").val(parseInt($("#health-points").val())+10);
+				$(".strengthp").val(parseInt($("#strength-points").val())-5);  
 				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
 				$(".next30").click(function(){ 
 					desert5story(); //next event story 5
@@ -2218,7 +2307,7 @@ function desert4story(){
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
-				$("#health-points").val(parseInt($("#health").val())+50);
+				$(".healthp").val(parseInt($("#health-points").val())+50);
 				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
 				$(".next30").click(function(){ 
 					desert5story(); //next event story 5
@@ -2284,7 +2373,16 @@ function desert5story() {
 				$(".next37").click(function(){ 
 					$("#desertHeadre").html('You don\'t have anything to fight mummy off, so mummy attacks you (-10 Health), but since you are easy target for her, gets quickly borred and leave you alone.');
 					$("#desert-select1").empty();
-					$("#health-points").val(parseInt($("#health").val())-10);
+					if (parseInt($("#health").val()) <= 10)
+					{
+						window.location.replace('#home-page');
+						alert("You are dead!!! Start over");      //player die
+						location.reload();
+					}
+					else
+					{
+						$(".healthp").val(parseInt($("#health-points").val())-10);
+					}
 					$('#desert-select1').append('<input type="button" value="Next" id="next38" data-inline="true" data-mini="true" data-icon="check" class="next38">').trigger('create');
 					$(".next38").click(function(){
 						$("#desertHeadre").html('You manage to crawl back to the exit.');
@@ -2420,7 +2518,16 @@ function desert5story() {
 				$(".next37").click(function(){ 
 					$("#desertHeadre").html('You don\'t have anything to fight mummy off, so mummy attacks you (-10 Health), but since you are easy target for her, gets quickly borred and leave you alone.');
 					$("#desert-select1").empty();
-					$("#health-points").val(parseInt($("#health").val())-10);
+					if (parseInt($("#health").val()) <= 10)
+					{
+						window.location.replace('#home-page');
+						alert("You are dead!!! Start over");      //player die
+						location.reload();
+					}
+					else
+					{
+						$(".healthp").val(parseInt($("#health-points").val())-10);
+					}
 					$('#desert-select1').append('<input type="button" value="Next" id="next38" data-inline="true" data-mini="true" data-icon="check" class="next38">').trigger('create');
 					$(".next38").click(function(){
 						$("#desertHeadre").html('You manage to crawl back to the exit.');
@@ -2502,7 +2609,7 @@ function desertEnd(){
 				do{
 				
 		
-					var playerVSbrick = Math.floor (Math.random() * (parseInt($("#strength").val()) + 0));
+					var playerVSbrick = Math.floor (Math.random() * (parseInt($("#strength-points").val())) );
 					var brick = Math.floor (Math.random() * 50);
 					alert('Round '+ roundNo + '\nYour attack: ' + playerVSbrick + '.\nBrick\'s attack ' + brick +'.\n');
 					$("#python-select1").empty();
@@ -2548,6 +2655,6 @@ function desertEnd(){
 	
 	});
 	
-	
+	  
 
 });
