@@ -158,8 +158,13 @@ function arrayShowItem()
 		//story2 opthion 2
 		$('#radio-choice-7').click(function() {
 			$("#headerGame").html('Fight:<br> Merchant is fighting back. Strength 50. <br>'+
-								  'You say: "My name is Inigo Montoya. You killed my father. Prepare to die".<br> '+
-								  'your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 50)');
+								  'You say: "My name is Inigo Montoya. You killed my father. Prepare to die".<br> ');
+			$("#select1").empty();
+			$("#select2").empty();
+			$("#select3").empty();	
+			$("#select4").empty();
+			$('#select1').append('<input type="button" value="Next" id="next200" data-inline="true" data-mini="true" data-icon="check" class="next200">').trigger('create');
+				$(".next200").click(function(){ 
 			var merchant = Math.floor((Math.random() * 50));
 			var mrVSplayer = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + mrVSplayer  + ' Merchant\'s attack:' + merchant);
@@ -192,7 +197,6 @@ function arrayShowItem()
 						story3Forest(); //function to story 3	
 					});
 			}
-			
 			//plater win fight
 			else if(mrVSplayer >= merchant) {   
 				$("#headerGame").html('You have won the fight, but you leave the merchant go after taking his goods: money $80, knife (+5 Strength),  sword (+20 Strength), whisky (+5Health, -10 Intelligence)');    					//#backpack  !!!!!!!!!
@@ -250,6 +254,7 @@ function arrayShowItem()
 						story3Forest(); //function to story 3	
 					});
 			}
+			});
 		}); 
 			
 	//story2 opthion 3 try to buy somthing
@@ -419,7 +424,14 @@ function story3Forest() {
 			$("#select2").empty();
 			$("#select3").empty();	
 			$("#select4").empty();
-			$("#money").val(parseInt($("#money").val()) - 10);   // lose 10$
+			if(parseInt($("#money").val()) <= 10)
+			{
+				$("#money").val(parseInt($("#money").val()) -  parseInt($("#money").val()));
+			}
+			else
+			{
+				$("#money").val(parseInt($("#money").val()) - 10);
+			}   // lose 10$
 			$('#select1').append('<input name="radio-choice-4" id="radio-choice-15" value="choice-1" type="radio"><label for="radio-choice-15">you decide to fight him.</label>').trigger('create'); 
 			$('#select2').append('<input name="radio-choice-4" id="radio-choice-16" value="choice-1" type="radio"><label for="radio-choice-16">you pretend your still asleep.</label>').trigger('create');
 			$("#radio-choice-15").click(function(){
@@ -561,7 +573,14 @@ function story4Forest() {
 									$("#select1").empty();
 									$("#select2").empty();
 									$("#select3").empty();
-									$("#money").val(parseInt($("#money").val()) - 40);
+									if(parseInt($("#money").val()) <= 40)
+									{
+										$("#money").val(parseInt($("#money").val()) -  parseInt($("#money").val()));
+									}
+									else
+									{
+										$("#money").val(parseInt($("#money").val()) - 40);
+									}
 									$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 									$(".next5").click(function(){ 
 										story5Forest();//next story 5
@@ -573,7 +592,14 @@ function story4Forest() {
 								$("#select1").empty();
 								$("#select2").empty();
 								$("#select3").empty();
-								$("#money").val(parseInt($("#money").val()) - 40);
+								if(parseInt($("#money").val()) <= 40)
+								{
+									$("#money").val(parseInt($("#money").val()) -  parseInt($("#money").val()));
+								}
+								else
+								{
+									$("#money").val(parseInt($("#money").val()) - 40);
+								}
 								$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 								$(".next5").click(function(){ 
 									story5Forest();//next story 5
@@ -647,7 +673,14 @@ function story4Forest() {
 					$("#select1").empty();
 					$("#select2").empty();
 					$("#select3").empty();
-					$("#money").val(parseInt($("#money").val()) - 40);
+					if(parseInt($("#money").val()) <= 40)
+					{
+					   $("#money").val(parseInt($("#money").val()) -  parseInt($("#money").val()));
+					}
+					else
+					{
+						$("#money").val(parseInt($("#money").val()) - 40);
+					}
 					$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 					$(".next5").click(function(){ 
 						story5Forest();//next story 5
@@ -659,7 +692,14 @@ function story4Forest() {
 			$("#select1").empty();
 			$("#select2").empty();
 			$("#select3").empty();
-			$("#money").val(parseInt($("#money").val()) - 40);
+			if(parseInt($("#money").val()) <= 40)
+			{
+			   $("#money").val(parseInt($("#money").val()) -  parseInt($("#money").val()));
+			}
+			else
+			{
+				$("#money").val(parseInt($("#money").val()) - 40);
+			}
 			$('#select1').append('<input type="button" value="Next" id="next5" data-inline="true" data-mini="true" data-icon="check" class="next5">').trigger('create');
 			$(".next5").click(function(){ 
 				story5Forest();//next story 5 
@@ -947,7 +987,6 @@ function apple(){
 				$("#radio-choice-29").click(function(){
 					$("#select1").empty();
 					$("#select2").empty();
-					$("#headerGame").empty();
 					if(backpackCheak("sword"))
 					{								
 						alert("you alrady have the sword");
