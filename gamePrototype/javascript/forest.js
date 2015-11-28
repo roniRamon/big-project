@@ -165,17 +165,17 @@ function arrayShowItem()
 			$("#select4").empty();
 			$('#select1').append('<input type="button" value="Next" id="next200" data-inline="true" data-mini="true" data-icon="check" class="next200">').trigger('create');
 				$(".next200").click(function(){ 
-			var merchant = Math.floor((Math.random() * 50));
-			var mrVSplayer = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
-			alert('Your attack: ' + mrVSplayer  + ' Merchant\'s attack:' + merchant);
-			if(mrVSplayer < merchant) {   //player lose fight
-				$("#headerGame").html('You have lost the fight but merchant lets your go. He feels pity for an orphant and gives you a bottle of whisky (+5 health, -10 intelligence) which you can put in your backpack or leave it.');   //#backpack !!!!!!!
-				$("#select1").empty();
-				$("#select2").empty();
-				$("#select3").empty();	
-				$("#select4").empty();
-				$('#select1').append('<input name="radio-choice-3" id="radio-choice-10" value="choice-1" type="radio"><label for="radio-choice-10">Don\'t take it.</label>').trigger('create'); 
-				$('#select2').append('<input name="radio-choice-3" id="radio-choice-11" value="choice-1" type="radio"><label for="radio-choice-11">take it..</label>').trigger('create');
+					var merchant = Math.floor((Math.random() * 50));
+					var mrVSplayer = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
+					alert('Your attack: ' + mrVSplayer  + ' Merchant\'s attack:' + merchant);
+					if(mrVSplayer < merchant) {   //player lose fight
+					$("#headerGame").html('You have lost the fight but merchant lets your go. He feels pity for an orphant and gives you a bottle of whisky (+5 health, -10 intelligence) which you can put in your backpack or leave it.');   //#backpack !!!!!!!
+					$("#select1").empty();
+					$("#select2").empty();
+					$("#select3").empty();	
+					$("#select4").empty();
+					$('#select1').append('<input name="radio-choice-3" id="radio-choice-10" value="choice-1" type="radio"><label for="radio-choice-10">Don\'t take it.</label>').trigger('create'); 
+					$('#select2').append('<input name="radio-choice-3" id="radio-choice-11" value="choice-1" type="radio"><label for="radio-choice-11">take it..</label>').trigger('create');
 					$('#radio-choice-11').click(function() {
 						if(backpackCheak("whisky")){								
 							alert("you alrady have the whisky");
@@ -196,16 +196,16 @@ function arrayShowItem()
 					$('#radio-choice-10').click(function() {
 						story3Forest(); //function to story 3	
 					});
-			}
-			//plater win fight
-			else if(mrVSplayer >= merchant) {   
-				$("#headerGame").html('You have won the fight, but you leave the merchant go after taking his goods: money $80, knife (+5 Strength),  sword (+20 Strength), whisky (+5Health, -10 Intelligence)');    					//#backpack  !!!!!!!!!
-				$("#select1").empty();
-				$("#select2").empty();
-				$("#select3").empty();	
-				$("#select4").empty();
-				$('#select1').append('<input name="radio-choice-3" id="radio-choice-10" value="choice-1" type="radio"><label for="radio-choice-10">Don\'t take it.</label>').trigger('create'); 
-				$('#select2').append('<input name="radio-choice-3" id="radio-choice-11" value="choice-1" type="radio"><label for="radio-choice-11">take it..</label>').trigger('create');
+				}
+				//plater win fight
+				else if(mrVSplayer >= merchant) {   
+					$("#headerGame").html('You have won the fight, but you leave the merchant go after taking his goods: money $80, knife (+5 Strength),  sword (+20 Strength), whisky (+5Health, -10 Intelligence)');    					//#backpack  !!!!!!!!!
+					$("#select1").empty();
+					$("#select2").empty();
+					$("#select3").empty();	
+					$("#select4").empty();
+					$('#select1').append('<input name="radio-choice-3" id="radio-choice-10" value="choice-1" type="radio"><label for="radio-choice-10">Don\'t take it.</label>').trigger('create'); 
+					$('#select2').append('<input name="radio-choice-3" id="radio-choice-11" value="choice-1" type="radio"><label for="radio-choice-11">take it..</label>').trigger('create');
 					$('#radio-choice-11').click(function() {
 						$("#money").val(parseInt($("#money").val()) + 80);  					//add money
 						if(backpackCheak("knife")){								
@@ -985,28 +985,23 @@ function apple(){
 				$('#select1').append('<input name="radio-choice-5" id="radio-choice-29" value="choice-1" type="radio"><label for="radio-choice-29">Take it.</label>').trigger('create'); 
 				$('#select2').append('<input name="radio-choice-5" id="radio-choice-30" value="choice-1" type="radio"><label for="radio-choice-30">Dont take it.</label>').trigger('create');
 				$("#radio-choice-29").click(function(){
-					$("#select1").empty();
-					$("#select2").empty();
 					if(backpackCheak("sword"))
 					{								
 						alert("you alrady have the sword");
 					}
-					else if((!backpackCheak("sword") )&& backpack.length <=4)
+					else if(backpack.length >= 4)
+					{
+						alert("you dont have any more space in your backpack!!");
+						arrayShowItem();
+					}
+					else if((!backpackCheak("sword") )&& backpack.length <= 4)
 					{
 						backpack.push("sowrd");											 //add sword to backpack
 						$(".strengthp").val(parseInt($("#strength-points").val())+40);	//sword add 20 to strength
 						arrayShowItem();
 					}
-					else if(backpack.length >4)
-					{
-						alert("you dont have any more space in your backpack!!");
-						arrayShowItem();
-					}
-					//go back to city + pinguin
-					$('#select1').append('<input type="button" value="Next" id="next8" data-inline="true" data-mini="true" data-icon="check" class="next8">').trigger('create');
-					$(".next8").click(function(){ 
+					//go back to city + pinguin 
 						forestEnd();
-					});	
 				});
 				$("#radio-choice-30").click(function(){
 					$("#select1").empty();
@@ -1704,15 +1699,20 @@ function mountainEnd(){
 				});
 		});
 		
-		//story2 opthion 2
+		//story2 opthion 2 attack him
 		$('#radio-choice-27').click(function() {
-			$("#desertHeadr").html('Merchant is fighting back. Strength 30. You say: "Hasta la vista baby!". your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 30)');
+			$("#desertHeadre").html('Merchant is fighting back. Strength 30. You say: "Hasta la vista baby!". your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 30)');
+			$("#desert-select1").empty();
+			$("#desert-select2").empty();
+			$("#desert-select3").empty();
+			$('#desert-select1').append('<input type="button" value="Next" id="next220" data-inline="true" data-mini="true" data-icon="check" class="next220">').trigger('create');
+			$(".next220").click(function(){ 
 			var merchant2 = Math.floor((Math.random() * 50));
 			var mrVSplayer2 = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + mrVSplayer2  + ' Merchant\'s attack:' + merchant2);
 			if(mrVSplayer2 < merchant2 && (parseInt($("#health").val()) > 20)) 
 			{   //player lose fight
-				$("#desertHeadr").html('-20 Health. You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases and gives you an apple  (+5 health) which you can put in your backpack or leave it.');   //#backpack !!!!!!!
+				$("#desertHeadre").html('-20 Health. You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases and gives you an apple  (+5 health) which you can put in your backpack or leave it.');   //#backpack !!!!!!!
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();	
@@ -1744,7 +1744,7 @@ function mountainEnd(){
 			//player win fight
 			else if(mrVSplayer2 >= merchant2) 
 			{   
-				$("#desertHeadr").html('You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), sword (+50 Strength), apple (+25 Health, +5 Intelligence) Where do you want to put a knife');    					//#backpack  !!!!!!!!!
+				$("#desertHeadre").html('You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), sword (+50 Strength), apple (+25 Health, +5 Intelligence) Where do you want to put a knife');    					//#backpack  !!!!!!!!!
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();	
@@ -1806,10 +1806,11 @@ function mountainEnd(){
 			location.reload();
 			}	
 		}); 
+	});
 			
 	//story2 opthion 3 try to buy somthing
 		$('#radio-choice-28').click(function() {
-			$("#desertHeadr").html('Merchant shows you his goods: ');    					//#backpack  !!!!!!!!!
+			$("#desertHeadre").html('Merchant shows you his goods: ');    					//#backpack  !!!!!!!!!
 			$("#desert-select1").empty();
 			$("#desert-select2").empty();
 			$("#desert-select3").empty();	
@@ -2610,90 +2611,98 @@ function desertEnd(){
 	
 	///////////////////////////////Python’s Nest
 
-	$('#GoToThePython').hide();
-	
-	if($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible'))
-	{
-	  $('#GoToThePython').show()
-	}
+
 	
 	//Do not give penguins
 	$('#final-choice-1').click(function(){
-		$("#pythonHeader").html('You didn\'t give penguins to the Pythons and tried to protectem. Python ate you instead of penguins. You died. Game OVER.');
-		$("#python-select1").empty();
-		$("#python-select2").empty();
-		$('#python-select1').append('<input type="button" value="Next" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
-		$(".next100").click(function(){ 
-			alert("You are dead!!! Start over");
-			window.location.replace('#home-page');      //player die
-			location.reload();
-		});
-		
+		if(!($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible')))
+		{
+			nopenguins();
+		}
+		else if($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible'))
+		{
+			$("#pythonHeader").html('You didn\'t give penguins to the Pythons and tried to protectem. Python ate you instead of penguins. You died. Game OVER.');
+			$("#python-select1").empty();
+			$("#python-select2").empty();
+			$('#python-select1').append('<input type="button" value="Next" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
+			$(".next100").click(function(){ 
+				alert("You are dead!!! Start over");
+				window.location.replace('#home-page');      //player die
+				location.reload();
+			});
+		}
 	});
 	
 	//give penguins
 	$('#final-choice-2').click(function(){
-		$('#pythonHeader').html('Python ate penguins, but lets you through.');
-		$("#python-select1").empty();
-		$("#python-select2").empty();
-		$('#python-select1').append('<input type="button" value="Go to Mysterious Hut" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
-		$(".next100").click(function(){ 
-			$('#pythonHeader').html('You have found what you have been looking for all the way. The only thing that prevents you from fulfilling your mission is the mysterious monster hiding in his hut. You can finally fight him to ' + $("#select-choice-1 option:selected" ).text() +'. The monster is a Brick ');
+		if(!($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible')))
+		{
+			nopenguins();
+		}
+		else if($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible'))
+		{
+			$('#pythonHeader').html('Python ate penguins, but lets you through.');
 			$("#python-select1").empty();
-			$('#python-select1').append('<input type="button" value="Fight" id="next110" data-inline="true" data-mini="true" data-icon="check" class="next110">').trigger('create');
-			$(".next110").click(function(){ 
-				var roundNo = 1
-				var finalBattleScore = 0
+			$("#python-select2").empty();
+			$('#python-select1').append('<input type="button" value="Go to Mysterious Hut" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
+			$(".next100").click(function(){ 
+				$('#pythonHeader').html('You have found what you have been looking for all the way. The only thing that prevents you from fulfilling your mission is the mysterious monster hiding in his hut. You can finally fight him to ' + $("#select-choice-1 option:selected" ).text() +'. The monster is a Brick ');
+				$("#python-select1").empty();
+				$('#python-select1').append('<input type="button" value="Fight" id="next110" data-inline="true" data-mini="true" data-icon="check" class="next110">').trigger('create');
+				$(".next110").click(function(){ 
+					var roundNo = 1
+					var finalBattleScore = 0
 				
-				do{
+					do{
 				
-		
-					var playerVSbrick = Math.floor (Math.random() * (parseInt($("#strength-points").val())) );
-					var brick = Math.floor (Math.random() * 50);
-					alert('Round '+ roundNo + '\nYour attack: ' + playerVSbrick + '.\nBrick\'s attack ' + brick +'.\n');
-					$("#python-select1").empty();
-					$("#python-select2").empty();
-					roundNo ++;
-					if (playerVSbrick < brick)
-					{// you loose round
-						alert('You lost the round '+ (roundNo -1)  + '.');
+						var playerVSbrick = Math.floor (Math.random() * (parseInt($("#strength-points").val())) );
+						var brick = Math.floor (Math.random() * 50);
+						alert('Round '+ roundNo + '\nYour attack: ' + playerVSbrick + '.\nBrick\'s attack ' + brick +'.\n');
 						$("#python-select1").empty();
 						$("#python-select2").empty();
-					
-					}
-					else if(playerVSbrick >= brick)// you won round
+						roundNo ++;
+						if (playerVSbrick < brick)
+						{// you loose round
+							alert('You lost the round '+ (roundNo -1)  + '.');
+							$("#python-select1").empty();
+							$("#python-select2").empty();
+						}
+						else if(playerVSbrick >= brick)// you won round
+						{
+							alert('You won the round '+ (roundNo -1) + '.');
+							$("#python-select1").empty();
+							$("#python-select2").empty();
+							finalBattleScore ++;
+						}
+					}while(roundNo < 6)
+				
+					if (finalBattleScore < 3)
 					{
-						alert('You won the round '+ (roundNo -1) + '.');
+						$('#pythonHeader').html('You were too weak to fight off the Brick. You lost the game. GAME OVER	');
 						$("#python-select1").empty();
 						$("#python-select2").empty();
-						finalBattleScore ++;
+						$('#python-select1').append('<input type="button" value="Next" id="next102" data-inline="true" data-mini="true" data-icon="check" class="next102">').trigger('create');
+						$(".next102").click(function(){ 
+							alert("You are dead!!! Start over");
+							window.location.replace('#home-page');      //player die
+							location.reload();
+						});
 					}
-				}while(roundNo < 6)
-				
-				if (finalBattleScore < 3)
-				{
-					$('#pythonHeader').html('You were too weak to fight off the Brick. You lost the game. GAME OVER	');
-					$("#python-select1").empty();
-					$("#python-select2").empty();
-					$('#python-select1').append('<input type="button" value="Next" id="next102" data-inline="true" data-mini="true" data-icon="check" class="next102">').trigger('create');
-					$(".next102").click(function(){ 
-						alert("You are dead!!! Start over");
-						window.location.replace('#home-page');      //player die
-						location.reload();
-					});
-				}
-				else
-				{
-					$('#pythonHeader').html('Congrats!! You won the fight with the Brick and you have managed to ' + $("#select-choice-1 option:selected" ).text() + '. Well Done!!! The End.');
-					$("#python-select1").empty();
-					$("#python-select2").empty();
-				}
-		});//next10
+					else
+					{
+						$('#pythonHeader').html('Congrats!! You won the fight with the Brick and you have managed to ' + $("#select-choice-1 option:selected" ).text() + '. Well Done!!! The End.');
+						$("#python-select1").empty();
+						$("#python-select2").empty();
+					}
+				});//next10
 			
-		});
-	
+			});
+		}
 	});
-	
-	  
 
+function nopenguins(evt){
+	alert('Not enough penguins!!\n come back when you have 3');
+	window.location.replace('#city-page');
+}
+	  
 });
