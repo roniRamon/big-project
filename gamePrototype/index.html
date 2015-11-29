@@ -25,8 +25,8 @@
   <div data-role="header" id="empty-header">
   </div>
   <div role="main" class="ui-content" id="title-screen">
-    <img src="#" alt="Game Logo" id="logo" height="220" width="220"><br>
-    <a href="#home-page" class="ui-btn ui-btn-inline">START GAME</a>
+	<img src="images/logo.png" class="fade-in one" alt="Game Logo" id="logo" height="347" width="500"><br>
+	<a href="#home-page" class="ui-btn ui-btn-inline fade-in two">START GAME</a>
   </div>
 </div> <!-- end of title page -->
 
@@ -37,10 +37,10 @@
 <!-- HEADER #1 -->
   <div data-role="header" id="header1" data-position="fixed">
     <div class="ui-bar" id="project-details"> <!-- wrap content of the header#1 -->
-      <h1>The Tale of Tux</h1>
+      <img src="images/logo_small.png" alt="Small Game Logo" height="60" width="86">
       <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
-        <a href="#" data-icon="gear" id="info">Options</a>
-        <a href="#" data-icon="info" id="info">How to play</a>
+	<a href="#" data-icon="gear" id="options">Options</a>
+        <a href="#" data-icon="info" id="how-to">How to play</a>
         <a href="#about-page" data-icon="star" id="about">About</a>
       </div> <!-- end of grouped buttons -->
     </div> <!-- end of content of header#1 -->
@@ -111,17 +111,65 @@
 <!-- ABOUT PAGE -->
   <div data-role="page" id="about-page">
      <div data-role="header" id="about-page-header" data-position="fixed">
-    <div class="ui-bar" id="project-details"> <!-- wrap content of the header -->
-      <h1>The Tale of Tux</h1>
-      <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
-        <a href="#home-page" data-icon="star" id="about">Home</a>
-      </div> <!-- end of grouped buttons -->
+      <div class="ui-bar" id="project-details"> <!-- wrap content of the header -->
+	 <img src="images/logo_small.png" alt="Small Game Logo" height="60" width="86">
+         <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
+     	   <a href="#home-page" data-icon="star" id="about">Home</a>
+      	</div> <!-- end of grouped buttons -->
     </div> <!-- end of content of header -->
   </div> <!-- end of header -->
 
 
-   <div class="ui-content" role="main">
-    <a href="#home-page" id="back-home" class="ui-btn ui-shadow ui-btn-inline ui-corner-all">Back to home page</a>
+   <div class="ui-content" role="main" id="about-page-content">
+	<h2>'The Tale of Tux' was created as a group project for the 'Software Engineering' class in the City College of San Francisco. Nine enthusiastic group members worked hard to create this game from scratch in four weeks.</h2>
+
+      <div id="group-members">
+        <div id="member1" class="member">
+          <img src="#" alt="Image of Group Member #1" class="member-img" width="100" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Tari</h3>
+          <p class="about-member" style="width: 200px;">Functional Spec/Graphics. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum sapien vel massa commodo, ac pulvinar ante condimentum.</p>
+        </div>
+        <div id="member2" class="member">
+          <img src="#" alt="Image of Group Member #2" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Justin</h3>
+          <p class="about-member" style="width: 200px;">Functional Spec/Graphics.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum sapien vel massa commodo, ac pulvinar ante condimentum.</p>
+        </div>
+        <div id="member3" class="member">
+          <img src="#" alt="Image of Group Member #3" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Steven</h3>
+          <p class="about-member" style="width: 200px;">Functional Spec.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum sapien vel massa commodo, ac pulvinar ante condimentum.</p>
+        </div>
+        <div id="member4" class="member">
+          <img src="images/olga.jpg" alt="Image of Group Member #4" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Olga</h3>
+          <p class="about-member" style="width: 200px;">UI/UX. Olga is a promising front-end web developer with the philological background. She enjoys: a good book, a cup of tea and when this goddamn piece of code is finally working!</p>
+        </div>
+        <div id="member5" class="member">
+          <img src="#" alt="Image of Group Member #5" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Rowvin</h3>
+          <p class="about-member" style="width: 200px;">Technical Spec.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum sapien vel massa commodo, ac pulvinar ante condimentum.</p>
+        </div>
+        <div id="member6" class="member">
+            <img src="#" alt="Image of Group Member #6" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Drake</h3>
+          <p class="about-member" style="width: 200px;">Technical Spec.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum sapien vel massa commodo, ac pulvinar ante condimentum.</p>
+        </div>
+        <div id="member7" class="member">
+          <img src="images/gosha.jpg" alt="Image of Group Member #7" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Gosha</h3>
+          <p class="about-member" style="width: 200px;">Technical Spec. Malgorzata "Mau" aka "Gosha" Galazka is a nutrition and sudoku lover who have been trying to make it out for living (nutrition didn't work so far). Pain in the ... stomach for any inconsistency in the project documentation. </p>
+        </div>
+        <div id="member8" class="member">
+          <img src="images/roni.jpg" alt="Image of Group Member #8" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Roni</h3>
+          <p class="about-member" style="width: 200px;">Coder. Roni is a hard working, dedicated, respectful and loyal person who always tries to better herself by gaining knowledge wherever she can. She works well in high stress and pressured situations.</p>
+        </div>
+        <div id="member9" class="member">
+          <img src="#" alt="Image of Group Member #9" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <h3>Nikhil</h3>
+          <p class="about-member" style="width: 200px;">Coder. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum sapien vel massa commodo, ac pulvinar ante condimentum.</p>
+        </div>
+      </div> <!-- end of container for all group members -->
     </div> <!-- end of content on About page -->
   </div> <!-- end of About  page -->
 
@@ -148,7 +196,7 @@
       		<h1 id="my-goal">Goal: <span id="set-goal"></span></h1><br>
    	</div>
 
-      <!-- grouped points fields in header#2 -->
+      <!-- grouped points fields in external header -->
       <fieldset class="ui-grid-c" style="width:20%" id="user-points" title="Always keep an eye on your scores. If the health reaches zero, your character dies and the game is over. The higher number of strength increases the chance of winnning in battles. The higher number of intelligence provides more actions to choose from during events. Money is needed for a trade">
         <div class="ui-block-a">
                <label for="health-points">Health:</label></span>
@@ -204,8 +252,8 @@
 <div data-role="page" id="tutorial-page">
 
   <!-- TUTORIAL MAIN CONTENT -->
-  <div role="main" class="ui-content" id="tutorial-content" style="text-align: center;">
-      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+  <div role="main" class="ui-content" id="tutorial-content">
+      <fieldset data-role="controlgroup" class="ui-bar-b text-container">
 	 <legend style="text-align: justify; padding: 15px;"><p id="demoHeader">First, explore the upper panel by mousing over fields.<br><br>
           You will have 2-4 options to choose from in each step.
            Once you make a choice, you can't go back. For example, you meet an enemy. What do you do? Click 'Fight' to see what can happen.
@@ -234,8 +282,8 @@
 <!-- CITY/HUB PAGE -->
   <div data-role="page" id="city-page">
     <!-- CITY MAIN CONTENT -->
-  <div role="main" class="ui-content" id="city-content" style="text-align: center;">
-      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+  <div role="main" class="ui-content" id="city-content">
+      <fieldset data-role="controlgroup" class="ui-bar-b text-container">
           <p>You are in the city. You can choose one of the areas below to continue your journey
           </p>
 		  <div id="citySelect">
@@ -251,9 +299,9 @@
 
 <!--  FOREST PAGE -->
   <div data-role="page" id="forest-page">
-    <div role="main" class="ui-content" id="forest-content" style="text-align: center;">
+    <div role="main" class="ui-content" id="forest-content">
     
-      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+      <fieldset data-role="controlgroup" class="ui-bar-b text-container">
           <legend><h3 id="headerGame">You are crossing the meadow where group of goats are walking around. What do you do?</h3></legend>
 		  	<div id="select1">
               <input name="forest-choice-1" id="forest-choice-1" value="choice-1" type="radio">
@@ -274,8 +322,8 @@
 
   <!-- MOUNTAIN PAGE -->
   <div data-role="page" id="mountain-page">
-    <div class="ui-content" role="main" id="mountain-content" style="text-align: center;">
-      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+    <div class="ui-content" role="main" id="mountain-content">
+      <fieldset data-role="controlgroup" class="ui-bar-b text-container">
           <legend><h3 id="mountain-headr">You round a narrow corner on the mountain ledge. Your gaze meets the eyes of a mountain lion, a.k.a. a catamount, cougar, panther, or puma. Despite its many names, it wants only one thing: to eat YOU!</h3></legend>
 		  	<div id="mountain-select-1">
               <input name="mountain-choice-1" id="mountain-choice-1" value="choice-1" type="radio">
@@ -296,8 +344,8 @@
 
   <!-- DESERT PAGE -->
   <div data-role="page" id="desert-page">
-   <div class="ui-content" role="main" id="desert-content" style="text-align: center;">
-      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+   <div class="ui-content" role="main" id="desert-content">
+      <fieldset data-role="controlgroup" class="ui-bar-b text-container">
         <legend><h3 id="desertHeadre">The world begings to blur. The sand below begins to stick the bottom of your feet.</h3></legend>
 		 <div id="desert-select1">
           	<input name="desert-choice-1" id="desert-choice-1" value="choice-1" type="radio">
@@ -316,8 +364,8 @@
 
   <!-- PYTHON'S NEST PAGE -->
   <div data-role="page" id="python-page">
-   <div class="ui-content" role="main" id="final-battle-content" style="text-align: center;">
-      <fieldset data-role="controlgroup" class="ui-bar-b" style="width: 600px;">
+   <div class="ui-content" role="main" id="final-battle-content">
+      <fieldset data-role="controlgroup" class="ui-bar-b text-container">
       <legend><h3 id="pythonHeader">Python says: “I can see you have brought me penguins. Let me take care of them from now on." What do you do? </h3></legend>
 		 <div id="python-select1"> 
         	<input name="final-choice-1" id="final-choice-1" value="choice-1" type="radio">
