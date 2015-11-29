@@ -483,7 +483,7 @@ function story4Forest() {
 	$("#radio-choice-18").click(function(){
 		$("#select1").empty();
 		$("#select2").empty();
-		$("#headerGame").html('Go left to shortcut in the dark part of the forest. you reached a one eye demon, if you want to pass this way you have to fight. roll the dice to see if you can bit him');
+		$("#headerGame").html('Go left to shortcut in the dark part of the forest. you reached a one eye demon, if you want to pass this way you have to fight. roll the dice to see if you can beat him');
 		$('#select1').append('<input type="button" value="Roll Dice" id="rolldice" data-inline="true" data-mini="true" data-icon="check" class="rolldice">').trigger('create');
 			$(".rolldice").click(function(){ 
 				$("#select1").empty();
@@ -1273,7 +1273,7 @@ function forestEnd(){
 			var dragon = Math.floor((Math.random() * 150));
 			var playerVSdragon = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + playerVSdragon + '. Dragon\'s attack '+ dragon + '.' );
-			if (playerVSdragon < dragon && (parseInt($("#health").val()) > 50))  //dragon win
+			if (playerVSdragon < dragon && (parseInt($("#health-points").val()) > 50))  //dragon win
 			{   
 				$("#mountain-headr").html('You have lost the fight (-50 Health), but you are still alive. You run away from the dragon and stupid fairy who got you into this. After you are far far away you only stop to get some rest and promise yourself never to fight a dragon for any fairy. NEVER.');
 				$(".healthp").val(parseInt($("#health-points").val())-50);
@@ -1311,7 +1311,7 @@ function forestEnd(){
 					MerchantInMountains();//next event story 3 mountain
 				});
 			}
-			else if (parseInt($("#health").val()) <= 50)
+			else if (parseInt($("#health-points").val()) <= 50)
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
