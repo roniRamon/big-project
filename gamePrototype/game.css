@@ -1,52 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* cancel default jQuery Mobile style */
+.ui-page {
+    background: white !important;
+    padding: 0px !important; 
+}
+
+.ui-content {
+    background: white !important;    
+}
+
+
 /* TITLE SCREEN */
 /*......................................*/
   #title-screen {
     text-align: center;
     margin-top: 100px;
    }
+ 
+  /* make keyframes that tell the start state and the end state of our object */
+   
+  @-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @-moz-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+   
+  .fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+   
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+   
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    animation-duration: 3s;
+  }
+   
+  .fade-in.one {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  }
+   
+  .fade-in.two {
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay:3s;
+  animation-delay: 3s;
+  }
 
   #logo {
-    border-radius: 10em;
-    border: 1px solid black;
+    margin-bottom: 40px;
+  }
+
+  #empty-header {
+    opacity: 0;
   }
 
 /* HOME PAGE settings */
 /*......................................*/
 
   #home-page-content {
+    padding-top: 140px;
+    padding-right: 40px;
+    padding-left: 40px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-  /* Header #1 */
-  /*.....................*/
+
+  /* Header on home page */
+  /*............................... */
+
   #project-details {
-    margin: 10px 50px;
+    margin: 0px 40px;
     font-size: 20px;
   }
-  #info, #about {
-    margin-left: 10px;
+  #project-details div{
+    padding: 10px;
   }
 
   #introduction {
-    border: 1px solid black;
     flex: 1;
     text-align: center;
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 6px;
-    line-height: 2em;   
+    line-height: 1.8em;   
     overflow: scroll;
     background-color: #E9E9E9;
     padding: 20px;
+    height: 100%;
+  }
+
+  #introduction h1 {
+    margin: 20px;
   }
 
   #accordion {
     flex: 2;
-    margin: 20px;
-    text-align: left;
-    outline: none;
+    margin-left: 20px;
   }
-
+  .ui-collapsible-set {
+    margin: 0px 0px;
+  }
   #begin {
-    border: 1px solid green;
+    margin-top: 20px;
   }
 
   /* ABOUT PAGE SETTINGS */
@@ -55,6 +118,13 @@
   #about-page-content {
     margin: 0 auto;
     width: 70%;
+    padding-top: 140px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #about-page-content h2 {
+    margin-bottom: 20px;
   }
 
   /* div containing info about all group members */
@@ -73,8 +143,8 @@
   /* div container for each member */
   .member {
     background-color: #E9E9E9;
-    padding: 20px;
-    display: 1;
+    padding: 10px;
+    flex: 1;
     text-align: center;
     margin: 15px;
     -moz-border-radius-topleft: 90px;
@@ -84,20 +154,37 @@
     -webkit-border-bottom-right-radius: 90px;
     border-bottom-right-radius: 90px;
   }
+
+  .member h3 {
+    text-align: center;
+  }
   /* text about each member */
   .about-member {  
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-/* MAIN GAME PAGE settings */
+/* TUTORIAL PAGE */
+/* ....................................*/
+  .ui-tooltip {
+      font-size: 12px;
+      padding: 15px;
+      border-radius: 20px;
+      box-shadow: 0 0 7px black;
+      border: 2px solid white;
+    }
+
+/* MAIN GAME settings */
 /*......................................*/
 
 /* example settings for page background */
  #tutorial-content {
-    background-color: #fff;
+    padding-top: 100px;
+    /*background-color: #fff;
     background-image: url("#");
     background-position: top center;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover;*/
   }
 
   /* external header settings */
@@ -111,6 +198,10 @@
     text-align: center;
     width: 100%;
     display: flex;
+  }
+
+  #playerDetails {
+    display: none;
   }
 
 #header2-content #set-description {
@@ -127,6 +218,7 @@
 
    #header2-content #user-points input {
       text-align: center;
+      border: 2px solid white;
    }
 
    /* container for 3 images with penguins */
@@ -153,3 +245,16 @@
     flex: 2;
   }
 
+  /* reduce size of fieldsets to half*/
+  .text-container {
+    width: 50%;
+  }
+
+  .text-container p, h3 {
+    text-align: justify;
+    padding: 15px;
+  }
+
+  #city-content, #forest-content, #mountain-content, #desert-content, #final-battle-content {
+    padding-top: 100px;
+  }
