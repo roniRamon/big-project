@@ -184,7 +184,10 @@ function arrayShowItem()
 						{
 							backpack.push("whisky");											 //add wisky to backpack	
 							$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
-							$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+							if(parseInt($("#smart-points").val()) > 10)
+								$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+							else
+								$(".smartp").val(parseInt($("#smart-points").val())- parseInt($("#smart-points").val()));
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -241,7 +244,10 @@ function arrayShowItem()
 						{
 							backpack.push("whisky");											 //add wisky to backpack	
 							$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
-							$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+							if(parseInt($("#smart-points").val()) > 10)
+								$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+							else
+								$(".smartp").val(parseInt($("#smart-points").val())- parseInt($("#smart-points").val()));  	
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
@@ -306,7 +312,10 @@ function arrayShowItem()
 								backpack.push("whisky");											 //add wisky to backpack
 								$("#money").val(parseInt($("#money").val()) - 50);
 								$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
-								$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+								if(parseInt($("#smart-points").val()) > 10)
+									$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+								else
+									$(".smartp").val(parseInt($("#smart-points").val())- parseInt($("#smart-points").val()));  	   	
 								arrayShowItem();
 							}
 							else {
@@ -1369,7 +1378,7 @@ function MerchantInMountains(){
 		if (fightYou < fightOpponent && (parseInt($("#health").val()) > 25))  //Merchant win
 		{   
 			$("#mountain-headr").html('You have lost the fight (-25 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) Do you want to put it in your backpack or leave it.');
-			$$(".healthp").val(parseInt($("#health-points").val())-25);
+			$(".healthp").val(parseInt($("#health-points").val())-25);
 			$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-20" value="choice-1" type="radio"><label for="mountain-choice-20">Yes.</label>').trigger('create'); 
 			$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-21" value="choice-1" type="radio"><label for="mountain-choice-21">No.</label>').trigger('create');
 			$("#mountain-choice-20").click(function(){ 
@@ -1381,7 +1390,10 @@ function MerchantInMountains(){
 	  		{
 				backpack.push("whisky");										//add whisky to backpack
 				$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
-				$(".smartp").val(parseInt($("#smart-points").val())-10);	//less 10 from intelligence
+				if(parseInt($("#smart-points").val()) > 10)
+					$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+				else
+					$(".smartp").val(parseInt($("#smart-points").val())- parseInt($("#smart-points").val()));
 				arrayShowItem();
 	  		}
 	  		else
@@ -1437,7 +1449,10 @@ function MerchantInMountains(){
 				{
 					backpack.push("whisky");											 //add wisky to backpack	
 					$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
-					$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+					if(parseInt($("#smart-points").val()) > 10)
+						$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+					else
+						$(".smartp").val(parseInt($("#smart-points").val())- parseInt($("#smart-points").val()));
 					arrayShowItem();
 				}
 				else if(backpack.length >4)
@@ -1507,7 +1522,10 @@ function MerchantInMountains(){
 								backpack.push("whisky");											 //add wisky to backpack
 								$("#money").val(parseInt($("#money").val()) - 50);
 								$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
-								$(".strengthp").val(parseInt($("#strength-points").val())-10);  	//whisky sub 10 Intelligence
+								if(parseInt($("#smart-points").val()) > 10)
+									$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
+								else
+									$(".smartp").val(parseInt($("#smart-points").val())- parseInt($("#smart-points").val())); 
 								arrayShowItem();
 							}
 							else {
