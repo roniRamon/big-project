@@ -140,11 +140,24 @@
    align-content: space-between;
   }
 
+  /* div containing info about all group members */
+  #group-members {
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+  }
+
   /* div container for each member */
   .member {
     background-color: #E9E9E9;
     padding: 10px;
-    flex: 1;
+    -webkit-flex: 20%;
+    -moz-flex: 20%;
+    -ms-flex: 20%;
+    flex: 20%; 
     text-align: center;
     margin: 15px;
     -moz-border-radius-topleft: 90px;
@@ -158,10 +171,13 @@
   .member h3 {
     text-align: center;
   }
+
   /* text about each member */
   .about-member {  
-    padding-left: 10px;
-    padding-right: 10px;
+    margin:  0 auto;
+    width: 80%;
+    padding: 15px;
+    padding-top: 0px;
   }
 
 /* TUTORIAL PAGE */
