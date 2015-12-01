@@ -5,7 +5,7 @@ $( document ).ready(function() {
 	// demo of the fight situatuin
 	$( "#demo-select1" ).click(function() {
 		var demoUpdatedText1 = '<p>Say, you had enough strength and you beat the enemy!' +
-		' You find a lollipop in his pocket. You have an option to keep it or ignore it. Click "Yes" in this case ' +
+		' You find a lollipop in his pocket. You have an option to keep it or ignore it. Click "Keep the item" ' +
 		'and then check you backpack.</p>'
 
   		$("#demoHeader").html(demoUpdatedText1);
@@ -13,8 +13,8 @@ $( document ).ready(function() {
   		$("#demo-select3").empty();
 		$("#demo-select4").empty();
 		// add new text to input labels
-  		$("#demo-label1").text('Yes');
-  		$("#demo-label2").text('No');
+  		$("#demo-label1").text('Keep the item');
+  		$("#demo-label2").text('Ignore the item and move on');
 
 
   			// demo of selecting an item
@@ -45,11 +45,11 @@ $(document).on("pagecontainerbeforeshow",function(event, ui) {
 	// var activePage = $('body').pagecontainer('getActivePage');
     var activePageId = activePage[0].id;
     if(activePageId !== "tutorial-page") {
- 	   $( "#user-points, #quit-game, #open-backpack, #hints-btn, #penguins").tooltip({
+ 	   $( "#set-description, #user-points, #quit-game, #open-backpack, #hints-btn, #penguins").tooltip({
   			disabled: true
 		});
 	} else if (activePageId == "tutorial-page") {
-		$( "#user-points, #quit-game, #open-backpack, #hints-btn, #penguins").tooltip({
+		$( "#set-description, #user-points, #quit-game, #open-backpack, #hints-btn, #penguins").tooltip({
   			disabled: false
 		});
 	}
