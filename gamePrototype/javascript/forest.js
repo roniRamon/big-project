@@ -1719,13 +1719,13 @@ function mountainEnd(){
 		
 		//story2 opthion 2 attack him
 		$('#radio-choice-27').click(function() {
-			$("#desertHeadre").html('Merchant is fighting back. Strength 30. You say: "Hasta la vista baby!". your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 30)');
+			$("#desertHeadre").html('Merchant is fighting back. Strength 30. You say: "Hasta la vista baby!".');
 			$("#desert-select1").empty();
 			$("#desert-select2").empty();
 			$("#desert-select3").empty();
 			$('#desert-select1').append('<input type="button" value="Next" id="next220" data-inline="true" data-mini="true" data-icon="check" class="next220">').trigger('create');
 			$(".next220").click(function(){ 
-			var merchant2 = Math.floor((Math.random() * 50));
+			var merchant2 = Math.floor((Math.random() * 30));
 			var mrVSplayer2 = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + mrVSplayer2  + ' Merchant\'s attack:' + merchant2);
 			if(mrVSplayer2 < merchant2 && (parseInt($("#health").val()) > 20)) 
@@ -1789,7 +1789,7 @@ function mountainEnd(){
 						}
 						else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
-							backpack.push("sowrd");											 //add sword to backpack
+							backpack.push("sword");											 //add sword to backpack
 							$(".strengthp").val(parseInt($("#strength-points").val())+50);	//sword add 50 to strength
 							arrayShowItem();
 						}
