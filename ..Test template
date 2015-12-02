@@ -121,9 +121,9 @@ Stats: 5/100/0
 Money: $500
 Backpack: Lollipop
 1. Attack him 						(2 of 3)
-2. Next confirmation
+2. Next
    (pop up: I win)
-4. Don't take it 					(1 of 2)
+3. Don't take it 					(1 of 2)
 (2b of 6 endings)
 Comment:
 The following is displayed in the text box during 2. Next confirmation: your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 30) is displayed in the text.
