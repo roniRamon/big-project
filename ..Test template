@@ -40,6 +40,22 @@ Comment: stats are not changed after the fight. Started with 10 health and nothi
 Stats at whisky - OK.
 
 Drake
+Home Page
+1. Step 1: adsf
+2. Step 2: Viking
+3. Step 3: Save Prince
+4. Step 4: Health: 1000, Strength: 1000, Intelligence: 1000
+   (pop up: set accordingly)
+5. Step 4: Health: 0, Strength: 0, Intelligence: 0
+6. Step 4: Health: 1000, Strength: 1000, Intelligence: 1000
+   (pop up: set accordignly)
+7. Begin Adventure
+Comment:
+A) After step 4: The box on the left after the pop up displays "Get ready, adsf!".
+It should not show ready.
+B) After step 7, the box on the left remains shown. I am able to "Begin Adventure" with over 3000 points.
+
+Drake
 Desert: dessert
 Stats: 0/100/0
 Money: $500
