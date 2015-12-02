@@ -1114,7 +1114,7 @@ function forestEnd(){
 					peak();  // next event peak
 				});
 			}
-	  		else if (parseInt($("#health-points").val()) <= 10)
+	  		else if(parseInt($("#health-points").val()) <= 10)
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
@@ -2135,7 +2135,7 @@ function desert3story(){
 					$("#desert-select2").empty();
 					$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 					$(".next24").click(function(){ 
-						if (parseInt($("#health-points").val())) < 0)
+						if (parseInt($("#health-points").val()) < 0)
 						{
 							$("#desertHeadre").html('You fall into your own death within the 8th mile to dehydration. GAME OVER');
 							$("#desert-select1").empty();
