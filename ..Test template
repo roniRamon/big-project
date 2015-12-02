@@ -56,6 +56,210 @@ It should not show ready.
 B) After step 7, the box on the left remains shown. I am able to "Begin Adventure" with over 3000 points.
 
 Drake
+Mountain: Lion
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Fight the big cat				(1 of 3)
+   (pop up: I win)
+   * strength + 3
+2. Next
+(1 of 4 endings)
+Comment:
+OK
+
+Drake
+Mountain: Lion
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Run away					(2 of 3)
+2. Run ahead					(1 of 2)
+3. Next
+(2 of 4 endings)
+Comment:
+OK
+
+Drake
+Mountain: Lion
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Run away					(2 of 3)
+2. Run the way you came from			(2 of 2)
+   (pop up: death)
+(3 of 4 endings)
+Comment:
+OK
+
+Drake
+Mountain: Lion
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Show you're not a threat 			(3 of 3)
+   * Mountain lion tooth (health + 25)
+2. Next
+(4 of 4 endings)
+Comment:
+OK
+
+Drake
+Mountain: Ascending The Peak
+Stats: 0/0/100
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Fight for sword 				(1 of 3)
+   (pop up: You lose)
+   (-25 health)
+2. Next
+(1a of 6 endings)
+Comment:
+Still alive if I have -25 health.
+
+Drake
+Mountain: Ascending The Peak
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Fight for sword 				(1 of 3)
+   (pop up: You win)
+   (pop up: death)
+(1b of 6 endings)
+Comment:
+Dead if I win the fight
+
+Drake
+Mountain: Ascending The Peak
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Leave her alone				(2 of 3)
+2. Next
+(2 of 6 endings)
+Comment:
+OK
+
+Drake
+Mountain: Ascending The Peak
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. ask for sword				(3 of 3)
+2. Yes, kill dragon				(1 of 2)
+   (pop up: You lose)
+   (pop up: you die)
+(3 of 6 endings)
+Comment:
+OK
+
+Drake
+Mountain: Ascending The Peak
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. ask for sword				(3 of 3)
+2. Yes, kill dragon				(1 of 2)
+   (pop up: You win)
+3. yes, keep sword				(1 of 2)
+   * super sword (strength + 110)
+(4 of 6 endings)
+Comment:
+OK
+
+Drake
+Mountain: Ascending The Peak
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. ask for sword				(3 of 3)
+2. Yes, kill dragon				(1 of 2)
+   (pop up: You win)
+3. no 						(2 of 2)
+(5 of 6 endings)
+Comment:
+OK
+
+Drake
+Mountain: Ascending The Peak
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. ask for sword				(3 of 3)
+2. no, leave dragon alone 			(2 of 2)
+3. Next
+(6 of 6 endings)
+
+Drake
+Mountain: Merchant
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Ignore					(1 of 3)
+2. Next
+(1 of 5 endings)
+Comment:
+OK
+
+Drake
+Mountain: Merchant
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Attack him 					(2 of 3)
+   (pop up: You win)
+2. Next
+   - strength + 5
+   - money + 80
+   - small knife (strength + 5)
+   - large sowrd (strength + 25)
+   - whiskey (health + 5, intelligence - 10)
+(2 of 5 endings)
+Comment:
+Next will not work. Possibly because backpack cannot fit all these items.
+
+Drake
+Mountain: Merchant
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Try to buy something 			(3 of 3)
+2. large sword					(1 of 3)
+   * large sword (strength + 25, money - 450)
+(3 of 5 endings)
+Comment: 
+OK
+
+Drake
+Mountain: Merchant
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Try to buy something 			(3 of 3)
+2. whiskey					(2 of 3)
+   * whiskey (health + 5, intelligence - 10, money - 50)
+(4 of 5 endings)
+Comment:
+OK
+
+Drake
+Mountain: Merchant
+Stats: 25/100/0
+Money: $500
+Backpack: Lollipop, Mountain lion tooth
+1. Try to buy something 			(3 of 3)
+2. No Thanks 					(3 of 3)
+(5 of 5 endings)
+Comment:
+
+Drake
+Mountain: Penguin
+1. Next
+   * penguin obtained
+Comment:
+OK
+
+Drake
 Desert: dessert
 Stats: 0/100/0
 Money: $500
@@ -545,5 +749,5 @@ Drake
 Desert: Penguin
 1. Next
    * obtain Penguin
-Comment
+Comment:
 OK
