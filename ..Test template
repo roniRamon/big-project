@@ -56,6 +56,467 @@ It should not show ready.
 B) After step 7, the box on the left remains shown. I am able to "Begin Adventure" with over 3000 points.
 
 Drake
+Forest: Goats Adventure
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Chase a goat						(1 of 3)
+   * health + 30
+(1 of 4 events)
+Comment:
+OK
+
+Drake
+Forest: Goats Adventure
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Walk away						(2 of 3)
+   * health + 5
+(2 of 4 events)
+Comment:
+OK
+
+Drake
+Forest: Goats Adventure
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Pick flowers						(3 of 3)
+2. Fight						(1 of 2)
+   (pop up: You lose)
+   (pop up: Death)
+(3a of 4 events)
+Comment:
+Spelling error in pop up.
+Pop up also does not seem complete
+
+Drake
+Forest: Goats Adventure
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Pick flowers						(3 of 3)
+2. Fight						(1 of 2)
+   (pop up: You win)
+   * money + 50, health + 10
+3. Next
+(3b of 4 events)
+Comment:
+OK
+
+Drake
+Forest: Goats Adventure
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Pick flowers						(3 of 3)
+2. Walk away 						(2 of 2)
+3. Next
+(4 of 4 events)
+Comment:
+OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Ignore him						(1 of 3)
+2. Next
+(1 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Ignore him						(2 of 3)
+2. Attack him
+3. Next 
+   (pop up: You lose)
+4. Don't take whiskey 					(1 of 2)
+(2a of 6 events)
+Comment:
+Weird structure since we don't die, but OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Ignore him						(2 of 3)
+2. Attack him
+3. Next 
+   (pop up: You win)
+4. Take knife, sword, whiskey				(2 of 2)
+    * money + 80
+    * knife (strength + 5)
+    * sword (strength + 20)
+    * whiskey (health + 5, intelligence - 10)
+(2b of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Ignore him						(2 of 3)
+2. Attack him
+3. Next 
+   (pop up: You lose)
+4. Don't take it					(2 of 2)
+(3a of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Ignore him						(2 of 3)
+2. Attack him
+3. Next 
+   (pop up: You win)
+4. Don't take anything					(2 of 2)
+(3b of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Try to buy something 				(3 of 3)
+2. sword						(1 of 3)
+   * sword (strength + 20, money - 500)
+(4 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Try to buy something 				(3 of 3)
+2. whiskey						(2 of 3)
+   * whiskey (money - 50, health + 5, intelligence - 10)
+(5 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Merchant
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Try to buy something 				(3 of 3)
+2. No thanks						(3 of 3)
+(6 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Hole
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Go in 						(1 of 2)
+2. Try to climb						(1 of 3)
+3. Next
+   (pop up: death)
+(1 of 5 events)
+Comment:
+OK
+
+Drake
+Forest: Hole
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Go in 						(1 of 2)
+2. Start crying 					(2 of 3)
+3. Next
+(2 of 5 events)
+Comment: 
+OK
+
+Drake
+Forest: Hole
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Go in 						(1 of 2)
+2. Make a rope	 					(3 of 3)
+   * Intelligence + 10
+3. Next
+(3 of 5 events)
+Comment: 
+OK
+
+Drake
+Forest: Hole
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Camp 						(2 of 2)
+   * money - 10
+2. Fight robber						(1 of 2)
+   * ax 
+   * money + 10
+3. Next
+(4 of 5 events)
+Comment:
+OK
+
+Drake
+Forest: Hole
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Camp 						(2 of 2)
+   * money - 10
+2. Pretend to be asleep					(1 of 2)
+3. Next
+(5 of 5 events)
+Comment:
+OK
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop, ax
+1. Go left 						(1 of 2)
+2. Roll dice
+   (pop up: You win)
+3. Next
+(1a of ... events)
+Comment:
+OK
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop, ax
+1. Go left 						(1 of 2)
+2. Roll dice
+   (pop up: You lose)
+   (pop up: death)
+(1b of ... events)
+Comment:
+Alerts death too soon. Does not explain to user how the death occured.
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 100/0/0 (if health > 10)
+Money: $500
+Backpack: Lollipop, ax
+1. Go left 						(1 of 2)
+2. Roll dice
+   (pop up: You lose)
+   * health - 10, money - 10
+(1c of ... events)
+Comment:
+OK
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop, ax
+1. Go left 						(1 of 2)
+2. Roll dice
+   (pop up: push)
+   (pop up: death)
+   (pop up: you lose)
+   (pop up: death)
+(1d of ... events)
+Comment:
+Apparently I died twice! On a push, the death alert pops up before the 2nd roll.
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop, ax
+1. Go the safe route					(2 of 2)
+2. Build a raft if knife or ax 				(1 of 3)
+   (pop up if no ax)
+   * strength -5
+3. Next
+Comment:
+OK
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop, ax
+1. Go the safe route					(2 of 2)
+2. Try to swim across 					(2 of 3)
+3. Build a raft if knife or ax				(1 of 2)
+   (pop up if no ax)
+   * health - 5
+Comment:
+OK, but grammer: some repetition with the mention of health - 5
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop, ax
+1. Go the safe route					(2 of 2)
+2. Try to swim across 					(2 of 3)
+2. Pay $15						(2 of 2)
+   * money - 40
+Comment:
+OK
+
+Drake
+Forest: Enchanted Forest (River)
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop, ax
+1. Go the safe route					(2 of 2)
+2. Pay $15 						(3 of 3)
+   * money - 40
+Comment:
+OK
+
+Drake
+Forest: Dead Body
+Stats 0/100/0
+Money: $460
+Backpack: Lollipop, ax
+1. Run away						(1 of 2)
+   * lose a random item
+(1 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Dead Body
+Stats 0/100/0
+Money: $460
+Backpack: Lollipop, ax
+1. Examine body						(2 of 2)
+   * money + 30
+2. Next
+3. Yes or No options					(choices)
+   Take ax? 			yes
+   Take Mythical MothMan? 	yes
+   Take Bio of Grace Hopper?	yes
+   Take apple?			yes
+4. Run away						(1 of 2)
+   * lose a random item
+(2 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Dead Body
+Stats 0/100/0
+Money: $460
+Backpack: Lollipop, ax
+1. Examine body						(2 of 2)
+   * money + 30
+2. Next
+3. Yes or No options					(choices)
+   Take ax? 			yes
+   Take Mythical MothMan? 	yes
+   Take Bio of Grace Hopper?	yes
+   Take apple?			yes
+4. Examine dead boy 					(2 of 2)
+5. Kill injured man 					(1 of 2)
+6. take sword						(1 of 2)
+   (pop up if items are maxed out)
+   * strength + 40
+(3 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Dead Body
+Stats 0/100/0
+Money: $460
+Backpack: Lollipop, ax
+1. Examine body						(2 of 2)
+   * money + 30
+2. Next
+3. Yes or No options					(choices)
+   Take ax? 			yes
+   Take Mythical MothMan? 	yes
+   Take Bio of Grace Hopper?	yes
+   Take apple?			yes
+   (pop up if user can't fit the item)
+4. Examine dead boy 					(2 of 2)
+5. Kill injured man 					(1 of 2)
+6. Don't take sword 					(2 of 2)
+7. Next
+(4 of 6 events)
+Comment:
+On #7, it asks if you want to take the sword again when user already clicked no 
+
+Drake
+Forest: Dead Body
+Stats 0/100/0
+Money: $460
+Backpack: Lollipop, ax
+1. Examine body						(2 of 2)
+   * money + 30
+2. Next
+3. Yes or No options					(choices)
+   Take ax? 			yes
+   Take Mythical MothMan? 	yes
+   Take Bio of Grace Hopper?	yes
+   Take apple?			yes
+4. Examine dead boy 					(2 of 2)
+5. Ask what happened					(2 of 2)
+6. Help him						(1 of 2)
+7. Next
+    * health + 100
+(5 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Dead Body
+Stats 0/100/0
+Money: $460
+Backpack: Lollipop, ax
+1. Examine body						(2 of 2)
+   * money + 30
+2. Next
+3. Yes or No options					(choices)
+   Take ax? 			yes
+   Take Mythical MothMan? 	yes
+   Take Bio of Grace Hopper?	yes
+   Take apple?			yes
+4. Examine dead boy 					(2 of 2)
+5. Ask what happened					(2 of 2)
+6. Don't help						(2 of 2)
+7. Next
+(6 of 6 events)
+Comment:
+OK
+
+Drake
+Forest: Penguin
+1. Next
+   * penguin
+Comment:
+OK
+
+Drake
 Mountain: Lion
 Stats: 0/100/0
 Money: $500
