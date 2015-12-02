@@ -2186,6 +2186,7 @@ function desert3story(){
 							$('#desert-select1').append('<input type="button" value="Next" id="next410" data-inline="true" data-mini="true" data-icon="check" class="next410">').trigger('create');
 							$(".next410").click(function(){ 
 								desert4story();//next story desert 4
+							});
 						});
 					});
 					//Attempt to kill the python for its meat and blood
@@ -2193,14 +2194,15 @@ function desert3story(){
 						$("#desertHeadre").html('You run unto the python and grab it by its mouth. The snake wiggles for a minute and then becomes motionless. You eat the python and feel rejuvenated (+15 Health, +15 Strength). You continue  your search for penguin.');
 						$("#desert-select1").empty();
 						$("#desert-select2").empty();
+						$(".strengthp").val(parseInt($("#strength-points").val())+15);
 						$('#desert-select1').append('<input type="button" value="Next" id="next410" data-inline="true" data-mini="true" data-icon="check" class="next410">').trigger('create');
 						$(".next410").click(function(){ 
 							desert4story();//next story desert 4
 						});
 					});
-			});	
-		});
-	});
+			});	//500
+		});//38
+	
 }
 	  
 //story 4 desert Canyon Adventures
