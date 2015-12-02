@@ -1095,13 +1095,17 @@ function forestEnd(){
 	  $("#mountain-select-1").empty();
 	  $("#mountain-select-2").empty();
 	  $("#mountain-select-3").empty();
-	  var pumaScore = Math.floor((Math.random() * 20));
-	  var player = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
-	  alert('Your attack: ' + player+ '. Mountain lion\'s attack: '+ pumaScore + '.' );
+	  $('#mountain-select-1').append('<input type="button" value="Next" id="next70M" data-inline="true" data-mini="true" data-icon="check" class="next70M">').trigger('create');
+		$(".next70M").click(function(){
+	  	var pumaScore = Math.floor((Math.random() * 20));
+	  	var player = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
+	  	alert('Your attack: ' + player+ '. Mountain lion\'s attack: '+ pumaScore + '.' );
 			if (player < pumaScore && (parseInt($("#health-points").val()) > 10))  //puma win
 			{   
 				$("#mountain-headr").html('The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off. -10 Health');
 				$(".healthp").val(parseInt($("#health-points").val())-10);
+				$("#mountain-select-1").empty();
+				$("#mountain-select-2").empty();
 				$('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
 				$(".next70").click(function(){ 
 					peak(); // next event peak
@@ -1111,6 +1115,8 @@ function forestEnd(){
 			{
 				$("#mountain-headr").html('You grab the cat out of the air and hurl it off the mountainside. Manly. Your strength increeses (Strength +3)');
 				$(".strengthp").val(parseInt($("#strength-points").val())+3);
+				$("#mountain-select-1").empty();
+	  			$("#mountain-select-2").empty();
 				$('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
 				$(".next70").click(function(){ 
 					peak();  // next event peak
@@ -1122,6 +1128,7 @@ function forestEnd(){
 				alert("You are dead!!! Start over");      //player die
 				location.reload();
 			}
+  	});
   });
 
   //Run away	  
