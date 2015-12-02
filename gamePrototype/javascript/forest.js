@@ -1406,13 +1406,16 @@ function MerchantInMountains(){
 		}
 		else if(fightYou >= fightOpponent) //Merchant lose
 		{
-			$("#mountain-headr").html('You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, small knife (+5 Strength), large sword (+25 Strength), whisky (+5Health, -10 Intelligence)');
+			$("#mountain-headr").html('You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, small knife (+5 Strength), large sword (+25 Strength), whisky (+5Health, -10 Intelligence).Do you want to put it in your backpack or leave it. ');
 			$("#mountain-select-1").empty();
 			$("#mountain-select-2").empty();
 			$("#mountain-select-3").empty();
 			$("#mountain-select-4").empty();
-			$('#mountain-select-1').append('<input type="button" value="Next" id="next73" data-inline="true" data-mini="true" data-icon="check" class="next73">').trigger('create');
-			$(".next73").click(function(){ 
+			//$('#mountain-select-1').append('<input type="button" value="Next" id="next73" data-inline="true" data-mini="true" data-icon="check" class="next73">').trigger('create');
+			$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-m20" value="choice-1" type="radio"><label for="mountain-choice-m20">Yes.</label>').trigger('create'); 
+			$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-m21" value="choice-1" type="radio"><label for="mountain-choice-m21">No.</label>').trigger('create');
+			//$(".next73").click(function(){ 
+			$("#mountain-choice-m20").click(function(){
 				$(".strengthp").val(parseInt($("#strength-points").val())+5);
 				$("#money").val(parseInt($("#money").val()) + 80);  					//add money
 				if(backpackCheak("knife"))
@@ -1460,6 +1463,9 @@ function MerchantInMountains(){
 					alert("you dont have any more space in your backpack!!");
 				}
 					mountainEnd();//next event end of mountain									
+			});
+			$("#mountain-choice-m21").click(function(){
+				mountainEnd();//next event end of mountain	
 			});
 			
 	}
