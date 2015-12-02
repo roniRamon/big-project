@@ -501,6 +501,9 @@ function story4Forest() {
 					var d1Player = Math.floor(Math.random() * 6) + 1;
     				var d2Demon = Math.floor(Math.random() * 6) + 1;
     				alert("You rolled "+ d1Player +" And the Demon rolled " + d2Demon);
+					if(d1Player == d2Demon)
+						alert("it a tie! you roll again"); 
+				}
 					if(d1Player > d2Demon)   //player win
 					{
 						$("#headerGame").html('you win! you can keep going through the path.');
@@ -623,8 +626,7 @@ function story4Forest() {
 						alert("You are dead!!! Start over");      //player die
 						location.reload();
 					}
-				
-			}	
+				//	
 		 });
 	});
 	//long and safe way
