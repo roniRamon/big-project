@@ -280,7 +280,7 @@ Backpack: Lollipop, ax
 2. Roll dice
    (pop up: You win)
 3. Next
-(1a of ... events)
+(1a of 5 events)
 Comment:
 OK
 
@@ -292,7 +292,7 @@ Backpack: Lollipop, ax
 2. Roll dice
    (pop up: You lose)
    (pop up: death)
-(1b of ... events)
+(1b of 5 events)
 Comment:
 Alerts death too soon. Does not explain to user how the death occured.
 
@@ -304,7 +304,7 @@ Backpack: Lollipop, ax
 2. Roll dice
    (pop up: You lose)
    * health - 10, money - 10
-(1c of ... events)
+(1c of 5 events)
 Comment:
 OK
 
@@ -318,7 +318,7 @@ Backpack: Lollipop, ax
    (pop up: death)
    (pop up: you lose)
    (pop up: death)
-(1d of ... events)
+(1d of 5 events)
 Comment:
 Apparently I died twice! On a push, the death alert pops up before the 2nd roll.
 
@@ -331,6 +331,7 @@ Backpack: Lollipop, ax
    (pop up if no ax)
    * strength -5
 3. Next
+(2 of 5 events)
 Comment:
 OK
 
@@ -343,6 +344,7 @@ Backpack: Lollipop, ax
 3. Build a raft if knife or ax				(1 of 2)
    (pop up if no ax)
    * health - 5
+(3 of 5 events)
 Comment:
 OK, but health - 5 is mentioned twice when it only happens once
 
@@ -354,6 +356,7 @@ Backpack: Lollipop, ax
 2. Try to swim across 					(2 of 3)
 2. Pay $15						(2 of 2)
    * money - 40
+(4 of 5 events)
 Comment:
 OK
 
@@ -364,6 +367,7 @@ Backpack: Lollipop, ax
 1. Go the safe route					(2 of 2)
 2. Pay $15 						(3 of 3)
    * money - 40
+(5 of 5 events)
 Comment:
 OK
 
