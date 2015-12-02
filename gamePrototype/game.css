@@ -5,9 +5,26 @@
 
 /* overwrite default jQuery Mobile style */
 .ui-page {
-    background: white !important;
-    padding: 0px !important; 
+  background-color: -webkit-gradient(
+  linear,
+  right top,
+  right top,
+  color-stop(0.21, #FCEC5B),
+  color-stop(0.69, #56E3FC)
+  );
+  background-image: -o-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
+  background-image: -moz-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
+  background-image: -webkit-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
+  background-image: -ms-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
+  background-image: linear-gradient(to right top, #FCEC5B 21%, #56E3FC 69%);
+  padding: 0px !important; 
+  font-family: 'Raleway', sans-serif;
 }
+
+.ui-content {
+    /*background: white !important;    */
+}
+
 
 /* TITLE SCREEN */
 /*......................................*/
@@ -22,7 +39,7 @@
   @-moz-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
    
-  .fade-in {
+.fade-in {
     opacity:0;  /* make things invisible upon start */
     -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
     -moz-animation:fadeIn ease-in 1;
@@ -35,7 +52,7 @@
     -webkit-animation-duration: 3s;
     -moz-animation-duration: 3s;
     animation-duration: 3s;
-  }
+}
    
   .fade-in.one {
   -webkit-animation-delay: 0.7s;
@@ -62,8 +79,8 @@
 
   #home-page-content {
     padding-top: 140px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 60px;
+    padding-left: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,6 +88,10 @@
 
   /* Header on home page */
   /*............................... */
+  #header1 {
+    background-color: rgba(0,0,0,.7);
+    border-bottom: 2px solid #FCEC5B;
+  }
 
   #project-details {
     margin: 0px 40px;
@@ -81,15 +102,23 @@
   }
 
   #introduction {
+    color: #f0f0f0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    text-shadow: none;
     flex: 1;
     text-align: center;
     padding: 20px 20px;
     border-radius: 6px;
     line-height: 1.8em;   
     overflow: scroll;
-    background-color: #E9E9E9;
+    background-color: rgba(0,0,0,.7);
     padding: 20px;
     height: 100%;
+    -webkit-box-shadow: 0px 5px 18px 0px rgba(25, 25, 25, 0.56);
+    -moz-box-shadow:    0px 5px 18px 0px rgba(25, 25, 25, 0.56);
+    box-shadow:         0px 5px 18px 0px rgba(25, 25, 25, 0.56);
   }
 
   #introduction h1 {
@@ -99,10 +128,49 @@
   #accordion {
     flex: 2;
     margin-left: 20px;
+    border-radius: 6px;
+    
   }
   .ui-collapsible-set {
     margin: 0px 0px;
+  }   
+
+  #accordion .ui-collapsible-heading .ui-btn {
+    background: rgba(0,0,0,.6);
+    color: white;
+    text-shadow: none;
+    border: none;
   }
+
+  #accordion .ui-collapsible-content {
+    background: rgba(0,0,0,.4);
+    color: white;
+    text-shadow: none;
+    }
+
+  #accordion .ui-collapsible-content .ui-input-text  {
+    /*-webkit-box-shadow: 0px 5px 18px 0px rgba(25, 25, 25, 0.56);
+      -moz-box-shadow:    0px 5px 18px 0px rgba(25, 25, 25, 0.56);
+      box-shadow:         0px 5px 18px 0px rgba(25, 25, 25, 0.56);  
+  */
+    /*background: #F0FFF0;*/
+    border: 1px solid silver;
+  }
+
+  #accordion a.ui-input-clear {
+    background: rgba(0,0,0,.6);
+  }
+
+  #accordion #col4 h4 {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  #assign-points label {
+    text-transform: uppercase;
+    font-weight: 500;
+  } 
+
   #begin {
     margin-top: 20px;
   }
@@ -116,6 +184,11 @@
     padding-top: 140px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  #about-page-header {
+    background-color: rgba(0,0,0,.7);
+    border-bottom: 2px solid #FCEC5B;
   }
 
   #about-page-content h2 {
@@ -135,13 +208,19 @@
 
   /* div container for each member */
   .member {
-    background-color: #E9E9E9;
+   background-color: rgba(0,0,0,.7);
+    border-bottom: 2px solid #FCEC5B;
+    color: white;
+    text-shadow: none;
+    text-align: center;
+    -webkit-box-shadow: 0px 5px 18px 0px rgba(25, 25, 25, 0.56);
+    -moz-box-shadow:    0px 5px 18px 0px rgba(25, 25, 25, 0.56);
+    box-shadow:         0px 5px 18px 0px rgba(25, 25, 25, 0.56);
     padding: 10px;
     -webkit-flex: 20%;
     -moz-flex: 20%;
     -ms-flex: 20%;
     flex: 20%; 
-    text-align: center;
     margin: 15px;
     -moz-border-radius-topleft: 90px;
     -webkit-border-top-left-radius: 90px;
@@ -156,7 +235,8 @@
     padding: 10px;
   }
   /* text about each member */
-  .about-member {  
+  .about-member { 
+    text-align: left; 
     margin:  0 auto;
     width: 80%;
     padding: 15px;
@@ -189,6 +269,7 @@
   /* external header settings */
   #header2 {
     background-color: rgba(0,0,0,.7);
+    border-bottom: 2px solid #FCEC5B;
   }
 
   #header2-content {
@@ -197,18 +278,29 @@
     text-align: center;
     width: 100%;
     display: flex;
+    font-family: 'Raleway', sans-serif;
   }
 
 #header2-content #set-description {
   flex: 2;
-  line-height: 20px;
+  line-height: 25px;
   text-align: left;
   display: block;
+}
+
+#set-char, #set-goal, #set-name {
+  letter-spacing: 2px;
+  color: #00BFFF;
 }
 
   #header2-content #user-points {
     flex: 2;
     display: inline;
+  }
+
+  #user-points .ui-state-disabled {
+      opacity: 0.8;
+      border: 1px solid #00BFFF;
   }
 
    #header2-content #user-points input {
@@ -224,17 +316,18 @@
   }
 
   #header2-content .penguin {
+    background-color: black;
+    background-image: url("images/penguin.png");
     background-size: cover;
     border: 1px solid white;
     border-radius: 3em;
-    background-color: black;
     height: 40px;
     width: 40px;
     display: inline-block;
   }
 
   #header2-content #controls {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-right: 20px;
     flex: 2;
   }
@@ -243,6 +336,10 @@
     padding: 10;
     padding-left: 20px;
     line-height: 2em;
+    -webkit-box-shadow: 8px 3px 12px 0px rgba(25, 25, 25, 0.62);
+    -moz-box-shadow:    8px 3px 12px 0px rgba(25, 25, 25, 0.62);
+    box-shadow:         8px 3px 12px 0px rgba(25, 25, 25, 0.62);
+    border-right: 1px solid #639DBC;
   }
 
   #mypanel h3 {
