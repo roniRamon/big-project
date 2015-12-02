@@ -39,6 +39,283 @@ Forest: merchant:
 Comment: stats are not changed after the fight. Started with 10 health and nothing got deducted. At the page of taking whisky typo "take it" Should be  "Take it" on the button.
 Stats at whisky - OK.
 
+Drake
+Desert: dessert
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Continue walking 					(1 of 2)
+2. Continue walking..
+3. Make like a rock and roll				(1 of 2)
+4. Next
+(1 of 4 endings)
+Comment: 
+OK
+
+Drake
+Desert: dessert
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Continue walking 					(1 of 2)
+2. Continue walking..
+3. Freak out! 						(2 of 2)
+4. Death confirmation
+   (pop up: death)
+(2 of 4 endings)
+Comment:
+OK
+
+Drake
+Desert: dessert
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Investigate 						(2 of 2)
+2. Lick the sand 					(1 of 2)
+3. Next
+   * health +5
+(3 of 4 endings)
+Comment:
+OK
+
+Drake
+Desert: dessert
+Stats: 0/100/0
+Money: $500
+Backpack: Lollipop
+1. Investigate 						(2 of 2)
+2. Continue walking 					(2 of 2)
+3. Next
+(4 of 4 endings)
+Comment:
+OK
+
+Drake
+Desert: Merchant
+Stats: 5/100/0
+Money: $500
+Backpack: Lollipop
+1. Ignore him and move on 				(1 of 3)
+2. Next
+(1 of 6 endings)
+Comment:
+OK
+
+Drake
+Desert: Merchant:
+Stats: 5/100/0
+Money: $500
+Backpack: Lollipop
+1. Attack him 						(2 of 3)
+2. Next confirmation
+   (pop up: I lose)
+   (pop up: Death)
+(2a of 6 endings)
+Comment:
+OK
+
+Drake
+Desert: Merchant
+Stats: 5/100/0
+Money: $500
+Backpack: Lollipop
+1. Attack him 						(2 of 3)
+2. Next confirmation
+   (pop up: I win)
+4. Don't take it 					(1 of 2)
+(2b of 6 endings)
+Comment:
+The following is displayed in the text box during 2. Next confirmation: your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 30) is displayed in the text.
+
+Drake
+Desert: Merchant
+Stats: 5/100/0
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Attack him 						(2 of 3)
+2. Next confirmation
+   (pop up: I win)
+4. Take it 						(2 of 2)
+   * money + 80
+   * knife (strength + 25)
+   * sword (strength + 50)
+   * apple (health + 25, intelligence + 5)
+(3 of 6 endings)
+Comment:
+OK
+
+Drake
+Desert: Merchant
+Stats: 5/100/0
+Backpack: Lollipop
+1. Try to buy something 				(3 of 3)
+2. sword 						(1 of 3)
+   (pop up: No Money)
+(4 of 6 endings)
+Comment:
+OK
+
+Drake
+Desert: Merchant
+Stats: 5/100/0
+Backpack: Lollipop
+1. Try to buy something 				(3 of 3)
+2. apple (+25 strength, +5 intel, $40)			(2 of 3)
+   * money - 40
+   * apple(health +25, intelligence + 5)
+(5 of 6 endings)
+Comment:
+OK
+
+Drake
+Desert: Merchant
+Stats: 5/100/0
+Backpack: Lollipop
+1. Try to buy something 				(3 of 3)
+2. No thanks 						(3 of 3)
+(6 of 6 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Continue walking					(1 of 3)
+2. Wait for rain					(1 of 2)
+   (pop up: Death)
+(1 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Continue walking 					(1 of 3)
+2. Continue towards Cactus Island			(2 of 2)
+3. Yes, I might need cactus				(1 of 2)
+   (pop up: obtained cactus)
+   * cactus (health + 5, health - 2)
+(2 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Continue walking 					(1 of 3)
+2. Continue towards Cactus Island			(2 of 2)
+3. No cactus						(2 of 2)
+4. Next
+(3 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Dig							(2 of 3)
+2. Continue digging					(1 of 2)
+3. Death confirmation
+   (pop up: death)
+(4 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Dig							(2 of 3)
+2. Continue walking					(2 of 2)
+3. Walk to Cactus Island
+4. Yes, take cactus					(1 of 2)
+   (pop up: obtained cactus)
+   * cactus (health + 5, health - 2)
+(5 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Dig							(2 of 3)
+2. Continue walking					(2 of 2)
+3. Walk to Cactus Island
+4. No cactus						(2 of 2)
+5. Next
+(6 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Walk in opposite path				(3 of 3)
+2. Walk towards Cactus Island				(1 of 2)
+3. Next: getting tired
+   * health - 10
+4. Next: made it!
+   * health + 5
+(7 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Walk in opposite path				(3 of 3)
+2. Continue 						(2 of 2)
+3. Ignore python					(1 of 2)
+   (pop up: death)
+(8 of 9 endings)
+Comment:
+OK
+
+Drake
+Desert: Cactus
+Stats: 30/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Walk in opposite path				(3 of 3)
+2. Continue 						(2 of 2)
+3. Attack python					(2 of 2)
+(9 of 9 endings)
+Comment:
+Option is disabled
+
+Drake
+Desert: Canyon
+Stats: 33/175/5
+Money: $580
+Backpack: Lollipop, knife, sword, apple, cactus
+1. Make loud noise 					(1 of 2)
+2. Fight troll 						(1 of 3)
+3. Yes to needle 					(1 of 2)
+   (pop up: obtained needle)
+   * health + 5
+   
+Comment:
+Inconsistency pop ups for items
+eg) no pop up from
+    - buying items from merchant, or
+    - obtainin cactus
+
 
 
 
