@@ -113,7 +113,7 @@ Backpack: Lollipop, Mountain lion tooth
    (pop up: You lose)
    (-25 health)
 2. Next
-(1a of 6 endings)
+(1a of 5 endings)
 Comment:
 Still alive if I have -25 health.
 
@@ -125,7 +125,7 @@ Backpack: Lollipop, Mountain lion tooth
 1. Fight for sword 				(1 of 3)
    (pop up: You win)
    (pop up: death)
-(1b of 6 endings)
+(1b of 5 endings)
 Comment:
 Dead if I win the fight
 
@@ -136,7 +136,7 @@ Money: $500
 Backpack: Lollipop, Mountain lion tooth
 1. Leave her alone				(2 of 3)
 2. Next
-(2 of 6 endings)
+(2 of 5 endings)
 Comment:
 OK
 
@@ -149,7 +149,7 @@ Backpack: Lollipop, Mountain lion tooth
 2. Yes, kill dragon				(1 of 2)
    (pop up: You lose)
    (pop up: you die)
-(3 of 6 endings)
+(3a of 5 endings)
 Comment:
 OK
 
@@ -163,7 +163,7 @@ Backpack: Lollipop, Mountain lion tooth
    (pop up: You win)
 3. yes, keep sword				(1 of 2)
    * super sword (strength + 110)
-(4 of 6 endings)
+(3b of 5 endings)
 Comment:
 OK
 
@@ -176,7 +176,7 @@ Backpack: Lollipop, Mountain lion tooth
 2. Yes, kill dragon				(1 of 2)
    (pop up: You win)
 3. no 						(2 of 2)
-(5 of 6 endings)
+(4 of 5 endings)
 Comment:
 OK
 
@@ -188,7 +188,7 @@ Backpack: Lollipop, Mountain lion tooth
 1. ask for sword				(3 of 3)
 2. no, leave dragon alone 			(2 of 2)
 3. Next
-(6 of 6 endings)
+(5 of 5 endings)
 Comment:
 OK
 
