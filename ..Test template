@@ -287,6 +287,7 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
+<<RESOLVED>>
 Drake
 Desert: Cactus
 Stats: 30/175/5
@@ -295,33 +296,238 @@ Backpack: Lollipop, knife, sword, apple
 1. Walk in opposite path				(3 of 3)
 2. Continue 						(2 of 2)
 3. Attack python					(2 of 2)
+   * health + 15, strength + 15
 (9 of 9 endings)
 Comment:
 Option is disabled
 
 Drake
 Desert: Canyon
-Stats: 33/175/5
+Stats: 30/190/5/580
 Money: $580
-Backpack: Lollipop, knife, sword, apple, cactus
+Backpack: Lollipop, knife, sword, apple
 1. Make loud noise 					(1 of 2)
 2. Fight troll 						(1 of 3)
 3. Yes to needle 					(1 of 2)
    (pop up: obtained needle)
    * health + 5
-   
+(1 of 7 endings)
 Comment:
 Inconsistency pop ups for items
 eg) no pop up from
     - buying items from merchant, or
     - obtainin cactus
 
+Drake
+Desert: Canyon
+Stats: 30/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Make loud noise 					(1 of 2)
+2. Fight troll 						(1 of 3)
+3. No to needle 					(2 of 2)
+   (pop up: no to needle)
+(2 of 7 endings)
+Comment:
+Inconsistency pop up
 
+Drake
+Desert: Canyon
+Stats: 30/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Make loud noise 					(1 of 2)
+2. Run back						(2 of 3)
+3. Death Confirmation
+   (pop up: death)
+(3 of 7 endings)
+Comment:
+OK
 
+Drake
+Desert: Canyon
+Stats: 30/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Make loud noise 					(1 of 2)
+2. Run back						(3 of 3)
+3. Jump
+   (pop up: death)
+(4 of 7 endings)
+Comment:
+OK
 
+Drake
+Desert: Canyon
+Stats: 30/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Have a rest						(2 of 2)
+2. Bargain						(1 of 3)
+   - Money: +200
+3. Next
+(5 of 7 endings)
+Comment:
+OK
 
+Drake
+Desert: Canyon
+Stats: 30/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Have a rest						(2 of 2)
+2. Jump	at bird 					(2 of 3)
+   (pop up: death)
+(6 of 7 endings)
+Comment:
+OK
 
+Drake
+Desert: Canyon
+Stats: 30/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Have a rest						(2 of 2)
+2. Jump	at bird 					(3 of 3)
+   * health -5, health + 10				(3 of 3)
+3. Next
+(7 of 7 endings)
+Comment:
+OK
 
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Compass						(1 of 3)
+2. Run							(1 of 3)
+3. Next: find exit
+4. Next: exit with compass
+(1 of 10 endings)
+Comment:
+OK
 
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Compass						(1 of 3)
+2. Fight						(2 of 3)
+3. Next
+   (pop up: death)
+(2 of 10 endings)
+Comment:
+OK
 
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Compass						(1 of 3)
+2. Talk							(3 of 3)
+3. Next
+(3 of 10 endings)
+Comment:
+OK
 
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Flame Torch						(2 of 3)
+2. Run							(1 of 3)
+3. Next: find exit
+4. Next: find exit with torch
+(4 of 10 endings)
+Comment:
+OK
+
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Flame Torch						(2 of 3)
+2. Fight						(2 of 3)
+3. Next: fight mummy 
+4. Next: burn mummy 
+(5 of 10 endings)
+Comment:
+It would make sense to increase strength here
+
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Flame Torch						(2 of 3)
+2. Talk							(3 of 3)
+3. Next
+(6 of 10 endings)
+Comment:
+OK
+
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Stack of gold					(3 of 3)
+2. Run 							(1 of 3)
+3. Next: find exit
+4. Don't give back gold 				(1 of 2)
+5. Death Confirmation
+   (pop up: death)
+(7 of 10 endings)
+Comment:
+OK
+
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Stack of gold					(3 of 3)
+2. Run 							(1 of 3)
+3. Next: find exit
+4. Give back gold 					(2 of 2)
+5. Next
+(8 of 10 endings)
+Comment:
+OK
+
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Stack of gold					(3 of 3)
+2. Fight						(2 of 3)
+3. Next
+   (pop up: death)
+(9 of 10 endings)
+Comment:
+OK
+
+Drake
+Desert: Pyramid
+Stats: 35/190/5/580
+Money: $580
+Backpack: Lollipop, knife, sword, apple
+1. Stack of gold					(3 of 3)
+2. Talk							(3 of 3)
+3. Next
+(10 of 10 endings)
+Comment:
+OK
+
+Drake
+Desert: Penguin
+1. Next
+   * obtain Penguin
+Comment
+OK
