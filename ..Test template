@@ -1129,3 +1129,65 @@ Desert: Penguin
    * obtain Penguin
 Comment:
 OK
+
+///////////////////////
+// Test Run by Drake //
+///////////////////////
+Penguin:
+    Name: ASF
+    Character: Viking
+    Goal: Save Prince
+    Health: 105
+    Strength: 198
+    Intelligence: 0
+    Money: 480
+    Backpack: Lollipop, super sword, book "The Mythical Man Month"
+
+    Python's Nest
+        1. Give Penguins to Python
+        2. Go to Mysterious Hut
+        3. Fight Brick	
+
+            (pop up)
+            Round 1:
+            Your attack: 154
+            Brick's attack: 39
+
+            (pop up)
+            You won the round 1.
+
+            (pop up)
+            round 2:
+            Your attack: 176
+            Brick's attack: 29
+
+            (pop up)
+            You won the round 2
+
+            (pop up)
+            round 3:
+            Your attack: 176
+            Brick's attack: 39
+
+            (pop up)
+            You won the round 3
+
+            (pop up)
+            Round 4:
+            Your attack: 43
+            Brick's attack: 15
+
+            (pop up)
+            You won the round 4
+
+            (pop up)
+            Round 5:
+            Your attack: 167
+            Brick's attack: 42
+
+            (pop up)
+            You won the round 5
+
+            Congrats!! You won the fight with the Brick and you have managed to Save Prince. Well Done!!! The End.
+Comments:
+Too Easy!
