@@ -88,7 +88,8 @@
     $("#ready").click(function() {
       if(parseInt($("#health").val()) + parseInt($("#strength").val()) + parseInt($("#intelligence").val()) > 100)
       {
-        alert("You have 100 points. Distribute them accordingly");  
+        alert("You have 100 points. Distribute them accordingly"); 
+		$( "#begin" ).disable(true);  
       }
       else {
         // enable the start button
@@ -96,7 +97,7 @@
       };
 
       // replace the introduction text with the chosen options
-	var userName = $("#name").val();
+	  var userName = $("#name").val();
       var selectedChar = $("#select-choice-0 option:selected" ).text();
       var selectedGoal = $("#select-choice-1 option:selected" ).text();
 
