@@ -182,7 +182,8 @@ function arrayShowItem()
 						}
 						else if((!backpackCheak("whisky") )&& backpack.length <= 4)
 						{
-							backpack.push("whisky");											 //add wisky to backpack	
+							backpack.push("whisky");											 //add wisky to backpack
+							alert('you put in your backpack a whisky bottle');
 							$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 							if(parseInt($("#smart-points").val()) > 10)
 								$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -217,6 +218,7 @@ function arrayShowItem()
 						else if((!backpackCheak("knife") )&& backpack.length <=4)
 						{
 							backpack.push("knife");											//add knife to backpack
+							alert('you put in your backpack a knife');
 							$(".strengthp").val(parseInt($("#strength-points").val())+5); 	//knife add 5 to strength
 							arrayShowItem();
 						}
@@ -229,7 +231,8 @@ function arrayShowItem()
 						}
 						else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
-							backpack.push("sowrd");											 //add sword to backpack
+							backpack.push("sword");											 //add sword to backpack
+							alert('you put in your backpack a sword');
 							$(".strengthp").val(parseInt($("#strength-points").val())+20);	//sword add 20 to strength
 							arrayShowItem();
 						}
@@ -242,7 +245,8 @@ function arrayShowItem()
 						}
 						else if((!backpackCheak("whisky") )&& backpack.length <=4)
 						{
-							backpack.push("whisky");											 //add wisky to backpack	
+							backpack.push("whisky");											 //add wisky to backpack
+							alert('you put in your backpack a whisky bottle');
 							$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 							if(parseInt($("#smart-points").val()) > 10)
 								$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -285,7 +289,8 @@ function arrayShowItem()
 						{
 						if(parseInt($("#money").val()) >= 500)
 						{
-							backpack.push("sowrd");											 //add sword to backpack
+							backpack.push("sword");											 //add sword to backpack
+							alert('you put in your backpack a sword');
 							$("#money").val(parseInt($("#money").val()) - 500);
 							$(".strengthp").val(parseInt($("#strength-points").val())+20);	//sword add 20 to strength
 							arrayShowItem();
@@ -310,6 +315,7 @@ function arrayShowItem()
 							if(parseInt($("#money").val()) >= 50)
 							{	
 								backpack.push("whisky");											 //add wisky to backpack
+								alert('you put in your backpack a whisky bottle');
 								$("#money").val(parseInt($("#money").val()) - 50);
 								$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 								if(parseInt($("#smart-points").val()) > 10)
@@ -337,6 +343,7 @@ function arrayShowItem()
 						if(parseInt($("#money").val()) >= 100)
 						{	
 							backpack.push("knife");											 //add knife to backpack
+							alert('you put in your backpack a knife');
 							$("#money").val(parseInt($("#money").val()) - 100);
 							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
@@ -454,7 +461,8 @@ function story3Forest() {
 				}
 				else if(backpack.length < 4 && (!backpackCheak("axe")))
 				{
-					backpack.push("axe");											 //add axe to backpack   			   	
+					backpack.push("axe");											 //add axe to backpack 
+					alert('you put in your backpack an axe');
 					arrayShowItem();
 				}
 				else
@@ -540,7 +548,7 @@ function story4Forest() {
 								$('#select2').append('<input name="radio-choice-5" id="radio-choice-21" value="choice-1" type="radio"><label for="radio-choice-21">Try to swim across.</label>').trigger('create');
 								$('#select3').append('<input name="radio-choice-5" id="radio-choice-22" value="choice-1" type="radio"><label for="radio-choice-22"> Pay the river keeper 15$ to get him across safely.</label>').trigger('create');
 								$("#radio-choice-20").click(function(){
-									if(backpackCheak("knife")|| backpackCheak("ex"))
+									if(backpackCheak("knife")|| backpackCheak("axe"))
 									{												 
 										$("#headerGame").html('You user your ax/knife to build a raft. you reached the other side of the river but your tired. you lose 5 point of strength.(-5 strength) ');	
 										$("#select1").empty();
@@ -902,7 +910,8 @@ function axe(){
 	}
 	else if(backpack.length < 4 && (!backpackCheak("axe")))
 	{
-		backpack.push("axe");											 //add ex to backpack   			   	
+		backpack.push("axe");											 //add ex to backpack 
+		alert('you put in your backpack an axe');
 		arrayShowItem();
 		$(".strengthp").val(parseInt($("#strength-points").val())+30);
 	}
@@ -919,7 +928,8 @@ function book1() {
 	}
 	else if(backpack.length < 4 && (!backpackCheak("book “The Mythical Man Month” ")))
 	{
-		backpack.push("book “The Mythical Man Month” ");											 //add book “The Mythical Man Month” to backpack   			   	
+		backpack.push("book “The Mythical Man Month” ");											 //add book “The Mythical Man Month” to backpack  
+		alert('you put in your backpack the book “The Mythical Man Month”');
 		arrayShowItem();
 		$(".smartp").val(parseInt($("#smart-points").val())+(parseInt($("#smart-points").val())*15)/25);
 		
@@ -938,6 +948,7 @@ function book2(){
 	else if(backpack.length < 4 && (!backpackCheak("book “Biography of Grace Hopper”")))
 	{
 		backpack.push("book “Biography of Grace Hopper”");											 //add book Biography of Grace Hopper” to backpack   			   	
+		alert('you put in your backpack the book “Biography of Grace Hopper”');
 		arrayShowItem();
 		$(".smartp").val(parseInt($("#smart-points").val())+(parseInt($("#smart-points").val())*10)/20);
 	}
@@ -955,6 +966,7 @@ function apple(){
 	else if(backpack.length < 4 && (!backpackCheak("apple")))
 	{
 		backpack.push("apple");											 //add apple   			   	
+		alert('you put in your backpack an apple');
 		arrayShowItem();
 		$(".healthp").val(parseInt($("#health-points").val())+5);
 	}
@@ -1007,7 +1019,8 @@ function apple(){
 					}
 					else if((!backpackCheak("sword") )&& backpack.length <= 4)
 					{
-						backpack.push("sowrd");											 //add sword to backpack
+						backpack.push("sword");											 //add sword to backpack
+						alert('you put in your backpack a sword');
 						$(".strengthp").val(parseInt($("#strength-points").val())+40);	//sword add 20 to strength
 						arrayShowItem();
 					}
@@ -1183,6 +1196,7 @@ function forestEnd(){
 	  else if((!backpackCheak("Mountain lion tooth") )&& backpack.length <=4)
 	  {
 		backpack.push("Mountain lion tooth");							//add Mountain lion tooth to backpack
+		alert('you put in your backpack a Mountain lion tooth');
 		$(".healthp").val(parseInt($("#health-points").val())+25); 	//Mountain lion tooth add 25 to health
 		arrayShowItem();
 	  }
@@ -1242,6 +1256,7 @@ function forestEnd(){
 	  				else if((!backpackCheak("super sword") )&& backpack.length <=4)
 	  				{
 						backpack.push("super sword");							//add super swordto backpack
+						alert('you put in your backpack a super sword');
 						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
@@ -1316,6 +1331,7 @@ function forestEnd(){
 	  				else if((!backpackCheak("super sword") )&& backpack.length <=4)
 	  				{
 						backpack.push("super sword");									//add super swordto backpack
+						alert('you put in your backpack a super sword');
 						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
@@ -1399,6 +1415,7 @@ function MerchantInMountains(){
 	  		else if((!backpackCheak("whisky") )&& backpack.length <=4)
 	  		{
 				backpack.push("whisky");										//add whisky to backpack
+				alert('you put in your backpack a whisky bottle');
 				$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 				if(parseInt($("#smart-points").val()) > 10)
 					$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -1435,6 +1452,7 @@ function MerchantInMountains(){
 				else if((!backpackCheak("knife") )&& backpack.length <=4)
 				{
 					backpack.push("knife");											//add knife to backpack
+					alert('you put in your backpack a knife');
 					$(".strengthp").val(parseInt($("#strength-points").val())+5);	//knife add 5 to strength
 					arrayShowItem();
 				}
@@ -1447,7 +1465,8 @@ function MerchantInMountains(){
 				}
 				else if((!backpackCheak("sword") )&& backpack.length <=4)
 				{
-					backpack.push("sowrd");											 //add sword to backpack
+					backpack.push("sword");											 //add sword to backpack
+					alert('you put in your backpack a sword');
 					$(".strengthp").val(parseInt($("#strength-points").val())+25);	//sword add 25 to strength
 					arrayShowItem();
 				}
@@ -1461,6 +1480,7 @@ function MerchantInMountains(){
 				else if((!backpackCheak("whisky") )&& backpack.length <=4)
 				{
 					backpack.push("whisky");											 //add wisky to backpack	
+					alert('you put in your backpack a whisky bottle');
 					$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 					if(parseInt($("#smart-points").val()) > 10)
 						$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -1511,7 +1531,8 @@ function MerchantInMountains(){
 						{
 						if(parseInt($("#money").val()) >= 450)
 						{
-							backpack.push("sowrd");											 //add sword to backpack
+							backpack.push("sword");											 //add sword to backpack
+							alert('you put in your backpack a sword');
 							$("#money").val(parseInt($("#money").val()) - 450);
 							$(".strengthp").val(parseInt($("#strength-points").val())+25); //sword add 25 to strength
 							arrayShowItem();
@@ -1536,6 +1557,7 @@ function MerchantInMountains(){
 							if(parseInt($("#money").val()) >= 50)
 							{	
 								backpack.push("whisky");											 //add wisky to backpack
+								alert('you put in your backpack a whisky bottle');
 								$("#money").val(parseInt($("#money").val()) - 50);
 								$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 								if(parseInt($("#smart-points").val()) > 10)
@@ -1563,6 +1585,7 @@ function MerchantInMountains(){
 						if(parseInt($("#money").val()) >= 100)
 						{	
 							backpack.push("knife");											 //add knife to backpack
+							alert('you put in your backpack a knife');
 							$("#money").val(parseInt($("#money").val()) - 100);
 							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
@@ -1761,6 +1784,7 @@ function mountainEnd(){
 						else if((!backpackCheak("apple") )&& backpack.length <= 4)
 						{
 							backpack.push("apple");											 //add apple to backpack	
+							alert('you put in your backpack an apple');
 							$(".healthp").val(parseInt($("#health-points").val())+5);   		 //apple add 5 health   	
 							arrayShowItem();
 						}
@@ -1793,6 +1817,7 @@ function mountainEnd(){
 						else if((!backpackCheak("knife") )&& backpack.length <=4)
 						{
 							backpack.push("knife");											//add knife to backpack
+							alert('you put in your backpack a knife');
 							$(".strengthp").val(parseInt($("#strength-points").val())+25);	//knife add 25 to strength
 							arrayShowItem();
 						}
@@ -1806,6 +1831,7 @@ function mountainEnd(){
 						else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
 							backpack.push("sword");											 //add sword to backpack
+							alert('you put in your backpack a sword');
 							$(".strengthp").val(parseInt($("#strength-points").val())+50);	//sword add 50 to strength
 							arrayShowItem();
 						}
@@ -1819,6 +1845,7 @@ function mountainEnd(){
 						else if((!backpackCheak("apple") )&& backpack.length <=4)
 						{
 							backpack.push("apple");											 //add apple to backpack	
+							alert('you put in your backpack an apple');
 							$(".healthp").val(parseInt($("#health-points").val())+25);   			//apple add 25 health
 							$(".smartp").val(parseInt($("#smart-points").val())+5);   	//apple add 5 Intelligence
 							arrayShowItem();
@@ -1866,7 +1893,8 @@ function mountainEnd(){
 						{
 						if(parseInt($("#money").val()) >= 800)
 						{
-							backpack.push("sowrd");											 //add sword to backpack
+							backpack.push("sword");											 //add sword to backpack
+							alert('you put in your backpack a sword');
 							$("#money").val(parseInt($("#money").val()) - 800);
 							$(".strengthp").val(parseInt($("#strength-points").val())+40);	//sword add 40 to strength
 							arrayShowItem();
@@ -1894,6 +1922,7 @@ function mountainEnd(){
 							if(parseInt($("#money").val()) >= 40)
 							{	
 								backpack.push("apple");											 //add apple to backpack
+								alert('you put in your backpack an apple');
 								$("#money").val(parseInt($("#money").val()) - 40);
 								$(".healthp").val(parseInt($("#health-points").val())+25);   			//apple add 25 health
 								$(".smartp").val(parseInt($("#smart-points").val())+5);   	//apple add 5 Intelligence
@@ -1921,6 +1950,7 @@ function mountainEnd(){
 						if(parseInt($("#money").val()) >= 100)
 						{	
 							backpack.push("knife");											 //add knife to backpack
+							alert('you put in your backpack a knife');
 							$("#money").val(parseInt($("#money").val()) - 100);
 							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
@@ -2268,7 +2298,6 @@ function desert4story(){
 					desert5story(); //next event story 5
 				});
 				$("#radio-choice-56").click(function(){
-					alert("You didn't take the needle");
 					desert5story(); //next event story 5
 				});	
 			});
