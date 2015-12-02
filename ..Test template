@@ -132,7 +132,8 @@ Backpack: Lollipop
 4. Don't take whiskey 					(1 of 2)
 (2a of 6 events)
 Comment:
-Weird structure since we don't die, but OK
+Weird structure since we don't die.
+OK still I think.
 
 Forest: Merchant
 Stats: 0/100/0
@@ -342,7 +343,7 @@ Backpack: Lollipop, ax
    (pop up if no ax)
    * health - 5
 Comment:
-OK, but grammer: some repetition with the mention of health - 5
+OK, but health - 5 is mentioned twice when it only happens once
 
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
