@@ -39,6 +39,7 @@ Forest: merchant:
 Comment: stats are not changed after the fight. Started with 10 health and nothing got deducted. At the page of taking whisky typo "take it" Should be  "Take it" on the button.
 Stats at whisky - OK.
 
+<<RESOLVED>>
 Home Page
 1. Step 1: adsf
 2. Step 2: Viking
@@ -619,6 +620,7 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
+<<RESOLVED>>
 Mountain: Merchant
 Stats: 25/100/0
 Money: $500
