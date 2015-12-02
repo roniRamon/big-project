@@ -1413,7 +1413,7 @@ function MerchantInMountains(){
 			$("#mountain-select-4").empty();
 			$('#mountain-select-1').append('<input type="button" value="Next" id="next73" data-inline="true" data-mini="true" data-icon="check" class="next73">').trigger('create');
 			$(".next73").click(function(){ 
-				$$(".strengthp").val(parseInt($("#strength-points").val())+5);
+				$(".strengthp").val(parseInt($("#strength-points").val())+5);
 				$("#money").val(parseInt($("#money").val()) + 80);  					//add money
 				if(backpackCheak("knife"))
 				{								
