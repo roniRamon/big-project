@@ -39,7 +39,6 @@ Forest: merchant:
 Comment: stats are not changed after the fight. Started with 10 health and nothing got deducted. At the page of taking whisky typo "take it" Should be  "Take it" on the button.
 Stats at whisky - OK.
 
-Drake
 Home Page
 1. Step 1: adsf
 2. Step 2: Viking
@@ -55,7 +54,6 @@ A) After step 4: The box on the left after the pop up displays "Get ready, adsf!
 It should not show ready.
 B) After step 7, the box on the left remains shown. I am able to "Begin Adventure" with over 3000 points.
 
-Drake
 Forest: Goats Adventure
 Stats: 0/100/0
 Money: $500
@@ -66,7 +64,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Goats Adventure
 Stats: 0/100/0
 Money: $500
@@ -77,7 +74,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Goats Adventure
 Stats: 0/100/0
 Money: $500
@@ -91,7 +87,6 @@ Comment:
 Spelling error in pop up.
 Pop up also does not seem complete
 
-Drake
 Forest: Goats Adventure
 Stats: 0/100/0
 Money: $500
@@ -105,7 +100,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Goats Adventure
 Stats: 0/100/0
 Money: $500
@@ -117,7 +111,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -128,7 +121,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -142,7 +134,6 @@ Backpack: Lollipop
 Comment:
 Weird structure since we don't die, but OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -160,7 +151,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -174,7 +164,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -188,7 +177,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -200,7 +188,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -212,7 +199,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Merchant
 Stats: 0/100/0
 Money: $500
@@ -223,7 +209,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Hole
 Stats: 0/100/0
 Money: $500
@@ -236,7 +221,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Hole
 Stats: 0/100/0
 Money: $500
@@ -248,7 +232,6 @@ Backpack: Lollipop
 Comment: 
 OK
 
-Drake
 Forest: Hole
 Stats: 0/100/0
 Money: $500
@@ -261,7 +244,6 @@ Backpack: Lollipop
 Comment: 
 OK
 
-Drake
 Forest: Hole
 Stats: 0/100/0
 Money: $500
@@ -276,7 +258,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Hole
 Stats: 0/100/0
 Money: $500
@@ -289,7 +270,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
 Money: $500
@@ -302,7 +282,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
 Money: $500
@@ -315,7 +294,6 @@ Backpack: Lollipop, ax
 Comment:
 Alerts death too soon. Does not explain to user how the death occured.
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 100/0/0 (if health > 10)
 Money: $500
@@ -328,7 +306,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
 Money: $500
@@ -343,7 +320,6 @@ Backpack: Lollipop, ax
 Comment:
 Apparently I died twice! On a push, the death alert pops up before the 2nd roll.
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
 Money: $500
@@ -356,7 +332,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
 Money: $500
@@ -369,7 +344,6 @@ Backpack: Lollipop, ax
 Comment:
 OK, but grammer: some repetition with the mention of health - 5
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
 Money: $500
@@ -381,7 +355,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Enchanted Forest (River)
 Stats: 0/100/0
 Money: $500
@@ -392,7 +365,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Dead Body
 Stats 0/100/0
 Money: $460
@@ -403,7 +375,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Dead Body
 Stats 0/100/0
 Money: $460
@@ -422,7 +393,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Dead Body
 Stats 0/100/0
 Money: $460
@@ -444,7 +414,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Dead Body
 Stats 0/100/0
 Money: $460
@@ -466,7 +435,6 @@ Backpack: Lollipop, ax
 Comment:
 On #7, it asks if you want to take the sword again when user already clicked no 
 
-Drake
 Forest: Dead Body
 Stats 0/100/0
 Money: $460
@@ -488,7 +456,6 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Dead Body
 Stats 0/100/0
 Money: $460
@@ -509,14 +476,12 @@ Backpack: Lollipop, ax
 Comment:
 OK
 
-Drake
 Forest: Penguin
 1. Next
    * penguin
 Comment:
 OK
 
-Drake
 Mountain: Lion
 Stats: 0/100/0
 Money: $500
@@ -529,7 +494,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Mountain: Lion
 Stats: 0/100/0
 Money: $500
@@ -541,7 +505,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Mountain: Lion
 Stats: 0/100/0
 Money: $500
@@ -553,7 +516,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Mountain: Lion
 Stats: 0/100/0
 Money: $500
@@ -565,7 +527,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Mountain: Ascending The Peak
 Stats: 0/0/100
 Money: $500
@@ -578,7 +539,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 Still alive if I have -25 health.
 
-Drake
 Mountain: Ascending The Peak
 Stats: 25/100/0
 Money: $500
@@ -590,7 +550,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 Dead if I win the fight
 
-Drake
 Mountain: Ascending The Peak
 Stats: 25/100/0
 Money: $500
@@ -601,7 +560,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Ascending The Peak
 Stats: 25/100/0
 Money: $500
@@ -614,7 +572,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Ascending The Peak
 Stats: 25/100/0
 Money: $500
@@ -628,7 +585,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Ascending The Peak
 Stats: 25/100/0
 Money: $500
@@ -641,7 +597,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Ascending The Peak
 Stats: 25/100/0
 Money: $500
@@ -653,7 +608,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Merchant
 Stats: 25/100/0
 Money: $500
@@ -664,7 +618,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Merchant
 Stats: 25/100/0
 Money: $500
@@ -681,7 +634,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 Next will not work. Possibly because backpack cannot fit all these items.
 
-Drake
 Mountain: Merchant
 Stats: 25/100/0
 Money: $500
@@ -693,7 +645,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment: 
 OK
 
-Drake
 Mountain: Merchant
 Stats: 25/100/0
 Money: $500
@@ -705,7 +656,6 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Merchant
 Stats: 25/100/0
 Money: $500
@@ -716,14 +666,12 @@ Backpack: Lollipop, Mountain lion tooth
 Comment:
 OK
 
-Drake
 Mountain: Penguin
 1. Next
    * penguin obtained
 Comment:
 OK
 
-Drake
 Desert: dessert
 Stats: 0/100/0
 Money: $500
@@ -736,7 +684,6 @@ Backpack: Lollipop
 Comment: 
 OK
 
-Drake
 Desert: dessert
 Stats: 0/100/0
 Money: $500
@@ -750,7 +697,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: dessert
 Stats: 0/100/0
 Money: $500
@@ -763,7 +709,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: dessert
 Stats: 0/100/0
 Money: $500
@@ -775,7 +720,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: Merchant
 Stats: 5/100/0
 Money: $500
@@ -786,7 +730,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: Merchant:
 Stats: 5/100/0
 Money: $500
@@ -799,7 +742,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: Merchant
 Stats: 5/100/0
 Money: $500
@@ -812,7 +754,6 @@ Backpack: Lollipop
 Comment:
 The following is displayed in the text box during 2. Next confirmation: your.strenght = random(from 0 to Strength.Max), merchant.strength = random(from 0 to 30) is displayed in the text.
 
-Drake
 Desert: Merchant
 Stats: 5/100/0
 Money: $580
@@ -829,7 +770,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Merchant
 Stats: 5/100/0
 Backpack: Lollipop
@@ -840,7 +780,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: Merchant
 Stats: 5/100/0
 Backpack: Lollipop
@@ -852,7 +791,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: Merchant
 Stats: 5/100/0
 Backpack: Lollipop
@@ -862,7 +800,6 @@ Backpack: Lollipop
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -874,7 +811,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -888,7 +824,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -901,7 +836,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -914,7 +848,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -929,7 +862,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -943,7 +875,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -958,7 +889,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -972,7 +902,6 @@ Comment:
 OK
 
 <<RESOLVED>>
-Drake
 Desert: Cactus
 Stats: 30/175/5
 Money: $580
@@ -985,7 +914,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 Option is disabled
 
-Drake
 Desert: Canyon
 Stats: 30/190/5/580
 Money: $580
@@ -1002,7 +930,6 @@ eg) no pop up from
     - buying items from merchant, or
     - obtainin cactus
 
-Drake
 Desert: Canyon
 Stats: 30/190/5/580
 Money: $580
@@ -1015,7 +942,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 Inconsistency pop up
 
-Drake
 Desert: Canyon
 Stats: 30/190/5/580
 Money: $580
@@ -1028,7 +954,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Canyon
 Stats: 30/190/5/580
 Money: $580
@@ -1041,7 +966,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Canyon
 Stats: 30/190/5/580
 Money: $580
@@ -1054,7 +978,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Canyon
 Stats: 30/190/5/580
 Money: $580
@@ -1066,7 +989,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Canyon
 Stats: 30/190/5/580
 Money: $580
@@ -1079,7 +1001,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1092,7 +1013,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1105,7 +1025,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1117,7 +1036,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1130,7 +1048,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1143,7 +1060,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 It would make sense to increase strength here
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1155,7 +1071,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1170,7 +1085,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1184,7 +1098,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1197,7 +1110,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Pyramid
 Stats: 35/190/5/580
 Money: $580
@@ -1209,7 +1121,6 @@ Backpack: Lollipop, knife, sword, apple
 Comment:
 OK
 
-Drake
 Desert: Penguin
 1. Next
    * obtain Penguin
