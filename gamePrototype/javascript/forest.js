@@ -90,7 +90,7 @@ function arrayShowItem()
 			});
 			}
 			else if(gkScore >= gkVSplayer){   //gk wins
-				if(parseInt($("#health").val()) <= 20)
+				if(parseInt($("#health-points").val()) <= 20)
 				{
 					window.location.replace('#home-page');
 					alert("You are dead!!! Start over");      //player die
@@ -1096,7 +1096,7 @@ function forestEnd(){
 	  var pumaScore = Math.floor((Math.random() * 20));
 	  var player = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 	  alert('Your attack: ' + player+ '. Mountain lion\'s attack: '+ pumaScore + '.' );
-			if (player < pumaScore && (parseInt($("#health").val()) > 10))  //puma win
+			if (player < pumaScore && (parseInt($("#health-points").val()) > 10))  //puma win
 			{   
 				$("#mountain-headr").html('The cat rips you to shreds. It begins gnawing on you, but decides you taste gross and walks off. -10 Health');
 				$(".healthp").val(parseInt($("#health-points").val())-10);
@@ -1114,7 +1114,7 @@ function forestEnd(){
 					peak();  // next event peak
 				});
 			}
-	  		else if (parseInt($("#health").val()) <= 10)
+	  		else if (parseInt($("#health-points").val()) <= 10)
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
@@ -1141,7 +1141,7 @@ function forestEnd(){
 	  });
 	  $('#mountain-choice-5').click(function(){     //Run the way you came from.
 	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you\'re back where you started your climb up the mountain. Your leg hurt and got few bruisers from the fall (-20 Health).');
-		 if (parseInt($("#health").val()) <= 20)
+		 if (parseInt($("#health-points").val()) <= 20)
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
@@ -1205,7 +1205,8 @@ function forestEnd(){
 		var fairy = Math.floor((Math.random() * 60));
 		var playerVSfairy = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 		alert('Your attack: ' + playerVSfairy + '. Fairy\'s attack: '+ fairy + '.' );
-		if (playerVSfairy < fairy)  //fairy win
+		
+		if (playerVSfairy < fairy && (parseInt($("#health-points").val()) > 25))  //fairy win
 		{   
 			$("#mountain-headr").html('You have lost the fight (-25 Health), but you are still alive. Pleading for mercy you are spared by a fairy who leaves you on the ground. In te evening you are finally able to move and continue your journey.');
 			$(".healthp").val(parseInt($("#health-points").val())-25);
@@ -1214,10 +1215,10 @@ function forestEnd(){
 				MerchantInMountains();//next event story 3 mountain
 			});
 		}
-		else if(playerVSfairy >= fairy && (parseInt($("#health").val()) > 25)) //fairy lose
+		else if(playerVSfairy >= fairy ) //fairy lose
 		{
 			$("#mountain-headr").html('You have won the fight (Strength +20) and you take the super sword (+60 Strength) from dead fairy');
-			$$(".strengthp").val(parseInt($("#strength-points").val())+20);
+			$(".strengthp").val(parseInt($("#strength-points").val())+20);
 			$('#mountain-select-1').append('<input type="button" value="Next" id="next71" data-inline="true" data-mini="true" data-icon="check" class="next71">').trigger('create');
 			$(".next71").click(function(){ 
 				$("#mountain-headr").html('Do you want to put it in your backpack ?');
@@ -1247,12 +1248,12 @@ function forestEnd(){
 				});
 			}); 
 	   }
-		else if (parseInt($("#health").val()) <= 25)
-			{
+	   else if(parseInt($("#health-points").val()) <= 25)
+	   {
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
 				location.reload();
-			}
+	   }
 	 });   
 	//Leave her alone and continue your journey.
 	 $("#mountain-choice-7").click(function(){ 
@@ -1375,7 +1376,7 @@ function MerchantInMountains(){
 		var fightYou = Math.floor (Math.random() * (parseInt($("#strength-points").val())) );
         var fightOpponent = Math.floor (Math.random() * 70);
 		alert('Your attack: ' + fightYou + '. Merchant\'s attack '+ fightOpponent + '.' );
-		if (fightYou < fightOpponent && (parseInt($("#health").val()) > 25))  //Merchant win
+		if (fightYou < fightOpponent && (parseInt($("#health-points").val()) > 25))  //Merchant win
 		{   
 			$("#mountain-headr").html('You have lost the fight (-25 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) Do you want to put it in your backpack or leave it.');
 			$(".healthp").val(parseInt($("#health-points").val())-25);
@@ -1469,7 +1470,7 @@ function MerchantInMountains(){
 			});
 			
 	}
-	else if (parseInt($("#health").val()) <= 25)
+	else if (parseInt($("#health-points").val()) <= 25)
 	{
 		window.location.replace('#home-page');
 		alert("You are dead!!! Start over");      //player die
@@ -1554,7 +1555,7 @@ function MerchantInMountains(){
 						{	
 							backpack.push("knife");											 //add knife to backpack
 							$("#money").val(parseInt($("#money").val()) - 100);
-							$$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
+							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
 						}
 						else {
@@ -1734,7 +1735,7 @@ function mountainEnd(){
 			var merchant2 = Math.floor((Math.random() * 30));
 			var mrVSplayer2 = Math.floor((Math.random() *  (parseInt($("#strength-points").val())) ));
 			alert('Your attack: ' + mrVSplayer2  + ' Merchant\'s attack:' + merchant2);
-			if(mrVSplayer2 < merchant2 && (parseInt($("#health").val()) > 20)) 
+			if(mrVSplayer2 < merchant2 && (parseInt($("#health-points").val()) > 20)) 
 			{   //player lose fight
 				$("#desertHeadre").html('-20 Health. You have lost the fight but merchant lets your go. He feels pity for you and your poor phrases and gives you an apple  (+5 health) which you can put in your backpack or leave it.');   //#backpack !!!!!!!
 				$("#desert-select1").empty();
@@ -1823,7 +1824,7 @@ function mountainEnd(){
 						desert3story();//function to story 3 desert
 					});
 			}
-			else if (parseInt($("#health").val()) <= 20)
+			else if (parseInt($("#health-points").val()) <= 20)
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
@@ -1966,7 +1967,7 @@ function desert3story(){
 				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-40" value="choice-1" type="radio"><label for="radio-choice-40">Continue walking towards Cactus Island.</label>').trigger('create');
 				$("#radio-choice-39").click(function(){
 					$("#desertHeadre").html('You decide to wait. Your phone has no wifi so you decide to play Angry Birds while you wait for the rain. 4 hours has passed and your phone is receiving wifi again. You look up the weather and notice the weather app says it will only be cloudy. You do some research and realize that it does not rain here. You decide to once again walk towards Cactus Island, 1 mile down the road. Health: -5.');
-					if (parseInt($("#health").val()) <= 5)
+					if (parseInt($("#health-points").val()) <= 5)
 					{
 						window.location.replace('#home-page');
 						alert("You are dead!!! Start over");      //player die
@@ -2134,7 +2135,7 @@ function desert3story(){
 					$("#desert-select2").empty();
 					$('#desert-select1').append('<input type="button" value="Next" id="next24" data-inline="true" data-mini="true" data-icon="check" class="next24">').trigger('create');
 					$(".next24").click(function(){ 
-						if (parseInt($("#health").val()) < 0)
+						if (parseInt($("#health-points").val())) < 0)
 						{
 							$("#desertHeadre").html('You fall into your own death within the 8th mile to dehydration. GAME OVER');
 							$("#desert-select1").empty();
@@ -2172,7 +2173,7 @@ function desert3story(){
 						$("#desertHeadre").html('You decide to ignore the python and walk. As you begin to walk, the python sneaks up from behind you. Before you can do anything to stop it, it strikes at you. (-20 Health)');
 						$("#desert-select1").empty();
 						$("#desert-select2").empty();
-						if (parseInt($("#health").val()) <= 20)
+						if (parseInt($("#health-points").val()) <= 20)
 						{
 							window.location.replace('#home-page');
 							alert("You are dead!!! Start over");      //player die
@@ -2201,6 +2202,7 @@ function desert3story(){
 						$("#desert-select1").empty();
 						$("#desert-select2").empty();
 						$(".strengthp").val(parseInt($("#strength-points").val())+15);
+						$(".healthp").val(parseInt($("#health-points").val())+15);
 						$('#desert-select1').append('<input type="button" value="Next" id="next410" data-inline="true" data-mini="true" data-icon="check" class="next410">').trigger('create');
 						$(".next410").click(function(){ 
 							desert4story();//next story desert 4
@@ -2281,7 +2283,7 @@ function desert4story(){
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
-				if (parseInt($("#health").val()) <= 10)
+				if (parseInt($("#health-points").val()) <= 10)
 				{
 					window.location.replace('#home-page');
 					alert("You are dead!!! Start over");      //player die
@@ -2439,7 +2441,7 @@ function desert5story() {
 				$(".next37").click(function(){ 
 					$("#desertHeadre").html('You don\'t have anything to fight mummy off, so mummy attacks you (-10 Health), but since you are easy target for her, gets quickly borred and leave you alone.');
 					$("#desert-select1").empty();
-					if (parseInt($("#health").val()) <= 10)
+					if (parseInt($("#health-points").val()) <= 10)
 					{
 						window.location.replace('#home-page');
 						alert("You are dead!!! Start over");      //player die
@@ -2584,7 +2586,7 @@ function desert5story() {
 				$(".next37").click(function(){ 
 					$("#desertHeadre").html('You don\'t have anything to fight mummy off, so mummy attacks you (-10 Health), but since you are easy target for her, gets quickly borred and leave you alone.');
 					$("#desert-select1").empty();
-					if (parseInt($("#health").val()) <= 10)
+					if (parseInt($("#health-points").val()) <= 10)
 					{
 						window.location.replace('#home-page');
 						alert("You are dead!!! Start over");      //player die
