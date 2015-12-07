@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="game.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
   <script src="javascript/home.js"></script>
   <script src="javascript/tutorial.js"></script>
   <script src="javascript/forest.js"></script> 
@@ -112,7 +113,7 @@
       <div class="ui-bar" id="project-details"> <!-- wrap content of the header -->
 	 <img src="images/logo_small.png" alt="Small Game Logo" height="60" width="86">
          <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right"> <!-- grouped buttons in the header -->
-     	   <a href="#home-page" data-icon="star" id="about">Home</a>
+     	   <a href="#home-page" data-icon="star" id="back-home-btn">Home</a>
       	</div> <!-- end of grouped buttons -->
     </div> <!-- end of content of header -->
   </div> <!-- end of header -->
@@ -123,7 +124,7 @@
 
       <div id="group-members">
         <div id="member1" class="member">
-          <img src="#" alt="Image of Group Member #1" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
+          <img src="tari.png" alt="Image of Group Member #1" class="member-img" width="150" height="150" style="border-radius: 6em;border:2px solid black;">
           <h3>Tari</h3>
           <p class="about-member">Functional Spec/Graphics. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum sapien vel massa commodo, ac pulvinar ante condimentum.</p>
         </div>
@@ -253,8 +254,8 @@
   <div role="main" class="ui-content" id="tutorial-content">
       <fieldset data-role="controlgroup" class="ui-bar-b text-container">
 	 <legend style="text-align: justify; padding: 15px;"><p id="demoHeader">First, explore the upper panel by mousing over fields.<br><br>
-          You will have 2-4 options to choose from in each step.
-           Once you make a choice, you can't go back. For example, you meet an enemy. What do you do? Click 'Fight' to see what can happen.
+	You will have 2-4 options to choose from in each step.
+           Once you make a choice, you can't go back. For example, you meet an enemy. Click any option to see what can happen.
           </p></legend>
 	  <div id="demo-select1">
               <input name="demo-choice-1" id="demo-choice-1" value="choice-1" type="radio">
@@ -379,14 +380,12 @@
   </div> <!-- end of PYTHON'S NEST page -->
 
 
-
-  <!-- GAME OVER PAGE -->
-  <div data-role="page" id="game-over-page">
-   <div class="ui-content" role="main">
-	<h1>GAME OVER!</h1>
+<!-- YOU VICTORY PAGE -->
+  <div data-role="page" id="victory-page">
+   <div class="ui-content" role="main" id="victory-content">
     <a href="#home-page" id="restart" class="ui-btn ui-shadow ui-btn-inline ui-corner-all">Restart</a>
-    </div> <!-- end of content on game over page -->
-  </div> <!-- end of game over page -->
+    </div> <!-- end of content on victory page -->
+  </div> <!-- end of victory page -->
 
   <script>
 				 
