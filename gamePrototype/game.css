@@ -5,34 +5,21 @@
 
 /* overwrite default jQuery Mobile style */
 .ui-page {
-  background-color: -webkit-gradient(
-  linear,
-  right top,
-  right top,
-  color-stop(0.21, #FCEC5B),
-  color-stop(0.69, #56E3FC)
-  );
-  background-image: -o-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
-  background-image: -moz-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
-  background-image: -webkit-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
-  background-image: -ms-linear-gradient(right top, #FCEC5B 21%, #56E3FC 69%);
-  background-image: linear-gradient(to right top, #FCEC5B 21%, #56E3FC 69%);
+  background-color: #25B0E6;
+  background: -webkit-linear-gradient(89deg, #e6ed60, #1faeeb);
+  background: -moz=linear-gradient(89deg, #e6ed60, #1faeeb);
+  background: -o-linear-gradient(89deg, #e6ed60, #1faeeb);
+  background: linear-gradient(89deg, #e6ed60, #1faeeb);
   padding: 0px !important; 
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
-
-.ui-content {
-    /*background: white !important;    */
-}
-
 
 /* TITLE SCREEN */
 /*......................................*/
   #title-screen {
     text-align: center;
     margin-top: 100px;
-   }
- 
+}
   /* make keyframes that tell the start state and the end state of our object */
    
   @-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -74,6 +61,29 @@
     opacity: 0;
   }
 
+  /* BUTTONS ON TITLE SCREEN AND HOME PAGE */
+  /*.................................................... */
+   #title-screen .ui-btn, #accordion .ui-input-btn, #about, #begin, #back-home-btn, #victory-content .ui-btn {
+      background-color: rgba(0,0,0,.5);
+      text-shadow: none;
+      text-transform: uppercase;
+      color: white;
+      border: none;
+      transition: all 0.5s ease;
+   }
+
+  #title-screen .ui-btn:hover,  #victory-content .ui-btn:hover {
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.91);
+    -moz-box-shadow:    0px 0px 11px 0px rgba(0, 0, 0, 0.91);
+    box-shadow:         0px 0px 11px 0px rgba(0, 0, 0, 0.91);
+  }
+
+  #accordion .ui-input-btn:hover, #about:hover, #about:focus, #begin:hover, #back-home-btn:hover {
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(170, 246, 255, 0.84);
+    -moz-box-shadow:    0px 0px 13px 0px rgba(170, 246, 255, 0.84);
+    box-shadow:         0px 0px 13px 0px rgba(170, 246, 255, 0.84);
+  }
+
 /* HOME PAGE settings */
 /*......................................*/
 
@@ -88,6 +98,7 @@
 
   /* Header on home page */
   /*............................... */
+
   #header1 {
     background-color: rgba(0,0,0,.7);
     border-bottom: 2px solid #FCEC5B;
@@ -149,14 +160,22 @@
     }
 
   #accordion .ui-collapsible-content .ui-input-text  {
-    /*-webkit-box-shadow: 0px 5px 18px 0px rgba(25, 25, 25, 0.56);
-      -moz-box-shadow:    0px 5px 18px 0px rgba(25, 25, 25, 0.56);
-      box-shadow:         0px 5px 18px 0px rgba(25, 25, 25, 0.56);  
-  */
-    /*background: #F0FFF0;*/
     border: 1px solid silver;
   }
 
+  /* select option styling */
+  #accordion .ui-select .ui-btn {
+    background-color: #7ACBAC;
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  #accordion .ui-select .ui-btn:hover {
+   -webkit-box-shadow: 0px 0px 4px 0px rgba(168, 217, 139, 0.91);
+-moz-box-shadow:    0px 0px 4px 0px rgba(168, 217, 139, 0.91);
+box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
+  }
   #accordion a.ui-input-clear {
     background: rgba(0,0,0,.6);
   }
@@ -245,6 +264,7 @@
 
 /* TUTORIAL PAGE */
 /* ....................................*/
+
   .ui-tooltip {
       font-size: 12px;
       padding: 15px;
@@ -256,14 +276,8 @@
 /* MAIN GAME settings */
 /*......................................*/
 
-/* example settings for page background */
  #tutorial-content {
-    padding-top: 100px;
-    /*background-color: #fff;
-    background-image: url("#");
-    background-position: top center;
-    background-attachment: fixed;
-    background-size: cover;*/
+    padding-top: 120px;
   }
 
   /* external header settings */
@@ -282,15 +296,15 @@
   }
 
 #header2-content #set-description {
-  flex: 2;
-  line-height: 25px;
+  flex: 3;
+  line-height: 22px;
   text-align: left;
   display: block;
 }
 
 #set-char, #set-goal, #set-name {
-  letter-spacing: 2px;
-  color: #00BFFF;
+  color: rgba(44, 178, 225, 1);
+  font-size: 15px;
 }
 
   #header2-content #user-points {
@@ -305,17 +319,21 @@
 
    #header2-content #user-points input {
       text-align: center;
-      border: 2px solid white;
+      background-color: 2px solid white;
    }
 
    /* container for 3 images with penguins */
   #header2-content #penguins {
     text-align: center;
-    padding: 10px;
+    padding-top: 10px;
     flex: 2;
+    background-color: rgba(0, 191, 255, .2);
+    border-radius: 6px;
   }
 
+
   #header2-content .penguin {
+     margin-left: 8px;
     background-color: black;
     background-image: url("images/penguin.png");
     background-size: cover;
@@ -327,7 +345,7 @@
   }
 
   #header2-content #controls {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 20px;
     flex: 2;
   }
@@ -349,12 +367,51 @@
   #mypanel .ui-btn {
     margin-top: 20px;
   }
-  /* reduce size of fieldsets to half*/
+  #mypanel .ui-btn:hover {
+    background-color: rgba(44, 178, 225, 0.6)!important;
+    transition: all 0.5s ease;
+     -webkit-box-shadow: -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+    -moz-box-shadow:    -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+    box-shadow:         -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+  }
+
+  /* popup with hints */
+
+  #popupDialog .ui-header {
+
+}
+
+#popupDialog {
+  /*background-color: rgba(101, 196, 186, .8);*/
+}
+
+  /* styling of the main game text container */
   .text-container {
-    width: 50%;
+    font-size: 16px;
+    width: 100%;
     text-align: center;
     padding: 15px;
     line-height: 30px;
+    background-color: rgba(0,0,0,.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .ui-btn-icon-left::after {
+    left: 0.4em;
+  }
+
+  html .ui-bar-b .ui-btn:focus, html .ui-bar-b .ui-btn:active, html .ui-bar-b .ui-btn:hover {
+    -webkit-box-shadow: -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+    -moz-box-shadow:    -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+    box-shadow:         -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+    background-color: rgba(44, 178, 225, 0.6);
+    transition: all 0.5s ease;
+  }
+
+  .text-container .ui-btn {
+    text-align: center;
   }
 
   .text-container p {
@@ -365,11 +422,269 @@
     padding: 15px;
   }
 
-  #city-content, #forest-content, #mountain-content, #desert-content, #final-battle-content {
-    padding-top: 100px;
-  }
-
-  #game-over-content {
+  #victory-content {
     text-align: center;
     padding-top: 200px;
   }
+
+  #restart {
+    position: absolute;
+    bottom: 50px;
+    left: 47%;
+  }
+
+  #city-page {
+    background-image: url(images/Crossroad.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 130%;
+  }
+
+  #forest-page {
+    background-image: url(images/Forest.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  #mountain-page {
+    background-image: url(images/Mountains.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+
+   #desert-page {
+    background-image: url(images/Desert.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 100%;
+  }
+
+   #python-page {
+    background-image: url(images/PythonNest.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  #victory-page {
+    background-image: url(images/victory.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 100%;
+  }
+
+  @media all and (max-width: 64em) {
+  
+/* TITLE SCREEN */
+/*......................................*/
+  #title-screen {
+    margin-top: 60px;
+   }
+
+   #logo {
+    width: 300px;
+    height: 208px;
+    margin-bottom: 30px;
+  }
+
+
+  /* HOME PAGE settings */
+/*......................................*/
+
+  #home-page-content {
+    padding: 20px;
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 120px;
+    }
+
+   #project-details {
+      margin: 5px 5px;
+      font-size: 18px;
+    }
+
+    #introduction {
+      border: 1px solid black;
+      flex: 1;
+      font-size: 16px;
+      padding: 10px;
+      line-height: 1.5em;   
+    }
+
+    #introduction h1 {
+       margin: 15px;
+       font-size: 20px;
+      }
+
+    #accordion {
+      flex: 1;
+      margin: 0px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    #accordion input {
+      text-align: center;
+       font-size: 15px;
+    }
+
+    #begin {
+      margin-top: 15px;
+    margin-bottom: 10px;
+    }
+
+  /* ABOUT page settings */
+  /* ...................................... */
+
+   #about-page-content {
+    padding: 20px;
+      margin: 0 auto;
+      width: 90%;
+      padding-top: 120px;
+    font-size: 15px;
+    }
+
+    #about-page-content h2 {
+      font-size: 17px;
+    }
+
+    #group-members {
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+
+    .member {
+      margin: 5px;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+  }
+
+  /* MAIN GAME settings */
+  /*......................................*/
+
+  #tutorial-content, #city-content {
+    padding-top: 200px;
+  }
+
+  #header2-content {
+      padding-right: 5px;
+      padding-left: 5px;
+      flex-wrap: wrap;
+   }
+
+  #header2-content #set-description {
+    display: none;
+  }
+
+  #header2-content #user-points {
+      flex: 1;
+      order: 3;
+      margin-right: 10px;
+  }
+
+  #user-points label  {
+    font-size: 13px;
+  }
+
+  #header2-content #user-points input {
+    height: 4px;
+  }
+
+   /* container for 3 images with penguins */
+  #header2-content #penguins {
+     padding-top: 5px;
+    text-align: center;
+    flex: 100%;
+    order: 2;
+    background-color: rgba(0, 191, 255, .3);
+    border-radius: 6px;
+    margin: 3px;
+    margin-right: 10px;
+    height: 40px;
+  }
+
+  #header2-content .penguin {
+    height: 30px;
+    width: 30px;
+  }
+
+  #header2-content #controls {
+    margin: 5px;
+    flex: 100%;
+    order: 1;
+  }
+
+   .text-container {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    line-height: 25px;
+  margin: 5px;
+  position: relative;
+  }
+
+  #forest-content, #mountain-content, #desert-content, #victory-page, #final-battle-content {
+    padding-top: 200px;
+  }
+
+  #victory-content {
+    text-align: center;
+  }
+
+  #restart {
+    position: absolute;
+    bottom: 50px;
+    left: 40%;
+  }
+
+  #city-page {
+    background-image: url(images/Crossroad.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  #forest-page {
+    background-image: url(images/Forest.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+
+  #mountain-page {
+    background-image: url(images/Mountains.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+
+   #desert-page {
+    background-image: url(images/Desert.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: cover;
+  }
+
+   #python-page {
+    background-image: url(images/PythonNest.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  #victory-page {
+    background-image: url(images/victory.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  }
+}
+
+
