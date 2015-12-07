@@ -2681,11 +2681,11 @@ function desertEnd(){
 	
 	//Do not give penguins
 	$('#final-choice-1').click(function(){
-		if(!($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible')))
+		if(!($('#penguin1').is(':visible') && $('#penguin2').is(':visible') && $('#penguin3').is(':visible')))
 		{
 			nopenguins();
 		}
-		else if($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible'))
+		else if($('#penguin1').is(':visible') && $('#penguin2').is(':visible') && $('#penguin3').is(':visible'))
 		{
 			$("#pythonHeader").html('You didn\'t give penguins to the Pythons and tried to protectem. Python ate you instead of penguins. You died. Game OVER.');
 			$("#python-select1").empty();
@@ -2701,11 +2701,11 @@ function desertEnd(){
 	
 	//give penguins
 	$('#final-choice-2').click(function(){
-		if(!($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible')))
+		if(!($('#penguin1').is(':visible') && $('#penguin2').is(':visible') && $('#penguin3').is(':visible')))
 		{
 			nopenguins();
 		}
-		else if($('#penguin1').is(':visible') && $('#penguin1').is(':visible') && $('#penguin1').is(':visible'))
+		else if($('#penguin1').is(':visible') && $('#penguin2').is(':visible') && $('#penguin3').is(':visible'))
 		{
 			$('#pythonHeader').html('Python ate penguins, but lets you through.');
 			$("#python-select1").empty();
