@@ -3,10 +3,10 @@ $( document ).ready(function() {
 	$( document ).tooltip();
 
 	// demo of the fight situatuin
-	$( "#demo-select1" ).click(function() {
-		var demoUpdatedText1 = '<p>Say, you had enough strength and you beat the enemy!' +
-		' You find a lollipop in his pocket. You have an option to keep it or ignore it. Click "Keep the item" ' +
-		'and then check you backpack.</p>'
+	$( "#demo-select1, #demo-select2, #demo-select3, #demo-select4" ).click(function() {
+		var demoUpdatedText1 = '<p>Say, you had enough strength, you fight the enemy and you win!' +
+		' You find a lollipop in his pocket. You have an option to keep it or ignore it. Click any option, ' +
+		'but then check you backpack.</p>'
 
   		$("#demoHeader").html(demoUpdatedText1);
   		// remove extra choices
@@ -18,11 +18,11 @@ $( document ).ready(function() {
 
 
   			// demo of selecting an item
-		  	$( "#demo-select1" ).click(function() {
+		  	$( "#demo-select1, #demo-select2").click(function() {
 		  		$("#demoItem").html('Lollipop');
 		  		$("#backpack").html('');
 
-		  		var demoUpdatedText2 = "<p>This is how you choose to put a new item in your backpack " +
+		  		var demoUpdatedText2 = "<p>By clicking 'Keep the item' you will collect useful items in your backpack " +
 		  		"(you still have 5 free spots, the lollipop is a little gift to cheer you up!). " +
 		  		"<br>You will begin your game in the city and will return there to change the game area. " +
 		  		"When you complete all three areas, you can go to the Python's nest" +
@@ -33,7 +33,7 @@ $( document ).ready(function() {
 				$("#demo-select2").empty();
 
 				// add 'Im ready to go to the city' button
-				 var goToCityButton = "<a href='#city-page' class='ui-btn ui-shadow ui-btn-inline ui-icon-arrow-d ui-btn-icon-left'>I'm ready to go to the City!</a>";
+				 var goToCityButton = "<a href='#city-page' class='ui-btn ui-shadow ui-btn-inline ui-icon-arrow-d ui-corner-all ui-btn-icon-left'>I'm ready to go to the City!</a>";
 				$("#demo-select1").append(goToCityButton);
 		  	});
   	});
