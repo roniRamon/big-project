@@ -817,7 +817,7 @@ function story5Forest() {
 						$(".nobook2").click(function(){
 							$("#headerGame").html('Do you whant to take the Apple?');
 							$("#select1").empty();
-							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple">input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
+							$('#select1').append('<input type="button" value="Yes" id="yesApple" data-inline="true" data-mini="true" data-icon="check" class="yesApple"><input type="button" value="No" id="noApple" data-inline="true" data-mini="true" data-icon="check" class="noApple">').trigger('create');
 							$(".yesApple").click(function(){
 								apple();
 								keepGoingStory5();
