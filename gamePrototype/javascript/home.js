@@ -132,6 +132,11 @@
 
     // initialize the external header#2
     $( "#header2" ).toolbar();
+	  
+	  $("#quit-game").click(function() {
+		  	window.location.replace('#home-page');
+	  		location.reload();
+	  });
 });
 
 
