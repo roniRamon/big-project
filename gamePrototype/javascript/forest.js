@@ -1253,7 +1253,7 @@ function forestEnd(){
 	  				{								
 						alert("you alrady have the super sword");
 	  				}
-	  				else if((!backpackCheak("super sword") )&& backpack.length <=4)
+	  				else if((!backpackCheak("super sword") )&& backpack.length < 4)
 	  				{
 						backpack.push("super sword");							//add super swordto backpack
 						alert('you put in your backpack a super sword');
