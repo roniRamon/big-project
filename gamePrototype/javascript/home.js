@@ -137,6 +137,10 @@
 		  	window.location.replace('#home-page');
 	  		location.reload();
 	  });
+	  
+	  
+	  
+	 
 });
 
 
@@ -150,3 +154,6 @@
         $("#header2").show();
     }
   });
+
+
+ 

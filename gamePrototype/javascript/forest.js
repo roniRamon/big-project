@@ -71,7 +71,7 @@ function arrayShowItem()
 		$('#select1').append('<input name="radio-choice-2" id="radio-choice-4" value="choice-1" type="radio"><label for="radio-choice-4">Fight</label>').trigger('create'); 
 		$('#select2').append('<input name="radio-choice-2" id="radio-choice-5" value="choice-2" type="radio"><label for="radio-choice-5">Walk away</label>').trigger('create'); 	
 		$('#radio-choice-4').click(function(){      //option C:A
-			$("#headerGame").html('You attach the goat-keeper (Strength 100) Your.strength (a random between 0 to max.strength) Gk.strength (random between 0 to 100)');
+			$("#headerGame").html('You attack the goat-keeper');
 			$("#select1").empty();
 			$("#select2").empty();
 			var gkScore = Math.floor((Math.random() * 100));
@@ -407,7 +407,7 @@ function story3Forest() {
 					$(".next3").click(function(){ 
 						alert("You are dead!!! Start over");
 						window.location.replace('#home-page');      //player die
-						location.reload();
+						location.reload(true);
 				});
 				
 			});
