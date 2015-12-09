@@ -1,24 +1,25 @@
 Summary:
 Role playing game for students, PG 13.
-The game will be based on predefined scenario and main goal to achieve. 
+The game will feature several playable characters with a selectable goal. To win the game,
+the user must play through a choose your own adventure style story and complete their goal.
 
 Beginning of the game
 <<NICE TO HAVE>> User has to choose the main character: Viking, Warrior Princess, Cheese, 
-Cone. And goals: Save Prince, Milk Cow, Plant a tree, Eat the most delicious ice-cream in 
+or Pinecone, and a goal: Save Prince, Milk Cow, Plant a tree, Eat the most delicious ice-cream in 
 the world before it melts.<<>> 
 
-User will start the game with giving a name to their character and assigning points to the 
+User will start the game by giving a name to their character and assigning points to the 
 attributes of the character. The main attributes are:
--	Health – which has to be maintained on the positive level in order to keep the character 
-alive. This parameter might be decreased during the fight. Health recovery will be available 
-at special events and during meeting selected characters during events
--	Strength – a measure of combat strength of the character. Might be increased by certain 
-artefacts gathered in selected events or after winning the fight with selected creatures. 
-This parameter can be decreased only by removing equipment which was giving it additional 
-values. The base strength of the character cannot be decreased 
--	Intelligence – measure of negotiation and empathy skills of the character. By developing 
-this skill character might avoid a fight with some of the creatures, can get better deals 
-with merchants and while picking up items will have more choices to pick from
+-	Health – which has to remain above zero in order to keep the character alive. This parameter
+might be decreased during the fight. Health recovery will be available at special events 
+during the game.
+-	Strength – A measure of combat strength of the character. Strength can be increased by certain 
+artifacts gathered in selected events or after winning a fight. The base strength of the character
+cannot be decreased.
+-	Intelligence – A measure of the characters ability to persuade in game characters and discover
+hidden features. By developing this skill, the character might avoid a fight with some of the
+creatures, get better deals with merchants and have more item choices from events.
+
 User will be given initial number of points which they need to redistribute between above 
 parameters. Depending on it user can create more defensive (higher input on intelligence 
 and health) or offensive (attach and health) character.
