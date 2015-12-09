@@ -632,7 +632,7 @@ function story4Forest() {
 					{
 						window.location.replace('#home-page');
 						alert("You are dead!!! Start over");      //player die
-						location.reload();
+						location.reload(true);
 					}
 				//	
 		 });
@@ -1139,7 +1139,7 @@ function forestEnd(){
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
-				location.reload();
+				location.reload(true);
 			}
   	});
   });
@@ -1167,7 +1167,7 @@ function forestEnd(){
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
-				location.reload();
+				location.reload(true);
 			}
 		  else
 		  {
@@ -1276,7 +1276,7 @@ function forestEnd(){
 	   {
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
-				location.reload();
+				location.reload(true);
 	   }
 	 });   
 	//Leave her alone and continue your journey.
@@ -1350,7 +1350,7 @@ function forestEnd(){
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
-				location.reload();
+				location.reload(true);
 			}
 		});
 		// don't attach dragon
@@ -1503,7 +1503,7 @@ function MerchantInMountains(){
 	{
 		window.location.replace('#home-page');
 		alert("You are dead!!! Start over");      //player die
-		location.reload();
+		location.reload(true);
 	}	
 			$("#mountain-choice-21").click(function(){ 
 				mountainEnd();//next event end of mountain
@@ -1681,7 +1681,7 @@ function mountainEnd(){
 				$(".next2-2").click(function(){ 
 					alert("You are dead!!! Start over");
 					window.location.replace('#home-page');      //player die
-					location.reload();
+					location.reload(true);
 				});
 			});
 	  });
@@ -1864,7 +1864,7 @@ function mountainEnd(){
 			{
 				window.location.replace('#home-page');
 				alert("You are dead!!! Start over");      //player die
-			location.reload();
+			location.reload(true);
 			}	
 		}); 
 	});
@@ -2010,7 +2010,7 @@ function desert3story(){
 					{
 						window.location.replace('#home-page');
 						alert("You are dead!!! Start over");      //player die
-						location.reload();
+						location.reload(true);
 					}
 					else 
 					{
@@ -2111,7 +2111,7 @@ function desert3story(){
 					$(".next23").click(function(){ 
 						alert("You are dead!!! Start over");
 						window.location.replace('#home-page');      //player die
-						location.reload();
+						location.reload(true);
 					});
 				});
 				// Continue walking
@@ -2184,7 +2184,7 @@ function desert3story(){
 							$(".next25D").click(function(){ 
 								alert("You are dead!!! Start over");
 								window.location.replace('#home-page');      //player die
-								location.reload();
+								location.reload(true);
 							});
 						}
 						else // you are still alive  
@@ -2216,7 +2216,7 @@ function desert3story(){
 						{
 							window.location.replace('#home-page');
 							alert("You are dead!!! Start over");      //player die
-							location.reload();
+							location.reload(true);
 						}
 						else
 						{
@@ -2312,7 +2312,7 @@ function desert4story(){
 					$(".next30").click(function(){ 
 						alert("You are dead!!! Start over");
 						window.location.replace('#home-page');      //player die
-						location.reload();
+						location.reload(true);
 					});
 			});
 			//You jump into the canyon
@@ -2325,7 +2325,7 @@ function desert4story(){
 				{
 					window.location.replace('#home-page');
 					alert("You are dead!!! Start over");      //player die
-					location.reload();
+					location.reload(true);
 				}
 				else
 				{
@@ -2369,7 +2369,7 @@ function desert4story(){
 				$(".next30").click(function(){ 
 					alert("You are dead!!! Start over");
 					window.location.replace('#home-page');      //player die
-					location.reload();
+					location.reload(true);
 				});
 			});
 			//>You jump into the canyon and disappear
@@ -2430,7 +2430,7 @@ function desert4story(){
 					$(".next30").click(function(){ 
 						alert("You are dead!!! Start over");
 						window.location.replace('#home-page');      //player die
-						location.reload();
+						location.reload(true);
 					});
 			});
 		});		
@@ -2483,7 +2483,7 @@ function desert5story() {
 					{
 						window.location.replace('#home-page');
 						alert("You are dead!!! Start over");      //player die
-						location.reload();
+						location.reload(true);
 					}
 					else
 					{
@@ -2598,7 +2598,7 @@ function desert5story() {
 						$(".next37").click(function(){ 
 							alert("You are dead!!! Start over");
 							window.location.replace('#home-page');      //player die
-							location.reload();
+							location.reload(true);
 						});
 					});//66
 					//Hand it the gold
@@ -2628,7 +2628,7 @@ function desert5story() {
 					{
 						window.location.replace('#home-page');
 						alert("You are dead!!! Start over");      //player die
-						location.reload();
+						location.reload(true);
 					}
 					else
 					{
@@ -2694,7 +2694,7 @@ function desertEnd(){
 			$(".next100").click(function(){ 
 				alert("You are dead!!! Start over");
 				window.location.replace('#home-page');      //player die
-				location.reload();
+				location.reload(true);
 			});
 		}
 	});
@@ -2751,7 +2751,7 @@ function desertEnd(){
 						$(".next102").click(function(){ 
 							alert("You are dead!!! Start over");
 							window.location.replace('#home-page');      //player die
-							location.reload();
+							location.reload(true);
 						});
 					}
 					else
