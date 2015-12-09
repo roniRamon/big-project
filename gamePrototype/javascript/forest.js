@@ -92,8 +92,8 @@ function arrayShowItem()
 			else if(gkScore >= gkVSplayer){   //gk wins
 				if(parseInt($("#health-points").val()) <= 20)
 				{
-					window.location.replace('#home-page');
-					alert("You are dead!!! Start over");      //player die
+					alert("You are dead!!! Start over"); 
+					window.location.replace('#home-page');//player die
 					location.reload(true);
 				}
 				else
