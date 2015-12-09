@@ -94,7 +94,7 @@ function arrayShowItem()
 				{
 					window.location.replace('#home-page');
 					alert("You are dead!!! Start over");      //player die
-					location.reload();
+					location.reload(true);
 				}
 				else
 				{
