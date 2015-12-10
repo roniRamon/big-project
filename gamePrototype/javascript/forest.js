@@ -92,9 +92,15 @@ function arrayShowItem()
 			else if(gkScore >= gkVSplayer){   //gk wins
 				if(parseInt($("#health-points").val()) <= 20)
 				{
-					alert("You are dead!!! Start over"); 
-					window.location.replace('#home-page');//player die
-					location.reload(true);
+					$( "#popupDead" ).popup( "open" )
+					$( "#popupDead" ).bind({
+						popupafterclose: function(event, ui) { 
+						window.location.replace('#home-page');      //player die
+						location.reload(true);
+						}
+					 });
+					
+					
 				}
 				else
 				{
@@ -403,12 +409,13 @@ function story3Forest() {
 				$("#select1").empty();
 				$("#select2").empty();
 				$("#select3").empty();	
-				$('#select1').append('<input type="button" value="Next" id="next3" data-inline="true" data-mini="true" data-icon="check" class="next3">').trigger('create');
-					$(".next3").click(function(){ 
-						alert("You are dead!!! Start over");
+				$('#select1').append('<a href="#popupDead" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+					$( "#popupDead" ).bind({
+						popupafterclose: function(event, ui) { 
 						window.location.replace('#home-page');      //player die
 						location.reload(true);
-				});
+						}
+					 });
 				
 			});
 			$("#radio-choice-16").click(function(){
@@ -630,9 +637,14 @@ function story4Forest() {
 				}
 				else if(parseInt($("#health-points").val()) <= 20)
 					{
-						window.location.replace('#home-page');
-						alert("You are dead!!! Start over");      //player die
-						location.reload(true);
+						$( "#popupDead" ).popup( "open" )
+						$( "#popupDead" ).bind({
+							popupafterclose: function(event, ui) { 
+							window.location.replace('#home-page');      //player die
+							location.reload(true);
+						 	}
+					 	});
+
 					}
 				//	
 		 });
@@ -1137,9 +1149,13 @@ function forestEnd(){
 			}
 	  		else if(parseInt($("#health-points").val()) <= 10)
 			{
-				window.location.replace('#home-page');
-				alert("You are dead!!! Start over");      //player die
-				location.reload(true);
+				$( "#popupDeadM" ).popup( "open" )
+				$( "#popupDeadM" ).bind({
+					popupafterclose: function(event, ui) { 
+					window.location.replace('#home-page');      //player die
+					location.reload(true);
+					}
+				 });
 			}
   	});
   });
@@ -1165,9 +1181,13 @@ function forestEnd(){
 	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you\'re back where you started your climb up the mountain. Your leg hurt and got few bruisers from the fall (-20 Health).');
 		 if (parseInt($("#health-points").val()) <= 20)
 			{
-				window.location.replace('#home-page');
-				alert("You are dead!!! Start over");      //player die
-				location.reload(true);
+				$( "#popupDeadM" ).popup( "open" )
+				$( "#popupDeadM" ).bind({
+					popupafterclose: function(event, ui) { 
+					window.location.replace('#home-page');      //player die
+					location.reload(true);
+					}
+				 });
 			}
 		  else
 		  {
@@ -1274,9 +1294,13 @@ function forestEnd(){
 	   }
 	   else if(parseInt($("#health-points").val()) <= 25)
 	   {
-				window.location.replace('#home-page');
-				alert("You are dead!!! Start over");      //player die
-				location.reload(true);
+				$( "#popupDeadM" ).popup( "open" )
+				$( "#popupDeadM" ).bind({
+					popupafterclose: function(event, ui) { 
+					window.location.replace('#home-page');      //player die
+					location.reload(true);
+					}
+				 });
 	   }
 	 });   
 	//Leave her alone and continue your journey.
@@ -1348,9 +1372,13 @@ function forestEnd(){
 			}
 			else if (parseInt($("#health-points").val()) <= 50)
 			{
-				window.location.replace('#home-page');
-				alert("You are dead!!! Start over");      //player die
-				location.reload(true);
+				$( "#popupDeadM" ).popup( "open" )
+				$( "#popupDeadM" ).bind({
+					popupafterclose: function(event, ui) { 
+					window.location.replace('#home-page');      //player die
+					location.reload(true);
+					}
+				 });
 			}
 		});
 		// don't attach dragon
@@ -1501,9 +1529,13 @@ function MerchantInMountains(){
 	}
 	else if (parseInt($("#health-points").val()) <= 25)
 	{
-		window.location.replace('#home-page');
-		alert("You are dead!!! Start over");      //player die
-		location.reload(true);
+		$( "#popupDeadM" ).popup( "open" )
+		$( "#popupDeadM" ).bind({
+			popupafterclose: function(event, ui) { 
+				window.location.replace('#home-page');      //player die
+				location.reload(true);
+				}
+		 });
 	}	
 			$("#mountain-choice-21").click(function(){ 
 				mountainEnd();//next event end of mountain
@@ -1677,12 +1709,13 @@ function mountainEnd(){
 	  			$("#desert-select1").empty();
 	  			$("#desert-select2").empty(); 
 				//you die
-				$('#desert-select1').append('<input type="button" value="Next" id="next2-2" data-inline="true" data-mini="true" data-icon="check" class="next2-2">').trigger('create');
-				$(".next2-2").click(function(){ 
-					alert("You are dead!!! Start over");
-					window.location.replace('#home-page');      //player die
-					location.reload(true);
-				});
+				$('#desert-select1').append('<a href="#popupDeadD" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+					$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
+						window.location.replace('#home-page');      //player die
+						location.reload(true);
+						}
+					 });
 			});
 	  });
 	  //Investigate
@@ -1862,9 +1895,13 @@ function mountainEnd(){
 			}
 			else if (parseInt($("#health-points").val()) <= 20)
 			{
-				window.location.replace('#home-page');
-				alert("You are dead!!! Start over");      //player die
-			location.reload(true);
+				$( "#popupDeadD" ).popup( "open" )
+					$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
+						window.location.replace('#home-page');      //player die
+						location.reload(true);
+						}
+					 });
 			}	
 		}); 
 	});
@@ -2008,9 +2045,13 @@ function desert3story(){
 					$("#desertHeadre").html('You decide to wait. Your phone has no wifi so you decide to play Angry Birds while you wait for the rain. 4 hours has passed and your phone is receiving wifi again. You look up the weather and notice the weather app says it will only be cloudy. You do some research and realize that it does not rain here. You decide to once again walk towards Cactus Island, 1 mile down the road. Health: -5.');
 					if (parseInt($("#health-points").val()) <= 5)
 					{
-						window.location.replace('#home-page');
-						alert("You are dead!!! Start over");      //player die
+						$( "#popupDeadD" ).popup( "open" )
+						$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
+						window.location.replace('#home-page');      //player die
 						location.reload(true);
+						}
+					 });
 					}
 					else 
 					{
@@ -2107,12 +2148,13 @@ function desert3story(){
 					$("#desert-select1").empty();
 					$("#desert-select2").empty();
 					//you die
-					$('#desert-select1').append('<input type="button" value="Next" id="next23" data-inline="true" data-mini="true" data-icon="check" class="next23">').trigger('create');
-					$(".next23").click(function(){ 
-						alert("You are dead!!! Start over");
+					$('#desert-select1').append('<a href="#popupDeadD" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+					$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
 						window.location.replace('#home-page');      //player die
 						location.reload(true);
-					});
+						}
+					 });
 				});
 				// Continue walking
 				$("#radio-choice-450").click(function(){
@@ -2180,12 +2222,13 @@ function desert3story(){
 							$("#desert-select1").empty();
 							$("#desert-select2").empty();
 							//you die
-							$('#desert-select1').append('<input type="button" value="Next" id="next25D" data-inline="true" data-mini="true" data-icon="check" class="next25D">').trigger('create');
-							$(".next25D").click(function(){ 
-								alert("You are dead!!! Start over");
+							$('#desert-select1').append('<a href="#popupDeadD" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+							$( "#popupDeadD" ).bind({
+							popupafterclose: function(event, ui) { 
 								window.location.replace('#home-page');      //player die
 								location.reload(true);
-							});
+								}
+					 		});
 						}
 						else // you are still alive  
 						{
@@ -2214,9 +2257,13 @@ function desert3story(){
 						$("#desert-select2").empty();
 						if (parseInt($("#health-points").val()) <= 20)
 						{
-							window.location.replace('#home-page');
-							alert("You are dead!!! Start over");      //player die
-							location.reload(true);
+							$( "#popupDeadD" ).popup( "open" )
+							$( "#popupDeadD" ).bind({
+								popupafterclose: function(event, ui) { 
+									window.location.replace('#home-page');      //player die
+									location.reload(true);
+								}
+							});
 						}
 						else
 						{
@@ -2308,12 +2355,13 @@ function desert4story(){
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
 				//you die
-				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
-					$(".next30").click(function(){ 
-						alert("You are dead!!! Start over");
+				$('#desert-select1').append('<a href="#popupDeadD" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+					$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
 						window.location.replace('#home-page');      //player die
 						location.reload(true);
-					});
+						}
+					 });
 			});
 			//You jump into the canyon
 			$("#radio-choice-55").click(function(){
@@ -2323,9 +2371,14 @@ function desert4story(){
 				$("#desert-select3").empty();
 				if (parseInt($("#health-points").val()) <= 10)
 				{
-					window.location.replace('#home-page');
-					alert("You are dead!!! Start over");      //player die
-					location.reload(true);
+					$( "#popupDeadD" ).popup( "open" )
+					$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
+						window.location.replace('#home-page');      //player die
+						location.reload(true);
+						}
+					 });
+
 				}
 				else
 				{
@@ -2365,12 +2418,13 @@ function desert4story(){
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
 				//you die
-				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
-				$(".next30").click(function(){ 
-					alert("You are dead!!! Start over");
-					window.location.replace('#home-page');      //player die
-					location.reload(true);
-				});
+				$('#desert-select1').append('<a href="#popupDeadD" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+					$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
+						window.location.replace('#home-page');      //player die
+						location.reload(true);
+						}
+					 });
 			});
 			//>You jump into the canyon and disappear
 			$("#radio-choice-55").click(function(){
@@ -2426,12 +2480,13 @@ function desert4story(){
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();
 				//you die
-				$('#desert-select1').append('<input type="button" value="Next" id="next30" data-inline="true" data-mini="true" data-icon="check" class="next30">').trigger('create');
-					$(".next30").click(function(){ 
-						alert("You are dead!!! Start over");
+				$('#desert-select1').append('<a href="#popupDeadD" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+					$( "#popupDeadD" ).bind({
+						popupafterclose: function(event, ui) { 
 						window.location.replace('#home-page');      //player die
 						location.reload(true);
-					});
+						}
+					 });
 			});
 		});		
 }
@@ -2481,9 +2536,13 @@ function desert5story() {
 					$("#desert-select1").empty();
 					if (parseInt($("#health-points").val()) <= 10)
 					{
-						window.location.replace('#home-page');
-						alert("You are dead!!! Start over");      //player die
-						location.reload(true);
+						$( "#popupDeadD" ).popup( "open" )
+						$( "#popupDeadD" ).bind({
+							popupafterclose: function(event, ui) { 
+							window.location.replace('#home-page');      //player die
+							location.reload(true);
+							}
+						});
 					}
 					else
 					{
@@ -2594,11 +2653,12 @@ function desert5story() {
 						$("#desert-select1").empty();
 						$("#desert-select2").empty();
 						//die
-						$('#desert-select1').append('<input type="button" value="Next" id="next37" data-inline="true" data-mini="true" data-icon="check" class="next37">').trigger('create');
-						$(".next37").click(function(){ 
-							alert("You are dead!!! Start over");
+						$('#desert-select1').append('<a href="#popupDeadD" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+						$( "#popupDeadD" ).bind({
+							popupafterclose: function(event, ui) { 
 							window.location.replace('#home-page');      //player die
 							location.reload(true);
+							}
 						});
 					});//66
 					//Hand it the gold
@@ -2626,9 +2686,13 @@ function desert5story() {
 					$("#desert-select1").empty();
 					if (parseInt($("#health-points").val()) <= 10)
 					{
-						window.location.replace('#home-page');
-						alert("You are dead!!! Start over");      //player die
-						location.reload(true);
+						$( "#popupDeadD" ).popup( "open" )
+						$( "#popupDeadD" ).bind({
+							popupafterclose: function(event, ui) { 
+							window.location.replace('#home-page');      //player die
+							location.reload(true);
+							}
+						});
 					}
 					else
 					{
@@ -2690,11 +2754,12 @@ function desertEnd(){
 			$("#pythonHeader").html('You didn\'t give penguins to the Pythons and tried to protectem. Python ate you instead of penguins. You died. Game OVER.');
 			$("#python-select1").empty();
 			$("#python-select2").empty();
-			$('#python-select1').append('<input type="button" value="Next" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
-			$(".next100").click(function(){ 
-				alert("You are dead!!! Start over");
+			$('#python-select1').append('<a href="#popupDeadP” data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+			$( "#popupDeadP" ).bind({
+			popupafterclose: function(event, ui) { 
 				window.location.replace('#home-page');      //player die
 				location.reload(true);
+				}
 			});
 		}
 	});
@@ -2747,18 +2812,17 @@ function desertEnd(){
 						$('#pythonHeader').html('You were too weak to fight off the Brick. You lost the game. GAME OVER	');
 						$("#python-select1").empty();
 						$("#python-select2").empty();
-						$('#python-select1').append('<input type="button" value="Next" id="next102" data-inline="true" data-mini="true" data-icon="check" class="next102">').trigger('create');
-						$(".next102").click(function(){ 
-							alert("You are dead!!! Start over");
+						$('#python-select1').append('<a href="#popupDeadP” data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+						$( "#popupDeadP" ).bind({
+						popupafterclose: function(event, ui) { 
 							window.location.replace('#home-page');      //player die
 							location.reload(true);
+							}
 						});
 					}
 					else
 					{
-						$('#pythonHeader').html('Congrats!! You won the fight with the Brick and you have managed to ' + $("#select-choice-1 option:selected" ).text() + '. Well Done!!! The End.');
-						$("#python-select1").empty();
-						$("#python-select2").empty();
+						window.location.replace('#victory-page');
 					}
 				});//next10
 			
