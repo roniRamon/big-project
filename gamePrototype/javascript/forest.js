@@ -175,15 +175,15 @@ function arrayShowItem()
 					$("#select3").empty();	
 					$("#select4").empty();
 					$('#select1').append('<input name="radio-choice-3" id="radio-choice-10" value="choice-1" type="radio"><label for="radio-choice-10">Don\'t take it.</label>').trigger('create'); 
-					$('#select2').append('<input name="radio-choice-3" id="radio-choice-11" value="choice-1" type="radio"><label for="radio-choice-11">take it..</label>').trigger('create');
+					$('#select2').append('<input name="radio-choice-3" id="radio-choice-11" value="choice-1" type="radio"><label for="radio-choice-11">Take it..</label>').trigger('create');
 					$('#radio-choice-11').click(function() {
 						if(backpackCheak("whisky")){								
-							alert("you already have the whisky");
+							alert("You already have the whisky");
 						}
 						else if((!backpackCheak("whisky") )&& backpack.length <= 4)
 						{
 							backpack.push("whisky");											 //add wisky to backpack
-							alert('you put in your backpack a whisky bottle');
+							alert('You put in your backpack a whisky bottle');
 							$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 							if(parseInt($("#smart-points").val()) > 10)
 								$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -380,7 +380,7 @@ function arrayShowItem()
 // function 3 story 3 forest Hole 
 function story3Forest() {
 	
-	$("#headerGame").html('You want to enter the forest. The forest is dark. It\'s night. You need some kind of light to show you the way. What do yo do?');
+	$("#headerGame").html('You want to enter the forest. The forest is dark. It\'s night. You need some kind of light to show you the way. What do you do?');
 	$("#select1").empty();
 	$("#select2").empty();
 	$("#select3").empty();	
@@ -390,7 +390,7 @@ function story3Forest() {
 		
 	//story 3 option 1 go whithout a light
 	$("#radio-choice-13B").click(function(){
-			$("#headerGame").html('Go in without any light.<br> You enter the forest without any light. You cannot see anything, its all dark around you. You make a few steps and you fall into a deep hole in the ground. What do you do?');
+			$("#headerGame").html('Go in without any light.<br> You enter the forest without any light. You cannot see anything, Its all dark around you. You make a few steps and you fall into a deep hole in the ground. What do you do?');
 			$("#select1").empty();
 			$("#select2").empty();
 			$("#select3").empty();	
@@ -751,24 +751,24 @@ function story5Forest() {
 	});
 	//examine the body
 	$("#radio-choice-24").click(function(){
-		$("#headerGame").html('While examining the body you found some money (+30$) and following artifacts: axe (+30 strength), book “The Mythical Man Month” (+25/ 15* Intelligence), book “Biography of Grace Hopper” ((+20/ 10* Intelligence), apple (+5 Health).What do you do:');
+		$("#headerGame").html('While examining the body you found some money (+30$) and following artifacts: axe (+30 strength), book “The Mythical Man Month” (+25/ 15* Intelligence), book “Biography of Grace Hopper” ((+20/ 10* Intelligence), apple (+5 Health). What do you do:');
 		$("#select1").empty();
 		$("#select2").empty();
 		$("#money").val(parseInt($("#money").val()) + 30);
 		$('#select1').append('<input type="button" value="Next" id="next7" data-inline="true" data-mini="true" data-icon="check" class="next7">').trigger('create');
 			$(".next7").click(function(){ 
-				$("#headerGame").html('Do you whant to take the Axe?');
+				$("#headerGame").html('Do you want to take the Axe?');
 				$("#select1").empty();
 				$("#select2").empty();
 				$('#select1').append('<input type="button" value="Yes" id="yesAxe" data-inline="true" data-mini="true" data-icon="check" class="yesAxe"><input type="button" value="No" id="noAxe" data-inline="true" data-mini="true" data-icon="check" class="noAxe">').trigger('create');
 				$(".yesAxe").click(function(){ 
 					axe();
-					$("#headerGame").html('Do you whant to take the book “The Mythical Man Month”?');
+					$("#headerGame").html('Do you want to take the book “The Mythical Man Month”?');
 					$("#select1").empty();
 					$('#select1').append('<input type="button" value="Yes" id="yesbook1" data-inline="true" data-mini="true" data-icon="check" class="yesbook1"><input type="button" value="No" id="nobook1" data-inline="true" data-mini="true" data-icon="check" class="nobook1">').trigger('create');
 					$(".yesbook1").click(function(){
 						book1();
-						$("#headerGame").html('Do you whant to take the book “Biography of Grace Hopper”?');
+						$("#headerGame").html('Do you want to take the book “Biography of Grace Hopper”?');
 						$("#select1").empty();
 						$('#select1').append('<input type="button" value="Yes" id="yesbook2" data-inline="true" data-mini="true" data-icon="check" class="yesbook2"><input type="button" value="No" id="nobook2" data-inline="true" data-mini="true" data-icon="check" class="nobook2">').trigger('create');
 						$(".yesbook2").click(function(){
@@ -911,7 +911,7 @@ function axe(){
 	else if(backpack.length < 4 && (!backpackCheak("axe")))
 	{
 		backpack.push("axe");											 //add ex to backpack 
-		alert('you put in your backpack an axe');
+		alert('You put in your backpack an axe');
 		arrayShowItem();
 		$(".strengthp").val(parseInt($("#strength-points").val())+30);
 	}
