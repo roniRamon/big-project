@@ -453,7 +453,7 @@ function story3Forest() {
 			$("#radio-choice-15").click(function(){
 				$("#select1").empty();
 				$("#select2").empty();
-				$("#headerGame").html('You decide to fight him: <br>You want to fight him but he runs away leaving behind him everything he took from you and he also drops an axe. You pick up the ax (if you have a spot in your backpack ) and the money(+10$)');
+				$("#headerGame").html('You decide to fight him: <br>You want to fight him but he runs away leaving behind him everything he took from you and he also drops an axe. You pick up the ax (if you have a spot in your backpack ) and the money he left(+10$)');
 				$("#money").val(parseInt($("#money").val()) + 10);
 				if(backpack.length >=4)
 				{
