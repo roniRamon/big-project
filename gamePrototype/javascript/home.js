@@ -1,5 +1,3 @@
-
-
 // ACCORDION MENU SETTINGS
   $( document ).ready(function() { 
 
@@ -55,6 +53,10 @@
         $( "#col4" ).collapsible("enable" );
     });
 
+	 // when user clicks in input with numbers, select the content
+  	$("input[type='number']").on("click", function () {
+     		$(this).select();
+ 	 });
 
     //if the letter is not digit then display error and don't type anything   
   $("#health").keypress(function (e) {
@@ -138,9 +140,10 @@
 	  		location.reload();
 	  });
 	  
-	  
-	  
-	 
+	 $("#restart").click(function() {
+       		 window.location.replace('#home-page');
+       		 location.reload();
+   	 });	  
 });
 
 
