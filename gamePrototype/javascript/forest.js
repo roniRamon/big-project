@@ -2814,7 +2814,7 @@ function desertEnd(){
 						$("#python-select2").empty();
 						$('#python-select1').append('<a href="#popupDeadP” data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
 						$( "#popupDeadP" ).bind({
-						popupafterclose: function(event, ui) { 
+							popupafterclose: function(event, ui) { 
 							window.location.replace('#home-page');      //player die
 							location.reload(true);
 							}
@@ -2831,8 +2831,9 @@ function desertEnd(){
 	});
 
 function nopenguins(evt){
-	alert('Not enough penguins!!\n come back when you have 3');
 	window.location.replace('#city-page');
+	alert('Not enough penguins!!\n come back when you have 3');
+	
 }
 	  
 });
