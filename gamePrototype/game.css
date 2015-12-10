@@ -7,8 +7,7 @@
 .ui-page {
   background-color: #25B0E6;
   background: -webkit-linear-gradient(89deg, #e6ed60, #1faeeb);
-  background: -moz=linear-gradient(89deg, #e6ed60, #1faeeb);
-  background: -o-linear-gradient(89deg, #e6ed60, #1faeeb);
+  background: -moz-linear-gradient(89deg, #e6ed60, #1faeeb);
   background: linear-gradient(89deg, #e6ed60, #1faeeb);
   padding: 0px !important; 
   font-family: 'Roboto', sans-serif;
@@ -70,15 +69,10 @@
       color: white;
       border: none;
       transition: all 0.5s ease;
+      font-family: 'Raleway', sans-serif;
    }
 
-  #title-screen .ui-btn:hover,  #victory-content .ui-btn:hover {
-    -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.91);
-    -moz-box-shadow:    0px 0px 11px 0px rgba(0, 0, 0, 0.91);
-    box-shadow:         0px 0px 11px 0px rgba(0, 0, 0, 0.91);
-  }
-
-  #accordion .ui-input-btn:hover, #about:hover, #about:focus, #begin:hover, #back-home-btn:hover {
+  #accordion .ui-input-btn:hover, #about:hover, #about:focus, #begin:hover, #back-home-btn:hover,  #title-screen .ui-btn:hover,  #victory-content .ui-btn:hover  {
     -webkit-box-shadow: 0px 0px 13px 0px rgba(170, 246, 255, 0.84);
     -moz-box-shadow:    0px 0px 13px 0px rgba(170, 246, 255, 0.84);
     box-shadow:         0px 0px 13px 0px rgba(170, 246, 255, 0.84);
@@ -121,6 +115,8 @@
     flex: 1;
     text-align: center;
     padding: 20px 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
     line-height: 1.8em;   
     overflow: scroll;
@@ -139,9 +135,9 @@
   #accordion {
     flex: 2;
     margin-left: 20px;
-    border-radius: 6px;
-    
+    border-radius: 6px;  
   }
+
   .ui-collapsible-set {
     margin: 0px 0px;
   }   
@@ -160,7 +156,7 @@
     }
 
   #accordion .ui-collapsible-content .ui-input-text  {
-    border: 1px solid silver;
+    border: 1px ridge black;
   }
 
   /* select option styling */
@@ -168,14 +164,11 @@
     background-color: #7ACBAC;
     border: none;
     text-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
   }
 
-  #accordion .ui-select .ui-btn:hover {
-   -webkit-box-shadow: 0px 0px 4px 0px rgba(168, 217, 139, 0.91);
--moz-box-shadow:    0px 0px 4px 0px rgba(168, 217, 139, 0.91);
-box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
-  }
   #accordion a.ui-input-clear {
     background: rgba(0,0,0,.6);
   }
@@ -189,6 +182,24 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     text-transform: uppercase;
     font-weight: 500;
   } 
+
+  #errmsg, #errmsg1, #errmsg2 {
+    color: red;
+  }
+
+   /* select option menu styling */
+#select-choice-0-menu li a {
+      background-color: white !important;
+      text-shadow: none !important;
+    }
+
+  #select-choice-0-menu li a:focus,  #select-choice-1-menu li a:focus {
+      background-color: #40B8D4 !important;
+    }
+
+   #select-choice-0-menu li, #select-choice-1-menu li {
+      font-family: 'Raleway', sans-serif !important;
+   }
 
   #begin {
     margin-top: 20px;
@@ -266,11 +277,21 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
 /* ....................................*/
 
   .ui-tooltip {
-      font-size: 12px;
+      font-size: 16px;
       padding: 15px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
       border-radius: 20px;
+      -webkit-box-shadow: 0 0 7px black;
+      -moz-box-shadow: 0 0 7px black;
       box-shadow: 0 0 7px black;
       border: 2px solid white;
+      text-shadow: none;
+      color: #E0FFFF;
+      background: -webkit-linear-gradient(272deg, #0f6d80, #27b0e5);
+      background: -moz-linear-gradient(272deg, #0f6d80, #27b0e5);
+      background: linear-gradient(272deg, #0f6d80, #27b0e5);
+      font-family: 'Raleway', sans-serif;
     }
 
 /* MAIN GAME settings */
@@ -283,7 +304,7 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
   /* external header settings */
   #header2 {
     background-color: rgba(0,0,0,.7);
-    border-bottom: 2px solid #FCEC5B;
+    border-bottom: 1px solid black;
   }
 
   #header2-content {
@@ -292,14 +313,14 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     text-align: center;
     width: 100%;
     display: flex;
-    font-family: 'Raleway', sans-serif;
   }
 
 #header2-content #set-description {
-  flex: 3;
+  flex: 2;
   line-height: 22px;
   text-align: left;
   display: block;
+  font-family: 'Raleway', sans-serif;
 }
 
 #set-char, #set-goal, #set-name {
@@ -308,39 +329,48 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
 }
 
   #header2-content #user-points {
-    flex: 2;
+    flex: 3;
     display: inline;
   }
 
   #user-points .ui-state-disabled {
-      opacity: 0.8;
+      opacity: 1;
       border: 1px solid #00BFFF;
   }
 
    #header2-content #user-points input {
       text-align: center;
-      background-color: 2px solid white;
    }
 
    /* container for 3 images with penguins */
   #header2-content #penguins {
     text-align: center;
-    padding-top: 10px;
-    flex: 2;
-    background-color: rgba(0, 191, 255, .2);
+    flex: 1;
+    background-color: rgba(44, 178, 225, 0.6);
+    background-image: url(images/ice.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
+    margin: 10px 30px;
+    border: 1px solid black;
+    padding-bottom: 2px;
+    padding-top: 2px;
   }
 
-
   #header2-content .penguin {
-     margin-left: 8px;
+    margin: 1px;
     background-color: black;
     background-image: url("images/penguin.png");
     background-size: cover;
-    border: 1px solid white;
+    border: 1px solid black;
+    -webkit-border-radius: 3em;
+    -moz-border-radius: 3em;
     border-radius: 3em;
-    height: 40px;
-    width: 40px;
+    height: 36px;
+    width: 36px;
     display: inline-block;
   }
 
@@ -350,8 +380,9 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     flex: 2;
   }
 
+  /* backpack stying */
   #mypanel {
-    padding: 10;
+    padding: 10px;
     padding-left: 20px;
     line-height: 2em;
     -webkit-box-shadow: 8px 3px 12px 0px rgba(25, 25, 25, 0.62);
@@ -361,12 +392,18 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
   }
 
   #mypanel h3 {
+    margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  #mypanel li {
+    margin-bottom: 10px;
   }
 
   #mypanel .ui-btn {
     margin-top: 20px;
   }
+
   #mypanel .ui-btn:hover {
     background-color: rgba(44, 178, 225, 0.6)!important;
     transition: all 0.5s ease;
@@ -376,32 +413,43 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
   }
 
   /* popup with hints */
-
   #popupDialog .ui-header {
+    background: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
 
-}
+  #popupDialog .ui-btn .ui-icon-delete {
+    background-color: dimgray !important;
+  }
 
-#popupDialog {
-  /*background-color: rgba(101, 196, 186, .8);*/
-}
+  #popupDialog {
+    background: -webkit-linear-gradient(272deg, #0f6d80, #27b0e5);
+    background: -moz-linear-gradient(272deg, #0f6d80, #27b0e5);
+    background: linear-gradient(272deg, #0f6d80, #27b0e5);
+    font-family: 'Raleway', sans-serif;
+  }
 
   /* styling of the main game text container */
   .text-container {
     font-size: 16px;
     width: 100%;
-    text-align: center;
+    text-align: center !important;
     padding: 15px;
     line-height: 30px;
     background-color: rgba(0,0,0,.8);
     position: absolute;
     bottom: 0;
     left: 0;
+    font-family: 'Roboto', sans-serif;
   }
 
   .ui-btn-icon-left::after {
     left: 0.4em;
   }
 
+  /* rewrite default button settings for theme b */
   html .ui-bar-b .ui-btn:focus, html .ui-bar-b .ui-btn:active, html .ui-bar-b .ui-btn:hover {
     -webkit-box-shadow: -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
     -moz-box-shadow:    -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
@@ -414,12 +462,9 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     text-align: center;
   }
 
-  .text-container p {
-    padding: 15px;
-  }
-
   .text-container h3 {
     padding: 15px;
+    font-size: 18px;
   }
 
   #victory-content {
@@ -427,17 +472,18 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     padding-top: 200px;
   }
 
-  #restart {
-    position: absolute;
-    bottom: 50px;
-    left: 47%;
+  #tutorial-page {
+    background-image: url(images/HubCity.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 130% 130%;
   }
 
   #city-page {
     background-image: url(images/Crossroad.png);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100% 130%;
+    background-size: cover;
   }
 
   #forest-page {
@@ -469,19 +515,39 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
   }
 
   #victory-page {
-    background-image: url(images/victory.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100% 100%;
+    background: -webkit-linear-gradient(92deg, #e8f03e, #2ccced, #9c2ced);
+    background: -moz-linear-gradient(92deg, #e8f03e, #2ccced, #9c2ced);
+    background: linear-gradient(92deg, #e8f03e, #2ccced, #9c2ced);
+    background-size: 400% 400%;
+
+    -webkit-animation: changeBackgroundColor 20s ease infinite;
+    -moz-animation: changeBackgroundColor 20s ease infinite;
+    animation: changeBackgroundColor 20s ease infinite;
   }
 
-  @media all and (max-width: 64em) {
+  @-webkit-keyframes changeBackgroundColor {
+      0%{background-position:0% 91%}
+      50%{background-position:100% 10%}
+      100%{background-position:0% 91%}
+  }
+  @-moz-keyframes changeBackgroundColor {
+      0%{background-position:0% 91%}
+      50%{background-position:100% 10%}
+      100%{background-position:0% 91%}
+  }
+  @keyframes changeBackgroundColor { 
+      0%{background-position:0% 91%}
+      50%{background-position:100% 10%}
+      100%{background-position:0% 91%}
+  }
+
+@media all and (max-width: 48em) {
   
 /* TITLE SCREEN */
 /*......................................*/
   #title-screen {
     margin-top: 60px;
-   }
+  }
 
    #logo {
     width: 300px;
@@ -491,78 +557,78 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
 
 
   /* HOME PAGE settings */
-/*......................................*/
+  /*......................................*/
 
   #home-page-content {
     padding: 20px;
-      flex-direction: column;
-      align-items: stretch;
-      padding-top: 120px;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 120px;
+  }
+
+ #project-details {
+    margin: 5px 5px;
+    font-size: 18px;
+  }
+
+  #introduction {
+    border: 1px solid black;
+    flex: 1;
+    font-size: 16px;
+    padding: 10px;
+    line-height: 1.5em;   
+  }
+
+  #introduction h1 {
+     margin: 15px;
+     font-size: 20px;
     }
 
-   #project-details {
-      margin: 5px 5px;
-      font-size: 18px;
-    }
+  #accordion {
+    flex: 1;
+    margin: 0px;
+    margin-top: 10px;
+    text-align: center;
+  }
 
-    #introduction {
-      border: 1px solid black;
-      flex: 1;
-      font-size: 16px;
-      padding: 10px;
-      line-height: 1.5em;   
-    }
+  #accordion input {
+    text-align: center;
+     font-size: 15px;
+  }
 
-    #introduction h1 {
-       margin: 15px;
-       font-size: 20px;
-      }
+  #begin {
+    margin-top: 15px;
+  margin-bottom: 10px;
+  }
 
-    #accordion {
-      flex: 1;
-      margin: 0px;
-      margin-top: 10px;
-      text-align: center;
-    }
+/* ABOUT page settings */
+/* ...................................... */
 
-    #accordion input {
-      text-align: center;
-       font-size: 15px;
-    }
-
-    #begin {
-      margin-top: 15px;
-    margin-bottom: 10px;
-    }
-
-  /* ABOUT page settings */
-  /* ...................................... */
-
-   #about-page-content {
+ #about-page-content {
     padding: 20px;
-      margin: 0 auto;
-      width: 90%;
-      padding-top: 120px;
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 120px;
     font-size: 15px;
-    }
+  }
 
-    #about-page-content h2 {
-      font-size: 17px;
-    }
+  #about-page-content h2 {
+    font-size: 17px;
+  }
 
-    #group-members {
-      -webkit-flex-direction: column;
-      -moz-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column;
-    }
+  #group-members {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 
-    .member {
-      margin: 5px;
-      -webkit-flex: 1;
-      -moz-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
+  .member {
+    margin: 5px;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
   }
 
   /* MAIN GAME settings */
@@ -573,19 +639,19 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
   }
 
   #header2-content {
-      padding-right: 5px;
-      padding-left: 5px;
-      flex-wrap: wrap;
-   }
+    padding-right: 5px;
+    padding-left: 5px;
+    flex-wrap: wrap;
+ }
 
   #header2-content #set-description {
     display: none;
   }
 
   #header2-content #user-points {
-      flex: 1;
-      order: 3;
-      margin-right: 10px;
+    flex: 1;
+    order: 3;
+    margin-right: 10px;
   }
 
   #user-points label  {
@@ -598,15 +664,12 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
 
    /* container for 3 images with penguins */
   #header2-content #penguins {
-     padding-top: 5px;
     text-align: center;
     flex: 100%;
     order: 2;
-    background-color: rgba(0, 191, 255, .3);
-    border-radius: 6px;
-    margin: 3px;
-    margin-right: 10px;
-    height: 40px;
+    height: 35px;
+    padding-bottom: 1px;
+    padding-top: 1px;
   }
 
   #header2-content .penguin {
@@ -620,14 +683,28 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     order: 1;
   }
 
-   .text-container {
+   /* popup with hints */
+  #popupDialog .ui-header {
+    font-size: 14px;
+  }
+
+  #popupDialog {
+    font-size: 13px;
+  }
+
+  .text-container {
     font-size: 14px;
     width: 100%;
     text-align: center;
     padding: 5px;
     line-height: 25px;
-  margin: 5px;
-  position: relative;
+    margin: 5px;
+    position: relative;
+  }
+
+  .text-container h3 {
+    padding: 10px;
+    font-size: 16px;
   }
 
   #forest-content, #mountain-content, #desert-content, #victory-page, #final-battle-content {
@@ -638,10 +715,16 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     text-align: center;
   }
 
-  #restart {
-    position: absolute;
-    bottom: 50px;
-    left: 40%;
+ #victory-logo {
+    width: 300px;
+    height: 130px;
+  }
+
+  #tutorial-page {
+    background-image: url(images/HubCity.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 220% 100%;
   }
 
   #city-page {
@@ -678,13 +761,5 @@ box-shadow:         0px 0px 4px 0px rgba(168, 217, 139, 0.91);
     background-position: center center;
     background-size: cover;
   }
-
-  #victory-page {
-    background-image: url(images/victory.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-  }
 }
-
 
