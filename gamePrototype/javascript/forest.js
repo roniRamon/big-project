@@ -2754,7 +2754,7 @@ function desertEnd(){
 			$("#pythonHeader").html('You didn\'t give penguins to the Pythons and tried to protectem. Python ate you instead of penguins. You died. Game OVER.');
 			$("#python-select1").empty();
 			$("#python-select2").empty();
-			$('#python-select1').append('<a href="#popupDeadP” data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+			$('#python-select1').append('<a href="#popupDeadP" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
 			$( "#popupDeadP" ).bind({
 			popupafterclose: function(event, ui) { 
 				window.location.replace('#home-page');      //player die
@@ -2812,7 +2812,7 @@ function desertEnd(){
 						$('#pythonHeader').html('You were too weak to fight off the Brick. You lost the game. GAME OVER	');
 						$("#python-select1").empty();
 						$("#python-select2").empty();
-						$('#python-select1').append('<a href="#popupDeadP” data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
+						$('#python-select1').append('<a href="#popupDeadP" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ">Next</a>').trigger('create');
 						$( "#popupDeadP" ).bind({
 							popupafterclose: function(event, ui) { 
 							window.location.replace('#home-page');      //player die
