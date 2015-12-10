@@ -1,12 +1,17 @@
 // initialize mouse over tooltips 
 $( document ).ready(function() { 
-	$( document ).tooltip();
+	 $( document ).tooltip({
+	      position: {
+	        my: "center bottom-20",
+	        at: "center top"
+	      }
+	  });
 
 	// demo of the fight situatuin
 	$( "#demo-select1, #demo-select2, #demo-select3, #demo-select4" ).click(function() {
-		var demoUpdatedText1 = '<p>Say, you had enough strength, you fight the enemy and you win!' +
+		var demoUpdatedText1 = '<h3>Say, you had enough strength, you fight the enemy and you win!' +
 		' You find a lollipop in his pocket. You have an option to keep it or ignore it. Click any option, ' +
-		'but then check you backpack.</p>'
+		'but then check you backpack.</h3>'
 
   		$("#demoHeader").html(demoUpdatedText1);
   		// remove extra choices
@@ -22,11 +27,11 @@ $( document ).ready(function() {
 		  		$("#demoItem").html('Lollipop');
 		  		$("#backpack").html('');
 
-		  		var demoUpdatedText2 = "<p>By clicking 'Keep the item' you will collect useful items in your backpack " +
+		  		var demoUpdatedText2 = "<h3>By clicking 'Keep the item' you will collect useful items in your backpack " +
 		  		"(you still have 5 free spots, the lollipop is a little gift to cheer you up!). " +
 		  		"<br>You will begin your game in the city and will return there to change the game area. " +
 		  		"When you complete all three areas, you can go to the Python's nest" +
-		  		" and trade penguins for a final battle</p>"
+		  		" and trade penguins for a final battle</h3>"
 
 		  		$("#demoHeader").replaceWith(demoUpdatedText2);
 		  		$("#demo-select1").empty()
@@ -48,9 +53,13 @@ $(document).on("pagecontainerbeforeshow",function(event, ui) {
  	   $( "#set-description, #user-points, #quit-game, #open-backpack, #hints-btn, #penguins").tooltip({
   			disabled: true
 		});
+	    // remove demo item from the backpack before beginning the game
+  		$("#demoItem").hide();
 	} else if (activePageId == "tutorial-page") {
 		$( "#set-description, #user-points, #quit-game, #open-backpack, #hints-btn, #penguins").tooltip({
   			disabled: false
 		});
+		// show demo item on tutorial page
+		$("#demoItem").show();
 	}
   });
