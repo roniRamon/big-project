@@ -739,7 +739,7 @@ function story5Forest() {
 	$('#select2').append('<input name="radio-choice-6" id="radio-choice-24" value="choice-1" type="radio"><label for="radio-choice-24">You examine the body and the surroundings.</label>').trigger('create');
 	//running away
 	$("#radio-choice-23").click(function(){
-		$("#headerGame").html('You have run away in panic and lost one of your artifacts from your backpack ';
+		$("#headerGame").html('You have run away in panic and lost one of your artifacts from your backpack ');
 		$("#select1").empty();
 		$("#select2").empty();
 		backpack.splice(backpack.length-1, 1);
