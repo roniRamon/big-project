@@ -1138,7 +1138,7 @@ function forestEnd(){
 			}
 			else if(player >= pumaScore) //puma lose
 			{
-				$("#mountain-headr").html('You grab the cat out of the air and hurl it off the mountainside. Manly. Your strength increeses (Strength +3)');
+				$("#mountain-headr").html('You grab the cat out of the air and hurl it off the mountainside. Manly. Your strength increases. (Strength +3)');
 				$(".strengthp").val(parseInt($("#strength-points").val())+3);
 				$("#mountain-select-1").empty();
 	  			$("#mountain-select-2").empty();
@@ -1169,7 +1169,7 @@ function forestEnd(){
 	  $("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-4" value="choice-1" type="radio"><label for="mountain-choice-4">Run ahead.</label>').trigger('create'); 
 	  $("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-5" value="choice-1" type="radio"><label for="mountain-choice-5">Run the way you came from.</label>').trigger('create');
 	  $('#mountain-choice-4').click(function(){     //Run ahead.
-	  	$("#mountain-headr").html('You run towards the cat. Startled, it turns around and books it. Ain\'t gonna deal with someone crazy enough to chase a mountain lion.');
+	  	$("#mountain-headr").html('You run towards the cat. Startled, it turns around and books it. It ain\'t gonna deal with someone crazy enough to chase a mountain lion.');
 	  	$("#mountain-select-1").empty();
 	  	$("#mountain-select-2").empty();
 		$('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
@@ -1178,7 +1178,7 @@ function forestEnd(){
 		});  
 	  });
 	  $('#mountain-choice-5').click(function(){     //Run the way you came from.
-	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain. Whoops. After a lot of rolling you\'re back where you started your climb up the mountain. Your leg hurt and got few bruisers from the fall (-20 Health).');
+	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain, whoops. After a lot of rolling you\'re back where you started your climb up the mountain. You hurt your leg and got a few bruisers from the fall (-20 Health).');
 		 if (parseInt($("#health-points").val()) <= 20)
 			{
 				$( "#popupDeadM" ).popup( "open" )
@@ -1233,7 +1233,7 @@ function forestEnd(){
 	
   //Event 2: Ascending The Peak
   function peak() {
-  	$("#mountain-headr").html('You enter the Mountains. The penguin could be anywhere, but something tells you the only logical path to finding it would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. You could use a little break, and she\'s genuinely interested in how such an intriguing creature has found itself in the mountains.  After some time spent discussing your adventures, you catch the glisten of a jewel-encrusted sword in her backpack, it looks powerful. She notices your gaze and understands what it means; You want the sword. "Please, this sword is a family heirloom. It\'s value to me cannot be measured in coin; It\'s not for sale."');
+  	$("#mountain-headr").html('The penguin could be anywhere, but something tells you the only logical path to finding it would involve scaling the highest peak. Several monotonous hours after you begin your ascent, you come across a fairy. You could use a little break, and she\'s genuinely interested in how such an intriguing creature has found itself in the mountains.  After some time spent discussing your adventures, you catch the glisten of a jewel-encrusted sword in her backpack, it looks powerful. She notices your gaze and understands what it means; You want the sword. "Please, this sword is a family heirloom. It\'s value to me cannot be measured in coin; It\'s not for sale."');
   	$("#mountain-select-1").empty();
 	$("#mountain-select-2").empty();
 	$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-6" value="choice-1" type="radio"><label for="mountain-choice-6">Fight her for the sword.</label>').trigger('create'); 
@@ -1241,7 +1241,7 @@ function forestEnd(){
 	$("#mountain-select-3").append('<input name="radio-choice-10" id="mountain-choice-8" value="choice-1" type="radio"><label for="mountain-choice-8">ask for the sword</label>').trigger('create');
 	//Fight her for the sword
 	$("#mountain-choice-6").click(function(){ 
-		$("#mountain-headr").html(' You have decided to attack the fairy (strenght 60) and take the sword from her.');
+		$("#mountain-headr").html('You have decided to attack the fairy (strenght 60) and take the sword from her.');
 		$("#mountain-select-1").empty();
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
@@ -1251,7 +1251,7 @@ function forestEnd(){
 		
 		if (playerVSfairy < fairy && (parseInt($("#health-points").val()) > 25))  //fairy win
 		{   
-			$("#mountain-headr").html('You have lost the fight (-25 Health), but you are still alive. Pleading for mercy you are spared by a fairy who leaves you on the ground. In te evening you are finally able to move and continue your journey.');
+			$("#mountain-headr").html('You have lost the fight (-25 Health), but you are still alive. You plead for mercy and the fairy decides to spare you. By the evening you are finally able to move and you continue your journey.');
 			$(".healthp").val(parseInt($("#health-points").val())-25);
 			$('#mountain-select-1').append('<input type="button" value="Next" id="next71" data-inline="true" data-mini="true" data-icon="check" class="next71">').trigger('create');
 			$(".next71").click(function(){ 
@@ -1260,7 +1260,7 @@ function forestEnd(){
 		}
 		else if(playerVSfairy >= fairy ) //fairy lose
 		{
-			$("#mountain-headr").html('You have won the fight (Strength +20) and you take the super sword (+60 Strength) from dead fairy');
+			$("#mountain-headr").html('You have won the fight (Strength +20) and you take the super sword (+60 Strength) from the dead fairy');
 			$(".strengthp").val(parseInt($("#strength-points").val())+20);
 			$('#mountain-select-1').append('<input type="button" value="Next" id="next71" data-inline="true" data-mini="true" data-icon="check" class="next71">').trigger('create');
 			$(".next71").click(function(){ 
@@ -1271,12 +1271,12 @@ function forestEnd(){
 				$("#mountain-choice-9").click(function(){ 
 					if(backpackCheak("super sword"))
 	  				{								
-						alert("you alrady have the super sword");
+						alert("you already have the super sword");
 	  				}
 	  				else if((!backpackCheak("super sword") )&& backpack.length < 4)
 	  				{
 						backpack.push("super sword");							//add super swordto backpack
-						alert('you put in your backpack a super sword');
+						alert('you put the super sword in your backpack');
 						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
@@ -1305,7 +1305,7 @@ function forestEnd(){
 	 });   
 	//Leave her alone and continue your journey.
 	 $("#mountain-choice-7").click(function(){ 
-		$("#mountain-headr").html('You are looking at the sword  with hungry eyes, but you resists the temptation to get it by force. You respect the fact that it\'s a fairys heirloom and her belonging. After you rest you bid good bye to fairy and both of you are going your own way.');
+		$("#mountain-headr").html('You look at the sword with hungry eyes, but you resist the temptation to take it by force. You respect the fact that it\'s a family heirloom and her belonging. After some rest you bid goodbye to the fairy and both of you go on your own ways.');
 		$("#mountain-select-1").empty();
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
@@ -1316,12 +1316,12 @@ function forestEnd(){
 	 });    
 	// ask for the sword
 	$("#mountain-choice-8").click(function(){
-		$("#mountain-headr").html('You are looking at the sword with hungry eyes and ask fairy to give it to you (trying to use your natural charm. It doesn\'t work on fairys (like on any other species). But fairy rethinks your offer and says she might give you the sword if you fight of the dragon which is not letting her go through on the nearby path. What do you do?');
+		$("#mountain-headr").html('You look at the sword with hungry eyes and ask the fairy to give it to you (You try to use your natural charm, but it doesn\'t work on fairys . But the fairy rethinks your offer and says she might give you the sword if you fight off the dragon which is not letting her go through the nearby path. What do you do?');
 		$("#mountain-select-1").empty();
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
 		$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-9" value="choice-1" type="radio"><label for="mountain-choice-9">Yes, you will kill the dragon.</label>').trigger('create'); 
-		$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-10" value="choice-1" type="radio"><label for="mountain-choice-10">No, the risk is too high for such a small reward as sword (even nice one).</label>').trigger('create');
+		$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-10" value="choice-1" type="radio"><label for="mountain-choice-10">No, the risk is too high for such a small reward, as nice as the sword is).</label>').trigger('create');
 		// attack dragon
 		$("#mountain-choice-9").click(function(){ 
 			$("#mountain-headr").html('Fairy shows you where the dragon is and you see how big it is. Trying to look brave you attack the dragon (Strength 150).');
@@ -1333,7 +1333,7 @@ function forestEnd(){
 			alert('Your attack: ' + playerVSdragon + '. Dragon\'s attack '+ dragon + '.' );
 			if (playerVSdragon < dragon && (parseInt($("#health-points").val()) > 50))  //dragon win
 			{   
-				$("#mountain-headr").html('You have lost the fight (-50 Health), but you are still alive. You run away from the dragon and stupid fairy who got you into this. After you are far far away you only stop to get some rest and promise yourself never to fight a dragon for any fairy. NEVER.');
+				$("#mountain-headr").html('You have lost the fight (-50 Health), but you are still alive. You run away from the dragon and the stupid fairy who got you into this. After you are far, far away you only stop to get some rest and promise yourself never to fight a dragon for any fairy. NEVER.');
 				$(".healthp").val(parseInt($("#health-points").val())-50);
 				$('#mountain-select-1').append('<input type="button" value="Next" id="next71" data-inline="true" data-mini="true" data-icon="check" class="next71">').trigger('create');
 				$(".next71").click(function(){ 
@@ -1342,7 +1342,7 @@ function forestEnd(){
 			}
 			else if(playerVSdragon >= dragon) //dragon lose
 			{
-				$("#mountain-headr").html(' You have won the fight (Strength +50) and fairy gives you take the super sword (+60 Strength).Do you want to put it in your backpack ?');
+				$("#mountain-headr").html('You have won the fight (Strength +50) and the fairy gives you the super sword as promised (+60 Strength).Do you want to put it in your backpack ?');
 				$("#mountain-select-1").empty();
 				$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-11" value="choice-1" type="radio"><label for="mountain-choice-11">Yes.</label>').trigger('create'); 
 				$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-12" value="choice-1" type="radio"><label for="mountain-choice-12">No.</label>').trigger('create');
@@ -1350,12 +1350,12 @@ function forestEnd(){
 					$(".strengthp").val(parseInt($("#strength-points").val())+50);
 					if(backpackCheak("super sword"))
 	  				{								
-						alert("you alrady have the super sword");
+						alert("you already have the super sword");
 	  				}
 	  				else if((!backpackCheak("super sword") )&& backpack.length <=4)
 	  				{
 						backpack.push("super sword");									//add super swordto backpack
-						alert('you put in your backpack a super sword');
+						alert('you put the super sword in your backpack');
 						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
@@ -1383,7 +1383,7 @@ function forestEnd(){
 		});
 		// don't attach dragon
 		$("#mountain-choice-10").click(function(){ 
-			$("#mountain-headr").html('You think "This fairy must be crazy if she thinks I will go for that." You reject fairy\'s offer and go back on your quest for search for mountain penguin');
+			$("#mountain-headr").html('You think "This fairy must be crazy if she thinks I'll fight a dragon." You reject the fairy\'s offer and go back on your quest for the mountain penguin');
 			$("#mountain-select-1").empty();
 			$("#mountain-select-2").empty();
 			$("#mountain-select-3").empty();
@@ -1409,7 +1409,7 @@ function MerchantInMountains(){
 		$("#mountain-select-4").append('<input name="radio-choice-10" id="mountain-choice-16" value="choice-1" type="radio"><label for="mountain-choice-16">Start conversation</label>').trigger('create');
 	//Ignore him and move on
 	$("#mountain-choice-13").click(function(){ 
-		$("#mountain-headr").html('Merchant is trying to sell you something, but you reply him "If you don\'t have any penguins I\'m afraid I don\'t need anything else". You walk away.');
+		$("#mountain-headr").html('The merchant is trying to sell you something, but you reply to him "If you don\'t have any penguins, I\'m afraid I don\'t need anything". You walk away.');
 		$("#mountain-select-1").empty();
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
@@ -1421,7 +1421,7 @@ function MerchantInMountains(){
 	});
 	//Attack and try to take his goods
 	$("#mountain-choice-14").click(function(){ 
-		$("#mountain-headr").html(' Merchant is fighting back. Strength 70. You say: "Fear me, if you dare".');
+		$("#mountain-headr").html('Merchant is fighting back. Strength 70.');
 		$("#mountain-select-1").empty();
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
@@ -1431,19 +1431,19 @@ function MerchantInMountains(){
 		alert('Your attack: ' + fightYou + '. Merchant\'s attack '+ fightOpponent + '.' );
 		if (fightYou < fightOpponent && (parseInt($("#health-points").val()) > 25))  //Merchant win
 		{   
-			$("#mountain-headr").html('You have lost the fight (-25 Health) but merchant lets your go. He feels pity for an orphan and gives you a bottle of whisky (+5 health, -10 intelligence) Do you want to put it in your backpack or leave it.');
+			$("#mountain-headr").html('You have lost the fight (-25 Health) but the merchant lets you go. He gives you a bottle of whisky out of pity (+5 health, -10 intelligence) Do you want to put it in your backpack or leave it?');
 			$(".healthp").val(parseInt($("#health-points").val())-25);
-			$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-20" value="choice-1" type="radio"><label for="mountain-choice-20">Yes.</label>').trigger('create'); 
-			$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-21" value="choice-1" type="radio"><label for="mountain-choice-21">No.</label>').trigger('create');
+			$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-20" value="choice-1" type="radio"><label for="mountain-choice-20">Put it in backpack.</label>').trigger('create'); 
+			$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-21" value="choice-1" type="radio"><label for="mountain-choice-21">Leave it.</label>').trigger('create');
 			$("#mountain-choice-20").click(function(){ 
 			if(backpackCheak("whisky"))
 	  		{								
-				alert("you alrady have the whisky");
+				alert("you already have the whisky");
 	  		}
 	  		else if((!backpackCheak("whisky") )&& backpack.length <=4)
 	  		{
 				backpack.push("whisky");										//add whisky to backpack
-				alert('you put in your backpack a whisky bottle');
+				alert('you put the whiskey in your backpack');
 				$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 				if(parseInt($("#smart-points").val()) > 10)
 					$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -1461,7 +1461,7 @@ function MerchantInMountains(){
 		}
 		else if(fightYou >= fightOpponent) //Merchant lose
 		{
-			$("#mountain-headr").html('You have won the fight (Strength +5), but you leave the merchant go after taking his goods: money 80, small knife (+5 Strength), large sword (+25 Strength), whisky (+5Health, -10 Intelligence).Do you want to put it in your backpack or leave it. ');
+			$("#mountain-headr").html('You have won the fight (Strength +5), but you let the merchant go after taking his goods: money 80, small knife (+5 Strength), large sword (+25 Strength), whisky (+5Health, -10 Intelligence).Do you want to put it in your backpack or leave it. ');
 			$("#mountain-select-1").empty();
 			$("#mountain-select-2").empty();
 			$("#mountain-select-3").empty();
