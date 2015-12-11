@@ -2331,7 +2331,7 @@ function desert4story(){
 					{								
 						alert("you alrady have the needle");
 					}
-					else if((!backpackCheak("needle") )&& backpack.length <=4)
+					else if((!backpackCheak("needle") )&& backpack.length < 4)
 					{	
 						backpack.push("needle");											 //add needle to backpack
 						$(".strengthp").val(parseInt($("#strength-points").val())+10);   	//needle add 10 strength  
