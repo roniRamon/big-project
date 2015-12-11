@@ -1752,7 +1752,7 @@ function mountainEnd(){
 	 $("#desertHeadre").html('It\'s super weird but you lick the sand. It tastes like sugar. It\'s definitely sugar. Yum. Your health is increasing (+5 Health)');
 		 $("#desert-select1").empty();
 	 	 $("#desert-select2").empty(); 
-		 $("#health-points").val(parseInt($("#health").val())+5);
+		 $(".healthp").val(parseInt($("#health-points").val())+5);
 		 $('#desert-select1').append('<input type="button" value="Next" id="next2-2" data-inline="true" data-mini="true" data-icon="check" class="next2-2">').trigger('create');
 		 $(".next2-2").click(function(){ 
 			desert2story(); //next event desert 2
