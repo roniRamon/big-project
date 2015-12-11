@@ -995,7 +995,7 @@ function apple(){
 		$('#select1').append('<input name="radio-choice-5" id="radio-choice-25" value="choice-1" type="radio"><label for="radio-choice-25">You are running away in case there is an attacker in the area.</label>').trigger('create'); 
 		$('#select2').append('<input name="radio-choice-5" id="radio-choice-26" value="choice-1" type="radio"><label for="radio-choice-26">You examine the body and the surroundings</label>').trigger('create');
 		$("#radio-choice-25").click(function(){
-			$("#headerGame").html('You have run away in panic and lost one of your artifacts from your backpack ' + backpack[backpack.length -1]);
+			$("#headerGame").html('You have run away in panic and lost one of your artifacts from your backpack ');
 			backpack.splice(backpack.length-1, 1);
 			arrayShowItem()
 			$("#select1").empty();
