@@ -10,7 +10,7 @@ the world before it melts.<<>>
 
 User will start the game by giving a name to their character and assigning points to the 
 attributes of the character. The main attributes are:
--	Health – which has to remain above zero in order to keep the character alive. This parameter
+-	Health – Which has to remain above zero in order to keep the character alive. This parameter
 might be decreased during the fight. Health recovery will be available at special events 
 during the game.
 -	Strength – A measure of combat strength of the character. Strength can be increased by certain 
@@ -21,32 +21,31 @@ hidden features. By developing this skill, the character might avoid a fight wit
 creatures, get better deals with merchants and have more item choices from events.
 
 User will be given initial number of points which they need to redistribute between above 
-parameters. Depending on it user can create more defensive (higher input on intelligence 
-and health) or offensive (attach and health) character.
+parameters. Depending on their point distribution, the user can create a more defensive 
+(higher input on intelligence and health) or offensive (attack and health) character.
 Additional features of the character:
--	Money – the character will be given certain amount of cash in the beginning of a game 
-for which will be able to buy artefacts to increase it’s parameters (books for Intelligence; 
+-	Money – The character will be given a certain amount of cash in the beginning of the game 
+with which they will be able to buy artifacts to increase their stats (books for Intelligence; 
 swords, axes, bows, knifes for Strength; armor and healing potions for Health). At some events 
-character will be able to bribe the opponent instead to avoid the fight. In case when characters 
-Intelligence is not high enough and certain merchant creature is met money will allow to buy 
-another select option from given goods.
--	Backpack – character will have a backpack with limited number of slots to fill with found, 
-or collected from other creatures, artefacts. Some of the artefacts might increase parameters 
-of the character
+character will be able to bribe the opponent instead to avoid the fight.
+-	Backpack – character will have a backpack with a limited number of slots to fill with items
+and artifacts found or collected from other creatures or events. Some of the artifacts might 
+increase parameters of the character.
  
-The game.
-Character will be located in a location and will have to reach predefined goal. User will face 
-three types of events: Fight, Finding artefacts, Meetings other creatures.
+The game-
+Character will begin in a city which serves as the hub for all selectable game paths and will have
+to reach their predefined goal. User will face three types of events on selectable paths: Fights, 
+finding artifacts, and meeting other creatures.
 
 <<NICE TO HAVE>>To make the game less repetitive each meeting and fighting event will have multiple 
 (three) creatures defined from which script will pick one on random basis.<<>>  
 
-Details of the scenarios will be defined later in the project, but the game will have minimum 5 of 
-each events, which gives the total of 15 events after which the final battle with A Brick monster.
+Each of the game's events will take place in one of three different regions which have their own
+theme. Completing each region will unlock a path that leads to the final boss of the game.
 
-End of the game.
-The game ends with reaching the goal of the game and winning the final battle or by loosing 
-and dying in one of the fight in earlier events. 
+End of the game-
+The game ends in victory by defeating the final boss. There are many avenues to defeat, in order to
+make the user's choices feel meaningful and increase replayability of the game.
 
 <<NICE TO HAVE>> counting points and summary at the ending of the game. And/Or Counting number 
 of games played. 
@@ -54,11 +53,11 @@ of games played.
 
 
 Technical notes:
-- Game designed to single player only
-- No animation will be supported in the game. Events description will be displayed on the browser screen.
-User will pick the path to follow/choices will be made by a click on the button/link (single select only).
-- Program will not require reloading at the change of the event.
+- Game designed to be single player only
+- No animation will be supported in the game. Event descriptions will be displayed on the browser screen.
+  User will choose a path by clicking on a text button/link (single select only).
+- Program will not require reloading at the change of an event.
 - Every event will contain a static image or a design to make the interface more interesting.
 - Programming language: JavaScript/JQuery
-- Designed for Chrome, Firefox Mozilla and Safari. <<NICE TO HAVE>> available on IE too.>>
+- Designed for Firefox and Safari browsers. <<NICE TO HAVE>> available on Chrome and IE too.>>
 
