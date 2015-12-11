@@ -1383,7 +1383,7 @@ function forestEnd(){
 		});
 		// don't attach dragon
 		$("#mountain-choice-10").click(function(){ 
-			$("#mountain-headr").html('You think "This fairy must be crazy if she thinks I'll fight a dragon." You reject the fairy\'s offer and go back on your quest for the mountain penguin');
+			$("#mountain-headr").html('You think "This fairy must be crazy if she thinks I\'ll fight a dragon." You reject the fairy\'s offer and go back on your quest for the mountain penguin');
 			$("#mountain-select-1").empty();
 			$("#mountain-select-2").empty();
 			$("#mountain-select-3").empty();
