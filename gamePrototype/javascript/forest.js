@@ -1773,7 +1773,7 @@ function mountainEnd(){
 		$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-26" value="choice-1" type="radio"><label for="radio-choice-26">Ignore him and move on.</label>').trigger('create'); 
 		$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-27" value="choice-1" type="radio"><label for="radio-choice-27">Attack and try to take his goods.</label>').trigger('create');
 		$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-28" value="choice-1" type="radio"><label for="radio-choice-28">Try to buy something.</label>').trigger('create'); 
-		if(intelligence > 30)
+		if($(".smartp").val() > 30)
 			$('#desert-select4').append('<input name="radio-choice-3" id="radio-choice-29" value="choice-1" type="radio"><label for="radio-choice-29">Start conversation</label>').trigger('create'); 
 			
 		//story2 opthion 1
@@ -2011,7 +2011,7 @@ function mountainEnd(){
 		
 		//story 2 option 4 conversation   //need to be change option no there!!!! ########################
 		$("#radio-choice-29").click(function(){
-			$("#desertHeadre").html('Start conversation: ');    					
+			$("#desertHeadre").html('You start conversation with the merchant, but after he realizes that you are not interested in his goods, he walks away.');    					
 			$("#desert-select1").empty();
 			$("#desert-select2").empty();
 			$("#desert-select3").empty();	
