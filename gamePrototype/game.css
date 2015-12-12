@@ -513,6 +513,24 @@
     background-position: center center;
     background-size: cover;
   }
+	
+   /* 'Game over' popup dialogs */
+  #popupDead, #popupDeadM, #popupDeadD, #popupDeadP {
+    text-align: center;
+    padding: 20px;
+  }
+
+  #popupDead .ui-btn, #popupDeadM .ui-btn, #popupDeadD .ui-btn, #popupDeadP .ui-btn { 
+    margin-top: 15px;
+  }
+
+  #popupDead .ui-btn:hover, #popupDeadM .ui-btn:hover, #popupDeadD .ui-btn:hover, #popupDeadP .ui-btn:hover { 
+    background-color: rgba(44, 178, 225, 0.6);
+    transition: all 0.5s ease;
+    -webkit-box-shadow: -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+    -moz-box-shadow:    -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+    box-shadow:         -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
+  }
 
   #victory-page {
     background: -webkit-linear-gradient(92deg, #e8f03e, #2ccced, #9c2ced);
