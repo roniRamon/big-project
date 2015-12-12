@@ -1,0 +1,35 @@
+Testing
+
+Our testing process consists of four parts. 
+
+Part 1: Issue is reported by a tester 
+Part 2: Issue is confirmed to be an issue by a group member
+Part 3: Bug is fixed by the coder
+Part 4: Bug is confirmed fixed and closed
+
+Note: Due to the nature of our project, a separate check is performed for spelling and grammar issues. These issues are not resolved in the testing process. Instead, they are resolved in the Spelling/Grammar check portion of our project.
+
+Part 1 - Reporting the Issue
+Part 1 consists of a complete and exhaustive playthrough of every branch of the game. Several testers played through multiple branches of the game. Every possible step to reach a certain point of the game is recorded in our “Test Template”. The purpose of this playthrough is to verify that the desired outcome matches the expected outcome. In the event outcomes do not match, an issue tracker is filed.
+
+There were four types of major issues found in this portion of testing: 
+1. bugs
+2. inconsistencies
+3. undesired activities
+4. design issues
+
+Part 2 - Issue is confirmed to be an issue
+The coders (or in some cases group members) check and verify that the issue is a warranted issue. Sometimes, the issue (#34 for instance) is an intended result and therefore not an issue.
+
+Part 3 - Bug is fixed by the coder
+Issue #29, #32, and #33 are examples of bugs. If the user were to reach this stage of the game then the actual outcome did not match the expected outcome. The coders were able to fix these issues by re-tweaking the logic to their code.
+
+Issue #30 and #34 are examples of inconsistencies with the game. Sometimes the attributes were updated after an event and sometimes they were updated before an event. Also sometimes a pop up would trigger in one event, but not trigger in a similar event. To deal with this issue, the coders decided on one structure and have all the code in similar events follow that structure.
+
+Issue #31 and #46 lists undesired activities. The player is only suppose to start with 100 points. There were several hacks found that made it possible for the user to alter their attributes on the menu screen and during game play. The coders were able to fix these behaviors by manually inserting additional logic to disable the unwanted behaviors.
+
+Issue #37, #38, and #40 lists design issues such as “Hint title cut off” or “Layout problem”. To deal with these issue, the graphic designer and coders discussed better methods of presenting the game or information. Once the method is agreed upon, the implementation is made for the testers to re-examine.
+
+Part 4 - Bug is confirmed fixed and closed
+Once the bugs are fixed, the coder, tester, and other participants play through the branch to ensure the issue has been patched. The issue is then marked as resolved and closed in the issue tracker.
+
