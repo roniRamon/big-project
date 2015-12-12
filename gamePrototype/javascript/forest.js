@@ -1213,7 +1213,7 @@ function forestEnd(){
 	  {								
 		alert("you alrady have the Mountain lion tooth");
 	  }
-	  else if((!backpackCheak("Mountain lion tooth") )&& backpack.length <=4)
+	  else if((!backpackCheak("Mountain lion tooth") )&& backpack.length < 4)
 	  {
 		backpack.push("Mountain lion tooth");							//add Mountain lion tooth to backpack
 		alert('you put in your backpack a Mountain lion tooth');

@@ -66,6 +66,8 @@
                return false;
     }
    });
+	
+  
   
   //if the letter is not digit then display error and don't type anything   
   $("#strength").keypress(function (e) {
@@ -88,6 +90,15 @@
 
     // when user is ready with the steps:
     $("#ready").click(function() {
+	  if ($("#health").val() == "" || $("#health").val() == null)
+		  $("#health").val(1);
+		
+	  if ($("#strength").val() == "" || $("#strength").val() == null)
+		  $("#strength").val(1);
+		
+	 if ($("#intelligence").val() == "" || $("#intelligence").val() == null)
+		  $("#intelligence").val(1);
+		  
       if(parseInt($("#health").val()) + parseInt($("#strength").val()) + parseInt($("#intelligence").val()) > 100)
       {
         alert("You have 100 points. Distribute them accordingly"); 
