@@ -1405,7 +1405,7 @@ function MerchantInMountains(){
 	$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-13" value="choice-1" type="radio"><label for="mountain-choice-13">Ignore him and move on.</label>').trigger('create'); 
 	$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-14" value="choice-1" type="radio"><label for="mountain-choice-14">Attack and try to take his goods.</label>').trigger('create');
 	$("#mountain-select-3").append('<input name="radio-choice-10" id="mountain-choice-15" value="choice-1" type="radio"><label for="mountain-choice-15">Try to buy something.</label>').trigger('create');
-	if(intelligence > 40)
+	if($(".smartp").val() > 40)
 		$("#mountain-select-4").append('<input name="radio-choice-10" id="mountain-choice-16" value="choice-1" type="radio"><label for="mountain-choice-16">Start conversation</label>').trigger('create');
 	//Ignore him and move on
 	$("#mountain-choice-13").click(function(){ 
