@@ -1812,18 +1812,18 @@ function mountainEnd(){
 				$(".healthp").val(parseInt($("#health-points").val())-20);
 					$('#radio-choice-31').click(function() {
 						if(backpackCheak("apple")){								
-							alert("you alrady have the apple");
+							alert("You already have the apple");
 						}
 						else if((!backpackCheak("apple") )&& backpack.length <= 4)
 						{
 							backpack.push("apple");											 //add apple to backpack	
-							alert('you put in your backpack an apple');
+							alert('You put in your backpack an apple');
 							$(".healthp").val(parseInt($("#health-points").val())+5);   		 //apple add 5 health   	
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
-							alert("you dont have any more space in your backpack!!");
+							alert("You dont have any more space in your backpack!!");
 						}
 						desert3story(); //function to story 3	desert
 					});
@@ -1835,57 +1835,57 @@ function mountainEnd(){
 			//player win fight
 			else if(mrVSplayer2 >= merchant2) 
 			{   
-				$("#desertHeadre").html('You have won the fight, but you leave the merchant go after taking his goods: money 80, knife (+25 Strength), sword (+50 Strength), apple (+25 Health, +5 Intelligence) Where do you want to put a knife');    					//#backpack  !!!!!!!!!
+				$("#desertHeadre").html('You have won the fight, but you let the merchant go after taking his goods: money 80, knife (+25 Strength), sword (+50 Strength), apple (+25 Health, +5 Intelligence) Do you want to take it?');    					//#backpack  !!!!!!!!!
 				$("#desert-select1").empty();
 				$("#desert-select2").empty();
 				$("#desert-select3").empty();	
 				$("#desert-select4").empty();
 				$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-30" value="choice-1" type="radio"><label for="radio-choice-30">Don\'t take it.</label>').trigger('create'); 
-				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-31" value="choice-1" type="radio"><label for="radio-choice-31">take it..</label>').trigger('create');
+				$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-31" value="choice-1" type="radio"><label for="radio-choice-31">Take it..</label>').trigger('create');
 					$('#radio-choice-31').click(function() {
 						$("#money").val(parseInt($("#money").val()) + 80);  					//add money
 						if(backpackCheak("knife")){								
-							alert("you alrady have the knife");
+							alert("You already have the knife");
 						}
 						else if((!backpackCheak("knife") )&& backpack.length <=4)
 						{
 							backpack.push("knife");											//add knife to backpack
-							alert('you put in your backpack a knife');
+							alert('You put in your backpack a knife');
 							$(".strengthp").val(parseInt($("#strength-points").val())+25);	//knife add 25 to strength
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
-							alert("you dont have any more space in your backpack!!");
+							alert("You dont have any more space in your backpack!!");
 						}
 						if(backpackCheak("sword")){								
-							alert("you alrady have the sword");
+							alert("You alrady have the sword");
 						}
 						else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
 							backpack.push("sword");											 //add sword to backpack
-							alert('you put in your backpack a sword');
+							alert('You put in your backpack a sword');
 							$(".strengthp").val(parseInt($("#strength-points").val())+50);	//sword add 50 to strength
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
-							alert("you dont have any more space in your backpack!!");
+							alert("You dont have any more space in your backpack!!");
 						}										
 						if(backpackCheak("apple")){								
-							alert("you alrady have the apple");
+							alert("You already have the apple");
 						}
 						else if((!backpackCheak("apple") )&& backpack.length <=4)
 						{
 							backpack.push("apple");											 //add apple to backpack	
-							alert('you put in your backpack an apple');
+							alert('You put in your backpack an apple');
 							$(".healthp").val(parseInt($("#health-points").val())+25);   			//apple add 25 health
 							$(".smartp").val(parseInt($("#smart-points").val())+5);   	//apple add 5 Intelligence
 							arrayShowItem();
 						}
 						else if(backpack.length >4)
 						{
-							alert("you dont have any more space in your backpack!!");
+							alert("You dont have any more space in your backpack!!");
 						}
 						 desert3story();//function to story 3	desert								
 					});
@@ -1924,26 +1924,26 @@ function mountainEnd(){
 				$("#radio-choice-32").click(function(){
 					if(backpackCheak("sword"))
 					{								
-						alert("you alrady have the sword");
+						alert("You already have the sword");
 					}
 					else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
 						if(parseInt($("#money").val()) >= 800)
 						{
 							backpack.push("sword");											 //add sword to backpack
-							alert('you put in your backpack a sword');
+							alert('You put in your backpack a sword');
 							$("#money").val(parseInt($("#money").val()) - 800);
 							$(".strengthp").val(parseInt($("#strength-points").val())+40);	//sword add 40 to strength
 							arrayShowItem();
 						}
 						else 
 						{
-							alert("you dont have enough money");
+							alert("You dont have enough money");
 						} 
 					}
 					else if(backpack.length >4)
 					{
-						alert("you dont have any more space in your backpack!!");
+						alert("You dont have any more space in your backpack!!");
 						arrayShowItem();
 					}
 					desert3story(); //function to story 3	
@@ -1952,14 +1952,14 @@ function mountainEnd(){
 				$("#radio-choice-33").click(function(){
 						if(backpackCheak("apple"))
 						{								
-							alert("you alrady have the apple");
+							alert("You already have the apple");
 						}
 						else if((!backpackCheak("apple") )&& backpack.length <=4)
 						{
 							if(parseInt($("#money").val()) >= 40)
 							{	
 								backpack.push("apple");											 //add apple to backpack
-								alert('you put in your backpack an apple');
+								alert('You put in your backpack an apple');
 								$("#money").val(parseInt($("#money").val()) - 40);
 								$(".healthp").val(parseInt($("#health-points").val())+25);   			//apple add 25 health
 								$(".smartp").val(parseInt($("#smart-points").val())+5);   	//apple add 5 Intelligence
@@ -1967,12 +1967,12 @@ function mountainEnd(){
 							}
 							else 
 							{
-							alert("you dont have enough money");
+							alert("You dont have enough money");
 							} 
 						}
 						else if(backpack.length >4)
 						{
-							alert("you dont have any more space in your backpack!!");
+							alert("You dont have any more space in your backpack!!");
 						}
 					desert3story(); //function to story 3									
 				});
@@ -1980,26 +1980,26 @@ function mountainEnd(){
 				$("#radio-choice-34").click(function(){
 					if(backpackCheak("knife"))
 					{								
-							alert("you alrady have the knife");
+							alert("You alrady have the knife");
 					}
 					else if((!backpackCheak("knife") )&& backpack.length <=4)
 					{
 						if(parseInt($("#money").val()) >= 100)
 						{	
 							backpack.push("knife");											 //add knife to backpack
-							alert('you put in your backpack a knife');
+							alert('You put in your backpack a knife');
 							$("#money").val(parseInt($("#money").val()) - 100);
 							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
 						}
 						else 
 						{
-							alert("you dont have enough money");
+							alert("You dont have enough money");
 						} 
 					}
 					else if(backpack.length >4)
 					{
-						alert("you dont have any more space in your backpack!!");
+						alert("You dont have any more space in your backpack!!");
 					}
 					desert3story();//function to story 3 desert									
 				});
@@ -2011,7 +2011,7 @@ function mountainEnd(){
 		
 		//story 2 option 4 conversation   //need to be change option no there!!!! ########################
 		$("#radio-choice-29").click(function(){
-			$("#desertHeadre").html('You start conversation with the merchant, but after he realizes that you are not interested in his goods, he walks away.');    					
+			$("#desertHeadre").html('Your start conversation with the merchant, but after he realizes that you are not interested in his goods, he walks away.');    					
 			$("#desert-select1").empty();
 			$("#desert-select2").empty();
 			$("#desert-select3").empty();	
@@ -2071,7 +2071,7 @@ function desert3story(){
 							$("#radio-choice-400").click(function(){
 								if(backpackCheak("cactus"))
 								{								
-									alert("you alrady have the cactus");
+									alert("You already have the cactus");
 								}
 								else if(backpack.length >=4)
 								{
@@ -2108,7 +2108,7 @@ function desert3story(){
 							$("#radio-choice-420").click(function(){
 								if(backpackCheak("cactus"))
 								{								
-									alert("you alrady have the cactus");
+									alert("You already have the cactus");
 								}
 								else if(backpack.length >=4)
 								{
@@ -2172,7 +2172,7 @@ function desert3story(){
 						$("#radio-choice-470").click(function(){
 							if(backpackCheak("cactus"))
 							{								
-								alert("you alrady have the cactus");
+								alert("You already have the cactus");
 							}
 							else if(backpack.length >=4)
 							{
@@ -2329,7 +2329,7 @@ function desert4story(){
 				$("#radio-choice-55").click(function(){
 					if(backpackCheak("needle"))
 					{								
-						alert("you alrady have the needle");
+						alert("You already have the needle");
 					}
 					else if((!backpackCheak("needle") )&& backpack.length < 4)
 					{	
@@ -2632,9 +2632,9 @@ function desert5story() {
 			$("#desert-select1").empty();
 			$("#desert-select2").empty();
 			$("#desert-select3").empty();
-			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-63" value="choice-1" type="radio"><label for="radio-choice-63">run for your life.</label>').trigger('create'); 
-			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-64" value="choice-1" type="radio"><label for="radio-choice-64">fight the mummy.</label>').trigger('create'); 
-			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-65" value="choice-1" type="radio"><label for="radio-choice-65">talk to the mummy.</label>').trigger('create');
+			$('#desert-select1').append('<input name="radio-choice-3" id="radio-choice-63" value="choice-1" type="radio"><label for="radio-choice-63">Run for your life.</label>').trigger('create'); 
+			$('#desert-select2').append('<input name="radio-choice-3" id="radio-choice-64" value="choice-1" type="radio"><label for="radio-choice-64">Fight the mummy.</label>').trigger('create'); 
+			$('#desert-select3').append('<input name="radio-choice-3" id="radio-choice-65" value="choice-1" type="radio"><label for="radio-choice-65">Talk to the mummy.</label>').trigger('create');
 			//run for your life.
 			$("#radio-choice-63").click(function(){
 				$("#desertHeadre").html('Along the way, you fall into a pit trap. You are lost. You continue walking around looking for an exit.');
