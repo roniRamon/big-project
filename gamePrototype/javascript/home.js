@@ -148,12 +148,12 @@
 	  
 	  $("#quit-game").click(function() {
 		  	window.location.replace('#home-page');
-	  		location.reload();
+	  		location.reload(true);
 	  });
 	  
 	 $("#restart").click(function() {
        		 window.location.replace('#home-page');
-       		 location.reload();
+       		 location.reload(true);
    	 });	  
 });
 
