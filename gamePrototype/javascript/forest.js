@@ -1178,7 +1178,7 @@ function forestEnd(){
 		});  
 	  });
 	  $('#mountain-choice-5').click(function(){     //Run the way you came from.
-	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain, whoops. After a lot of rolling you\'re back where you started your climb up the mountain. You hurt your leg and got a few bruisers from the fall (-20 Health).');
+	  	$("#mountain-headr").html('You back up, but your foot misses the ledge and you tumble down the mountain, whoops. After a lot of rolling, you\'re back where you started your climb up the mountain. You hurt your leg and got a few bruisers from the fall (-20 Health).');
 		 if (parseInt($("#health-points").val()) <= 20)
 			{
 				$( "#popupDeadM" ).popup( "open" )
@@ -1205,24 +1205,24 @@ function forestEnd(){
   	  
   //Show you're not a threat.	  //#################need to change to show option if intelligence > 12 
   $("#mountain-choice-3").click(function(){
-	  $("#mountain-headr").html('Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before  leaving. Item: Mountain lion tooth (+25 Health)');
+	  $("#mountain-headr").html('Good thing you read that book on how to deescalate mountain lion encounters. You utter a few "meows", the cat nods in reply. It hands you something before leaving. Item: Mountain lion tooth (+25 Health)');
 	  $("#mountain-select-1").empty();
 	  $("#mountain-select-2").empty();
 	  $("#mountain-select-3").empty();
 	  if(backpackCheak("Mountain lion tooth"))
 	  {								
-		alert("you alrady have the Mountain lion tooth");
+		alert("You already have the Mountain lion tooth");
 	  }
 	  else if((!backpackCheak("Mountain lion tooth") )&& backpack.length < 4)
 	  {
 		backpack.push("Mountain lion tooth");							//add Mountain lion tooth to backpack
-		alert('you put in your backpack a Mountain lion tooth');
+		alert('You put in your backpack a Mountain lion tooth');
 		$(".healthp").val(parseInt($("#health-points").val())+25); 	//Mountain lion tooth add 25 to health
 		arrayShowItem();
 	  }
 	  else
 	 {
-		alert("you dont have any more space in your backpack!!");
+		alert("You dont have any more space in your backpack!!");
 		arrayShowItem();
 	 }
 	 $('#mountain-select-1').append('<input type="button" value="Next" id="next70" data-inline="true" data-mini="true" data-icon="check" class="next70">').trigger('create');
@@ -1238,10 +1238,10 @@ function forestEnd(){
 	$("#mountain-select-2").empty();
 	$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-6" value="choice-1" type="radio"><label for="mountain-choice-6">Fight her for the sword.</label>').trigger('create'); 
 	$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-7" value="choice-1" type="radio"><label for="mountain-choice-7">Leave her alone and continue your journey.</label>').trigger('create');
-	$("#mountain-select-3").append('<input name="radio-choice-10" id="mountain-choice-8" value="choice-1" type="radio"><label for="mountain-choice-8">ask for the sword</label>').trigger('create');
+	$("#mountain-select-3").append('<input name="radio-choice-10" id="mountain-choice-8" value="choice-1" type="radio"><label for="mountain-choice-8">Ask for the sword</label>').trigger('create');
 	//Fight her for the sword
 	$("#mountain-choice-6").click(function(){ 
-		$("#mountain-headr").html('You have decided to attack the fairy (strenght 60) and take the sword from her.');
+		$("#mountain-headr").html('You have decided to attack the fairy (strength 60) and take the sword from her.');
 		$("#mountain-select-1").empty();
 		$("#mountain-select-2").empty();
 		$("#mountain-select-3").empty();
@@ -1271,18 +1271,18 @@ function forestEnd(){
 				$("#mountain-choice-9").click(function(){ 
 					if(backpackCheak("super sword"))
 	  				{								
-						alert("you already have the super sword");
+						alert("You already have the super sword");
 	  				}
 	  				else if((!backpackCheak("super sword") )&& backpack.length < 4)
 	  				{
 						backpack.push("super sword");							//add super swordto backpack
-						alert('you put the super sword in your backpack');
+						alert('You put the super sword in your backpack');
 						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
 	  				else
 	 				{
-						alert("you dont have any more space in your backpack!!");
+						alert("You dont have any more space in your backpack!!");
 						arrayShowItem();
 					}
 					MerchantInMountains();//next event story 3 mountain
@@ -1350,18 +1350,18 @@ function forestEnd(){
 					$(".strengthp").val(parseInt($("#strength-points").val())+50);
 					if(backpackCheak("super sword"))
 	  				{								
-						alert("you already have the super sword");
+						alert("You already have the super sword");
 	  				}
 	  				else if((!backpackCheak("super sword") )&& backpack.length <=4)
 	  				{
 						backpack.push("super sword");									//add super swordto backpack
-						alert('you put the super sword in your backpack');
+						alert('You put the super sword in your backpack');
 						$(".strengthp").val(parseInt($("#strength-points").val())+60); 	//super sword add 60 to strength
 						arrayShowItem();
 	  				}
 	  				else
 	 				{
-						alert("you dont have any more space in your backpack!!");
+						alert("You dont have any more space in your backpack!!");
 						arrayShowItem();
 					}
 					MerchantInMountains();//next event story 3 mountain
@@ -1438,12 +1438,12 @@ function MerchantInMountains(){
 			$("#mountain-choice-20").click(function(){ 
 			if(backpackCheak("whisky"))
 	  		{								
-				alert("you already have the whisky");
+				alert("You already have the whisky");
 	  		}
 	  		else if((!backpackCheak("whisky") )&& backpack.length <=4)
 	  		{
 				backpack.push("whisky");										//add whisky to backpack
-				alert('you put the whiskey in your backpack');
+				alert('You put the whiskey in your backpack');
 				$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 				if(parseInt($("#smart-points").val()) > 10)
 					$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -1453,7 +1453,7 @@ function MerchantInMountains(){
 	  		}
 	  		else
 	 		{
-				alert("you dont have any more space in your backpack!!");
+				alert("You dont have any more space in your backpack!!");
 				arrayShowItem();
 			}
 					mountainEnd();//next event end of mountain
@@ -1461,54 +1461,54 @@ function MerchantInMountains(){
 		}
 		else if(fightYou >= fightOpponent) //Merchant lose
 		{
-			$("#mountain-headr").html('You have won the fight (Strength +5), but you let the merchant go after taking his goods: money 80, small knife (+5 Strength), large sword (+25 Strength), whisky (+5Health, -10 Intelligence).Do you want to put it in your backpack or leave it. ');
+			$("#mountain-headr").html('You have won the fight (Strength +5), but you let the merchant go after taking his goods: money 80, small knife (+5 Strength), large sword (+25 Strength), whisky (+5Health, -10 Intelligence). Do you want to put it in your backpack or leave it. ');
 			$("#mountain-select-1").empty();
 			$("#mountain-select-2").empty();
 			$("#mountain-select-3").empty();
 			$("#mountain-select-4").empty();
 			//$('#mountain-select-1').append('<input type="button" value="Next" id="next73" data-inline="true" data-mini="true" data-icon="check" class="next73">').trigger('create');
-			$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-m20" value="choice-1" type="radio"><label for="mountain-choice-m20">Yes.</label>').trigger('create'); 
-			$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-m21" value="choice-1" type="radio"><label for="mountain-choice-m21">No.</label>').trigger('create');
+			$("#mountain-select-1").append('<input name="radio-choice-10" id="mountain-choice-m20" value="choice-1" type="radio"><label for="mountain-choice-m20">Take it.</label>').trigger('create'); 
+			$("#mountain-select-2").append('<input name="radio-choice-10" id="mountain-choice-m21" value="choice-1" type="radio"><label for="mountain-choice-m21">Leave it.</label>').trigger('create');
 			//$(".next73").click(function(){ 
 			$("#mountain-choice-m20").click(function(){
 				$(".strengthp").val(parseInt($("#strength-points").val())+5);
 				$("#money").val(parseInt($("#money").val()) + 80);  					//add money
 				if(backpackCheak("knife"))
 				{								
-					alert("you alrady have the knife");
+					alert("You already have the knife");
 				}
 				else if((!backpackCheak("knife") )&& backpack.length <=4)
 				{
 					backpack.push("knife");											//add knife to backpack
-					alert('you put in your backpack a knife');
+					alert('You put in your backpack a knife');
 					$(".strengthp").val(parseInt($("#strength-points").val())+5);	//knife add 5 to strength
 					arrayShowItem();
 				}
 				else if(backpack.length >4)
 				{
-					alert("you dont have any more space in your backpack!!");
+					alert("You dont have any more space in your backpack!!");
 				}
 				if(backpackCheak("sword")){								
-					alert("you alrady have the sword");
+					alert("You already have the sword");
 				}
 				else if((!backpackCheak("sword") )&& backpack.length <=4)
 				{
 					backpack.push("sword");											 //add sword to backpack
-					alert('you put in your backpack a sword');
+					alert('You put in your backpack a sword');
 					$(".strengthp").val(parseInt($("#strength-points").val())+25);	//sword add 25 to strength
 					arrayShowItem();
 				}
 				else if(backpack.length >4)
 				{
-					alert("you dont have any more space in your backpack!!");
+					alert("You dont have any more space in your backpack!!");
 				}										
 				if(backpackCheak("whisky")){								
-					alert("you alrady have the whisky");
+					alert("You already have the whisky");
 				}
 				else if((!backpackCheak("whisky") )&& backpack.length <=4)
 				{
 					backpack.push("whisky");											 //add wisky to backpack	
-					alert('you put in your backpack a whisky bottle');
+					alert('You put in your backpack a whisky bottle');
 					$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 					if(parseInt($("#smart-points").val()) > 10)
 						$(".smartp").val(parseInt($("#smart-points").val())-10);   	//whisky sub 10 Intelligence
@@ -1518,7 +1518,7 @@ function MerchantInMountains(){
 				}
 				else if(backpack.length >4)
 				{
-					alert("you dont have any more space in your backpack!!");
+					alert("You dont have any more space in your backpack!!");
 				}
 					mountainEnd();//next event end of mountain									
 			});
@@ -1557,24 +1557,24 @@ function MerchantInMountains(){
 			    //buy sword
 				$("#mountain-choice-22").click(function(){
 					if(backpackCheak("sword")){								
-						alert("you alrady have the sword");
+						alert("You already have the sword");
 					}
 					else if((!backpackCheak("sword") )&& backpack.length <=4)
 						{
 						if(parseInt($("#money").val()) >= 450)
 						{
 							backpack.push("sword");											 //add sword to backpack
-							alert('you put in your backpack a sword');
+							alert('You put in your backpack a sword');
 							$("#money").val(parseInt($("#money").val()) - 450);
 							$(".strengthp").val(parseInt($("#strength-points").val())+25); //sword add 25 to strength
 							arrayShowItem();
 						}
 						else {
-							alert("you dont have enough money");} 
+							alert("You dont have enough money");} 
 					}
 					else if(backpack.length >4)
 					{
-						alert("you dont have any more space in your backpack!!");
+						alert("You dont have any more space in your backpack!!");
 						arrayShowItem();
 					}
 					mountainEnd();//next event end of mountain	
@@ -1582,14 +1582,14 @@ function MerchantInMountains(){
 				// buy whisky
 				$("#mountain-choice-23").click(function(){
 						if(backpackCheak("whisky")){								
-							alert("you alrady have the whisky");
+							alert("You already have the whisky");
 						}
 						else if((!backpackCheak("whisky") )&& backpack.length <=4)
 						{
 							if(parseInt($("#money").val()) >= 50)
 							{	
 								backpack.push("whisky");											 //add wisky to backpack
-								alert('you put in your backpack a whisky bottle');
+								alert('You put in your backpack a whisky bottle');
 								$("#money").val(parseInt($("#money").val()) - 50);
 								$(".healthp").val(parseInt($("#health-points").val())+5);   			//whisky add 5 health
 								if(parseInt($("#smart-points").val()) > 10)
@@ -1599,35 +1599,35 @@ function MerchantInMountains(){
 								arrayShowItem();
 							}
 							else {
-							alert("you dont have enough money");} 
+							alert("You dont have enough money");} 
 						}
 						else if(backpack.length >4)
 						{
-							alert("you dont have any more space in your backpack!!");
+							alert("You dont have any more space in your backpack!!");
 						}
 					mountainEnd();//next event end of mountain									
 				});
 				//buy knife
 				$("#mountain-choice-24").click(function(){
 					if(backpackCheak("knife")){								
-							alert("you alrady have the knife");
+							alert("You already have the knife");
 					}
 					else if((!backpackCheak("knife") )&& backpack.length <=4)
 					{
 						if(parseInt($("#money").val()) >= 100)
 						{	
 							backpack.push("knife");											 //add knife to backpack
-							alert('you put in your backpack a knife');
+							alert('You put in your backpack a knife');
 							$("#money").val(parseInt($("#money").val()) - 100);
 							$(".strengthp").val(parseInt($("#strength-points").val())+5);   			//knife add 5 strength   	
 							arrayShowItem();
 						}
 						else {
-							alert("you dont have enough money");} 
+							alert("You dont have enough money");} 
 						}
 					else if(backpack.length >4)
 					{
-						alert("you dont have any more space in your backpack!!");
+						alert("You dont have any more space in your backpack!!");
 					}
 					mountainEnd();//next event end of mountain									
 				});
@@ -2777,7 +2777,7 @@ function desertEnd(){
 			$("#python-select2").empty();
 			$('#python-select1').append('<input type="button" value="Go to Mysterious Hut" id="next100" data-inline="true" data-mini="true" data-icon="check" class="next100">').trigger('create');
 			$(".next100").click(function(){ 
-				$('#pythonHeader').html('You have found what you have been looking for all the way. The only thing that prevents you from fulfilling your mission is the mysterious monster hiding in his hut. You can finally fight him to ' + $("#select-choice-1 option:selected" ).text() +'. The monster is a Brick ');
+				$('#pythonHeader').html('You have found what you have been looking for all the way. The only thing that prevents you from fulfilling your mission is the mysterious monster hiding in his hut. You can finally fight him to ' + $("#select-choice-1 option:selected" ).text() +'. The monster is A. Brick ');
 				$("#python-select1").empty();
 				$('#python-select1').append('<input type="button" value="Fight" id="next110" data-inline="true" data-mini="true" data-icon="check" class="next110">').trigger('create');
 				$(".next110").click(function(){ 
