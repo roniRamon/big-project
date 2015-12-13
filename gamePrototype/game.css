@@ -429,13 +429,14 @@
     background: -moz-linear-gradient(272deg, #0f6d80, #27b0e5);
     background: linear-gradient(272deg, #0f6d80, #27b0e5);
     font-family: 'Raleway', sans-serif;
+    text-shadow: none;
   }
 
   /* styling of the main game text container */
   .text-container {
     font-size: 16px;
     width: 100%;
-    text-align: center !important;
+    text-align: center;
     padding: 15px;
     line-height: 30px;
     background-color: rgba(0,0,0,.8);
@@ -456,6 +457,18 @@
     box-shadow:         -2px 0px 12px 0px rgba(44, 178, 225, 0.75);
     background-color: rgba(44, 178, 225, 0.6);
     transition: all 0.5s ease;
+  }
+
+  /* text alignment for the text in the heading (Chrome and Safari) */
+  .text-container .ui-controlgroup-label {
+          margin: 0 auto !important;
+          width: 60%;
+          text-align: center;
+  }
+  .text-container legend {
+          margin: 0 auto !important;
+          width: 100%;
+          text-align: center;
   }
 
   .text-container .ui-btn {
@@ -538,9 +551,9 @@
     background: linear-gradient(92deg, #e8f03e, #2ccced, #9c2ced);
     background-size: 400% 400%;
 
-    -webkit-animation: changeBackgroundColor 20s ease infinite;
-    -moz-animation: changeBackgroundColor 20s ease infinite;
-    animation: changeBackgroundColor 20s ease infinite;
+    -webkit-animation: changeBackgroundColor 30s ease infinite;
+    -moz-animation: changeBackgroundColor 30s ease infinite;
+    animation: changeBackgroundColor 30s ease infinite;
   }
 
   @-webkit-keyframes changeBackgroundColor {
