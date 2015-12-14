@@ -485,6 +485,7 @@
   }
 
   #tutorial-page {
+    background-color: rgba(44, 178, 225, 0.5);
     background-image: url(images/HubCity.png);
     background-repeat: no-repeat;
     background-position: top right;
@@ -492,6 +493,7 @@
   }
 
   #city-page {
+    background-color: rgba(44, 178, 225, 0.5);
     background-image: url(images/Crossroad.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -499,6 +501,7 @@
   }
 
   #forest-page {
+    background-color: rgba(44, 178, 225, 0.5);
     background-image: url(images/Forest.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -506,6 +509,7 @@
   }
 
   #mountain-page {
+    background-color: rgba(44, 178, 225, 0.5);
     background-image: url(images/Mountains.png);
     background-repeat: no-repeat;
     background-position: top center;
@@ -513,6 +517,7 @@
   }
 
    #desert-page {
+    background-color: rgba(44, 178, 225, 0.5);
     background-image: url(images/Desert.png);
     background-repeat: no-repeat;
     background-position: top center;
@@ -520,6 +525,7 @@
   }
 
    #python-page {
+    background-color: rgba(44, 178, 225, 0.5);
     background-image: url(images/PythonNest.png);
     background-repeat: no-repeat;
     background-position: center center;
